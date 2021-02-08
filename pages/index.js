@@ -73,18 +73,26 @@ const Home = () => {
           Pilihan Paket
         </div>
         <div className="grid md:grid-cols-3 gap-6">
-          <PriceCard data={basic} title="Basic" color="green" url="/basic" />
+          <PriceCard
+            data={basic}
+            title="Basic"
+            color="green"
+            url="/basic"
+            price="100K"
+          />
           <PriceCard
             data={standard}
             title="Standard"
             color="blue"
             url="/standard"
+            price="120K"
           />
           <PriceCard
             data={premium}
             title="Premium"
             color="gold"
             url="/premium"
+            price="180K"
           />
         </div>
       </section>

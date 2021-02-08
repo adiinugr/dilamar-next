@@ -5,7 +5,7 @@ import Aos from "aos";
 
 import "aos/dist/aos.css";
 
-const PriceCard = ({ title, data, color, url }) => {
+const PriceCard = ({ title, data, color, url, price }) => {
   useEffect(() => {
     Aos.init({ duration: 1000 });
   }, []);
@@ -27,7 +27,7 @@ const PriceCard = ({ title, data, color, url }) => {
     >
       <div className="bg-white">
         <div className={titleClassName()}>{title}</div>
-        <div className="p-6 pb-0 font-bold text-3xl text-center">120K</div>
+        <div className="p-6 pb-0 font-bold text-3xl text-center">{price}</div>
         <div className="p-6">
           {data.map((dta) => (
             <div key={dta.id} className="flex items-center mb-2">
