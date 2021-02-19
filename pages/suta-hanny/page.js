@@ -197,7 +197,6 @@ const Page = () => {
           </div>
           <div className="h-80 w-5/6 md:w-3/4 mt-4 relative border-gray-200 border-2 rounded-lg overflow-hidden">
             <GoogleMaps />
-            hahah
           </div>
           <a
             href="https://www.google.com/maps/place/Eco+Club/@-6.2501354,106.5255575,15z/data=!4m5!3m4!1s0x0:0x134fb6d97ef96877!8m2!3d-6.2501354!4d106.5255575?hl=in-ID"

@@ -17,6 +17,7 @@ const GoogleMaps = (props) => {
       <Marker
         position={{ lat: -6.250106, lng: 106.525555 }}
         title="Suta & Hanny's Wedding"
+        name="Suta & Hanny's Wedding Location"
       />
     </Map>
   );
