@@ -132,8 +132,9 @@ const Page = () => {
               className="md:w-1/3 text-center font-body mb-8 md:mb-0"
               data-aos="fade-right"
             >
-              {/* <p className="font-display text-5xl mb-3">Suta</p> */}
-              <p>Dliyan Purwana Suta, S.H.</p>
+              <p className="font-display text-4xl mb-3">
+                Dliyan Purwana Suta, S.H.
+              </p>
               <p>Putra dari Bapak Drs. Zaenal Hayat dan Ibu Kurnaesin</p>
             </div>
             <div
@@ -146,8 +147,7 @@ const Page = () => {
               data-aos="fade-left"
               className="md:w-1/3 text-center font-body"
             >
-              {/* <p className="font-display text-5xl mb-3">Hanny</p> */}
-              <p>Hanny Suryani,S.Pd.</p>
+              <p className="font-display text-4xl mb-3">Hanny Suryani, S.Pd.</p>
               <p>
                 Putri dari Bapak Drs. Nana Suryana (Alm.) dan Ibu Nursamsiyah
               </p>
