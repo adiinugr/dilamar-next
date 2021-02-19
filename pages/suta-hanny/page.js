@@ -2,7 +2,6 @@ import { useContext, useEffect, useState } from "react";
 import Image from "next/image";
 import Countdown from "react-countdown";
 import Aos from "aos";
-import { motion } from "framer-motion";
 
 import "aos/dist/aos.css";
 
@@ -13,9 +12,10 @@ import { AiOutlineComment } from "react-icons/ai";
 import { renderer } from "../../components/CountDownRenderer";
 import { AudioContext } from "../../context/AudioContext";
 import Footer from "../../components/Footer";
+import GoogleMaps from "../../components/GoogleMaps";
 
 const Page = () => {
-  const [date] = useState("2021-12-04T10:30:00.000+07:00");
+  const [date] = useState("2021-03-21T11:00:00.000+07:00");
   const [comments, setComments] = useState([
     {
       name: "Sugeng",
@@ -43,7 +43,7 @@ const Page = () => {
   }, []);
 
   useEffect(() => {
-    setAudio(new Audio("/musics/beautiful-in-white.mp3"));
+    setAudio(new Audio("/suta-hanny/cristian-since.mp3"));
   }, []);
 
   useEffect(() => {
@@ -77,32 +77,36 @@ const Page = () => {
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-    >
-      <section className="h-screen relative">
-        <Image
-          src="/images/roses.jpg"
-          layout="fill"
-          objectFit="cover"
-          className="absolute"
-        />
-        <div className="h-full w-full bg-gray-800 absolute opacity-60" />
+    <div>
+      <section className="h-screen relative bg-suta-seashell overflow-hidden">
+        <div
+          data-aos="slide-right"
+          className="absolute top-0 left-0 w-56 h-56 md:w-96 md:h-96"
+        >
+          <Image src="/suta-hanny/flower1.png" layout="fill" />
+        </div>
+        <div
+          data-aos="slide-left"
+          className="absolute right-0 bottom-0 w-48 h-48 md:w-96 md:h-96"
+        >
+          <Image src="/suta-hanny/flower2.png" layout="fill" />
+        </div>
         <div
           data-aos="fade-up"
-          className="h-full w-full absolute text-gray-100 flex flex-col justify-center items-center"
+          className="h-full w-full absolute text-suta-lapis-lazuli flex flex-col justify-center items-center"
         >
-          <div className="text-2xl font-semibold">The Wedding</div>
+          <div className="text-2xl font-semibold">The Wedding Of</div>
           <div className="font-display text-6xl md:text-7xl my-4">
-            Ratna & Galih
+            Suta & Hanny
           </div>
-          <div className="text-xl">02 Desember 2021</div>
+          <div className="text-xl">Minggu, 21 Maret 2021</div>
         </div>
       </section>
-      <section className="bg-gray-800 py-16 flex flex-col items-center justify-center">
-        <div className="w-3/4 flex flex-col items-center justify-center">
+      <section className="bg-suta-gunmetal py-16 flex flex-col items-center justify-center overflow-hidden">
+        <div
+          data-aos="zoom-in"
+          className="w-3/4 flex flex-col items-center justify-center"
+        >
           <GoBook size={80} className="text-gray-300 mb-4" />
           <p className="text-center text-gray-300 mb-2 ">
             “Dan di antara tanda-tanda kekuasaan Allah ialah diciptakan-Nya
@@ -114,31 +118,31 @@ const Page = () => {
           <p className="text-gray-300 font-medium">(QS. Ar-Rum ayat 21)</p>
         </div>
       </section>
-      <section className="bg-green-50 py-20 md:px-40">
-        <div className="flex flex-col md:flex-row items-center justify-center h-full w-full z-20">
+      <section className="bg-suta-seashell py-20 px-8 md:px-40 overflow-hidden">
+        <div className="flex flex-col md:flex-row items-center justify-center h-full w-full z-20 text-suta-lapis-lazuli">
           <div
-            className="text-gray-700 md:w-1/3 text-center font-body mb-8 md:mb-0"
+            className="md:w-1/3 text-center font-body mb-8 md:mb-0"
             data-aos="fade-right"
           >
-            <p className="font-display text-5xl mb-3">Ratna</p>
-            <p>Ratna Wijaya</p>
-            <p>Putra dari Bapak dan Ibu</p>
-          </div>
-          <div className="text-gray-700 md:w-1/3 text-center font-display text-8xl mb-8 md:mb-0">
-            &
+            <p className="font-display text-5xl mb-3">Suta</p>
+            <p>Dliyan Purwana Suta, S.H.</p>
+            <p>Putra dari Bapak Drs. Zaenal Hayat dan Ibu Kurnaesin</p>
           </div>
           <div
-            data-aos="fade-left"
-            className="text-gray-700 md:w-1/3 text-center font-body"
+            data-aos="zoom-in"
+            className="md:w-1/3 text-center font-display text-8xl mb-8 md:mb-0"
           >
-            <p className="font-display text-5xl mb-3">Galih</p>
-            <p>Galih Prakoso</p>
-            <p>Putra dari Bapak dan Ibu</p>
+            &
+          </div>
+          <div data-aos="fade-left" className="md:w-1/3 text-center font-body">
+            <p className="font-display text-5xl mb-3">Hanny</p>
+            <p>Hanny Suryani,S.Pd.</p>
+            <p>Putri dari Bapak Drs. Nana Suryana (Alm.) dan Ibu Nursamsiyah</p>
           </div>
         </div>
       </section>
-      <section className="flex justify-center items-center bg-gray-500">
-        <div className="w-3/4 flex flex-col py-8 md:py-10 md:px-44 text-gray-200">
+      <section className="flex justify-center items-center bg-suta-gunmetal overflow-hidden">
+        <div className="w-3/4 flex flex-col py-8 md:py-10 md:px-44 text-suta-seashell">
           <div
             data-aos="zoom-in"
             className="text-center font-display text-4xl md:text-5xl mb-6"
@@ -148,41 +152,52 @@ const Page = () => {
           <Countdown date={Date.parse(date)} renderer={renderer} />
         </div>
       </section>
-      <section className="bg-gray-800 py-16 flex flex-col items-center justify-center">
-        <div className="w-5/6 md:w-3/4 border-gray-300 border-2 rounded-lg  h-screen md:h-64">
-          <div className=" flex flex-col md:flex-row items-center justify-center h-full w-full z-20">
-            <div
-              data-aos="zoom-in"
-              className="text-gray-300 px-4 md:px-0 md:w-1/2 text-center font-body mb-8 md:mb-0"
-            >
-              <p className="font-display text-5xl mb-4">Akad Nikah</p>
-              <p>Jumat, 3 Desember 2021</p>
-              <p className="my-4">Pukul 08.30 WIB</p>
-              <p className="font-semibold">Masjid Baitul Makmur 2 Unesa</p>
-              <p>Kampus Unesa Lidah Wetan, Surabaya</p>
+      <section className="bg-suta-seashell text-suta-lapis-lazuli py-16 flex flex-col items-center justify-center overflow-hidden">
+        <div className="w-5/6 md:w-3/4 border-suta-lapis-lazuli border-2 rounded-lg  h-screen md:h-96">
+          <div className=" flex flex-col items-center justify-center h-full w-full z-20">
+            <div className="w-full flex flex-col md:flex-row">
+              <div
+                data-aos="zoom-in"
+                className="px-4 md:px-0 md:w-1/2 text-center font-body mb-8 md:mb-0"
+              >
+                <p className="font-display text-5xl mb-4">Akad Nikah</p>
+                <p>Minggu, 21 Maret 2021</p>
+                <p className="my-4">Pukul 09.00 - 10.00 WIB</p>
+              </div>
+              <div
+                data-aos="zoom-in"
+                className="px-4 md:px-0 md:w-1/2 text-center font-body mb-8 md:mb-0"
+              >
+                <p className="font-display text-5xl mb-4">Resepsi</p>
+                <p>Minggu, 21 Maret 2021</p>
+                <p className="mt-4">Sesi 1: Pukul 11.00 - 13.00 WIB</p>
+                <p>Sesi 2: Pukul 13.00 - 15.00 WIB</p>
+                <p className="mb-4">Sesi 3: Pukul 15.00 - 17.00 WIB</p>
+              </div>
             </div>
-            <div
-              data-aos="zoom-in"
-              className="text-gray-300 px-4 md:px-0 md:w-1/2 text-center font-body mb-8 md:mb-0"
-            >
-              <p className="font-display text-5xl mb-4">Resepsi</p>
-              <p>Sabtu, 4 Desember 2021</p>
-              <p className="my-4">Pukul 10.00 WIB - Selesai</p>
-              <p className="font-semibold">Danau Unesa</p>
-              <p>Kampus Unesa Lidah Wetan, Surabaya</p>
+            <div data-aos="zoom-in" className="text-center mt-8 px-4">
+              <p className="font-semibold">ECO CLUB CITRA RAYA</p>
+              <p>
+                Jl. Ecopolis Citra Raya, Mekar Bakti, Kec. Panongan, Tangerang,
+                Banten
+              </p>
             </div>
           </div>
         </div>
+        <div className="h-80 w-5/6 md:w-3/4 mt-4 relative border-gray-200 border-2 rounded-lg overflow-hidden">
+          <GoogleMaps />
+          hahah
+        </div>
         <a
-          href="https://www.google.co.id/maps/place/Masjid+Baitul+Makmur+2+UNESA+Lidah+Wetan/@-7.3034604,112.6708557,17z/data=!3m1!4b1!4m5!3m4!1s0x2dd7fc53d3b94d03:0xa249469c90cd02b7!8m2!3d-7.3034604!4d112.6730444"
+          href="https://www.google.com/maps/place/Eco+Club/@-6.2501354,106.5255575,15z/data=!4m5!3m4!1s0x0:0x134fb6d97ef96877!8m2!3d-6.2501354!4d106.5255575?hl=in-ID"
           target="_blank"
           rel="noreferrer"
           className="w-5/6 md:w-3/4 bg-gray-300 mt-4 rounded-sm py-2 cursor-pointer flex items-center justify-center"
         >
-          <MdLocationOn size={20} /> Google Maps
+          <MdLocationOn size={20} /> Open Google Maps
         </a>
       </section>
-      <section className="bg-gray-300">
+      <section className="bg-gray-300 overflow-hidden">
         <div className="flex flex-col items-center justify-center py-6">
           <div className="font-display text-4xl mb-4">Guest Book</div>
           <div className="border-gray-700 border-2 py-1 px-4 flex items-center justify-center font-body cursor-pointer">
@@ -232,15 +247,15 @@ const Page = () => {
           </form>
         </div>
       </section>
-      <section className="bg-gray-600 py-8 flex flex-col items-center justify-center">
+      <section className="bg-gray-600 py-8 flex flex-col items-center justify-center overflow-hidden">
         <div className="text-center text-gray-300">
           <p className="font-body text-lg mb-3">Thank You</p>
-          <p className="font-display text-4xl">Ratna & Galih</p>
+          <p className="font-display text-4xl">Suta & Hanny</p>
         </div>
       </section>
 
       <Footer />
-    </motion.div>
+    </div>
   );
 };
 
