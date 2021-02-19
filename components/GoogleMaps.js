@@ -23,5 +23,5 @@ const GoogleMaps = (props) => {
 };
 
 export default GoogleApiWrapper({
-  apiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
+  apiKey: process.env.GOOGLE_MAPS_API_KEY,
 })(GoogleMaps);
