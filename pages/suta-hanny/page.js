@@ -11,9 +11,10 @@ import { AiOutlineComment } from "react-icons/ai";
 
 import { renderer } from "../../components/CountDownRenderer";
 import { AudioContext } from "../../context/AudioContext";
+
 import Footer from "../../components/Footer";
 import GoogleMaps from "../../components/GoogleMaps";
-import Head from "next/head";
+import InvitationHead from "../../components/InvitationHead";
 
 const Page = () => {
   const [date] = useState("2021-03-21T11:00:00.000+07:00");
@@ -79,10 +80,11 @@ const Page = () => {
 
   return (
     <>
-      <Head>
-        <title>Dilamar - Suta & Hanny Wedding</title>
-        <meta name="title" content="Dilamar - Suta & Hanny Wedding" />
-      </Head>
+      <InvitationHead
+        title="Suta & Hanny Wedding Invitation"
+        description="Kami mengundang Bapak/Ibu, saudara, dan rekan-rekan semua untuk hadir di acara pernikahan kami."
+        link="https://dilamar.vercel.app/suta-hanny"
+      />
       <div>
         <section className="h-screen relative bg-suta-seashell overflow-hidden">
           <div

@@ -2,18 +2,20 @@ import Image from "next/image";
 import Link from "next/link";
 import { useContext } from "react";
 
+import InvitationHead from "../../components/InvitationHead";
+
 import { AudioContext } from "../../context/AudioContext";
-import Head from "next/head";
 
 const Index = () => {
   const [playing, setPlaying] = useContext(AudioContext);
 
   return (
     <>
-      <Head>
-        <title>Dilamar - Suta & Hanny Wedding</title>
-        <meta name="title" content="Dilamar - Suta & Hanny Wedding" />
-      </Head>
+      <InvitationHead
+        title="Suta & Hanny Wedding Invitation"
+        description="Kami mengundang Bapak/Ibu, saudara, dan rekan-rekan semua untuk hadir di acara pernikahan kami."
+        link="https://dilamar.vercel.app/suta-hanny"
+      />
       <div>
         <div className="h-screen relative bg-suta-seashell overflow-hidden">
           <div
