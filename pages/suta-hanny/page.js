@@ -293,8 +293,16 @@ export async function getStaticProps() {
   const data = await res.json();
   const messages = await data.data;
 
+  const data = () => {
+    if (messages) {
+      return messages;
+    } else {
+      return [];
+    }
+  };
+
   return {
-    props: { messages: messages || [] },
+    props: { messages: data() },
   };
 }
 
