@@ -293,7 +293,7 @@ export async function getStaticProps() {
   const data = await res.json();
   const messages = await data.data;
 
-  const data = () => {
+  const getData = () => {
     if (messages) {
       return messages;
     } else {
@@ -302,7 +302,7 @@ export async function getStaticProps() {
   };
 
   return {
-    props: { messages: data() },
+    props: { messages: getData() },
   };
 }
 
