@@ -284,6 +284,9 @@ const Page = ({ messages }) => {
 export async function getStaticProps() {
   const res = await fetch(`${process.env.API_URI}/api/suta-hanny`, {
     method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
   });
   const data = await res.json();
   const messages = await data.data;
