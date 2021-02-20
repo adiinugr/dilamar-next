@@ -281,7 +281,7 @@ const Page = ({ messages }) => {
   );
 };
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const res = await fetch(`${process.env.API_URI}/api/suta-hanny`, {
     method: "GET",
   });
