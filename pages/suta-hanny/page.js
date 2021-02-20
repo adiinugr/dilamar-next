@@ -20,7 +20,7 @@ import ProtokolKesehatan from "../../components/ProtokolKesehatan";
 const Page = ({ messages }) => {
   const [date] = useState("2021-03-21T11:00:00.000+07:00");
 
-  const [data, setData] = useState(messages);
+  const [data, setData] = useState(messages || []);
 
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
