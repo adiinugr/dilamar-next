@@ -15,6 +15,7 @@ import { AudioContext } from "../../context/AudioContext";
 import Footer from "../../components/Footer";
 import GoogleMaps from "../../components/GoogleMaps";
 import InvitationHead from "../../components/InvitationHead";
+import ProtokolKesehatan from "../../components/ProtokolKesehatan";
 
 const Page = () => {
   const [date] = useState("2021-03-21T11:00:00.000+07:00");
@@ -209,6 +210,9 @@ const Page = () => {
             <MdLocationOn size={20} /> Open Google Maps
           </a>
         </section>
+
+        <ProtokolKesehatan />
+
         <section className="bg-gray-300 overflow-hidden">
           <div className="flex flex-col items-center justify-center py-6">
             <div className="font-display text-4xl mb-4">Guest Book</div>
