@@ -7,7 +7,7 @@ import "aos/dist/aos.css";
 
 import { GoBook } from "react-icons/go";
 import { MdLocationOn } from "react-icons/md";
-import { AiOutlineComment } from "react-icons/ai";
+import { AiOutlineComment, AiOutlineLoading3Quarters } from "react-icons/ai";
 
 import { renderer } from "../../components/CountDownRenderer";
 import { AudioContext } from "../../context/AudioContext";
@@ -24,6 +24,7 @@ const Page = ({ messages }) => {
 
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
 
   const [audio, setAudio] = useState(null);
@@ -54,6 +55,8 @@ const Page = ({ messages }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    setIsLoading(true);
+
     if (name === "" && comment === "") {
       setError("Harus diisi semua ya!");
     } else {
@@ -75,6 +78,10 @@ const Page = ({ messages }) => {
           message: comment,
         },
       ]);
+
+      setIsLoading(false);
+      setName("");
+      setComment("");
     }
   };
 
@@ -83,7 +90,7 @@ const Page = ({ messages }) => {
       <InvitationHead
         title="Suta & Hanny Wedding Invitation"
         description="Kami mengundang Bapak/Ibu, saudara, dan rekan-rekan semua untuk hadir di acara pernikahan kami."
-        link="https://dilamar.vercel.app/suta-hanny"
+        link="https://dilamar.vercel.app/suta-hanny/page"
       />
       <div>
         <section className="h-screen relative bg-suta-seashell overflow-hidden">
@@ -259,8 +266,13 @@ const Page = ({ messages }) => {
                 <div className="buttons flex">
                   <button
                     type="submit"
-                    className="btn border p-1 px-4 font-body cursor-pointer text-gray-200 ml-auto mt-4 bg-gray-700"
+                    className="btn border py-2 px-4 font-body cursor-pointer text-gray-200 ml-auto mt-4 bg-gray-700 flex justify-center items-center"
                   >
+                    {isLoading && (
+                      <div className="animate-spin mr-3">
+                        <AiOutlineLoading3Quarters />
+                      </div>
+                    )}
                     Post Comment
                   </button>
                 </div>
