@@ -11,7 +11,7 @@ const ProtokolKesehatan = () => {
         <div className="text-center font-display text-4xl md:text-5xl mb-6">
           Protokol Kesehatan
         </div>
-        <p>
+        <p className="mt-4">
           Sehubungan dengan kondisi saat ini, diharapkan bapak/ibu/saudara/i
           tamu undangan mematuhi himbauan dari pemerintah dalam pencegahan
           penyebaran Covid-19 dengan cara:

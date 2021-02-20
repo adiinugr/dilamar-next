@@ -17,22 +17,10 @@ import GoogleMaps from "../../components/GoogleMaps";
 import InvitationHead from "../../components/InvitationHead";
 import ProtokolKesehatan from "../../components/ProtokolKesehatan";
 
-const Page = () => {
+const Page = ({ messages }) => {
   const [date] = useState("2021-03-21T11:00:00.000+07:00");
-  const [comments, setComments] = useState([
-    {
-      name: "Sugeng",
-      comment: "Selamat ya! Semoga sakinah",
-    },
-    {
-      name: "Ita",
-      comment: "Semoga sakinah, mawadah, warohmah..",
-    },
-    {
-      name: "Intan",
-      comment: "Lancar sampai hari h yaa...",
-    },
-  ]);
+
+  const [data, setData] = useState(messages);
 
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
@@ -63,20 +51,31 @@ const Page = () => {
     };
   }, [audio, playing]);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     if (name === "" && comment === "") {
       setError("Harus diisi semua ya!");
-    }
+    } else {
+      const res = await fetch(`/api/suta-hanny`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          message: comment,
+        }),
+      });
 
-    setComments((prevComment) => [
-      ...prevComment,
-      {
-        name,
-        comment,
-      },
-    ]);
+      setData((prevData) => [
+        ...prevData,
+        {
+          name,
+          message: comment,
+        },
+      ]);
+    }
   };
 
   return (
@@ -136,7 +135,7 @@ const Page = () => {
               <p className="font-display text-3xl mb-3">
                 Dliyan Purwana Suta, S.H.
               </p>
-              <p>Putra dari Bapak Drs. Zaenal Hayat dan Ibu Kurnaesin</p>
+              <p>Putra dari Bapak Drs. Zaenal Hayat dan Ibu Kuraesin</p>
             </div>
             <div
               data-aos="zoom-in"
@@ -216,20 +215,26 @@ const Page = () => {
         <section className="bg-gray-300 overflow-hidden">
           <div className="flex flex-col items-center justify-center py-6">
             <div className="font-display text-4xl mb-4">Guest Book</div>
-            <div className="border-gray-700 border-2 py-1 px-4 flex items-center justify-center font-body cursor-pointer">
+            <a
+              href="#form"
+              className="border-gray-700 border-2 py-1 px-4 flex items-center justify-center font-body cursor-pointer"
+            >
               <AiOutlineComment size={20} />
-              <div className="ml-2">Write your wish</div>
-            </div>
+              <div cldivssName="ml-2">Write your wish</div>
+            </a>
           </div>
           <div className="w-4/5 border-gray-700 border-t-2 py-4 text-gray-900 mx-auto">
-            {comments.map((comment, index) => (
+            {data.map((comment, index) => (
               <div key={index} className="mb-2">
                 <p className="font-body font-semibold mb-1">{comment.name}</p>
-                <p className="font-body">{comment.comment}</p>
+                <p className="font-body">{comment.message}</p>
               </div>
             ))}
             <form onSubmit={handleSubmit}>
-              <div className="editor flex flex-col text-gray-800 max-w-2xl mt-6">
+              <div
+                id="form"
+                className="editor flex flex-col text-gray-800 max-w-2xl mt-6"
+              >
                 {error && (
                   <div className="mb-2 font-body text-red-800">
                     Harus diisi semua ya!
@@ -275,5 +280,17 @@ const Page = () => {
     </>
   );
 };
+
+export async function getServerSideProps() {
+  const res = await fetch(`${process.env.API_URI}/api/suta-hanny`, {
+    method: "GET",
+  });
+  const data = await res.json();
+  const messages = await data.data;
+
+  return {
+    props: { messages },
+  };
+}
 
 export default Page;
