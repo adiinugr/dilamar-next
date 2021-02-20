@@ -80,8 +80,6 @@ const Page = ({ messages }) => {
       ]);
 
       setIsLoading(false);
-      setName("");
-      setComment("");
     }
   };
 
