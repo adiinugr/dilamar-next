@@ -220,7 +220,7 @@ const Page = ({ messages }) => {
               className="border-gray-700 border-2 py-1 px-4 flex items-center justify-center font-body cursor-pointer"
             >
               <AiOutlineComment size={20} />
-              <div cldivssName="ml-2">Write your wish</div>
+              <div className="ml-2">Write your wish</div>
             </a>
           </div>
           <div className="w-4/5 border-gray-700 border-t-2 py-4 text-gray-900 mx-auto">
@@ -282,7 +282,7 @@ const Page = ({ messages }) => {
 };
 
 export async function getStaticProps() {
-  const res = await fetch(`${process.env.API_URI}/api/suta-hanny`, {
+  const res = await fetch(`https://dilamar.vercel.app/api/suta-hanny`, {
     method: "GET",
     headers: {
       "User-Agent":
