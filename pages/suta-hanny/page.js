@@ -294,7 +294,7 @@ const Page = ({ messages }) => {
   );
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const res = await fetch(`https://dilamar.vercel.app/api/suta-hanny`, {
     method: "GET",
     headers: {
