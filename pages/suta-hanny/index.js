@@ -1,12 +1,25 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import InvitationHead from "../../components/InvitationHead";
 
 import { AudioContext } from "../../context/AudioContext";
 
 const Index = () => {
   const [playing, setPlaying] = useContext(AudioContext);
+  const [loading, setLoading] = useState(false);
+
+  const handleClick = () => {
+    setLoading(true);
+    setPlaying(true);
+  };
+
+  useEffect(() => {
+    return () => {
+      setLoading(false);
+    };
+  }, []);
 
   return (
     <>
@@ -44,9 +57,14 @@ const Index = () => {
             </div>
             <Link href="/suta-hanny/page">
               <div
-                onClick={() => setPlaying(true)}
-                className="text-xl mt-12 md:mt-8 bg-suta-lapis-lazuli text-suta-seashell py-2 w-full md:w-1/2 text-center cursor-pointer rounded-md"
+                onClick={handleClick}
+                className="text-xl mt-12 md:mt-8 bg-suta-lapis-lazuli text-suta-seashell py-2 w-full md:w-1/2 text-center cursor-pointer rounded-md flex justify-center items-center"
               >
+                {loading && (
+                  <div className="animate-spin mr-3">
+                    <AiOutlineLoading3Quarters />
+                  </div>
+                )}{" "}
                 Open Invitation
               </div>
             </Link>
