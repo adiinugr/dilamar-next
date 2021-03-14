@@ -95,21 +95,17 @@ const Page = ({ messages }) => {
       />
       <div>
         <section className="h-screen relative bg-suta-seashell overflow-hidden">
-          <div
-            data-aos="slide-right"
-            className="absolute top-0 left-0 w-56 h-56 md:w-96 md:h-96"
-          >
-            <Image src="/suta-hanny/flower1.png" layout="fill" />
-          </div>
-          <div
-            data-aos="slide-left"
-            className="absolute right-0 bottom-0 w-48 h-48 md:w-96 md:h-96"
-          >
-            <Image src="/suta-hanny/flower2.png" layout="fill" />
-          </div>
+          <Image
+            src="/suta-hanny/suta-hany1.jpg"
+            layout="fill"
+            objectFit="cover"
+            className="absolute"
+          />
+          <div className="h-full w-full bg-gray-800 absolute opacity-60" />
+
           <div
             data-aos="fade-up"
-            className="h-full w-full absolute text-suta-lapis-lazuli flex flex-col justify-center items-center"
+            className="h-full w-full absolute text-suta-seashell flex flex-col justify-center items-center"
           >
             <div className="text-2xl font-semibold">The Wedding Of</div>
             <div className="font-display text-6xl md:text-7xl my-4">
@@ -173,9 +169,16 @@ const Page = ({ messages }) => {
             <Countdown date={Date.parse(date)} renderer={renderer} />
           </div>
         </section>
-        <section className="bg-suta-seashell text-suta-lapis-lazuli py-16 flex flex-col items-center justify-center overflow-hidden">
-          <div className="w-5/6 md:w-3/4 border-suta-lapis-lazuli border-2 rounded-lg  h-screen md:h-96">
-            <div className=" flex flex-col items-center justify-center h-full w-full z-20">
+        <section className="bg-suta-seashell text-suta-seashell py-16 flex flex-col items-center justify-center overflow-hidden">
+          <div className="w-5/6 md:w-3/4 border-suta-seashell border-2 rounded-lg overflow-hidden h-screen md:h-96 relative">
+            <Image
+              src="/suta-hanny/suta-hany2.jpg"
+              layout="fill"
+              objectFit="cover"
+              className="absolute"
+            />
+            <div className="h-full w-full bg-gray-800 absolute opacity-60" />
+            <div className=" flex flex-col items-center justify-center h-full w-full z-20 absolute">
               <div className="w-full flex flex-col md:flex-row">
                 <div
                   data-aos="zoom-in"
