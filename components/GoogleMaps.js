@@ -12,10 +12,13 @@ const GoogleMaps = (props) => {
       google={props.google}
       zoom={15}
       style={mapStyles}
-      initialCenter={{ lat: -6.250106, lng: 106.525555 }}
+      initialCenter={{
+        lat: props.lat || -6.250106,
+        lng: props.lng || 106.525555,
+      }}
     >
       <Marker
-        position={{ lat: -6.250106, lng: 106.525555 }}
+        position={{ lat: props.lat || -6.250106, lng: props.lng || 106.525555 }}
         title="Suta & Hanny's Wedding"
         name="Suta & Hanny's Wedding Location"
       />

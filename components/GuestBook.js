@@ -1,5 +1,5 @@
 import React from "react";
-import { AiOutlineComment } from "react-icons/ai";
+import { AiOutlineComment, AiOutlineLoading3Quarters } from "react-icons/ai";
 
 const GuestBook = ({
   comments,
@@ -9,6 +9,7 @@ const GuestBook = ({
   setComment,
   error,
   handleSubmit,
+  isLoading,
 }) => {
   return (
     <div className="bg-gray-300">
@@ -23,7 +24,7 @@ const GuestBook = ({
         {comments.map((comment, index) => (
           <div key={index} className="mb-2">
             <p className="font-body font-semibold mb-1">{comment.name}</p>
-            <p className="font-body">{comment.comment}</p>
+            <p className="font-body">{comment.message}</p>
           </div>
         ))}
         <form onSubmit={handleSubmit}>
@@ -52,8 +53,13 @@ const GuestBook = ({
             <div className="buttons flex">
               <button
                 type="submit"
-                className="btn border p-1 px-4 font-body cursor-pointer text-gray-200 ml-auto mt-4 bg-gray-700"
+                className="btn border py-2 px-4 font-body cursor-pointer text-gray-200 ml-auto mt-4 bg-gray-700 flex justify-center items-center"
               >
+                {isLoading && (
+                  <div className="animate-spin mr-3">
+                    <AiOutlineLoading3Quarters />
+                  </div>
+                )}
                 Post Comment
               </button>
             </div>
