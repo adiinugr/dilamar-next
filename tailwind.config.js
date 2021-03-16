@@ -10,6 +10,10 @@ module.exports = {
         "suta-gunmetal": "#222730",
         "suta-light-orange": "#f3cca2",
         "suta-blue": "#8094BD",
+        "nurul-color1": "#CEA300",
+        "nurul-color2": "#FFFF9F",
+        "nurul-color3": "#E9A2A3",
+        "nurul-color4": "#A25576",
       },
     },
     fontFamily: {

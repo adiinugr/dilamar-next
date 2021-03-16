@@ -1,7 +1,7 @@
 import React from "react";
 import Head from "next/head";
 
-const InvitationHead = ({ title, description, link }) => {
+const InvitationHead = ({ title, description, link, imagePath }) => {
   return (
     <Head>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -15,13 +15,19 @@ const InvitationHead = ({ title, description, link }) => {
       <meta property="og:url" content={link} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content="/suta-hanny/photo.jpeg" />
+      <meta
+        property="og:image"
+        content={imagePath || "/suta-hanny/photo.jpeg"}
+      />
 
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:url" content={link} />
       <meta property="twitter:title" content={title} />
       <meta property="twitter:description" content={description} />
-      <meta property="twitter:image" content="/suta-hanny/photo.jpeg"></meta>
+      <meta
+        property="twitter:image"
+        content={imagePath || "/suta-hanny/photo.jpeg"}
+      ></meta>
     </Head>
   );
 };

@@ -33,10 +33,17 @@ export const NamaPengantin2 = ({
   namaWanita,
   ortuPria,
   ortuWanita,
+  bgColor,
+  textColor,
 }) => {
+  const containerClassName = () =>
+    bgColor && textColor
+      ? `${bgColor} ${textColor} py-20 px-8 md:px-40 overflow-hidden`
+      : "bg-suta-seashell text-suta-lapis-lazuli py-20 px-8 md:px-40 overflow-hidden";
+
   return (
-    <div className="bg-suta-seashell py-20 px-8 md:px-40 overflow-hidden">
-      <div className="flex flex-col md:flex-row items-center justify-center h-full w-full z-20 text-suta-lapis-lazuli">
+    <div className={containerClassName()}>
+      <div className="flex flex-col md:flex-row items-center justify-center h-full w-full z-20 ">
         <div
           className="md:w-1/3 text-center font-body mb-8 md:mb-0"
           data-aos="fade-right"

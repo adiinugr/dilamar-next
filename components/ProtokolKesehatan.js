@@ -1,13 +1,15 @@
 import Image from "next/image";
 import React from "react";
 
-const ProtokolKesehatan = () => {
+const ProtokolKesehatan = ({ customColor }) => {
+  const containerClassName = () =>
+    customColor
+      ? `${customColor} flex justify-center items-center overflow-hidden`
+      : "flex justify-center items-center bg-suta-gunmetal text-suta-seashell overflow-hidden";
+
   return (
-    <div className="flex justify-center items-center bg-suta-gunmetal overflow-hidden">
-      <div
-        data-aos="zoom-in"
-        className="w-3/4 flex flex-col py-8 md:py-10 text-suta-seashell"
-      >
+    <div className={containerClassName()}>
+      <div data-aos="zoom-in" className="w-3/4 flex flex-col py-8 md:py-10">
         <div className="text-center font-display text-4xl md:text-5xl mb-6">
           Protokol Kesehatan
         </div>

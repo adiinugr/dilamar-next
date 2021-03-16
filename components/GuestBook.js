@@ -10,9 +10,19 @@ const GuestBook = ({
   error,
   handleSubmit,
   isLoading,
+  customColor,
+  buttonCustomColor,
 }) => {
+  const containerClassName = () =>
+    customColor ? `${customColor}` : "bg-gray-300";
+
+  const buttonClassName = () =>
+    buttonCustomColor
+      ? `${buttonCustomColor} btn border py-2 px-4 font-body cursor-pointer ml-auto mt-4 flex justify-center items-center`
+      : "btn border py-2 px-4 font-body cursor-pointer text-gray-200 ml-auto mt-4 bg-gray-700 flex justify-center items-center";
+
   return (
-    <div className="bg-gray-300">
+    <div className={containerClassName()}>
       <div className="flex flex-col items-center justify-center py-6">
         <div className="font-display text-4xl mb-4">Guest Book</div>
         <div className="border-gray-700 border-2 py-1 px-4 flex items-center justify-center font-body cursor-pointer">
@@ -51,10 +61,7 @@ const GuestBook = ({
             />
 
             <div className="buttons flex">
-              <button
-                type="submit"
-                className="btn border py-2 px-4 font-body cursor-pointer text-gray-200 ml-auto mt-4 bg-gray-700 flex justify-center items-center"
-              >
+              <button type="submit" className={buttonClassName()}>
                 {isLoading && (
                   <div className="animate-spin mr-3">
                     <AiOutlineLoading3Quarters />

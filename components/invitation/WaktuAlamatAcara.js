@@ -14,17 +14,34 @@ const WaktuAlamatAcara = ({
   googleMapsUri,
   lat,
   lng,
+  imagePath,
+  customColor,
+  buttonCustomColor,
 }) => {
+  const containerClassName = () =>
+    customColor
+      ? `${customColor} py-16 flex flex-col items-center justify-center overflow-hidden`
+      : "bg-suta-seashell text-gray-600 py-16 flex flex-col items-center justify-center overflow-hidden";
+
+  const buttonClassName = () =>
+    buttonCustomColor
+      ? `w-5/6 md:w-3/4 ${buttonCustomColor} mt-4 rounded-sm py-2 cursor-pointer flex items-center justify-center`
+      : "w-5/6 md:w-3/4 bg-gray-700 mt-4 text-gray-200 rounded-sm py-2 cursor-pointer flex items-center justify-center";
+
   return (
-    <div className="bg-suta-seashell text-suta-seashell py-16 flex flex-col items-center justify-center overflow-hidden">
-      <div className="w-5/6 md:w-3/4 border-suta-seashell border-2 rounded-lg overflow-hidden h-screen md:h-96 relative">
-        <Image
-          src="/suta-hanny/suta-hany2.jpg"
-          layout="fill"
-          objectFit="cover"
-          className="absolute"
-        />
-        <div className="h-full w-full bg-gray-800 absolute opacity-60" />
+    <div className={containerClassName()}>
+      <div className="w-5/6 md:w-3/4 border-gray-500 border-2 rounded-lg overflow-hidden h-screen md:h-96 relative">
+        {imagePath && (
+          <>
+            <Image
+              src={imagePath}
+              layout="fill"
+              objectFit="cover"
+              className="absolute"
+            />
+            <div className="h-full w-full bg-gray-800 absolute opacity-60" />
+          </>
+        )}
         <div className=" flex flex-col items-center justify-center h-full w-full z-20 absolute">
           <div className="w-full flex flex-col md:flex-row">
             <div
@@ -59,7 +76,7 @@ const WaktuAlamatAcara = ({
         href={googleMapsUri}
         target="_blank"
         rel="noreferrer"
-        className="w-5/6 md:w-3/4 bg-gray-700 mt-4 rounded-sm py-2 cursor-pointer flex items-center justify-center"
+        className={buttonClassName()}
       >
         <MdLocationOn size={20} /> Open Google Maps
       </a>

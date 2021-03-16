@@ -3,10 +3,15 @@ import Countdown from "react-countdown";
 
 import { renderer } from "../CountDownRenderer";
 
-const DateCountdown = ({ date }) => {
+const DateCountdown = ({ date, bgColor, textColor }) => {
+  const containerClassName = () =>
+    bgColor && textColor
+      ? `${bgColor} ${textColor} flex justify-center items-center overflow-hidden`
+      : "flex justify-center items-center bg-suta-gunmetal text-suta-seashell overflow-hidden";
+
   return (
-    <div className="flex justify-center items-center bg-suta-gunmetal overflow-hidden">
-      <div className="w-3/4 flex flex-col py-8 md:py-10 md:px-44 text-suta-seashell">
+    <div className={containerClassName()}>
+      <div className="w-3/4 flex flex-col py-8 md:py-10 md:px-44 ">
         <div
           data-aos="zoom-in"
           className="text-center font-display text-4xl md:text-5xl mb-6"
