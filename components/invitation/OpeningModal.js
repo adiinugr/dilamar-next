@@ -41,7 +41,9 @@ const OpeningModal = ({
         className="h-full w-full absolute flex flex-col justify-center items-center px-8"
       >
         <div className="text-xl text-center md:text-2xl font-semibold">
-          Dear {namaTamu}, you are invited
+          <p>Dear</p>
+          <p className="uppercase text-2xl mt-2 mb-8">{namaTamu}</p>
+          <p>you are invited to</p>
         </div>
         <div className="font-display text-5xl md:text-7xl my-4">
           {namaPengantin}
