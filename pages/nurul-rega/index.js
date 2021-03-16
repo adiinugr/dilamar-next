@@ -1,9 +1,9 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import Aos from "aos";
+import Modal from "react-modal";
 
 import "aos/dist/aos.css";
-
-import { AudioContext } from "../../context/AudioContext";
 
 import Footer from "../../components/Footer";
 import InvitationHead from "../../components/InvitationHead";
@@ -15,6 +15,7 @@ import DateCountdown from "../../components/invitation/DateCountdown";
 import WaktuAlamatAcara from "../../components/invitation/WaktuAlamatAcara";
 import GuestBook from "../../components/GuestBook";
 import Terimakasih from "../../components/invitation/Terimakasih";
+import OpeningModal from "../../components/invitation/OpeningModal";
 
 const Page = ({ messages }) => {
   const [date] = useState("2021-04-04T16:00:00.000+07:00");
@@ -26,8 +27,9 @@ const Page = ({ messages }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
 
+  const [modalIsOpen, setModalIsOpen] = useState(true);
+
   const [audio, setAudio] = useState(null);
-  const [playing] = useContext(AudioContext);
 
   useEffect(() => {
     Aos.init({ duration: 1000 });
@@ -35,21 +37,18 @@ const Page = ({ messages }) => {
 
   useEffect(() => {
     setAudio(new Audio("/suta-hanny/cristian-since.mp3"));
-  }, []);
-
-  useEffect(() => {
-    if (playing && audio) {
-      audio.play();
-    } else if (!playing && audio) {
-      audio.pause();
-    }
 
     return () => {
-      if (audio && playing) {
+      if (audio) {
         audio.pause();
       }
     };
-  }, [audio, playing]);
+  }, []);
+
+  const handleOpenModal = () => {
+    setModalIsOpen(false);
+    audio.play();
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -91,20 +90,47 @@ const Page = ({ messages }) => {
         title="Nurul & Rega Wedding Invitation"
         description="Kami mengundang Bapak/Ibu, saudara, dan rekan-rekan semua untuk hadir di acara pernikahan kami."
         link="https://dilamar.vercel.app/nurul-rega"
+        imagePath="/images/jeremy-weddings.jpg"
       />
       <div>
-        <Hero name="Nurul & Rega" date="04 April 2021" />
+        <Modal
+          isOpen={modalIsOpen}
+          ariaHideApp={false}
+          className="absolute top-6 left-6 right-6 bottom-6 md:top-10 md:left-10 md:right-10 md:bottom-10 bg-gray-900"
+        >
+          <OpeningModal
+            handleOpenModal={handleOpenModal}
+            namaTamu="Tamu Undangan"
+            namaPengantin="Nurul & Rega"
+            customColor="bg-nurul-color2 text-gray-500"
+            buttonCustomColor="bg-nurul-color1 text-gray-600 bg-opacity-40"
+          />
+        </Modal>
 
-        <QsArrum />
+        <Hero
+          name="Nurul & Rega"
+          date="04 April 2021"
+          bgColor="bg-nurul-color2"
+          textColor="text-gray-200"
+          imagePath="/images/jeremy-weddings.jpg"
+        />
+
+        <QsArrum bgColor="bg-nurul-color4" textColor="text-nurul-color2" />
 
         <NamaPengantin2
           namaWanita="Nurul Indah Suhartinah"
           ortuWanita="Putri Pertama dari Bpk. Catur A. Pramono & Nevi Susanti"
           namaPria="Rega Reksan Deva"
           ortuPria="Putra Terakhir dari Bpk. Trisnadi & Ibu Hesty Yuliaty"
+          bgColor="bg-nurul-color2"
+          textColor="text-gray-700"
         />
 
-        <DateCountdown date={date} />
+        <DateCountdown
+          date={date}
+          bgColor="bg-nurul-color4"
+          textColor="text-nurul-color2"
+        />
 
         <WaktuAlamatAcara
           tanggalAkad="Minggu, 04 April 2021"
@@ -116,9 +142,11 @@ const Page = ({ messages }) => {
           googleMapsUri="https://www.google.co.id/maps/place/Gedung+Aneka+Bhakti+II+depsos+bekasi+timur/@-6.253035,107.0199683,17z/data=!3m1!4b1!4m5!3m4!1s0x2e698e62504bb22f:0x818439d1931381c8!8m2!3d-6.253035!4d107.022157"
           lat={-6.25301}
           lng={107.02216}
+          customColor="bg-nurul-color2"
+          buttonCustomColor="bg-nurul-color4 text-nurul-color2"
         />
 
-        <ProtokolKesehatan />
+        <ProtokolKesehatan customColor="bg-nurul-color4 text-nurul-color2" />
 
         <GuestBook
           comments={data}
@@ -129,9 +157,14 @@ const Page = ({ messages }) => {
           error={error}
           isLoading={isLoading}
           handleSubmit={handleSubmit}
+          customColor="bg-nurul-color2"
+          buttonCustomColor="bg-nurul-color4 text-nurul-color2"
         />
 
-        <Terimakasih namaPengantin="Nurul & Rega" />
+        <Terimakasih
+          namaPengantin="Nurul & Rega"
+          customColor="bg-nurul-color4 text-nurul-color2"
+        />
 
         <Footer />
       </div>
