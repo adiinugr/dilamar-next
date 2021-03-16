@@ -106,17 +106,16 @@ const Page = ({ messages }) => {
             handleOpenModal={handleOpenModal}
             namaTamu={tamu}
             namaPengantin="Nurul & Rega"
-            customColor="bg-nurul-color2 text-gray-500"
+            customColor="text-nurul-gold"
             buttonCustomColor="bg-nurul-color1 text-gray-600 bg-opacity-40"
+            backgroundImagePath="/rustic-gold/rustic-background.png"
           />
         </Modal>
 
         <Hero
           name="Nurul & Rega"
           date="04 April 2021"
-          bgColor="bg-nurul-color2"
-          textColor="text-gray-200"
-          imagePath="/images/jeremy-weddings.jpg"
+          customColor="bg-suta-seashell text-nurul-gold"
         />
 
         <QsArrum bgColor="bg-nurul-color4" textColor="text-nurul-color2" />
@@ -126,8 +125,7 @@ const Page = ({ messages }) => {
           ortuWanita="Putri Pertama dari Bpk. Catur A. Pramono & Nevi Susanti"
           namaPria="Rega Reksan Deva"
           ortuPria="Putra Terakhir dari Bpk. Trisnadi & Ibu Hesty Yuliaty"
-          bgColor="bg-nurul-color2"
-          textColor="text-gray-700"
+          customColor="bg-suta-seashell text-nurul-gold"
         />
 
         <DateCountdown
@@ -146,7 +144,7 @@ const Page = ({ messages }) => {
           googleMapsUri="https://www.google.co.id/maps/place/Gedung+Aneka+Bhakti+II+depsos+bekasi+timur/@-6.253035,107.0199683,17z/data=!3m1!4b1!4m5!3m4!1s0x2e698e62504bb22f:0x818439d1931381c8!8m2!3d-6.253035!4d107.022157"
           lat={-6.25301}
           lng={107.02216}
-          customColor="bg-nurul-color2"
+          customColor="bg-suta-seashell text-nurul-gold"
           buttonCustomColor="bg-nurul-color4 text-nurul-color2"
         />
 
@@ -161,7 +159,7 @@ const Page = ({ messages }) => {
           error={error}
           isLoading={isLoading}
           handleSubmit={handleSubmit}
-          customColor="bg-nurul-color2"
+          customColor="bg-suta-seashell text-nurul-gold"
           buttonCustomColor="bg-nurul-color4 text-nurul-color2"
         />
 

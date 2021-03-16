@@ -6,6 +6,7 @@ const OpeningModal = ({
   namaPengantin,
   customColor,
   buttonCustomColor,
+  backgroundImagePath,
 }) => {
   const containerClassName = () =>
     customColor
@@ -31,9 +32,13 @@ const OpeningModal = ({
       >
         <Image src="/suta-hanny/flower2.png" layout="fill" />
       </div> */}
+      {backgroundImagePath && (
+        <Image src={backgroundImagePath} layout="fill" objectFit="cover" />
+      )}
+
       <div
         data-aos="fade-up"
-        className="h-full w-full absolute  flex flex-col justify-center items-center px-8"
+        className="h-full w-full absolute flex flex-col justify-center items-center px-8"
       >
         <div className="text-xl text-center md:text-2xl font-semibold">
           Dear {namaTamu}, you are invited

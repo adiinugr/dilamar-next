@@ -30,7 +30,7 @@ const WaktuAlamatAcara = ({
 
   return (
     <div className={containerClassName()}>
-      <div className="w-5/6 md:w-3/4 border-gray-500 border-2 rounded-lg overflow-hidden h-screen md:h-96 relative">
+      <div className="w-5/6 md:w-3/4 border-suta-light-orange border-2 rounded-lg overflow-hidden h-screen md:h-96 relative">
         {imagePath && (
           <>
             <Image
@@ -42,6 +42,20 @@ const WaktuAlamatAcara = ({
             <div className="h-full w-full bg-gray-800 absolute opacity-60" />
           </>
         )}
+
+        <div
+          data-aos="slide-right"
+          className="absolute -left-10 -bottom-20 w-full h-2/5 md:h-full md:w-2/4"
+        >
+          <Image src="/rustic-gold/1/left.png" layout="fill" />
+        </div>
+        <div
+          data-aos="slide-left"
+          className="absolute -right-10 -top-20 w-full h-2/5 md:h-full md:w-2/4"
+        >
+          <Image src="/rustic-gold/1/right.png" layout="fill" />
+        </div>
+
         <div className=" flex flex-col items-center justify-center h-full w-full z-20 absolute">
           <div className="w-full flex flex-col md:flex-row">
             <div

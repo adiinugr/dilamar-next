@@ -14,12 +14,14 @@ module.exports = {
         "nurul-color2": "#FFFF9F",
         "nurul-color3": "#E9A2A3",
         "nurul-color4": "#A25576",
+        "nurul-gold": "#D19515",
       },
     },
     fontFamily: {
       sans: ["Raleway", "sans-serif"],
       display: ["Dancing Script", "cursive"],
       body: ["Raleway", "sans-serif"],
+      noto: ["Noto Serif TC", "serif"],
     },
   },
   variants: {
