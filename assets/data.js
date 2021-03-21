@@ -72,7 +72,7 @@ export const basic = [
   },
   {
     id: 8,
-    title: "Youtube/ instagram live",
+    title: "Request fitur",
     isAvailable: false,
   },
 ];
@@ -115,7 +115,7 @@ export const standard = [
   },
   {
     id: 8,
-    title: "Youtube/ instagram live",
+    title: "Request fitur",
     isAvailable: false,
   },
 ];
@@ -157,7 +157,7 @@ export const premium = [
   },
   {
     id: 8,
-    title: "Youtube/ instagram live",
+    title: "Request fitur",
     isAvailable: true,
   },
 ];

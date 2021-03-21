@@ -33,7 +33,7 @@ const Home = () => {
               tentunya bisa menjangkau temanmu yang jauh di sana
             </div>
             <div className="bg-gray-400 py-2 px-5 self-start text-gray-100 cursor-pointer">
-              Buat Undangan
+              <a href="#paket">Buat Undangan</a>
             </div>
           </div>
           <div className="md:w-1/2 text-right mb-8 md:mb-0">
@@ -69,7 +69,7 @@ const Home = () => {
       </section>
 
       <section className="flex flex-col justify-center items-center bg-gray-100">
-        <div className="font-medium text-2xl py-10 text-gray-800">
+        <div id="paket" className="font-medium text-2xl py-10 text-gray-800">
           Pilihan Paket
         </div>
         <div className="grid md:grid-cols-3 gap-6">
