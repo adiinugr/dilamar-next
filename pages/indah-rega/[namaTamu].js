@@ -135,7 +135,7 @@ const Page = ({ messages }) => {
           bgColor="bg-nurul-color4"
           textColor="text-nurul-color2"
         />
-        <BigImage imagePath="/nurul-rega/lanscape.jpg" />
+        <BigImage imagePath="/nurul-rega/potrait-2.jpg" />
 
         <WaktuAlamatAcara
           tanggalAkad="Minggu, 04 April 2021"
