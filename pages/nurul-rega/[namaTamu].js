@@ -94,7 +94,7 @@ const Page = ({ messages }) => {
         title="Nurul & Rega Wedding Invitation"
         description="Kami mengundang Bapak/Ibu, saudara, dan rekan-rekan semua untuk hadir di acara pernikahan kami."
         link="https://dilamar.vercel.app/nurul-rega"
-        imagePath="/images/jeremy-weddings.jpg"
+        imagePath="/nurul-rega/image-edit.jpg"
       />
       <div>
         <Modal
@@ -106,9 +106,10 @@ const Page = ({ messages }) => {
             handleOpenModal={handleOpenModal}
             namaTamu={tamu}
             namaPengantin="Nurul & Rega"
-            customColor="text-nurul-gold"
-            buttonCustomColor="bg-nurul-color1 text-gray-600 bg-opacity-40"
-            backgroundImagePath="/rustic-gold/rustic-background.png"
+            customColor="text-nurul-color2"
+            buttonCustomColor="bg-nurul-color2 text-gray-800 bg-opacity-80"
+            backgroundImagePath="/nurul-rega/image-edit.jpg"
+            withOverlay
           />
         </Modal>
 

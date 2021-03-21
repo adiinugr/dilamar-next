@@ -7,6 +7,7 @@ const OpeningModal = ({
   customColor,
   buttonCustomColor,
   backgroundImagePath,
+  withOverlay,
 }) => {
   const containerClassName = () =>
     customColor
@@ -17,6 +18,11 @@ const OpeningModal = ({
     buttonCustomColor
       ? `text-xl mt-12 md:mt-8 ${buttonCustomColor} py-2 w-full md:w-1/2 text-center cursor-pointer rounded-md flex justify-center items-center`
       : "text-xl mt-12 md:mt-8 bg-suta-lapis-lazuli text-suta-seashell py-2 w-full md:w-1/2 text-center cursor-pointer rounded-md flex justify-center items-center";
+
+  const textBackgroundClassName = () =>
+    withOverlay
+      ? "h-full w-full absolute flex flex-col justify-center items-center px-8 bg-gray-600 bg-opacity-60"
+      : "h-full w-full absolute flex flex-col justify-center items-center px-8";
 
   return (
     <div className={containerClassName()}>
@@ -36,10 +42,7 @@ const OpeningModal = ({
         <Image src={backgroundImagePath} layout="fill" objectFit="cover" />
       )}
 
-      <div
-        data-aos="fade-up"
-        className="h-full w-full absolute flex flex-col justify-center items-center px-8"
-      >
+      <div data-aos="fade-up" className={textBackgroundClassName()}>
         <div className="text-xl text-center md:text-2xl font-semibold">
           <p>Dear</p>
           <p className="uppercase text-2xl mt-2 mb-8">{namaTamu}</p>
