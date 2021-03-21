@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-const BigImage = ({ imagePath, back }) => {
+const BigImage = ({ imagePath }) => {
   return (
     <div className="w-full flex justify-center items-center bg-suta-seashell pt-10 md:py-10 px-8 md:px-44 ">
       <div

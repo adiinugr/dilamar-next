@@ -95,7 +95,7 @@ const Page = ({ messages }) => {
         title="Indah & Rega Wedding Invitation"
         description="Kami mengundang Bapak/Ibu, saudara, dan rekan-rekan semua untuk hadir di acara pernikahan kami."
         link="https://dilamar.vercel.app/nurul-rega"
-        imagePath="/nurul-rega/portrait.jpg"
+        imagePath="/nurul-rega/lanscape.jpg"
       />
       <div>
         <Modal
