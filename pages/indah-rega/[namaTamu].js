@@ -16,6 +16,7 @@ import WaktuAlamatAcara from "../../components/invitation/WaktuAlamatAcara";
 import GuestBook from "../../components/GuestBook";
 import Terimakasih from "../../components/invitation/Terimakasih";
 import OpeningModal from "../../components/invitation/OpeningModal";
+import BigImage from "../../components/invitation/BigImage";
 
 const Page = ({ messages }) => {
   const [date] = useState("2021-04-04T16:00:00.000+07:00");
@@ -91,10 +92,10 @@ const Page = ({ messages }) => {
   return (
     <>
       <InvitationHead
-        title="Nurul & Rega Wedding Invitation"
+        title="Indah & Rega Wedding Invitation"
         description="Kami mengundang Bapak/Ibu, saudara, dan rekan-rekan semua untuk hadir di acara pernikahan kami."
         link="https://dilamar.vercel.app/nurul-rega"
-        imagePath="/nurul-rega/image.JPG"
+        imagePath="/nurul-rega/portrait.jpg"
       />
       <div>
         <Modal
@@ -105,16 +106,16 @@ const Page = ({ messages }) => {
           <OpeningModal
             handleOpenModal={handleOpenModal}
             namaTamu={tamu}
-            namaPengantin="Nurul & Rega"
-            customColor="text-nurul-color2"
-            buttonCustomColor="bg-nurul-color2 text-gray-800 bg-opacity-80"
-            backgroundImagePath="/nurul-rega/image-edit.jpg"
+            namaPengantin="Indah & Rega"
+            customColor="text-gray-50"
+            buttonCustomColor="bg-gray-100 text-gray-800 bg-opacity-80"
+            backgroundImagePath="/nurul-rega/potrait.jpg"
             withOverlay
           />
         </Modal>
 
         <Hero
-          name="Nurul & Rega"
+          name="Indah & Rega"
           date="04 April 2021"
           customColor="bg-suta-seashell text-nurul-gold"
         />
@@ -134,6 +135,7 @@ const Page = ({ messages }) => {
           bgColor="bg-nurul-color4"
           textColor="text-nurul-color2"
         />
+        <BigImage imagePath="/nurul-rega/lanscape.jpg" />
 
         <WaktuAlamatAcara
           tanggalAkad="Minggu, 04 April 2021"
@@ -165,7 +167,7 @@ const Page = ({ messages }) => {
         />
 
         <Terimakasih
-          namaPengantin="Nurul & Rega"
+          namaPengantin="Indah & Rega"
           customColor="bg-nurul-color4 text-nurul-color2"
         />
 
