@@ -20,7 +20,7 @@ import OpeningModal from "../../components/invitation/OpeningModal";
 const Page = ({ messages }) => {
   const [date] = useState("2021-04-04T16:00:00.000+07:00");
 
-  const [data, setData] = useState(messages);
+  const [data, setData] = useState(message);
 
   const router = useRouter();
   const { namaTamu } = router.query;
@@ -175,14 +175,17 @@ const Page = ({ messages }) => {
 };
 
 export async function getServerSideProps() {
-  const res = await fetch(`https://dilamar.vercel.app/api/nurul-rega`, {
-    method: "GET",
-    headers: {
-      "User-Agent":
-        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36",
-      Accept: "application/json; charset=UTF-8",
-    },
-  });
+  const res = await fetch(
+    `https://dilamar.vercel.app/api/kharnisa-imam/comment`,
+    {
+      method: "GET",
+      headers: {
+        "User-Agent":
+          "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36",
+        Accept: "application/json; charset=UTF-8",
+      },
+    }
+  );
   const data = await res.json();
   const messages = await data.data;
 
