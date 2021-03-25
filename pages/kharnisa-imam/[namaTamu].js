@@ -91,9 +91,9 @@ const Page = ({ messages }) => {
   return (
     <>
       <InvitationHead
-        title="Nurul & Rega Wedding Invitation"
+        title="Kharnisa & Imam Wedding Invitation"
         description="Kami mengundang Bapak/Ibu, saudara, dan rekan-rekan semua untuk hadir di acara pernikahan kami."
-        link="https://dilamar.vercel.app/nurul-rega"
+        link="https://dilamar.vercel.app/kharnisa-imam"
         imagePath="/images/jeremy-weddings.jpg"
       />
       <div>

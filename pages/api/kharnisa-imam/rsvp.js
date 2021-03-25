@@ -1,4 +1,4 @@
-import dbConnect from "../../utils/dbConnect";
+import dbConnect from "../../../utils/dbConnect";
 import Rsvp from "../../../models/kharnisa-imam/Rsvp";
 
 export default async (req, res) => {

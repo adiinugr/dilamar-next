@@ -1,4 +1,4 @@
-import dbConnect from "../../utils/dbConnect";
+import dbConnect from "../../../utils/dbConnect";
 import Comment from "../../../models/kharnisa-imam/Comment";
 
 export default async (req, res) => {
