@@ -15,7 +15,7 @@ import DateCountdown from "../../components/invitation/DateCountdown";
 import WaktuAlamatAcara from "../../components/invitation/WaktuAlamatAcara";
 import GuestBook from "../../components/GuestBook";
 import Terimakasih from "../../components/invitation/Terimakasih";
-import OpeningModal from "../../components/invitation/OpeningModal";
+import { OpeningModalOne } from "../../components/invitation/OpeningModal";
 import BigImage from "../../components/invitation/BigImage";
 
 const Page = ({ messages }) => {
@@ -103,7 +103,7 @@ const Page = ({ messages }) => {
           ariaHideApp={false}
           className="absolute top-6 left-6 right-6 bottom-6 md:top-10 md:left-10 md:right-10 md:bottom-10 bg-gray-900"
         >
-          <OpeningModal
+          <OpeningModalOne
             handleOpenModal={handleOpenModal}
             namaTamu={tamu}
             namaPengantin="Indah & Rega"

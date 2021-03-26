@@ -15,12 +15,12 @@ import DateCountdown from "../../components/invitation/DateCountdown";
 import WaktuAlamatAcara from "../../components/invitation/WaktuAlamatAcara";
 import GuestBook from "../../components/GuestBook";
 import Terimakasih from "../../components/invitation/Terimakasih";
-import OpeningModal from "../../components/invitation/OpeningModal";
+import { OpeningModalTwo } from "../../components/invitation/OpeningModal";
 
 const Page = ({ messages }) => {
   const [date] = useState("2021-04-04T16:00:00.000+07:00");
 
-  const [data, setData] = useState(message);
+  const [data, setData] = useState(messages);
 
   const router = useRouter();
   const { namaTamu } = router.query;
@@ -102,7 +102,7 @@ const Page = ({ messages }) => {
           ariaHideApp={false}
           className="absolute top-6 left-6 right-6 bottom-6 md:top-10 md:left-10 md:right-10 md:bottom-10 bg-gray-900"
         >
-          <OpeningModal
+          <OpeningModalTwo
             handleOpenModal={handleOpenModal}
             namaTamu={tamu}
             namaPengantin="Nurul & Rega"
