@@ -9,8 +9,8 @@ const ProtokolKesehatan = ({ customColor }) => {
 
   return (
     <div className={containerClassName()}>
-      <div data-aos="zoom-in" className="w-3/4 flex flex-col py-8 md:py-10">
-        <div className="text-center font-display text-4xl md:text-5xl mb-6">
+      <div data-aos="zoom-in" className="w-3/4 flex flex-col py-8 md:py-14">
+        <div className="text-center font-display text-4xl md:text-6xl mb-6">
           Protokol Kesehatan
         </div>
         <p className="mt-4">

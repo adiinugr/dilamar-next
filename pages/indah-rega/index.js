@@ -8,14 +8,14 @@ import "aos/dist/aos.css";
 import Footer from "../../components/Footer";
 import InvitationHead from "../../components/InvitationHead";
 import ProtokolKesehatan from "../../components/ProtokolKesehatan";
-import Hero from "../../components/invitation/Hero";
+import { HeroOne } from "../../components/invitation/Hero";
 import QsArrum from "../../components/invitation/QsArrum";
 import { NamaPengantin2 } from "../../components/invitation/NamaPengantin";
 import DateCountdown from "../../components/invitation/DateCountdown";
-import WaktuAlamatAcara from "../../components/invitation/WaktuAlamatAcara";
-import GuestBook from "../../components/GuestBook";
+import { WaktuAlamatAcaraOne } from "../../components/invitation/WaktuAlamatAcara";
 import Terimakasih from "../../components/invitation/Terimakasih";
 import { OpeningModalOne } from "../../components/invitation/OpeningModal";
+import { GuestBookOne } from "../../components/invitation/GuestBook";
 
 const Page = ({ messages }) => {
   const [date] = useState("2021-04-04T16:00:00.000+07:00");
@@ -107,7 +107,7 @@ const Page = ({ messages }) => {
           />
         </Modal>
 
-        <Hero
+        <HeroOne
           name="Nurul & Rega"
           date="04 April 2021"
           bgColor="bg-nurul-color2"
@@ -132,7 +132,7 @@ const Page = ({ messages }) => {
           textColor="text-nurul-color2"
         />
 
-        <WaktuAlamatAcara
+        <WaktuAlamatAcaraOne
           tanggalAkad="Minggu, 04 April 2021"
           waktuAkad="Pukul 16.00 WIB - Selesai"
           tanggalResepsi="Minggu, 04 April 2021"
@@ -148,7 +148,7 @@ const Page = ({ messages }) => {
 
         <ProtokolKesehatan customColor="bg-nurul-color4 text-nurul-color2" />
 
-        <GuestBook
+        <GuestBookOne
           comments={data}
           name={name}
           setName={(e) => setName(e.target.value)}

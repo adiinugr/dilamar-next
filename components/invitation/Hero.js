@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const Hero = ({ name, date, customColor, imagePath }) => {
+export const HeroOne = ({ name, date, customColor, imagePath }) => {
   const containerClassName = () =>
     customColor
       ? `h-screen relative ${customColor} overflow-hidden`
@@ -45,4 +45,45 @@ const Hero = ({ name, date, customColor, imagePath }) => {
   );
 };
 
-export default Hero;
+export const HeroTwo = ({
+  name,
+  date,
+  customColor,
+  overlayColor,
+  imagePath,
+}) => {
+  const containerClassName = () =>
+    customColor
+      ? `h-screen relative ${customColor} overflow-hidden`
+      : "h-screen relative bg-suta-seashell overflow-hidden";
+
+  const overlayClassName = () =>
+    overlayColor
+      ? `h-full w-full ${overlayColor} absolute opacity-40`
+      : "h-full w-full bg-gray-800 absolute opacity-40";
+
+  return (
+    <div id="hero" className={containerClassName()}>
+      {imagePath && (
+        <>
+          <Image
+            src={imagePath}
+            layout="fill"
+            objectFit="cover"
+            className="absolute"
+          />
+          <div className={overlayClassName()} />
+        </>
+      )}
+
+      <div
+        data-aos="fade-up"
+        className="h-full w-full absolute flex flex-col justify-center items-center"
+      >
+        <div className="text-2xl md:text-3xl font-semibold">The Wedding Of</div>
+        <div className="font-display text-5xl md:text-8xl my-4">{name}</div>
+        <div className="text-xl md:text-2xl">{date}</div>
+      </div>
+    </div>
+  );
+};
