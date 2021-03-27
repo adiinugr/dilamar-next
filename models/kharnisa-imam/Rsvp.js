@@ -12,7 +12,6 @@ const KharnisaImamRsvpSchema = new Schema({
   },
   message: {
     type: String,
-    required: true,
   },
 });
 

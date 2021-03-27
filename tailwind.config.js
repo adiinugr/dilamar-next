@@ -16,6 +16,8 @@ module.exports = {
         "nurul-color4": "#A25576",
         "nurul-gold": "#D19515",
         "kharnisa-imam-rosegold": "#B76E79",
+        "kharnisa-imam-gold": "#C9B037",
+        "kharnisa-imam-silver": "#F2F2F2",
       },
     },
     fontFamily: {

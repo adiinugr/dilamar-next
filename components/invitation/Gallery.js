@@ -3,7 +3,10 @@ import React from "react";
 
 export const GalleryOne = () => {
   return (
-    <div id="gallery" className="bg-kharnisa-imam-rosegold text-gray-50 py-10">
+    <div
+      id="gallery"
+      className="bg-kharnisa-imam-silver text-kharnisa-imam-gold py-10"
+    >
       <div className="text-center font-display text-4xl md:text-5xl mb-8">
         Gallery
       </div>

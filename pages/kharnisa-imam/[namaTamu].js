@@ -34,7 +34,7 @@ const Page = ({ messages }) => {
 
   const [rsvpName, setRsvpName] = useState("");
   const [rsvpStatus, setRsvpStatus] = useState("");
-  const [rsvpMessage, setRsvpMessage] = useState("");
+  // const [rsvpMessage, setRsvpMessage] = useState("");
   const [rsvpIsLoading, setRsvpIsLoading] = useState(false);
   const [rsvpError, setRsvpError] = useState("");
   const [rsvpSuccess, setRsvpSuccess] = useState("");
@@ -102,7 +102,7 @@ const Page = ({ messages }) => {
 
     setRsvpIsLoading(true);
 
-    if (rsvpName === "" && rsvpStatus === "" && rsvpMessage === "") {
+    if (rsvpName === "" && rsvpStatus === "") {
       setRsvpSuccess("");
       setRsvpError("Harus diisi semua ya!");
       setRsvpIsLoading(false);
@@ -115,7 +115,7 @@ const Page = ({ messages }) => {
         body: JSON.stringify({
           name: rsvpName,
           status: rsvpStatus,
-          message: rsvpMessage,
+          // message: rsvpMessage,
         }),
       });
 
@@ -125,7 +125,7 @@ const Page = ({ messages }) => {
 
       setRsvpName("");
       setRsvpStatus("");
-      setRsvpMessage("");
+      // setRsvpMessage("");
     }
   };
 
@@ -135,7 +135,7 @@ const Page = ({ messages }) => {
         title="Kharnisa & Imam Wedding Invitation"
         description="Kami mengundang Bapak/Ibu, saudara, dan rekan-rekan semua untuk hadir di acara pernikahan kami."
         link="https://dilamar.vercel.app/kharnisa-imam"
-        imagePath="/kharnisa-imam/couple.png"
+        imagePath="/kharnisa-imam/couple-square.png"
       />
       <BottomMenu />
       <div>
@@ -149,7 +149,7 @@ const Page = ({ messages }) => {
             namaTamu={tamu}
             namaPengantin="Kharnisa & Imam"
             customColor="text-gray-50"
-            buttonCustomColor="bg-kharnisa-imam-rosegold text-gray-50"
+            buttonCustomColor="bg-kharnisa-imam-gold text-gray-50"
             backgroundImagePath="/kharnisa-imam/flower2.jpg"
             coupleImagePath="/kharnisa-imam/couple-square.png"
             withOverlay
@@ -160,7 +160,7 @@ const Page = ({ messages }) => {
           name="Kharnisa & Imam"
           date="04 April 2021"
           customColor="text-gray-50"
-          overlayColor="bg-kharnisa-imam-rosegold"
+          // overlayColor="bg-kharnisa-imam-gold"
           imagePath="/kharnisa-imam/couple4.png"
         />
 
@@ -168,10 +168,10 @@ const Page = ({ messages }) => {
           namaWanita="Khairunisa Dian Lestari, S. Hum"
           ortuWanita="Putri Bungsu dari Bpk. H. Suyoto (Alm) & Hj. Ayi Mustika"
           namaPria="Dwi Imam Avianto, S.E"
-          ortuPria="Putra dari Bpk. Kasturi Tri Irianto, A.Md & Ibu Ati Sugiarti, S.Ap, M.A"
+          ortuPria="Putra Kedua dari Bpk. Kasturi Tri Irianto, A.Md & Ibu Ati Sugiarti, S.Ap, M.A"
           imagePathPria="/kharnisa-imam/pria.png"
           imagePathWanita="/kharnisa-imam/wanita.png"
-          customColor="bg-kharnisa-imam-rosegold text-gray-50"
+          customColor="bg-kharnisa-imam-silver text-kharnisa-imam-gold"
         />
 
         <WaktuAlamatAcaraTwo
@@ -183,12 +183,12 @@ const Page = ({ messages }) => {
           googleMapsUri="https://www.google.co.id/maps/place/Bumbu+Desa+Harapan+Indah/@-6.1895096,106.9741279,17z/data=!3m1!4b1!4m5!3m4!1s0x2e698bbdd27bc41b:0x99301c03154afbd7!8m2!3d-6.1895096!4d106.9763166"
           lat={-6.18926}
           lng={106.97633}
-          customColor="bg-kharnisa-imam-rosegold text-gray-50"
-          buttonCustomColor="bg-kharnisa-imam-rosegold text-gray-50"
+          customColor="bg-kharnisa-imam-silver text-kharnisa-imam-gold"
+          buttonCustomColor="bg-kharnisa-imam-gold text-kharnisa-imam-silver"
           date={date}
         />
 
-        <ProtokolKesehatan customColor="bg-kharnisa-imam-rosegold text-gray-50" />
+        <ProtokolKesehatan customColor="bg-kharnisa-imam-silver text-kharnisa-imam-gold" />
 
         <GalleryOne />
 
@@ -197,8 +197,8 @@ const Page = ({ messages }) => {
           setName={(e) => setRsvpName(e.target.value)}
           status={rsvpStatus}
           setStatus={(e) => setRsvpStatus(e.target.value)}
-          message={rsvpMessage}
-          setMessage={(e) => setRsvpMessage(e.target.value)}
+          // message={rsvpMessage}
+          // setMessage={(e) => setRsvpMessage(e.target.value)}
           error={rsvpError}
           isLoading={rsvpIsLoading}
           succcess={rsvpSuccess}
@@ -214,15 +214,15 @@ const Page = ({ messages }) => {
           error={guestBookError}
           isLoading={guestBookIsLoading}
           handleSubmit={handleGuestBookSubmit}
-          customColor="bg-kharnisa-imam-rosegold text-gray-50"
-          buttonCustomColor="bg-gray-50 text-kharnisa-imam-rosegold"
-          borderColor="border-kharnisa-imam-rosegold"
+          customColor="bg-kharnisa-imam-silver text-kharnisa-imam-gold"
+          buttonCustomColor="bg-kharnisa-imam-gold text-kharnisa-imam-silver"
+          borderColor="border-kharnisa-imam-gold"
           inputTextColor="text-gray-600"
         />
 
         <Terimakasih
           namaPengantin="Kharnisa & Imam"
-          customColor="bg-kharnisa-imam-rosegold text-gray-50"
+          customColor="bg-kharnisa-imam-silver text-kharnisa-imam-gold"
         />
 
         <Footer />

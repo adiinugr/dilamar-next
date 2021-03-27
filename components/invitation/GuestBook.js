@@ -117,11 +117,11 @@ export const GuestBookTwo = ({
       : "editor flex flex-col text-nurul-gold max-w-2xl mt-6";
 
   return (
-    <div className="bg-kharnisa-imam-rosegold text-kharnisa-imam-rosegold flex justify-center py-20 overflow-hidden">
+    <div className="bg-kharnisa-imam-silver text-kharnisa-imam-gold flex justify-center py-20 overflow-hidden">
       <div className="w-5/6 md:w-2/4 pattern2 rounded-lg py-10">
         <div className="flex flex-col items-center justify-center py-6">
           <div className="font-display text-4xl mb-4">Guest Book</div>
-          <div className="border-kharnisa-imam-rosegold border-2 py-1 px-4 flex items-center justify-center font-body cursor-pointer">
+          <div className="border-kharnisa-imam-gold border-2 py-1 px-4 flex items-center justify-center font-body cursor-pointer">
             <AiOutlineComment size={20} />
             <div className="ml-2">Write your wish</div>
           </div>
@@ -159,7 +159,7 @@ export const GuestBookTwo = ({
               <div className="buttons flex">
                 <button
                   type="submit"
-                  className="btn border py-2 px-4 font-body cursor-pointer text-gray-50 ml-auto mt-4 bg-kharnisa-imam-rosegold flex justify-center items-center"
+                  className="btn border py-2 px-4 font-body cursor-pointer text-kharnisa-imam-silver ml-auto mt-4 bg-kharnisa-imam-gold flex justify-center items-center"
                 >
                   {isLoading && (
                     <div className="animate-spin mr-3">

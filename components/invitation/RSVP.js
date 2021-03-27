@@ -16,16 +16,16 @@ const RSVP = ({
   return (
     <div
       id="rsvp"
-      className="bg-kharnisa-imam-rosegold flex justify-center overflow-hidden"
+      className="bg-kharnisa-imam-silver text-kharnisa-imam-gold flex justify-center overflow-hidden"
     >
       <div className="w-5/6 md:w-2/4 pattern2 rounded-lg py-10">
         <div className="flex flex-col items-center justify-center py-6">
           <div className="font-display text-4xl mb-4">RSVP</div>
           <div className="text-center">Konfirmasi kehadiranmu di sini!</div>
         </div>
-        <div className="w-4/5 border-kharnisa-imam-rosegold border-t-2 py-4 mx-auto">
+        <div className="w-4/5 border-kharnisa-imam-gold border-t-2 py-4 mx-auto">
           <form onSubmit={handleSubmit}>
-            <div className="editor flex flex-col text-kharnisa-imam-rosegold max-w-2xl mt-6">
+            <div className="editor flex flex-col  max-w-2xl mt-6">
               {error && (
                 <div className="mb-2 font-body text-red-800">{error}</div>
               )}
@@ -50,18 +50,18 @@ const RSVP = ({
                 <option value="Tidak Hadir">Tidak Hadir</option>
                 <option value="Ragu-ragu">Ragu-ragu</option>
               </select>
-              <textarea
+              {/* <textarea
                 className="bg-gray-100 p-2 h-56 border border-gray-300 outline-none font-body"
                 spellCheck="false"
                 value={message}
                 onChange={setMessage}
-                placeholder="Describe your wish here"
-              />
+                placeholder="Input your message"
+              /> */}
 
               <div className="buttons flex">
                 <button
                   type="submit"
-                  className="btn border py-2 px-4 font-body cursor-pointer text-gray-50 ml-auto mt-4 bg-kharnisa-imam-rosegold flex justify-center items-center"
+                  className="btn border py-2 px-4 font-body cursor-pointer text-kharnisa-imam-silver ml-auto mt-4 bg-kharnisa-imam-gold flex justify-center items-center"
                 >
                   {isLoading && (
                     <div className="animate-spin mr-3">

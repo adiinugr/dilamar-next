@@ -142,14 +142,14 @@ export const WaktuAlamatAcaraTwo = ({
           untuk menghadiri acara resepsi pernikahan kami
         </div>
       </div>
-      <div className="w-5/6 md:w-2/4 pattern2 text-kharnisa-imam-rosegold rounded-lg py-10 px-4">
+      <div className="w-5/6 md:w-2/4 pattern2 text-kharnisa-imam-gold rounded-lg py-10 px-4">
         <div className="flex flex-col items-center justify-center h-full w-full z-20">
           <div
             data-aos="zoom-in"
             className="px-4 md:px-0 md:w-1/2 text-center font-body mb-14"
           >
             <Image
-              src="/kharnisa-imam/engagement.png"
+              src="/kharnisa-imam/engagement-gold.png"
               height={60}
               width={60}
               objectFit="cover"
@@ -163,7 +163,7 @@ export const WaktuAlamatAcaraTwo = ({
             className="px-4 md:px-0 md:w-1/2 text-center font-body mb-8 md:mb-0"
           >
             <Image
-              src="/kharnisa-imam/wedding-couple.png"
+              src="/kharnisa-imam/wedding-couple-gold.png"
               height={60}
               width={60}
               objectFit="cover"
@@ -183,7 +183,7 @@ export const WaktuAlamatAcaraTwo = ({
             className="px-4 md:px-0 md:w-1/2 text-center font-body mb-8"
           >
             <Image
-              src="/kharnisa-imam/clothes.png"
+              src="/kharnisa-imam/clothes-gold.png"
               height={60}
               width={60}
               objectFit="cover"

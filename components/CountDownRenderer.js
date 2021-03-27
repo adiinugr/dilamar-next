@@ -40,25 +40,25 @@ export const rendererTwo = ({ days, hours, minutes, seconds, completed }) => {
     return (
       <div className="flex justify-between font-body">
         <div className="flex flex-col justify-center items-center">
-          <div className="bg-kharnisa-imam-rosegold text-gray-50 w-10 md:w-16 h-12 mb-2 flex justify-center items-center rounded-md text-lg md:text-3xl font-medium">
+          <div className="bg-kharnisa-imam-gold text-gray-50 w-10 md:w-16 h-12 mb-2 flex justify-center items-center rounded-md text-lg md:text-3xl font-medium">
             <div>{days}</div>
           </div>
           <div>Day(s)</div>
         </div>
         <div className="flex flex-col justify-center items-center">
-          <div className="bg-kharnisa-imam-rosegold text-gray-50 w-10 md:w-16 h-12 mb-2 flex justify-center items-center rounded-md text-lg md:text-3xl font-medium">
+          <div className="bg-kharnisa-imam-gold text-gray-50 w-10 md:w-16 h-12 mb-2 flex justify-center items-center rounded-md text-lg md:text-3xl font-medium">
             <div>{hours}</div>
           </div>
           <div>Hour(s)</div>
         </div>
         <div className="flex flex-col justify-center items-center">
-          <div className="bg-kharnisa-imam-rosegold text-gray-50 w-10 md:w-16 h-12 mb-2 flex justify-center items-center rounded-md text-lg md:text-3xl font-medium">
+          <div className="bg-kharnisa-imam-gold text-gray-50 w-10 md:w-16 h-12 mb-2 flex justify-center items-center rounded-md text-lg md:text-3xl font-medium">
             <div>{minutes}</div>
           </div>
           <div>Minute(s)</div>
         </div>
         <div className="flex flex-col justify-center items-center">
-          <div className="bg-kharnisa-imam-rosegold text-gray-50 w-10 md:w-16 h-12 mb-2 flex justify-center items-center rounded-md text-lg md:text-3xl font-medium">
+          <div className="bg-kharnisa-imam-gold text-gray-50 w-10 md:w-16 h-12 mb-2 flex justify-center items-center rounded-md text-lg md:text-3xl font-medium">
             <div>{seconds}</div>
           </div>
           <div>Second(s)</div>
