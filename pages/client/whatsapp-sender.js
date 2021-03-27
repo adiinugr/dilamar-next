@@ -14,7 +14,7 @@ const WhatsAppSender = () => {
 
   return (
     <div className="bg-gray-200 md:h-screen">
-      <ClientHeader />
+      {/* <ClientHeader /> */}
       <section className="px-36 pt-36">
         <div className="w-1/2">
           <div className="mb-6">
