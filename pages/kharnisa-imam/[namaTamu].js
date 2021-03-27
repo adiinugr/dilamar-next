@@ -161,12 +161,12 @@ const Page = ({ messages }) => {
           date="04 April 2021"
           customColor="text-gray-50"
           overlayColor="bg-kharnisa-imam-rosegold"
-          imagePath="/kharnisa-imam/couple.png"
+          imagePath="/kharnisa-imam/couple4.png"
         />
 
         <NamaPengantinThree
           namaWanita="Khairunisa Dian Lestari, S. Hum"
-          ortuWanita="Putri dari Bpk. Bapak Suyoto (Alm) & Ibu Ayi Mustikai"
+          ortuWanita="Putri Bungsu dari Bpk. H. Suyoto (Alm) & Hj. Ayi Mustika"
           namaPria="Dwi Imam Avianto, S.E"
           ortuPria="Putra dari Bpk. Kasturi Tri Irianto, A.Md & Ibu Ati Sugiarti, S.Ap, M.A"
           imagePathPria="/kharnisa-imam/pria.png"
@@ -221,7 +221,7 @@ const Page = ({ messages }) => {
         />
 
         <Terimakasih
-          namaPengantin="Kharnisa & Indah"
+          namaPengantin="Kharnisa & Imam"
           customColor="bg-kharnisa-imam-rosegold text-gray-50"
         />
 
