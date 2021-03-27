@@ -51,6 +51,7 @@ export const GalleryOne = () => {
         if (gallery.type === "image") {
           return (
             <div
+              key={gallery.id}
               data-aos="fade-up"
               className="w-5/6 md:w-2/3 h-96 relative mx-auto mb-4"
             >
@@ -65,6 +66,7 @@ export const GalleryOne = () => {
         } else if (gallery.type === "video") {
           return (
             <div
+              key={gallery.id}
               data-aos="fade-up"
               className="w-5/6 md:w-2/3 h-96 relative mx-auto mb-4"
             >

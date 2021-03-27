@@ -17,6 +17,7 @@ import { OpeningModalTwo } from "../../components/invitation/OpeningModal";
 import BottomMenu from "../../components/BottomMenu";
 import RSVP from "../../components/invitation/RSVP";
 import { GalleryOne } from "../../components/invitation/Gallery";
+import PlayerButton from "../../components/PlayerButton";
 
 const Page = ({ messages }) => {
   const [date] = useState("2021-04-04T16:00:00.000+07:00");
@@ -42,6 +43,8 @@ const Page = ({ messages }) => {
   const [modalIsOpen, setModalIsOpen] = useState(true);
 
   const [audio, setAudio] = useState(null);
+  const [isAudioPlaying, setIsAudioPlaying] = useState(false);
+  const [showPlayButton, setShowPlayButton] = useState(false);
 
   useEffect(() => {
     Aos.init({ duration: 1000 });
@@ -53,13 +56,25 @@ const Page = ({ messages }) => {
     return () => {
       if (audio) {
         audio.pause();
+        setIsAudioPlaying(false);
       }
     };
   }, []);
 
+  const handlePlayMusic = () => {
+    audio.play();
+    setIsAudioPlaying(true);
+  };
+
+  const handlePauseMusic = () => {
+    audio.pause();
+    setIsAudioPlaying(false);
+  };
+
   const handleOpenModal = () => {
     setModalIsOpen(false);
-    audio.play();
+    setShowPlayButton(true);
+    handlePlayMusic();
   };
 
   const handleGuestBookSubmit = async (event) => {
@@ -138,6 +153,13 @@ const Page = ({ messages }) => {
         imagePath="/kharnisa-imam/couple-square.png"
       />
       <BottomMenu />
+      {showPlayButton && (
+        <PlayerButton
+          handlePlayMusic={handlePlayMusic}
+          handlePauseMusic={handlePauseMusic}
+          isAudioPlaying={isAudioPlaying}
+        />
+      )}
       <div>
         <Modal
           isOpen={modalIsOpen}
