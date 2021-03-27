@@ -8,14 +8,13 @@ import "aos/dist/aos.css";
 
 import { GoBook } from "react-icons/go";
 import { MdLocationOn } from "react-icons/md";
-import { AiOutlineWhatsApp, AiOutlineInstagram } from "react-icons/ai";
 
 import { renderer } from "../../components/CountDownRenderer";
 import { AudioContext } from "../../context/AudioContext";
-import GuestBook from "../../components/GuestBook";
 import GalleryImage from "../../components/GalleryImage";
 import { premiumImage } from "../../assets/data";
 import Footer from "../../components/Footer";
+import { GuestBookOne } from "../../components/invitation/GuestBook";
 
 const Page = () => {
   const [date] = useState("2021-12-04T10:30:00.000+07:00");
@@ -290,7 +289,7 @@ const Page = () => {
       </section>
 
       <section>
-        <GuestBook
+        <GuestBookOne
           comments={comments}
           comment={comment}
           name={name}
