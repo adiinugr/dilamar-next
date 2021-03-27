@@ -48,7 +48,7 @@ const Page = ({ messages }) => {
   }, []);
 
   useEffect(() => {
-    setAudio(new Audio("/suta-hanny/cristian-since.mp3"));
+    setAudio(new Audio("/kharnisa-imam/the-overtunes.mp3"));
 
     return () => {
       if (audio) {
@@ -59,7 +59,7 @@ const Page = ({ messages }) => {
 
   const handleOpenModal = () => {
     setModalIsOpen(false);
-    // audio.play();
+    audio.play();
   };
 
   const handleGuestBookSubmit = async (event) => {
@@ -135,7 +135,7 @@ const Page = ({ messages }) => {
         title="Kharnisa & Imam Wedding Invitation"
         description="Kami mengundang Bapak/Ibu, saudara, dan rekan-rekan semua untuk hadir di acara pernikahan kami."
         link="https://dilamar.vercel.app/kharnisa-imam"
-        imagePath="/images/jeremy-weddings.jpg"
+        imagePath="/kharnisa-imam/couple2.png"
       />
       <BottomMenu />
       <div>
