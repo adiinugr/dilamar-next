@@ -39,7 +39,7 @@ const ProtokolKesehatan = ({ customColor }) => {
             </p>
           </div>
         </div>
-        <p className="mt-12">
+        <p className="mt-12 text-center">
           Terimakasih atas pengertian bapak/ibu/saudara/i tamu undangan. Semoga
           dengan mematuhi protokol kesehatan di atas kita semua bisa terjaga
           dari Covid-19.
