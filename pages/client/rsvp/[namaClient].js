@@ -43,7 +43,7 @@ const Rsvp = ({ rsvp }) => {
 
   return (
     <div className="bg-gray-200">
-      <ClientHeader namaClient={namaClient} />
+      <ClientHeader namaClient={namaClient || ""} />
       <section className="px-4 md:px-36 py-6 mb-4 pt-36">
         <div className="flex flex-col md:flex-row justify-between items-center bg-gray-50 p-3 mb-4">
           <div className="flex items-center mb-4 md:mb-0">

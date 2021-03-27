@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const ClientHeader = ({ namaClient }) => {
-  const nama = namaClient.replace("-", " & ").toUpperCase() || "";
+  const nama = namaClient.replace("-", " & ").toUpperCase();
 
   return (
     <section className="bg-green-600 text-gray-50 px-4 md:px-36 fixed z-20 w-screen">
