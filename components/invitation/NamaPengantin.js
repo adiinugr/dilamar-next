@@ -139,7 +139,7 @@ export const NamaPengantinThree = ({
           data-aos="fade-right"
         >
           <div className="w-full md:w-1/2 mx-4 text-center md:text-left">
-            <p className="font-display text-3xl mb-3">{namaPria}</p>
+            <p className="font-display text-3xl md:text-5xl mb-3">{namaPria}</p>
             <p>{ortuPria}</p>
           </div>
           <div className="w-full md:w-1/2 mx-4 mb-6 md:mb-0">
