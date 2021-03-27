@@ -1,8 +1,9 @@
 import React from "react";
 import { CSVLink } from "react-csv";
-import ClientHeader from "./components/clientHeader";
-
+import { useRouter } from "next/router";
 import { Table } from "antd";
+
+import ClientHeader from "../components/clientHeader";
 
 import "antd/dist/antd.css";
 
@@ -12,37 +13,9 @@ const csvHeaders = [
   { label: "Pesan", key: "message" },
 ];
 
-const data = [
-  { _id: 1, name: "Ahmed", status: "Hadir", message: "Siap hadir ndan!!" },
-  {
-    _id: 2,
-    name: "Raed",
-    status: "Tidak Hadir",
-    message: "Maaf ya belum bisa hadir..",
-  },
-  {
-    _id: 3,
-    name: "Yezzi",
-    status: "Ragu-ragu",
-    message: "Aku usahain bisa hadir",
-  },
-  {
-    _id: 4,
-    name: "Ahmad",
-    status: "Ragu-ragu",
-    message:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum sit autem magnam perferendis, possimus dolore nemo dolorem illum iste obcaecati, aperiam exercitationem id eligendi quis magni perspiciatis debitis praesentium quas.",
-  },
-  {
-    _id: 5,
-    name: "Joko",
-    status: "Tidak Hadir",
-    message: "Males sih mau hadir. Capek!",
-  },
-];
-
-const Rsvp = () => {
-  const namaCLient = "indah-rega";
+const Rsvp = ({ rsvp }) => {
+  const router = useRouter();
+  const { namaClient } = router.query;
 
   const columns = [
     {
@@ -65,12 +38,12 @@ const Rsvp = () => {
   ];
 
   const statusCount = (status) => {
-    return data.filter((d) => d.status === status).length;
+    return rsvp.filter((d) => d.status === status).length;
   };
 
   return (
     <div className="bg-gray-200">
-      <ClientHeader />
+      <ClientHeader namaClient={namaClient} />
       <section className="px-4 md:px-36 py-6 mb-4 pt-36">
         <div className="flex flex-col md:flex-row justify-between items-center bg-gray-50 p-3 mb-4">
           <div className="flex items-center mb-4 md:mb-0">
@@ -86,9 +59,9 @@ const Rsvp = () => {
           </div>
           <div className="self-end">
             <CSVLink
-              data={data}
+              data={rsvp}
               headers={csvHeaders}
-              filename={`${namaCLient}.csv`}
+              filename={`${namaClient}.csv`}
               className="btn btn-primary"
               target="_blank"
             >
@@ -98,7 +71,7 @@ const Rsvp = () => {
         </div>
         <Table
           columns={columns}
-          dataSource={data}
+          dataSource={rsvp}
           rowKey={(record) => record._id}
           pagination={{
             defaultPageSize: 10,
@@ -110,5 +83,32 @@ const Rsvp = () => {
     </div>
   );
 };
+
+export async function getServerSideProps(context) {
+  const name = context.params.namaClient;
+
+  const res = await fetch(`https://dilamar.vercel.app/api/${name}/rsvp`, {
+    method: "GET",
+    headers: {
+      "User-Agent":
+        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36",
+      Accept: "application/json; charset=UTF-8",
+    },
+  });
+  const data = await res.json();
+  const rsvp = await data.data;
+
+  const getData = () => {
+    if (rsvp) {
+      return rsvp;
+    } else {
+      return [];
+    }
+  };
+
+  return {
+    props: { rsvp: getData() },
+  };
+}
 
 export default Rsvp;

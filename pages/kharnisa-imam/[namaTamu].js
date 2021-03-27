@@ -103,6 +103,7 @@ const Page = ({ messages }) => {
     setRsvpIsLoading(true);
 
     if (rsvpName === "" && rsvpStatus === "" && rsvpMessage === "") {
+      setRsvpSuccess("");
       setRsvpError("Harus diisi semua ya!");
       setRsvpIsLoading(false);
     } else {
@@ -119,6 +120,7 @@ const Page = ({ messages }) => {
       });
 
       setRsvpIsLoading(false);
+      setRsvpError("");
       setRsvpSuccess("Status Kehadiran Berhasil Dikirim!");
 
       setRsvpName("");
@@ -198,8 +200,8 @@ const Page = ({ messages }) => {
           message={rsvpMessage}
           setMessage={(e) => setRsvpMessage(e.target.value)}
           error={rsvpError}
-          success={rsvpSuccess}
           isLoading={rsvpIsLoading}
+          succcess={rsvpSuccess}
           handleSubmit={handleRsvpSubmit}
         />
 
