@@ -135,7 +135,7 @@ const Page = ({ messages }) => {
         title="Kharnisa & Imam Wedding Invitation"
         description="Kami mengundang Bapak/Ibu, saudara, dan rekan-rekan semua untuk hadir di acara pernikahan kami."
         link="https://dilamar.vercel.app/kharnisa-imam"
-        imagePath="/kharnisa-imam/couple2.png"
+        imagePath="/kharnisa-imam/couple.png"
       />
       <BottomMenu />
       <div>
@@ -216,7 +216,7 @@ const Page = ({ messages }) => {
           handleSubmit={handleGuestBookSubmit}
           customColor="bg-kharnisa-imam-rosegold text-gray-50"
           buttonCustomColor="bg-gray-50 text-kharnisa-imam-rosegold"
-          borderColor="border-gray-50"
+          borderColor="border-kharnisa-imam-rosegold"
           inputTextColor="text-gray-600"
         />
 
@@ -226,6 +226,7 @@ const Page = ({ messages }) => {
         />
 
         <Footer />
+        <div className="mb-20"></div>
       </div>
     </>
   );

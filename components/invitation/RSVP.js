@@ -18,7 +18,7 @@ const RSVP = ({
       id="rsvp"
       className="bg-kharnisa-imam-rosegold flex justify-center overflow-hidden"
     >
-      <div className="w-5/6 md:w-2/4 bg-gray-50 rounded-lg py-10">
+      <div className="w-5/6 md:w-2/4 pattern2 rounded-lg py-10">
         <div className="flex flex-col items-center justify-center py-6">
           <div className="font-display text-4xl mb-4">RSVP</div>
           <div className="text-center">Konfirmasi kehadiranmu di sini!</div>

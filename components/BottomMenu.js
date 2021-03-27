@@ -4,7 +4,7 @@ import { Link as ScrollLink } from "react-scroll";
 
 const BottomMenu = () => {
   return (
-    <div className="fixed flex items-center justify-around h-20 bg-white z-30 w-full bottom-0 left-0">
+    <div className="fixed flex pattern items-center justify-around h-20 bg-white z-30 w-full bottom-0 left-0">
       <ScrollLink to="hero" smooth={true} duration={500}>
         <div className="flex flex-col items-center justify-center cursor-pointer">
           <div className="text-center">

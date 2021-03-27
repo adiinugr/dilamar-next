@@ -118,7 +118,7 @@ export const GuestBookTwo = ({
 
   return (
     <div className="bg-kharnisa-imam-rosegold text-kharnisa-imam-rosegold flex justify-center py-20 overflow-hidden">
-      <div className="w-5/6 md:w-2/4 bg-gray-50 rounded-lg py-10">
+      <div className="w-5/6 md:w-2/4 pattern2 rounded-lg py-10">
         <div className="flex flex-col items-center justify-center py-6">
           <div className="font-display text-4xl mb-4">Guest Book</div>
           <div className="border-kharnisa-imam-rosegold border-2 py-1 px-4 flex items-center justify-center font-body cursor-pointer">

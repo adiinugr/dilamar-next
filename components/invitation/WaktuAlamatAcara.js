@@ -142,7 +142,7 @@ export const WaktuAlamatAcaraTwo = ({
           untuk menghadiri acara resepsi pernikahan kami
         </div>
       </div>
-      <div className="w-5/6 md:w-2/4 bg-gray-50 text-kharnisa-imam-rosegold rounded-lg py-10 px-4">
+      <div className="w-5/6 md:w-2/4 pattern2 text-kharnisa-imam-rosegold rounded-lg py-10 px-4">
         <div className="flex flex-col items-center justify-center h-full w-full z-20">
           <div
             data-aos="zoom-in"

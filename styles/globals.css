@@ -4,3 +4,49 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .pattern {
+    background-color: #e5e5f7;
+    opacity: 1;
+    background-image: repeating-radial-gradient(
+        circle at 0 0,
+        transparent 0,
+        #e5e5f7 7px
+      ),
+      repeating-linear-gradient(#d3d4e555, #d3d4e5);
+  }
+
+  .pattern2 {
+    background-color: #e5e5f7;
+    opacity: 0.9;
+    background: radial-gradient(
+        circle,
+        transparent 20%,
+        #e5e5f7 20%,
+        #e5e5f7 80%,
+        transparent 80%,
+        transparent
+      ),
+      radial-gradient(
+          circle,
+          transparent 20%,
+          #e5e5f7 20%,
+          #e5e5f7 80%,
+          transparent 80%,
+          transparent
+        )
+        17.5px 17.5px,
+      linear-gradient(
+          #d3d4e5 1.4000000000000001px,
+          transparent 1.4000000000000001px
+        )
+        0 -0.7000000000000001px,
+      linear-gradient(
+          90deg,
+          #d3d4e5 1.4000000000000001px,
+          #e5e5f7 1.4000000000000001px
+        ) -0.7000000000000001px 0;
+    background-size: 35px 35px, 35px 35px, 17.5px 17.5px, 17.5px 17.5px;
+  }
+}

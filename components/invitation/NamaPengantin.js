@@ -131,7 +131,7 @@ export const NamaPengantinThree = ({
             <p>{ortuWanita}</p>
           </div>
         </div>
-        <div className=" md:w-1/3 text-center font-display text-8xl my-10">
+        <div className=" md:w-1/3 text-center font-display text-7xl md:text-8xl my-10">
           - & -
         </div>
         <div
