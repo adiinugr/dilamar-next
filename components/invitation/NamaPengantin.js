@@ -104,8 +104,9 @@ export const NamaPengantinThree = ({
             Assalamu'alaikum Warahmatullahi Wabarakaatuh
           </div>
           <div className="mb-14 text-center">
-            Dengan memohon rahmat Allah Swt, kami menggundang
-            Bapak/Ibu/Saudara/i untuk menghadiri acara resepsi pernikahan kami
+            Dengan memohon rahmat dan ridho Allah SWT yang telah menciptakan
+            makhluk-Nya secara berpasang-pasangan, kami bermaksud
+            menyelenggarakan acara pernikahan Putra/Putri kami
           </div>
         </div>
         <div

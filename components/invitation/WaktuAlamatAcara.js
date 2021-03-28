@@ -138,8 +138,7 @@ export const WaktuAlamatAcaraTwo = ({
           Save The Date
         </div>
         <div data-aos="zoom-in" className="mb-10">
-          Dengan memohon rahmat Allah Swt, kami menggundang Bapak/Ibu/Saudara/i
-          untuk menghadiri acara resepsi pernikahan kami
+          InsyaAllah acara pernikahan akan diselenggarakan pada:
         </div>
       </div>
       <div className="w-5/6 md:w-2/4 pattern2 text-kharnisa-imam-gold rounded-lg py-10 px-4">

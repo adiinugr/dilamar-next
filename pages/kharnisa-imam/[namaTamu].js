@@ -190,7 +190,7 @@ const Page = ({ messages }) => {
           namaWanita="Khairunisa Dian Lestari, S. Hum"
           ortuWanita="Putri Bungsu dari Bpk. H. Suyoto (Alm) & Hj. Ayi Mustika"
           namaPria="Dwi Imam Avianto, S.E"
-          ortuPria="Putra Kedua dari Bpk. Kasturi Tri Irianto, A.Md & Ibu Ati Sugiarti, S.Ap, M.A"
+          ortuPria="Putra Kedua dari Bpk. Kasturi Tri Irianto, A.Md & Ibu Ati Sugiarti, S.AP, M.A"
           imagePathPria="/kharnisa-imam/pria.png"
           imagePathWanita="/kharnisa-imam/wanita.png"
           customColor="bg-kharnisa-imam-silver text-kharnisa-imam-gold"
