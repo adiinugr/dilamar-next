@@ -105,7 +105,7 @@ export const GalleryTwo = ({ customColor, imageData }) => {
                 src={gallery.src}
                 layout="fill"
                 objectFit="cover"
-                className="absolute"
+                className="absolute rounded-md"
               />
             </div>
           );
