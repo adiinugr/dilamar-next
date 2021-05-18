@@ -187,7 +187,7 @@ const Page = ({ messages }) => {
         title="Erni & Gayuh Wedding Invitation"
         description="Kami mengundang Bapak/Ibu, saudara, dan rekan-rekan semua untuk hadir di acara pernikahan kami."
         link="https://dilamar.vercel.app/erni-gayuh/Nama+Tamu"
-        imagePath="/kharnisa-imam/couple-square.png"
+        imagePath="/erni-gayuh/square.jpg"
       />
       <BottomMenuGeneral pattern="pattern2" />
       {showPlayButton && (
@@ -210,7 +210,7 @@ const Page = ({ messages }) => {
             customColor="text-gray-50"
             buttonCustomColor="bg-kharnisa-imam-rosegold text-gray-50"
             backgroundImagePath="/kharnisa-imam/flower2.jpg"
-            coupleImagePath="/kharnisa-imam/couple-square.png"
+            coupleImagePath="/erni-gayuh/square.jpg"
             withOverlay
           />
         </Modal>
