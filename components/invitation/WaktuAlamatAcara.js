@@ -241,7 +241,7 @@ export const WaktuAlamatAcaraFour = ({
       ? `w-5/6 md:w-3/4 ${buttonCustomColor} mt-4 rounded-sm py-2 cursor-pointer flex items-center justify-center`
       : "w-5/6 md:w-3/4 bg-gray-300 mt-4 rounded-sm py-2 cursor-pointer flex items-center justify-center";
   return (
-    <div className={containerClassName()}>
+    <div id="event" className={containerClassName()}>
       <div className="w-5/6 md:w-3/4 border-suta-seashell border-2 rounded-lg overflow-hidden h-screen md:h-96 relative">
         {bgImagePath && (
           <Image

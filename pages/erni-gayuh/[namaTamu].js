@@ -56,6 +56,33 @@ const imageData = [
   },
 ];
 
+const bottomMenuData = [
+  {
+    id: 1,
+    anchor: "hero",
+    title: "Home",
+    imagePath: "/images/bottom-menu/house.png",
+  },
+  {
+    id: 2,
+    anchor: "couple",
+    title: "Couple",
+    imagePath: "/images/bottom-menu/couple.png",
+  },
+  {
+    id: 3,
+    anchor: "event",
+    title: "Event",
+    imagePath: "/images/bottom-menu/calendar.png",
+  },
+  {
+    id: 4,
+    anchor: "gallery",
+    title: "Gallery",
+    imagePath: "/images/bottom-menu/image.png",
+  },
+];
+
 const Page = ({ messages }) => {
   const [date] = useState("2021-06-13T08:00:00.000+07:00");
 
@@ -88,7 +115,7 @@ const Page = ({ messages }) => {
   }, []);
 
   useEffect(() => {
-    setAudio(new Audio("/kharnisa-imam/the-overtunes.mp3"));
+    setAudio(new Audio("/erni-gayuh/a-thousand-years.mp3"));
 
     return () => {
       if (audio) {
@@ -123,7 +150,7 @@ const Page = ({ messages }) => {
       setGuestBookError("Harus diisi semua ya!");
       setGuestBookIsLoading(false);
     } else {
-      const res = await fetch(`/api/kharnisa-imam/comment`, {
+      const res = await fetch(`/api/erni-gayuh/comment`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -189,7 +216,7 @@ const Page = ({ messages }) => {
         link="https://dilamar.vercel.app/erni-gayuh/Nama+Tamu"
         imagePath="/erni-gayuh/square.jpg"
       />
-      <BottomMenuGeneral pattern="pattern2" />
+      <BottomMenuGeneral pattern="pattern2" bottomMenuData={bottomMenuData} />
       {showPlayButton && (
         <PlayerButton
           handlePlayMusic={handlePlayMusic}

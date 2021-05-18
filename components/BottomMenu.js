@@ -2,29 +2,6 @@ import Image from "next/image";
 import React from "react";
 import { Link as ScrollLink } from "react-scroll";
 
-const bottomMenuData = [
-  {
-    id: 1,
-    anchor: "hero",
-    imagePath: "/images/bottom-menu/house.png",
-  },
-  {
-    id: 2,
-    anchor: "couple",
-    imagePath: "/images/bottom-menu/couple.png",
-  },
-  {
-    id: 3,
-    anchor: "event",
-    imagePath: "/images/bottom-menu/calendar.png",
-  },
-  {
-    id: 4,
-    anchor: "gallery",
-    imagePath: "/images/bottom-menu/image.png",
-  },
-];
-
 const BottomMenu = () => {
   return (
     <div className="fixed flex text-kharnisa-imam-gold items-center justify-around h-20 bg-kharnisa-imam-silver z-30 w-full bottom-0 left-0">
@@ -97,7 +74,7 @@ const BottomMenu = () => {
   );
 };
 
-export const BottomMenuGeneral = ({ pattern, customColor }) => {
+export const BottomMenuGeneral = ({ pattern, customColor, bottomMenuData }) => {
   const containerClassName = () => {
     if (pattern) {
       return `fixed flex text-gray-800 items-center justify-around h-20 ${pattern} z-30 w-full bottom-0 left-0`;
@@ -121,7 +98,7 @@ export const BottomMenuGeneral = ({ pattern, customColor }) => {
                 objectFit="cover"
               />
             </div>
-            <div className="text-sm font-semibold">Home</div>
+            <div className="text-sm font-semibold">{menu.title}</div>
           </div>
         </ScrollLink>
       ))}
