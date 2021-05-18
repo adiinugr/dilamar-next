@@ -214,7 +214,7 @@ const Page = ({ messages }) => {
         title="Erni & Gayuh Wedding Invitation"
         description="Kami mengundang Bapak/Ibu, saudara, dan rekan-rekan semua untuk hadir di acara pernikahan kami."
         link="https://dilamar.vercel.app/erni-gayuh/Nama+Tamu"
-        imagePath="/erni-gayuh/lanscape.jpg"
+        imagePath="/erni-gayuh/lanscape.png"
       />
       <BottomMenuGeneral pattern="pattern2" bottomMenuData={bottomMenuData} />
       {showPlayButton && (
