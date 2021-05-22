@@ -18,6 +18,9 @@ module.exports = {
         "kharnisa-imam-rosegold": "#B76E79",
         "kharnisa-imam-gold": "#C9B037",
         "kharnisa-imam-silver": "#F2F2F2",
+        "may-kamal-american-silver": "#CECECE",
+        "may-kamal-sonic-silver": "#797979",
+        "may-kamal-platinum": "#E5E5E5",
       },
     },
     fontFamily: {
