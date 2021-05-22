@@ -50,3 +50,11 @@
     background-size: 35px 35px, 35px 35px, 17.5px 17.5px, 17.5px 17.5px;
   }
 }
+
+@layer utilities {
+  @variants responsive {
+    .h-135 {
+      height: 45rem;
+    }
+  }
+}

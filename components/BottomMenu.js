@@ -88,7 +88,7 @@ export const BottomMenuGeneral = ({ pattern, customColor, bottomMenuData }) => {
   return (
     <div className={containerClassName()}>
       {bottomMenuData.map((menu) => (
-        <ScrollLink to={menu.anchor} smooth={true} duration={500}>
+        <ScrollLink to={menu.anchor} smooth={true} duration={500} key={menu.id}>
           <div className="flex flex-col items-center justify-center cursor-pointer">
             <div className="text-center">
               <Image

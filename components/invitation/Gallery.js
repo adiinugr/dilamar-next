@@ -99,7 +99,7 @@ export const GalleryTwo = ({ customColor, imageData }) => {
             <div
               key={gallery.id}
               data-aos="fade-up"
-              className="w-5/6 md:w-2/3 h-96 relative mx-auto mb-4"
+              className="w-5/6 md:w-2/3 h-96 md:h-135 relative mx-auto mb-4"
             >
               <Image
                 src={gallery.src}
