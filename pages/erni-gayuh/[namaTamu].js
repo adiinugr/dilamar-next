@@ -10,20 +10,12 @@ import InvitationHead from "../../components/InvitationHead";
 import ProtokolKesehatan from "../../components/ProtokolKesehatan";
 import { HeroTwo } from "../../components/invitation/Hero";
 import { NamaPengantinThree } from "../../components/invitation/NamaPengantin";
-import {
-  WaktuAlamatAcaraFour,
-  WaktuAlamatAcaraOne,
-  WaktuAlamatAcaraTwo,
-} from "../../components/invitation/WaktuAlamatAcara";
-import {
-  GuestBookOne,
-  GuestBookTwo,
-} from "../../components/invitation/GuestBook";
+import { WaktuAlamatAcaraFour } from "../../components/invitation/WaktuAlamatAcara";
+import { GuestBookOne } from "../../components/invitation/GuestBook";
 import Terimakasih from "../../components/invitation/Terimakasih";
 import { OpeningModalTwo } from "../../components/invitation/OpeningModal";
 import { BottomMenuGeneral } from "../../components/BottomMenu";
-import RSVP from "../../components/invitation/RSVP";
-import { GalleryOne, GalleryTwo } from "../../components/invitation/Gallery";
+import { GalleryTwo } from "../../components/invitation/Gallery";
 import PlayerButton from "../../components/PlayerButton";
 import QsArrum from "../../components/invitation/QsArrum";
 import DateCountdown from "../../components/invitation/DateCountdown";
@@ -53,6 +45,21 @@ const imageData = [
     id: 5,
     type: "image",
     src: "/erni-gayuh/5.jpg",
+  },
+  {
+    id: 6,
+    type: "image",
+    src: "/erni-gayuh/9.JPG",
+  },
+  {
+    id: 7,
+    type: "image",
+    src: "/erni-gayuh/10.JPG",
+  },
+  {
+    id: 8,
+    type: "image",
+    src: "/erni-gayuh/11.JPG",
   },
 ];
 
@@ -96,13 +103,6 @@ const Page = ({ messages }) => {
   const [guestBookComment, setGuestBookComment] = useState("");
   const [guestBookIsLoading, setGuestBookIsLoading] = useState(false);
   const [guestBookError, setGuestBookError] = useState("");
-
-  const [rsvpName, setRsvpName] = useState("");
-  const [rsvpStatus, setRsvpStatus] = useState("");
-  // const [rsvpMessage, setRsvpMessage] = useState("");
-  const [rsvpIsLoading, setRsvpIsLoading] = useState(false);
-  const [rsvpError, setRsvpError] = useState("");
-  const [rsvpSuccess, setRsvpSuccess] = useState("");
 
   const [modalIsOpen, setModalIsOpen] = useState(true);
 
@@ -176,38 +176,6 @@ const Page = ({ messages }) => {
     }
   };
 
-  const handleRsvpSubmit = async (event) => {
-    event.preventDefault();
-
-    setRsvpIsLoading(true);
-
-    if (rsvpName === "" && rsvpStatus === "") {
-      setRsvpSuccess("");
-      setRsvpError("Harus diisi semua ya!");
-      setRsvpIsLoading(false);
-    } else {
-      const res = await fetch(`/api/kharnisa-imam/rsvp`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: rsvpName,
-          status: rsvpStatus,
-          // message: rsvpMessage,
-        }),
-      });
-
-      setRsvpIsLoading(false);
-      setRsvpError("");
-      setRsvpSuccess("Status Kehadiran Berhasil Dikirim!");
-
-      setRsvpName("");
-      setRsvpStatus("");
-      // setRsvpMessage("");
-    }
-  };
-
   return (
     <>
       <InvitationHead
@@ -260,8 +228,8 @@ const Page = ({ messages }) => {
           ortuWanita="Putri dari Bpk. Tuyar & Ibu Suyati"
           namaPria="Gayuh Priwibowo, S.Pd."
           ortuPria="Putra dari Bpk. Agus Prihmiardi & Ibu Sri Winarti"
-          imagePathPria="/erni-gayuh/pria.jpg"
-          imagePathWanita="/erni-gayuh/wanita.jpg"
+          imagePathPria="/erni-gayuh/pria.JPG"
+          imagePathWanita="/erni-gayuh/wanita.JPG"
           customColor="bg-kharnisa-imam-silver text-kharnisa-imam-rosegold"
         />
 
