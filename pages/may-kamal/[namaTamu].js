@@ -8,18 +8,22 @@ import "aos/dist/aos.css";
 import Footer from "../../components/Footer";
 import InvitationHead from "../../components/InvitationHead";
 import ProtokolKesehatan from "../../components/ProtokolKesehatan";
-import { HeroOne } from "../../components/invitation/Hero";
-import QsArrum from "../../components/invitation/QsArrum";
-import { NamaPengantin2 } from "../../components/invitation/NamaPengantin";
+import { HeroTwo } from "../../components/invitation/Hero";
+import { NamaPengantin1 } from "../../components/invitation/NamaPengantin";
 import DateCountdown from "../../components/invitation/DateCountdown";
-import { WaktuAlamatAcaraOne } from "../../components/invitation/WaktuAlamatAcara";
+import {
+  WaktuAlamatAcaraFour,
+  WaktuAlamatAcaraOne,
+  WaktuAlamatAcaraTwo,
+} from "../../components/invitation/WaktuAlamatAcara";
 import Terimakasih from "../../components/invitation/Terimakasih";
 import { OpeningModalOne } from "../../components/invitation/OpeningModal";
 import BigImage from "../../components/invitation/BigImage";
 import { GuestBookOne } from "../../components/invitation/GuestBook";
+import { QsAnNur32 } from "../../components/invitation/QuranAyat";
 
 const Page = ({ messages }) => {
-  const [date] = useState("2021-04-04T16:00:00.000+07:00");
+  const [date] = useState("2021-06-05T11:00:00.000+07:00");
 
   const [data, setData] = useState(messages);
 
@@ -63,7 +67,7 @@ const Page = ({ messages }) => {
     if (name === "" && comment === "") {
       setError("Harus diisi semua ya!");
     } else {
-      const res = await fetch(`/api/may-kamal`, {
+      const res = await fetch(`/api/may-kamal/comment`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -105,52 +109,51 @@ const Page = ({ messages }) => {
           <OpeningModalOne
             handleOpenModal={handleOpenModal}
             namaTamu={tamu}
-            namaPengantin="Indah & Rega"
+            namaPengantin="May & Kamal"
             customColor="text-gray-50"
             buttonCustomColor="bg-gray-100 text-gray-800 bg-opacity-80"
-            backgroundImagePath="/nurul-rega/potrait.jpg"
+            backgroundImagePath="/may-kamal/background.jpg"
             withOverlay
           />
         </Modal>
 
-        <HeroOne
-          name="Indah & Rega"
-          date="04 April 2021"
-          customColor="bg-suta-seashell text-nurul-gold"
+        <HeroTwo
+          name="May & Kamal"
+          date="05 Juni 2021"
+          imagePath="/may-kamal/background.jpg"
+          customColor="text-may-kamal-platinum"
         />
 
-        <QsArrum bgColor="bg-nurul-color4" textColor="text-nurul-color2" />
+        <QsAnNur32 bgColor="bg-may-kamal-platinum" textColor="text-gray-800" />
 
-        <NamaPengantin2
-          namaWanita="Nurul Indah Suhartinah"
-          ortuWanita="Putri Pertama dari Bpk. Catur A. Pramono & Nevi Susanti"
-          namaPria="Rega Reksan Deva"
-          ortuPria="Putra Terakhir dari Bpk. Trisnadi & Ibu Hesty Yuliaty"
-          customColor="bg-suta-seashell text-nurul-gold"
+        <NamaPengantin1
+          namaWanita="Siti Maysaroh"
+          ortuWanita="Putri dari Bpk. Syarifudin & Ibu Suminah"
+          namaPria="Achmad Kamal"
+          ortuPria="Putra dari Bpk. Walim & Ibu Sholeha"
+          customColor="bg-may-kamal-american-silver text-gray-800"
         />
 
         <DateCountdown
           date={date}
-          bgColor="bg-nurul-color4"
-          textColor="text-nurul-color2"
-        />
-        <BigImage imagePath="/nurul-rega/potrait-2.jpg" />
-
-        <WaktuAlamatAcaraOne
-          tanggalAkad="Minggu, 04 April 2021"
-          waktuAkad="Pukul 16.00 WIB - Selesai"
-          tanggalResepsi="Minggu, 04 April 2021"
-          waktuResepsiSesi1="Sesi 1: Pukul 19.00 - 20.00 WIB"
-          waktuResepsiSesi2="Sesi 2: Pukul 20.00 - 21.00 WIB"
-          namaTempat="Gedung Aneka Bhakti II Depsos, Bekasi Timur"
-          googleMapsUri="https://www.google.co.id/maps/place/Gedung+Aneka+Bhakti+II+depsos+bekasi+timur/@-6.253035,107.0199683,17z/data=!3m1!4b1!4m5!3m4!1s0x2e698e62504bb22f:0x818439d1931381c8!8m2!3d-6.253035!4d107.022157"
-          lat={-6.25301}
-          lng={107.02216}
-          customColor="bg-suta-seashell text-nurul-gold"
-          buttonCustomColor="bg-nurul-color4 text-nurul-color2"
+          bgColor="bg-may-kamal-platinum"
+          textColor="text-gray-800"
         />
 
-        <ProtokolKesehatan customColor="bg-nurul-color4 text-nurul-color2" />
+        <WaktuAlamatAcaraFour
+          tanggalAkad="Sabtu, 05 Juni 2021"
+          waktuAkad="Pukul 10.00 WIB - Selesai"
+          tanggalResepsi="Sabtu, 05 Juni 2021"
+          waktuResepsi="Pukul 11.00 WIB - 16.00 WIB"
+          namaTempat="Jl. P. Belitung 3 No.98 Rt.008/016 Kel.Aren Jaya Perumnas 3 Bekasi Timur"
+          googleMapsUri="https://maps.app.goo.gl/gioNwCG1Y7quQ96z9"
+          lat={-6.23951}
+          lng={107.03246}
+          customColor="bg-may-kamal-american-silver text-gray-200"
+          buttonCustomColor="bg-may-kamal-sonic-silver text-gray-200"
+        />
+
+        <ProtokolKesehatan customColor="bg-may-kamal-platinum text-gray-800" />
 
         <GuestBookOne
           comments={data}
@@ -161,13 +164,15 @@ const Page = ({ messages }) => {
           error={error}
           isLoading={isLoading}
           handleSubmit={handleSubmit}
-          customColor="bg-suta-seashell text-nurul-gold"
-          buttonCustomColor="bg-nurul-color4 text-nurul-color2"
+          customColor="bg-gray-500 text-gray-200"
+          borderColor="border-gray-200"
+          buttonCustomColor="bg-gray-300 text-gray-800"
+          inputTextColor="text-gray-800"
         />
 
         <Terimakasih
-          namaPengantin="Indah & Rega"
-          customColor="bg-nurul-color4 text-nurul-color2"
+          namaPengantin="May & Kamal"
+          customColor="bg-may-kamal-platinum text-gray-800"
         />
 
         <Footer />
