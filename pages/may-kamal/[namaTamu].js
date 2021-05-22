@@ -92,10 +92,9 @@ const Page = ({ messages }) => {
   return (
     <>
       <InvitationHead
-        title="Indah & Rega Wedding Invitation"
+        title="May & Kamal Wedding Invitation"
         description="Kami mengundang Bapak/Ibu, saudara, dan rekan-rekan semua untuk hadir di acara pernikahan kami."
-        link="https://dilamar.vercel.app/nurul-rega"
-        imagePath="/nurul-rega/lanscape.jpg"
+        link="https://dilamar.vercel.app/may-kamal/Nama+Tamu"
       />
       <div>
         <Modal
@@ -178,7 +177,7 @@ const Page = ({ messages }) => {
 };
 
 export async function getServerSideProps() {
-  const res = await fetch(`https://dilamar.vercel.app/api/may-kamal`, {
+  const res = await fetch(`https://dilamar.vercel.app/api/may-kamal/comment`, {
     method: "GET",
     headers: {
       "User-Agent":
