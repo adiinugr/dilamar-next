@@ -21,6 +21,7 @@ import { OpeningModalOne } from "../../components/invitation/OpeningModal";
 import BigImage from "../../components/invitation/BigImage";
 import { GuestBookOne } from "../../components/invitation/GuestBook";
 import { QsAnNur32 } from "../../components/invitation/QuranAyat";
+import PlayerButton from "../../components/PlayerButton";
 
 const Page = ({ messages }) => {
   const [date] = useState("2021-06-05T11:00:00.000+07:00");
@@ -39,6 +40,8 @@ const Page = ({ messages }) => {
   const [modalIsOpen, setModalIsOpen] = useState(true);
 
   const [audio, setAudio] = useState(null);
+  const [isAudioPlaying, setIsAudioPlaying] = useState(false);
+  const [showPlayButton, setShowPlayButton] = useState(false);
 
   useEffect(() => {
     Aos.init({ duration: 1000 });
@@ -56,7 +59,18 @@ const Page = ({ messages }) => {
 
   const handleOpenModal = () => {
     setModalIsOpen(false);
+    setShowPlayButton(true);
+    handlePlayMusic();
+  };
+
+  const handlePlayMusic = () => {
     audio.play();
+    setIsAudioPlaying(true);
+  };
+
+  const handlePauseMusic = () => {
+    audio.pause();
+    setIsAudioPlaying(false);
   };
 
   const handleSubmit = async (event) => {
@@ -100,6 +114,13 @@ const Page = ({ messages }) => {
         description="Kami mengundang Bapak/Ibu, saudara, dan rekan-rekan semua untuk hadir di acara pernikahan kami."
         link="https://dilamar.vercel.app/may-kamal/Nama+Tamu"
       />
+      {showPlayButton && (
+        <PlayerButton
+          handlePlayMusic={handlePlayMusic}
+          handlePauseMusic={handlePauseMusic}
+          isAudioPlaying={isAudioPlaying}
+        />
+      )}
       <div>
         <Modal
           isOpen={modalIsOpen}
