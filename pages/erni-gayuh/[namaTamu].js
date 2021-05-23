@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import Aos from "aos";
 import Modal from "react-modal";
 
-import "../metta-adi/node_modules/aos/dist/aos.css";
+import "aos/dist/aos.css";
 
 import Footer from "../../components/Footer";
 import InvitationHead from "../../components/InvitationHead";
