@@ -229,7 +229,7 @@ const Page = ({ messages }) => {
           namaPria="Gayuh Priwibowo, S.Pd."
           ortuPria="Putra dari Bpk. Agus Prihmiardi & Ibu Sri Winarti"
           imagePathPria="/erni-gayuh/pria.JPG"
-          imagePathWanita="/erni-gayuh/wanita.JPG"
+          imagePathWanita="/erni-gayuh/wanita.jpg"
           customColor="bg-kharnisa-imam-silver text-kharnisa-imam-rosegold"
         />
 
