@@ -113,6 +113,7 @@ const Page = ({ messages }) => {
         title="May & Kamal Wedding Invitation"
         description="Kami mengundang Bapak/Ibu, saudara, dan rekan-rekan semua untuk hadir di acara pernikahan kami."
         link="https://dilamar.vercel.app/may-kamal/Nama+Tamu"
+        imagePath="/may-kamal/lanscape.jpeg"
       />
       {showPlayButton && (
         <PlayerButton
