@@ -15,7 +15,7 @@ import { WaktuAlamatAcaraFour } from "../../components/invitation/WaktuAlamatAca
 import Terimakasih from "../../components/invitation/Terimakasih";
 import { OpeningModalOne } from "../../components/invitation/OpeningModal";
 import { GuestBookOne } from "../../components/invitation/GuestBook";
-import { QsAnNur32 } from "../../components/invitation/QuranAyat";
+import QsArrum from "../../components/invitation/QsArrum";
 import PlayerButton from "../../components/PlayerButton";
 
 const Page = ({ messages }) => {
@@ -43,7 +43,7 @@ const Page = ({ messages }) => {
   }, []);
 
   useEffect(() => {
-    setAudio(new Audio("/suta-hanny/cristian-since.mp3"));
+    setAudio(new Audio("/metta-adi/beautiful-in-white.mp3"));
 
     return () => {
       if (audio) {
@@ -105,10 +105,10 @@ const Page = ({ messages }) => {
   return (
     <>
       <InvitationHead
-        title="May & Kamal Wedding Invitation"
+        title="Metta & Adi Wedding Invitation"
         description="Kami mengundang Bapak/Ibu, saudara, dan rekan-rekan semua untuk hadir di acara pernikahan kami."
-        link="https://dilamar.vercel.app/may-kamal/Nama+Tamu"
-        imagePath="/may-kamal/lanscape.jpeg"
+        link="https://dilamar.vercel.app/metta-adi/Nama+Tamu"
+        imagePath="/metta-adi/lanscape.jpg"
       />
       {showPlayButton && (
         <PlayerButton
@@ -126,35 +126,38 @@ const Page = ({ messages }) => {
           <OpeningModalOne
             handleOpenModal={handleOpenModal}
             namaTamu={tamu}
-            namaPengantin="May & Kamal"
+            namaPengantin="Metta & Adi"
             customColor="text-gray-50"
             buttonCustomColor="bg-gray-100 text-gray-800 bg-opacity-80"
-            backgroundImagePath="/may-kamal/background.jpg"
+            backgroundImagePath="/metta-adi/roses.jpg"
             withOverlay
           />
         </Modal>
 
         <HeroTwo
-          name="May & Kamal"
+          name="Metta & Adi"
           date="05 Juni 2021"
-          imagePath="/may-kamal/background.jpg"
+          imagePath="/metta-adi/roses.jpg"
           customColor="text-may-kamal-platinum"
         />
 
-        <QsAnNur32 bgColor="bg-may-kamal-platinum" textColor="text-gray-800" />
+        <QsArrum
+          bgColor="bg-kharnisa-imam-rosegold"
+          textColor="text-gray-200"
+        />
 
         <NamaPengantin1
-          namaWanita="Siti Maysaroh"
-          ortuWanita="Putri dari Bpk. Syarifudin & Ibu Suminah"
-          namaPria="Achmad Kamal"
-          ortuPria="Putra dari Bpk. Walim & Ibu Sholeha"
-          customColor="bg-may-kamal-american-silver text-gray-800"
+          namaWanita="Metta Permatasari"
+          ortuWanita="Putri dari Bpk. Harun & Ibu Rudatin Endah Wibowanti"
+          namaPria="Adi Nugroho"
+          ortuPria="Putra dari Bpk. Purwadi & Ibu Puji Astuti"
+          customColor="bg-gray-700 text-gray-200"
         />
 
         <DateCountdown
           date={date}
-          bgColor="bg-may-kamal-platinum"
-          textColor="text-gray-800"
+          bgColor="bg-gray-600"
+          textColor="text-gray-200"
         />
 
         <WaktuAlamatAcaraFour
@@ -162,15 +165,17 @@ const Page = ({ messages }) => {
           waktuAkad="Pukul 10.00 WIB - Selesai"
           tanggalResepsi="Sabtu, 05 Juni 2021"
           waktuResepsi="Pukul 11.00 WIB - 16.00 WIB"
-          namaTempat="Jl. P. Belitung 3 No.98 Rt.008/016 Kel.Aren Jaya Perumnas 3 Bekasi Timur"
-          googleMapsUri="https://maps.app.goo.gl/gioNwCG1Y7quQ96z9"
-          lat={-6.23951}
-          lng={107.03246}
+          namaTempat="Bekasi Convention Center"
+          alamatTempat="Jl. Ahmad Yani, No 1, Marga Jaya, Kec. Bekasi Selatan, Kota Bekasi"
+          googleMapsUri="https://maps.app.goo.gl/RRvQ8dWpvckv4BKb8"
+          lat={-6.24926}
+          lng={106.99241}
           customColor="bg-may-kamal-american-silver text-gray-200"
-          buttonCustomColor="bg-may-kamal-sonic-silver text-gray-200"
+          buttonCustomColor="bg-gray-800 text-gray-200"
+          bgImagePath="/metta-adi/roses.jpg"
         />
 
-        <ProtokolKesehatan customColor="bg-may-kamal-platinum text-gray-800" />
+        <ProtokolKesehatan customColor="bg-kharnisa-imam-rosegold text-gray-200" />
 
         <GuestBookOne
           comments={data}
@@ -181,14 +186,14 @@ const Page = ({ messages }) => {
           error={error}
           isLoading={isLoading}
           handleSubmit={handleSubmit}
-          customColor="bg-gray-500 text-gray-200"
+          customColor="bg-gray-800 text-gray-200"
           borderColor="border-gray-200"
           buttonCustomColor="bg-gray-300 text-gray-800"
           inputTextColor="text-gray-800"
         />
 
         <Terimakasih
-          namaPengantin="May & Kamal"
+          namaPengantin="Metta & Adi"
           customColor="bg-may-kamal-platinum text-gray-800"
         />
 
