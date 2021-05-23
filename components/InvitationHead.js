@@ -17,8 +17,11 @@ const InvitationHead = ({ title, description, link, imagePath }) => {
       <meta property="og:description" content={description} />
       <meta
         property="og:image"
+        itemProp="image"
         content={imagePath || "/suta-hanny/photo.jpeg"}
       />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
 
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:url" content={link} />
