@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import Aos from "aos";
 import Modal from "react-modal";
 
-import "../metta-adi/node_modules/aos/dist/aos.css";
+import "aos/dist/aos.css";
 
 import Footer from "../../components/Footer";
 import InvitationHead from "../../components/InvitationHead";
@@ -76,7 +76,7 @@ const Page = ({ messages }) => {
     if (name === "" && comment === "") {
       setError("Harus diisi semua ya!");
     } else {
-      const res = await fetch(`/api/may-kamal/comment`, {
+      const res = await fetch(`/api/metta-adi/comment`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -199,7 +199,7 @@ const Page = ({ messages }) => {
 };
 
 export async function getServerSideProps() {
-  const res = await fetch(`https://dilamar.vercel.app/api/may-kamal/comment`, {
+  const res = await fetch(`https://dilamar.vercel.app/api/metta-adi/comment`, {
     method: "GET",
     headers: {
       "User-Agent":
