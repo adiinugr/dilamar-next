@@ -162,9 +162,9 @@ const Page = ({ messages }) => {
 
         <WaktuAlamatAcaraFour
           tanggalAkad="Sabtu, 05 Juni 2021"
-          waktuAkad="Pukul 10.00 WIB - Selesai"
+          waktuAkad="Pukul 08.00 WIB - Selesai"
           tanggalResepsi="Sabtu, 05 Juni 2021"
-          waktuResepsi="Pukul 11.00 WIB - 16.00 WIB"
+          waktuResepsi="Pukul 11.00 WIB - 13.00 WIB"
           namaTempat="Bekasi Convention Center"
           alamatTempat="Jl. Ahmad Yani, No 1, Marga Jaya, Kec. Bekasi Selatan, Kota Bekasi"
           googleMapsUri="https://maps.app.goo.gl/RRvQ8dWpvckv4BKb8"
