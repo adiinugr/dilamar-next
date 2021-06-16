@@ -251,8 +251,8 @@ const Page = ({ messages }) => {
           ortuWanita="Putri dari Alm. Bpk Hidayat & Ibu Desy Fandania Lasta Simbolon"
           namaPria="Andhika Ramadhan Budiprasetya, ST"
           ortuPria="Putra dari Bpk. Budiprastiyo Doelrachman & Ibu Sri Murniati"
-          imagePathPria="/nindya-andhika/pria.jpg"
-          imagePathWanita="/nindya-andhika/wanita.jpg"
+          imagePathPria="/nindya-andhika/pria.png"
+          imagePathWanita="/nindya-andhika/wanita.png"
           bgColor="bg-nindya-andhika-gold"
           textColor="text-nurul-gold"
         />
