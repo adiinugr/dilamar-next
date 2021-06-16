@@ -120,7 +120,7 @@ const Page = ({ messages }) => {
   }, []);
 
   useEffect(() => {
-    setAudio(new Audio("/erni-gayuh/a-thousand-years.mp3"));
+    setAudio(new Audio("/nindya-andhika/carpenter-close-to-you.mp3"));
 
     return () => {
       if (audio) {
@@ -155,7 +155,7 @@ const Page = ({ messages }) => {
       setGuestBookError("Harus diisi semua ya!");
       setGuestBookIsLoading(false);
     } else {
-      const res = await fetch(`/api/erni-gayuh/comment`, {
+      const res = await fetch(`/api/nindya-andhika/comment`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -343,14 +343,17 @@ const Page = ({ messages }) => {
 };
 
 export async function getServerSideProps() {
-  const res = await fetch(`https://dilamar.vercel.app/api/erni-gayuh/comment`, {
-    method: "GET",
-    headers: {
-      "User-Agent":
-        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36",
-      Accept: "application/json; charset=UTF-8",
-    },
-  });
+  const res = await fetch(
+    `https://dilamar.vercel.app/api/nindya-andhika/comment`,
+    {
+      method: "GET",
+      headers: {
+        "User-Agent":
+          "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36",
+        Accept: "application/json; charset=UTF-8",
+      },
+    }
+  );
   const data = await res.json();
   const messages = await data.data;
 
