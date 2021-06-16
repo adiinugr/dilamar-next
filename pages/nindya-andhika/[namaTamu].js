@@ -198,7 +198,7 @@ const Page = ({ messages }) => {
         title="Nindya & Andhika Wedding Invitation"
         description="Kami mengundang Bapak/Ibu, saudara, dan rekan-rekan semua untuk hadir di acara pernikahan kami."
         link="https://dilamar.vercel.app/nindya-andhika/Nama+Tamu"
-        imagePath="/nindya-andhika/met-image.png"
+        imagePath="/nindya-andhika/meta-image.png"
       />
       <BottomMenuGeneral
         bgColor="bg-kharnisa-imam-silver"
