@@ -1,4 +1,7 @@
 import Image from "next/image";
+import dynamic from "next/dynamic";
+
+const Snowfall = dynamic(() => import("react-snowfall"), { ssr: false });
 
 export const HeroOne = ({ name, date, customColor, imagePath }) => {
   const containerClassName = () =>
@@ -48,22 +51,22 @@ export const HeroOne = ({ name, date, customColor, imagePath }) => {
 export const HeroTwo = ({
   name,
   date,
-  customColor,
+  bgColor = "bg-gray-200",
+  textColor = "text-gray-800",
+  nameTextSize = "text-5xl md:text-8xl",
   overlayColor,
   imagePath,
 }) => {
-  const containerClassName = () =>
-    customColor
-      ? `h-screen relative ${customColor} overflow-hidden`
-      : "h-screen relative bg-suta-seashell overflow-hidden";
-
   const overlayClassName = () =>
     overlayColor
       ? `h-full w-full ${overlayColor} absolute opacity-40`
-      : "h-full w-full bg-gray-800 absolute opacity-40";
+      : "h-full w-full absolute";
 
   return (
-    <div id="hero" className={containerClassName()}>
+    <div
+      id="hero"
+      className={`h-screen relative ${bgColor} ${textColor} overflow-hidden`}
+    >
       {imagePath && (
         <>
           <Image
@@ -76,12 +79,11 @@ export const HeroTwo = ({
         </>
       )}
 
-      <div
-        data-aos="fade-up"
-        className="h-full w-full absolute flex flex-col justify-center items-center"
-      >
-        <div className="text-2xl md:text-3xl font-semibold">The Wedding Of</div>
-        <div className="font-display text-5xl md:text-8xl my-4">{name}</div>
+      <Snowfall speed={[0.5, 0.8]} wind={[0, 0.5]} color="#D19515" />
+
+      <div className="h-full w-full absolute flex flex-col justify-center items-center">
+        <div className="text-xl md:text-3xl font-semibold">The Wedding Of</div>
+        <div className={`font-display ${nameTextSize} my-4`}>{name}</div>
         <div className="text-xl md:text-2xl">{date}</div>
       </div>
     </div>

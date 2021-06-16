@@ -102,32 +102,17 @@ export const NamaPengantinThree = ({
   namaWanita,
   ortuPria,
   ortuWanita,
-  customColor,
+  bgColor = "bg-gray-200",
+  textColor = "text-gray-800",
   imagePathPria,
   imagePathWanita,
 }) => {
-  const containerClassName = () =>
-    customColor
-      ? `${customColor} relative py-20 px-8 md:px-40 overflow-hidden`
-      : "relative bg-kharnisa-imam-rosegold text-suta-lapis-lazuli py-20 px-8 md:px-40 overflow-hidden";
-
   return (
-    <div id="couple" className={containerClassName()}>
+    <div
+      id="couple"
+      className={`relative ${bgColor} ${textColor} py-6 px-8 md:px-40 overflow-hidden`}
+    >
       <div className="flex flex-col items-center justify-center">
-        <div data-aos="zoom-in">
-          <div className="font-display text-4xl md:text-6xl text-center font-semibold mb-10">
-            <p>We Are</p>
-            <p>Getting Married</p>
-          </div>
-          <div className="mb-4 text-center">
-            Assalamu'alaikum Warahmatullahi Wabarakaatuh
-          </div>
-          <div className="mb-14 text-center">
-            Dengan memohon rahmat dan ridho Allah SWT yang telah menciptakan
-            makhluk-Nya secara berpasang-pasangan, kami bermaksud
-            menyelenggarakan acara pernikahan Putra/Putri kami
-          </div>
-        </div>
         <div
           className="flex flex-col md:flex-row w-full items-center font-body mb-8 md:mb-0"
           data-aos="fade-left"

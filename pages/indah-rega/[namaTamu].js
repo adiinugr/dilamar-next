@@ -100,6 +100,7 @@ const Page = ({ messages }) => {
       <div>
         <Modal
           isOpen={modalIsOpen}
+          closeTimeoutMS={500}
           ariaHideApp={false}
           className="absolute top-6 left-6 right-6 bottom-6 md:top-10 md:left-10 md:right-10 md:bottom-10 bg-gray-900"
         >

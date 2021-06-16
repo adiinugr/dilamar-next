@@ -15,10 +15,17 @@ import { GuestBookOne } from "../../components/invitation/GuestBook";
 import Terimakasih from "../../components/invitation/Terimakasih";
 import { OpeningModalTwo } from "../../components/invitation/OpeningModal";
 import { BottomMenuGeneral } from "../../components/BottomMenu";
-import { GalleryTwo } from "../../components/invitation/Gallery";
+import { GalleryList } from "../../components/invitation/Gallery";
 import PlayerButton from "../../components/PlayerButton";
 import QsArrum from "../../components/invitation/QsArrum";
 import DateCountdown from "../../components/invitation/DateCountdown";
+import {
+  HiOutlineCalendar,
+  HiOutlineHeart,
+  HiOutlineHome,
+  HiOutlinePhotograph,
+} from "react-icons/hi";
+import { BigTitle } from "../../components/BigTitle";
 
 const imageData = [
   {
@@ -68,25 +75,25 @@ const bottomMenuData = [
     id: 1,
     anchor: "hero",
     title: "Home",
-    imagePath: "/images/bottom-menu/house.png",
+    iconName: <HiOutlineHome size={26} />,
   },
   {
     id: 2,
     anchor: "couple",
     title: "Couple",
-    imagePath: "/images/bottom-menu/couple.png",
+    iconName: <HiOutlineHeart size={26} />,
   },
   {
     id: 3,
     anchor: "event",
     title: "Event",
-    imagePath: "/images/bottom-menu/calendar.png",
+    iconName: <HiOutlineCalendar size={26} />,
   },
   {
     id: 4,
     anchor: "gallery",
     title: "Gallery",
-    imagePath: "/images/bottom-menu/image.png",
+    iconName: <HiOutlinePhotograph size={26} />,
   },
 ];
 
@@ -184,7 +191,7 @@ const Page = ({ messages }) => {
         link="https://dilamar.vercel.app/erni-gayuh/Nama+Tamu"
         imagePath="/erni-gayuh/lanscape.png"
       />
-      <BottomMenuGeneral pattern="pattern2" bottomMenuData={bottomMenuData} />
+      <BottomMenuGeneral bgColor="pattern2" bottomMenuData={bottomMenuData} />
       {showPlayButton && (
         <PlayerButton
           handlePlayMusic={handlePlayMusic}
@@ -203,7 +210,8 @@ const Page = ({ messages }) => {
             namaTamu={tamu}
             namaPengantin="Erni & Gayuh"
             customColor="text-gray-50"
-            buttonCustomColor="bg-kharnisa-imam-rosegold text-gray-50"
+            buttonBgColor="bg-kharnisa-imam-rosegold"
+            buttonTextColor="text-gray-50"
             backgroundImagePath="/kharnisa-imam/flower2.jpg"
             coupleImagePath="/erni-gayuh/square.jpg"
             withOverlay
@@ -258,11 +266,17 @@ const Page = ({ messages }) => {
 
         <ProtokolKesehatan customColor="bg-kharnisa-imam-silver text-kharnisa-imam-rosegold" />
 
-        <GalleryTwo
+        <GalleryList
           imageData={imageData}
-          customColor="bg-kharnisa-imam-rosegold text-gray-200"
+          bgColor="bg-kharnisa-imam-rosegold"
+          textColor="text-gray-200"
         />
 
+        <BigTitle
+          title="Guest Book"
+          bgColor="bg-kharnisa-imam-silver"
+          textColor="text-kharnisa-imam-rosegold"
+        />
         <GuestBookOne
           comments={data}
           name={guestBookName}
@@ -272,10 +286,12 @@ const Page = ({ messages }) => {
           error={guestBookError}
           isLoading={guestBookIsLoading}
           handleSubmit={handleGuestBookSubmit}
-          customColor="bg-kharnisa-imam-silver text-kharnisa-imam-rosegold"
-          buttonCustomColor="bg-kharnisa-imam-rosegold text-kharnisa-imam-silver"
-          borderColor="border-kharnisa-imam-rosegold"
-          inputTextColor="text-kharnisa-imam-rosegold"
+          textColor="text-kharnisa-imam-rosegold"
+          bgColor="bg-kharnisa-imam-silver"
+          writeYourWishBorder="border-kharnisa-imam-rosegold border-2"
+          wishBorder="border-kharnisa-imam-rosegold border-t-2"
+          buttonBgColor="bg-kharnisa-imam-rosegold"
+          buttonTextColor="text-kharnisa-imam-silver"
         />
 
         <Terimakasih

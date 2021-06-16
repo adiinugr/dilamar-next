@@ -7,22 +7,22 @@ export const renderer = ({ days, hours, minutes, seconds, completed }) => {
     );
   } else {
     return (
-      <div className="flex items-center justify-between font-body">
-        <div className="text-center">
-          <p className="text-xl md:text-3xl font-medium">{days}</p>
+      <div className="grid grid-cols-4 gap-4 items-center justify-between font-body">
+        <div className="text-center rounded-lg border p-2 border-gray-100">
+          <p className="text-lg md:text-3xl font-medium">{days}</p>
           <p>Day(s)</p>
         </div>
-        <div className="text-center">
-          <p className="text-xl md:text-3xl font-medium">{hours}</p>
+        <div className="text-center rounded-lg border p-2 border-gray-100">
+          <p className="text-lg md:text-3xl font-medium">{hours}</p>
           <p>Hour(s)</p>
         </div>
-        <div className="text-center">
-          <p className="text-xl md:text-3xl font-medium">{minutes}</p>
-          <p>Minute(s)</p>
+        <div className="text-center rounded-lg border p-2 border-gray-100">
+          <p className="text-lg md:text-3xl font-medium">{minutes}</p>
+          <p>Min(s)</p>
         </div>
-        <div className="text-center">
-          <p className="text-xl md:text-3xl font-medium">{seconds}</p>
-          <p>Second(s)</p>
+        <div className="text-center rounded-lg border p-2 border-gray-100">
+          <p className="text-lg md:text-3xl font-medium">{seconds}</p>
+          <p>Sec(s)</p>
         </div>
       </div>
     );

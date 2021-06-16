@@ -2,6 +2,13 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Aos from "aos";
 import Modal from "react-modal";
+import {
+  HiOutlineBookOpen,
+  HiOutlineCalendar,
+  HiOutlineHeart,
+  HiOutlineHome,
+  HiOutlinePhotograph,
+} from "react-icons/hi";
 
 import "aos/dist/aos.css";
 
@@ -11,13 +18,83 @@ import ProtokolKesehatan from "../../components/ProtokolKesehatan";
 import { HeroTwo } from "../../components/invitation/Hero";
 import { NamaPengantinThree } from "../../components/invitation/NamaPengantin";
 import { WaktuAlamatAcaraTwo } from "../../components/invitation/WaktuAlamatAcara";
-import { GuestBookTwo } from "../../components/invitation/GuestBook";
+import {
+  GuestBookOne,
+  GuestBookTwo,
+} from "../../components/invitation/GuestBook";
 import Terimakasih from "../../components/invitation/Terimakasih";
 import { OpeningModalTwo } from "../../components/invitation/OpeningModal";
-import BottomMenu from "../../components/BottomMenu";
+import { BottomMenuGeneral } from "../../components/BottomMenu";
 import RSVP from "../../components/invitation/RSVP";
-import { GalleryOne } from "../../components/invitation/Gallery";
+import { GalleryList, GalleryOne } from "../../components/invitation/Gallery";
 import PlayerButton from "../../components/PlayerButton";
+import { BigTitle } from "../../components/BigTitle";
+
+const bottomMenuData = [
+  {
+    id: 1,
+    anchor: "hero",
+    title: "Home",
+    iconName: <HiOutlineHome size={26} />,
+  },
+  {
+    id: 2,
+    anchor: "couple",
+    title: "Couple",
+    iconName: <HiOutlineHeart size={26} />,
+  },
+  {
+    id: 3,
+    anchor: "event",
+    title: "Event",
+    iconName: <HiOutlineCalendar size={26} />,
+  },
+  {
+    id: 4,
+    anchor: "gallery",
+    title: "Gallery",
+    iconName: <HiOutlinePhotograph size={26} />,
+  },
+  {
+    id: 5,
+    anchor: "rsvp",
+    title: "RSVP",
+    iconName: <HiOutlineBookOpen size={26} />,
+  },
+];
+
+const imageData = [
+  {
+    id: 1,
+    type: "image",
+    src: "/kharnisa-imam/couple.png",
+  },
+  {
+    id: 2,
+    type: "image",
+    src: "/kharnisa-imam/couple2.png",
+  },
+  {
+    id: 3,
+    type: "image",
+    src: "/kharnisa-imam/couple3.png",
+  },
+  {
+    id: 4,
+    type: "image",
+    src: "/kharnisa-imam/couple4.png",
+  },
+  {
+    id: 5,
+    type: "image",
+    src: "/kharnisa-imam/couple5.png",
+  },
+  {
+    id: 6,
+    type: "video",
+    videoId: "n9uIqjzZS_4",
+  },
+];
 
 const Page = ({ messages }) => {
   const [date] = useState("2021-04-04T16:00:00.000+07:00");
@@ -130,7 +207,6 @@ const Page = ({ messages }) => {
         body: JSON.stringify({
           name: rsvpName,
           status: rsvpStatus,
-          // message: rsvpMessage,
         }),
       });
 
@@ -140,7 +216,6 @@ const Page = ({ messages }) => {
 
       setRsvpName("");
       setRsvpStatus("");
-      // setRsvpMessage("");
     }
   };
 
@@ -152,7 +227,11 @@ const Page = ({ messages }) => {
         link="https://dilamar.vercel.app/kharnisa-imam"
         imagePath="/kharnisa-imam/couple-square.png"
       />
-      <BottomMenu />
+      <BottomMenuGeneral
+        textColor="text-kharnisa-imam-gold"
+        bgColor="bg-kharnisa-imam-silver"
+        bottomMenuData={bottomMenuData}
+      />
       {showPlayButton && (
         <PlayerButton
           handlePlayMusic={handlePlayMusic}
@@ -212,7 +291,11 @@ const Page = ({ messages }) => {
 
         <ProtokolKesehatan customColor="bg-kharnisa-imam-silver text-kharnisa-imam-gold" />
 
-        <GalleryOne />
+        <GalleryList
+          imageData={imageData}
+          bgColor="bg-kharnisa-imam-silver"
+          textColor="text-kharnisa-imam-gold py-10"
+        />
 
         <RSVP
           name={rsvpName}
@@ -227,20 +310,29 @@ const Page = ({ messages }) => {
           handleSubmit={handleRsvpSubmit}
         />
 
-        <GuestBookTwo
-          comments={data}
-          name={guestBookName}
-          setName={(e) => setGuestBookName(e.target.value)}
-          comment={guestBookComment}
-          setComment={(e) => setGuestBookComment(e.target.value)}
-          error={guestBookError}
-          isLoading={guestBookIsLoading}
-          handleSubmit={handleGuestBookSubmit}
-          customColor="bg-kharnisa-imam-silver text-kharnisa-imam-gold"
-          buttonCustomColor="bg-kharnisa-imam-gold text-kharnisa-imam-silver"
-          borderColor="border-kharnisa-imam-gold"
-          inputTextColor="text-gray-600"
-        />
+        <div className="px-14 md:w-2/4 py-10 bg-kharnisa-imam-silver">
+          <BigTitle
+            title="Guest Book"
+            bgColor="pattern2"
+            textColor="text-kharnisa-imam-gold"
+          />
+          <GuestBookOne
+            comments={data}
+            name={guestBookName}
+            setName={(e) => setGuestBookName(e.target.value)}
+            comment={guestBookComment}
+            setComment={(e) => setGuestBookComment(e.target.value)}
+            error={guestBookError}
+            isLoading={guestBookIsLoading}
+            handleSubmit={handleGuestBookSubmit}
+            bgColor="pattern2"
+            textColor="text-kharnisa-imam-gold"
+            writeYourWishBorder="border border-kharnisa-imam-gold"
+            wishBorder="border-t-2 border-kharnisa-imam-gold"
+            buttonBgColor="bg-kharnisa-imam-gold"
+            buttonTextColor="text-gray-200"
+          />
+        </div>
 
         <Terimakasih
           namaPengantin="Kharnisa & Imam"
