@@ -10,11 +10,7 @@ import InvitationHead from "../../components/InvitationHead";
 import ProtokolKesehatan from "../../components/ProtokolKesehatan";
 import { HeroTwo } from "../../components/invitation/Hero";
 import { NamaPengantinThree } from "../../components/invitation/NamaPengantin";
-import {
-  WaktuAlamatAcaraFour,
-  WaktuAlamatAcaraOne,
-  WaktuAlamatAcaraThree,
-} from "../../components/invitation/WaktuAlamatAcara";
+import { WaktuAlamatAcaraFour } from "../../components/invitation/WaktuAlamatAcara";
 import { GuestBookOne } from "../../components/invitation/GuestBook";
 import Terimakasih from "../../components/invitation/Terimakasih";
 import { OpeningModalTwo } from "../../components/invitation/OpeningModal";
@@ -58,6 +54,21 @@ const imageData = [
   },
   {
     id: 6,
+    type: "image",
+    src: "/nindya-andhika/picture6.png",
+  },
+  {
+    id: 7,
+    type: "image",
+    src: "/nindya-andhika/picture7.png",
+  },
+  {
+    id: 7,
+    type: "image",
+    src: "/nindya-andhika/picture8.png",
+  },
+  {
+    id: 7,
     type: "image",
     src: "/nindya-andhika/picture9.png",
   },
@@ -187,7 +198,7 @@ const Page = ({ messages }) => {
         title="Nindya & Andhika Wedding Invitation"
         description="Kami mengundang Bapak/Ibu, saudara, dan rekan-rekan semua untuk hadir di acara pernikahan kami."
         link="https://dilamar.vercel.app/nindya-andhika/Nama+Tamu"
-        imagePath="/erni-gayuh/lanscape.png"
+        imagePath="/nindya-andhika/met-image.png"
       />
       <BottomMenuGeneral
         bgColor="bg-kharnisa-imam-silver"
@@ -227,6 +238,7 @@ const Page = ({ messages }) => {
         />
 
         <BigTitle
+          anchorId="couple"
           title="We Are Getting Married"
           textSize="text-3xl md:text-5xl"
           bgColor="bg-nindya-andhika-gold"
@@ -251,6 +263,7 @@ const Page = ({ messages }) => {
         />
 
         <BigTitle
+          anchorId="event"
           title="Akad & Resepsi"
           textSize="text-3xl md:text-5xl"
           bgColor="bg-nindya-andhika-gold"
@@ -291,6 +304,7 @@ const Page = ({ messages }) => {
         />
 
         <BigTitle
+          anchorId="gallery"
           title="Our Gallery"
           textSize="text-3xl md:text-5xl"
           bgColor="bg-nindya-andhika-gold"
@@ -332,7 +346,7 @@ const Page = ({ messages }) => {
         <Terimakasih
           namaPengantin="Nindya & Andhika"
           bgColor="bg-nurul-gold"
-          textColor="text-gray-800"
+          textColor="text-gray-100"
         />
 
         <Footer />

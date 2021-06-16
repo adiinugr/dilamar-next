@@ -1,5 +1,6 @@
 export const BigTitle = ({
   title,
+  anchorId,
   bgColor = "bg-gray-200",
   textColor = "text-gray-800",
   textSize = "text-4xl",
@@ -7,7 +8,10 @@ export const BigTitle = ({
   borderColor = "border-gray-800",
 }) => {
   return (
-    <div className={`${bgColor} ${textColor} pt-16 pb-2 flex justify-center`}>
+    <div
+      id={anchorId}
+      className={`${bgColor} ${textColor} pt-16 pb-2 flex justify-center`}
+    >
       <div
         data-aos="zoom-in"
         className={`${textSize} ${fontStyle} py-2 border-t border-b ${borderColor}`}

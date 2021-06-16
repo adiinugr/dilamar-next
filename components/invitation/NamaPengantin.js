@@ -109,7 +109,6 @@ export const NamaPengantinThree = ({
 }) => {
   return (
     <div
-      id="couple"
       className={`relative ${bgColor} ${textColor} py-6 px-8 md:px-40 overflow-hidden`}
     >
       <div className="flex flex-col items-center justify-center">
