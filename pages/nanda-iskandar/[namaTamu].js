@@ -9,7 +9,10 @@ import Footer from "../../components/Footer";
 import InvitationHead from "../../components/InvitationHead";
 import ProtokolKesehatan from "../../components/ProtokolKesehatan";
 import { HeroTwo } from "../../components/invitation/Hero";
-import { NamaPengantin1 } from "../../components/invitation/NamaPengantin";
+import {
+  NamaPengantin1,
+  NamaPengantinThree,
+} from "../../components/invitation/NamaPengantin";
 import DateCountdown from "../../components/invitation/DateCountdown";
 import { WaktuAlamatAcaraFour } from "../../components/invitation/WaktuAlamatAcara";
 import Terimakasih from "../../components/invitation/Terimakasih";
@@ -19,7 +22,7 @@ import QsArrum from "../../components/invitation/QsArrum";
 import PlayerButton from "../../components/PlayerButton";
 
 const Page = ({ messages }) => {
-  const [date] = useState("2021-06-05T11:00:00.000+07:00");
+  const [date] = useState("2021-07-16T16:00:00.000+07:00");
 
   const [data, setData] = useState(messages);
 
@@ -27,10 +30,10 @@ const Page = ({ messages }) => {
   const { namaTamu } = router.query;
   const tamu = namaTamu.replace("+", " ");
 
-  const [name, setName] = useState("");
-  const [comment, setComment] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [guestBookName, setGuestBookName] = useState("");
+  const [guestBookComment, setGuestBookComment] = useState("");
+  const [guestBookIsLoading, setGuestBookIsLoading] = useState(false);
+  const [guestBookError, setGuestBookError] = useState("");
 
   const [modalIsOpen, setModalIsOpen] = useState(true);
 
@@ -68,47 +71,48 @@ const Page = ({ messages }) => {
     setIsAudioPlaying(false);
   };
 
-  const handleSubmit = async (event) => {
+  const handleGuestBookSubmit = async (event) => {
     event.preventDefault();
 
-    setIsLoading(true);
+    setGuestBookIsLoading(true);
 
-    if (name === "" && comment === "") {
-      setError("Harus diisi semua ya!");
+    if (guestBookName === "" && guestBookComment === "") {
+      setGuestBookError("Harus diisi semua ya!");
+      setGuestBookIsLoading(false);
     } else {
-      const res = await fetch(`/api/metta-adi/comment`, {
+      const res = await fetch(`/api/nindya-andhika/comment`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          name,
-          message: comment,
+          name: guestBookName,
+          message: guestBookComment,
         }),
       });
 
       setData((prevData) => [
         ...prevData,
         {
-          name,
-          message: comment,
+          name: guestBookName,
+          message: guestBookComment,
         },
       ]);
 
-      setIsLoading(false);
+      setGuestBookIsLoading(false);
 
-      setName("");
-      setComment("");
+      setGuestBookName("");
+      setGuestBookComment("");
     }
   };
 
   return (
     <>
       <InvitationHead
-        title="Metta & Adi Wedding Invitation"
+        title="Nanda & Iskandar Wedding Invitation"
         description="Kami mengundang Bapak/Ibu, saudara, dan rekan-rekan semua untuk hadir di acara pernikahan kami."
-        link="https://dilamar.vercel.app/metta-adi/Nama+Tamu"
-        imagePath="/metta-adi/lanscape.jpg"
+        link="https://dilamar.vercel.app/nanda-iskandar/Nama+Tamu"
+        imagePath="/nanda-iskandar/picture2.jpg"
       />
       {showPlayButton && (
         <PlayerButton
@@ -121,80 +125,95 @@ const Page = ({ messages }) => {
         <Modal
           isOpen={modalIsOpen}
           ariaHideApp={false}
+          closeTimeoutMS={500}
           className="absolute top-6 left-6 right-6 bottom-6 md:top-10 md:left-10 md:right-10 md:bottom-10 bg-gray-900"
         >
           <OpeningModalOne
             handleOpenModal={handleOpenModal}
             namaTamu={tamu}
-            namaPengantin="Metta & Adi"
-            customColor="text-gray-50"
-            buttonCustomColor="bg-gray-100 text-gray-800 bg-opacity-80"
-            backgroundImagePath="/metta-adi/roses.jpg"
+            namaPengantin="Nanda & Iskandar"
+            textColor="text-gray-100"
+            buttonBgColor="bg-nurul-gold"
+            buttonTextColor="text-kharnisa-imam-silver"
+            backgroundImagePath="/nanda-iskandar/picture3.jpeg"
             withOverlay
           />
         </Modal>
 
         <HeroTwo
-          name="Metta & Adi"
-          date="05 Juni 2021"
-          imagePath="/metta-adi/roses.jpg"
+          name="Nanda & Iskandar"
+          date="16 Juli 2021"
+          textColor="text-gray-100"
+          imagePath="/nanda-iskandar/picture1.jpeg"
           customColor="text-may-kamal-platinum"
+          overlayColor="bg-gray-700"
+          snowColor="#FFFFFF"
         />
 
-        <QsArrum
-          bgColor="bg-kharnisa-imam-rosegold"
-          textColor="text-gray-200"
-        />
+        <QsArrum bgColor="bg-nurul-gold" textColor="text-gray-200" />
 
-        <NamaPengantin1
-          namaWanita="Metta Permatasari"
-          ortuWanita="Putri dari Bpk. Harun & Ibu Rudatin Endah Wibowanti"
-          namaPria="Adi Nugroho"
-          ortuPria="Putra dari Bpk. Purwadi & Ibu Puji Astuti"
-          customColor="bg-gray-700 text-gray-200"
+        <NamaPengantinThree
+          namaWanita="Nanda Aristya"
+          ortuWanita="Putri Pertama dari Bpk. Djainul Arifin & Ibu Soepiyah"
+          namaPria="Moch. Iskandar"
+          ortuPria="Putra Kedua dari Bpk. H. Akdor & Ibu Hj. Saedah"
+          imagePathPria="/nanda-iskandar/pria.jpeg"
+          imagePathWanita="/nanda-iskandar/wanita.jpeg"
+          bgColor="bg-nindya-andhika-gold"
+          textColor="text-nurul-gold"
         />
 
         <DateCountdown
           date={date}
-          bgColor="bg-gray-600"
+          bgColor="bg-nurul-gold"
           textColor="text-gray-200"
         />
 
         <WaktuAlamatAcaraFour
-          tanggalAkad="Sabtu, 05 Juni 2021"
-          waktuAkad="Pukul 08.00 WIB - Selesai"
-          tanggalResepsi="Sabtu, 05 Juni 2021"
-          waktuResepsi="Pukul 11.00 WIB - 13.00 WIB"
-          namaTempat="Bekasi Convention Center"
-          alamatTempat="Jl. Ahmad Yani, No 1, Marga Jaya, Kec. Bekasi Selatan, Kota Bekasi"
-          googleMapsUri="https://maps.app.goo.gl/RRvQ8dWpvckv4BKb8"
-          lat={-6.24926}
-          lng={106.99241}
-          customColor="bg-may-kamal-american-silver text-gray-200"
-          buttonCustomColor="bg-gray-800 text-gray-200"
-          bgImagePath="/metta-adi/roses.jpg"
+          bgColor="bg-nindya-andhika-gold"
+          textColor="text-nurul-gold"
+          overlayBgColor="bg-gray-50"
+          akadImagePath="/nanda-iskandar/picture2.jpeg"
+          resepsiImagePath="/nanda-iskandar/picture1.jpeg"
+          tanggalAkad="Jumat, 16 Juli 2021"
+          waktuAkad="Pukul 07.00 - Selesai"
+          tanggalResepsi="Jumat, 16 Juli 2021"
+          waktuResepsiSesi1="Pukul 16.00 - Selesai"
+          namaTempat="Kediaman Mempelai Putri"
+          alamatTempat="Wedoro Candi 1 / Timpian No. 29 RT 03 RW 06 Waru-Sidoarjo"
+          googleMapsUri="https://goo.gl/maps/Hzmk2VzmSDfViFFr9"
+          lat={-7.35101}
+          lng={112.7474}
+          buttonBgColor="bg-nurul-gold"
+          buttonTextColor="text-kharnisa-imam-silver"
         />
 
-        <ProtokolKesehatan customColor="bg-kharnisa-imam-rosegold text-gray-200" />
+        <ProtokolKesehatan
+          bgColor="bg-nindya-andhika-gold"
+          textColor="text-nurul-gold"
+        />
 
         <GuestBookOne
           comments={data}
-          name={name}
-          setName={(e) => setName(e.target.value)}
-          comment={comment}
-          setComment={(e) => setComment(e.target.value)}
-          error={error}
-          isLoading={isLoading}
-          handleSubmit={handleSubmit}
-          customColor="bg-gray-800 text-gray-200"
-          borderColor="border-gray-200"
-          buttonCustomColor="bg-gray-300 text-gray-800"
-          inputTextColor="text-gray-800"
+          name={guestBookName}
+          setName={(e) => setGuestBookName(e.target.value)}
+          comment={guestBookComment}
+          setComment={(e) => setGuestBookComment(e.target.value)}
+          error={guestBookError}
+          isLoading={guestBookIsLoading}
+          handleSubmit={handleGuestBookSubmit}
+          textColor="text-nurul-gold"
+          bgColor="bg-nindya-andhika-gold"
+          writeYourWishBorder="border-nurul-gold border-2"
+          wishBorder="border-nurul-gold border-t-2"
+          buttonBgColor="bg-nurul-gold"
+          buttonTextColor="text-kharnisa-imam-silver"
         />
 
         <Terimakasih
-          namaPengantin="Metta & Adi"
-          customColor="bg-may-kamal-platinum text-gray-800"
+          namaPengantin="Nanda & Iskandar"
+          bgColor="bg-nurul-gold"
+          textColor="text-gray-100"
         />
 
         <Footer />
@@ -204,14 +223,17 @@ const Page = ({ messages }) => {
 };
 
 export async function getServerSideProps() {
-  const res = await fetch(`https://dilamar.vercel.app/api/metta-adi/comment`, {
-    method: "GET",
-    headers: {
-      "User-Agent":
-        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36",
-      Accept: "application/json; charset=UTF-8",
-    },
-  });
+  const res = await fetch(
+    `https://dilamar.vercel.app/api/nanda-iskandar/comment`,
+    {
+      method: "GET",
+      headers: {
+        "User-Agent":
+          "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36",
+        Accept: "application/json; charset=UTF-8",
+      },
+    }
+  );
   const data = await res.json();
   const messages = await data.data;
 

@@ -50,6 +50,7 @@ export const OpeningModalOne = ({
     </div>
   );
 };
+
 export const OpeningModalTwo = ({
   handleOpenModal,
   namaTamu,

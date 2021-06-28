@@ -56,6 +56,7 @@ export const HeroTwo = ({
   nameTextSize = "text-5xl md:text-8xl",
   overlayColor,
   imagePath,
+  snowColor = "#D19515",
 }) => {
   const overlayClassName = () =>
     overlayColor
@@ -79,7 +80,7 @@ export const HeroTwo = ({
         </>
       )}
 
-      <Snowfall speed={[0.5, 0.8]} wind={[0, 0.5]} color="#D19515" />
+      <Snowfall speed={[0.5, 0.8]} wind={[0, 0.5]} color={snowColor} />
 
       <div className="h-full w-full absolute flex flex-col justify-center items-center">
         <div className="text-xl md:text-3xl font-semibold">The Wedding Of</div>
