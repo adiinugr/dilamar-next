@@ -46,7 +46,7 @@ const Page = ({ messages }) => {
   }, []);
 
   useEffect(() => {
-    setAudio(new Audio("/metta-adi/beautiful-in-white.mp3"));
+    setAudio(new Audio("/nanda-iskandar/shania-twain-youre-still-the-one.mp3"));
 
     return () => {
       if (audio) {
@@ -80,7 +80,7 @@ const Page = ({ messages }) => {
       setGuestBookError("Harus diisi semua ya!");
       setGuestBookIsLoading(false);
     } else {
-      const res = await fetch(`/api/nindya-andhika/comment`, {
+      const res = await fetch(`/api/nanda-iskandar/comment`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
