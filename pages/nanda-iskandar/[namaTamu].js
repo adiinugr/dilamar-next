@@ -112,7 +112,7 @@ const Page = ({ messages }) => {
         title="Nanda & Iskandar Wedding Invitation"
         description="Kami mengundang Bapak/Ibu, saudara, dan rekan-rekan semua untuk hadir di acara pernikahan kami."
         link="https://dilamar.vercel.app/nanda-iskandar/Nama+Tamu"
-        imagePath="/nanda-iskandar/picture2.jpeg"
+        imagePath="/nanda-iskandar/meta-image.jpeg"
       />
       {showPlayButton && (
         <PlayerButton
