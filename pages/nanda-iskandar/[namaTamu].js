@@ -119,6 +119,7 @@ const Page = ({ messages }) => {
           handlePlayMusic={handlePlayMusic}
           handlePauseMusic={handlePauseMusic}
           isAudioPlaying={isAudioPlaying}
+          uar
         />
       )}
       <div>
@@ -176,7 +177,7 @@ const Page = ({ messages }) => {
           akadImagePath="/nanda-iskandar/picture2.jpeg"
           resepsiImagePath="/nanda-iskandar/picture1.jpeg"
           tanggalAkad="Jumat, 16 Juli 2021"
-          waktuAkad="Pukul 07.00 - Selesai"
+          waktuAkad="Pukul 08.00 - Selesai"
           tanggalResepsi="Jumat, 16 Juli 2021"
           waktuResepsiSesi1="Pukul 16.00 - Selesai"
           namaTempat="Kediaman Mempelai Putri"

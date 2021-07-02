@@ -34,7 +34,7 @@ export const OpeningModalOne = ({
           <p className="uppercase text-2xl mt-2 mb-8">{namaTamu}</p>
           <p>you are invited to</p>
         </div>
-        <div className="font-display text-5xl md:text-7xl my-4">
+        <div className="font-display text-4xl md:text-7xl my-4">
           {namaPengantin}
         </div>
         <div className="text-xl md:text-2xl font-semibold">
