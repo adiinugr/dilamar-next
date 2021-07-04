@@ -13,7 +13,7 @@ import { NamaPengantinThree } from "../../components/invitation/NamaPengantin";
 import { WaktuAlamatAcaraFour } from "../../components/invitation/WaktuAlamatAcara";
 import { GuestBookOne } from "../../components/invitation/GuestBook";
 import Terimakasih from "../../components/invitation/Terimakasih";
-import { OpeningModalTwo } from "../../components/invitation/OpeningModal";
+import { OpeningModalNoInvitation } from "../../components/invitation/OpeningModal";
 import { BottomMenuGeneral } from "../../components/BottomMenu";
 import { GalleryList } from "../../components/invitation/Gallery";
 import PlayerButton from "../../components/PlayerButton";
@@ -25,6 +25,7 @@ import {
   HiOutlinePhotograph,
 } from "react-icons/hi";
 import { BigTitle } from "../../components/BigTitle";
+import { TidakMengundang } from "../../components/invitation/QuranAyat";
 
 const imageData = [
   {
@@ -195,8 +196,10 @@ const Page = ({ messages }) => {
   return (
     <>
       <InvitationHead
-        title="Nindya & Andhika Wedding Invitation"
-        description="Kami mengundang Bapak/Ibu, saudara, dan rekan-rekan semua untuk hadir di acara pernikahan kami."
+        title="Nindya & Andhika Wedding"
+        description="Mohon doa restu atas
+          pernikahan kami berdua. Tak lupa kami memohon maaf apa bila tidak
+          dapat memberikan undangan, karena keadaan yang tidak memungkinkan."
         link="https://dilamar.vercel.app/nindya-andhika/Nama+Tamu"
         imagePath="/nindya-andhika/meta-image.png"
       />
@@ -219,7 +222,7 @@ const Page = ({ messages }) => {
           ariaHideApp={false}
           className="absolute top-0 left-0 right-0 bottom-0"
         >
-          <OpeningModalTwo
+          <OpeningModalNoInvitation
             handleOpenModal={handleOpenModal}
             namaTamu={tamu}
             textColor="text-nurul-gold"
@@ -236,6 +239,8 @@ const Page = ({ messages }) => {
           nameTextSize="text-4xl md:text-8xl"
           imagePath="/bg-gold/bg-gold-1.png"
         />
+
+        <TidakMengundang bgColor="bg-nurul-gold" textColor="text-gray-200" />
 
         <BigTitle
           anchorId="couple"
@@ -264,7 +269,7 @@ const Page = ({ messages }) => {
 
         <BigTitle
           anchorId="event"
-          title="Akad & Resepsi"
+          title="Akad"
           textSize="text-3xl md:text-5xl"
           bgColor="bg-nindya-andhika-gold"
           textColor="text-nurul-gold"
@@ -281,13 +286,14 @@ const Page = ({ messages }) => {
           waktuAkad="Pukul 08.00 - selesai"
           tanggalResepsi="Minggu, 11 Juli 2021"
           waktuResepsiSesi1="Pukul 11.00 - 13.00 WIB"
-          namaTempat="Masjid Jami’ Al Muhajirin"
-          alamatTempat="Jl. Utama Raya Perumahan Duren Jaya RT.004/RW.010, Duren Jaya, Bekasi Timur"
-          googleMapsUri="https://goo.gl/maps/Dphejb3SEx6mgaGY8"
-          lat={-6.23774}
-          lng={107.02059}
+          namaTempat="KUA Bekasi Timur"
+          alamatTempat="RT.001/RW.010, Bekasi Jaya, Kec. Bekasi Tim., Kota Bks, Jawa Barat 17113"
+          googleMapsUri="https://www.google.com/search?safe=strict&tbs=lf:1,lf_ui:2&tbm=lcl&sxsrf=ALeKk00ALT5JtxjB3n_ERzONvJ7nySLdoA:1625402118018&q=kua+bekasi+timur&rflfq=1&num=10&ved=2ahUKEwjcwvHetsnxAhVaaCsKHW8oCLUQtgN6BAgPEAQ#rlfi=hd:;si:1415445948945370345;mv:[[-6.233572297438537,107.01194396972807],[-6.2354814009111195,107.00686923027189],null,[-6.234526850043482,107.00940659999998],18]"
+          lat={-6.2340109664371735}
+          lng={107.00968908618594}
           buttonBgColor="bg-nurul-gold"
           buttonTextColor="text-kharnisa-imam-silver"
+          isResepsi={false}
         />
 
         <BigTitle

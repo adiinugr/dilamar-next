@@ -25,3 +25,26 @@ export const QsAnNur32 = ({ bgColor, textColor }) => {
     </div>
   );
 };
+export const TidakMengundang = ({ bgColor, textColor }) => {
+  const containerClassName = () =>
+    bgColor && textColor
+      ? `${bgColor} ${textColor} py-16 flex flex-col items-center justify-center overflow-hidden`
+      : "bg-suta-gunmetal text-gray-300 py-16 flex flex-col items-center justify-center overflow-hidden";
+
+  return (
+    <div className={containerClassName()}>
+      <div
+        data-aos="zoom-in"
+        className="w-3/4 flex flex-col items-center justify-center"
+      >
+        <GoBook size={80} className=" mb-4" />
+        <p className="text-center mb-2 ">
+          Bapak/ Ibu/ Saudara/ i yang kami hormati. Mohon doa restu atas
+          pernikahan kami berdua. Tak lupa kami memohon maaf apa bila tidak
+          dapat memberikan undangan, karena keadaan yang tidak memungkinkan.
+        </p>
+        <p className="font-medium">Nindya & Andhika</p>
+      </div>
+    </div>
+  );
+};
