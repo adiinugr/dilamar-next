@@ -283,7 +283,7 @@ const Page = ({ messages }) => {
           akadImagePath="/nindya-andhika/picture2.png"
           resepsiImagePath="/nindya-andhika/picture6.png"
           tanggalAkad="Minggu, 11 Juli 2021"
-          waktuAkad="Pukul 08.00 - selesai"
+          waktuAkad="Pukul 10.00 - 11.00 WIB"
           tanggalResepsi="Minggu, 11 Juli 2021"
           waktuResepsiSesi1="Pukul 11.00 - 13.00 WIB"
           namaTempat="KUA Bekasi Timur"
