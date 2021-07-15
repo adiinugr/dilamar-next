@@ -1,4 +1,4 @@
-import { GoBook } from "react-icons/go";
+import { IoIosWarning } from "react-icons/io";
 
 export const QsAnNur32 = ({ bgColor, textColor }) => {
   const containerClassName = () =>
@@ -37,7 +37,7 @@ export const TidakMengundang = ({ bgColor, textColor }) => {
         data-aos="zoom-in"
         className="w-3/4 flex flex-col items-center justify-center"
       >
-        <GoBook size={80} className=" mb-4" />
+        <IoIosWarning size={80} className=" mb-4" />
         <p className="text-center mb-2 ">
           Bapak/ Ibu/ Saudara/ i yang kami hormati. Mohon doa restu atas
           pernikahan kami berdua. Tak lupa kami memohon maaf apa bila tidak

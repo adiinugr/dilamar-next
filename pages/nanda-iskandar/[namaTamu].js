@@ -16,10 +16,14 @@ import {
 import DateCountdown from "../../components/invitation/DateCountdown";
 import { WaktuAlamatAcaraFour } from "../../components/invitation/WaktuAlamatAcara";
 import Terimakasih from "../../components/invitation/Terimakasih";
-import { OpeningModalOne } from "../../components/invitation/OpeningModal";
+import {
+  OpeningModalNoInvitation,
+  OpeningModalOne,
+} from "../../components/invitation/OpeningModal";
 import { GuestBookOne } from "../../components/invitation/GuestBook";
 import QsArrum from "../../components/invitation/QsArrum";
 import PlayerButton from "../../components/PlayerButton";
+import { TidakMengundang } from "../../components/invitation/QuranAyat";
 
 const Page = ({ messages }) => {
   const [date] = useState("2021-07-16T16:00:00.000+07:00");
@@ -109,8 +113,10 @@ const Page = ({ messages }) => {
   return (
     <>
       <InvitationHead
-        title="Nanda & Iskandar Wedding Invitation"
-        description="Kami mengundang Bapak/Ibu, saudara, dan rekan-rekan semua untuk hadir di acara pernikahan kami."
+        title="Nanda & Iskandar Wedding"
+        description="Mohon doa restu atas
+          pernikahan kami berdua. Tak lupa kami memohon maaf apa bila tidak
+          dapat memberikan undangan, karena keadaan yang tidak memungkinkan."
         link="https://dilamar.vercel.app/nanda-iskandar/Nama+Tamu"
         imagePath="/nanda-iskandar/meta-image.jpeg"
       />
@@ -125,14 +131,13 @@ const Page = ({ messages }) => {
       <div>
         <Modal
           isOpen={modalIsOpen}
-          ariaHideApp={false}
           closeTimeoutMS={500}
-          className="absolute top-6 left-6 right-6 bottom-6 md:top-10 md:left-10 md:right-10 md:bottom-10 bg-gray-900"
+          ariaHideApp={false}
+          className="absolute top-0 left-0 right-0 bottom-0"
         >
-          <OpeningModalOne
+          <OpeningModalNoInvitation
             handleOpenModal={handleOpenModal}
             namaTamu={tamu}
-            namaPengantin="Nanda & Iskandar"
             textColor="text-gray-100"
             buttonBgColor="bg-nurul-gold"
             buttonTextColor="text-kharnisa-imam-silver"
@@ -149,6 +154,11 @@ const Page = ({ messages }) => {
           customColor="text-may-kamal-platinum"
           overlayColor="bg-gray-700"
           snowColor="#FFFFFF"
+        />
+
+        <TidakMengundang
+          bgColor="bg-nindya-andhika-gold"
+          textColor="text-nurul-gold"
         />
 
         <QsArrum bgColor="bg-nurul-gold" textColor="text-gray-200" />
@@ -177,7 +187,7 @@ const Page = ({ messages }) => {
           akadImagePath="/nanda-iskandar/picture2.jpeg"
           resepsiImagePath="/nanda-iskandar/picture1.jpeg"
           tanggalAkad="Jumat, 16 Juli 2021"
-          waktuAkad="Pukul 08.00 - Selesai"
+          waktuAkad="Pukul 06.30 - Selesai"
           tanggalResepsi="Jumat, 16 Juli 2021"
           waktuResepsiSesi1="Pukul 16.00 - Selesai"
           namaTempat="Kediaman Mempelai Putri"
@@ -187,6 +197,7 @@ const Page = ({ messages }) => {
           lng={112.7474}
           buttonBgColor="bg-nurul-gold"
           buttonTextColor="text-kharnisa-imam-silver"
+          isResepsi={false}
         />
 
         <ProtokolKesehatan
