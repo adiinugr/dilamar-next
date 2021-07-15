@@ -240,7 +240,11 @@ const Page = ({ messages }) => {
           imagePath="/bg-gold/bg-gold-1.png"
         />
 
-        <TidakMengundang bgColor="bg-nurul-gold" textColor="text-gray-200" />
+        <TidakMengundang
+          bgColor="bg-nurul-gold"
+          textColor="text-gray-200"
+          name="Nindya & Andhika"
+        />
 
         <BigTitle
           anchorId="couple"

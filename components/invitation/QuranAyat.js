@@ -25,7 +25,7 @@ export const QsAnNur32 = ({ bgColor, textColor }) => {
     </div>
   );
 };
-export const TidakMengundang = ({ bgColor, textColor }) => {
+export const TidakMengundang = ({ bgColor, textColor, name }) => {
   const containerClassName = () =>
     bgColor && textColor
       ? `${bgColor} ${textColor} py-16 flex flex-col items-center justify-center overflow-hidden`
@@ -43,7 +43,7 @@ export const TidakMengundang = ({ bgColor, textColor }) => {
           pernikahan kami berdua. Tak lupa kami memohon maaf apa bila tidak
           dapat memberikan undangan, karena keadaan yang tidak memungkinkan.
         </p>
-        <p className="font-medium">Nindya & Andhika</p>
+        <p className="font-medium">{name}</p>
       </div>
     </div>
   );

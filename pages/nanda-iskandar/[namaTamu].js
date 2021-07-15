@@ -159,6 +159,7 @@ const Page = ({ messages }) => {
         <TidakMengundang
           bgColor="bg-nindya-andhika-gold"
           textColor="text-nurul-gold"
+          name="Nanda & Iskandar"
         />
 
         <QsArrum bgColor="bg-nurul-gold" textColor="text-gray-200" />
