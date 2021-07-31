@@ -1,5 +1,5 @@
 import dbConnect from "../../../utils/dbConnect";
-import Angpau from "../../../models/ririk-roy/Angpau";
+import Rsvp from "../../../models/kharnisa-imam/Rsvp";
 
 export default async (req, res) => {
   const { method } = req;
@@ -9,22 +9,22 @@ export default async (req, res) => {
   switch (method) {
     case "GET":
       try {
-        const angpaus = await Angpau.find();
+        const rsvps = await Rsvp.find();
 
-        res.status(200).json({ success: true, data: angpaus });
+        res.status(200).json({ success: true, data: rsvps });
       } catch (error) {
         res.status(400).json({ message: error, success: false });
       }
       break;
     case "POST":
       try {
-        const angpau = await Angpau.create(req.body);
+        const rsvp = await Rsvp.create(req.body);
 
         res.status(201).json({
           status: 201,
-          message: "Berhasil mengirim Angpau!",
+          message: "Berhasil menambahkan Rsvp!",
           success: true,
-          data: angpau,
+          data: rsvp,
         });
       } catch (error) {
         res.status(400).json({
@@ -37,7 +37,7 @@ export default async (req, res) => {
     default:
       res.status(400).json({
         status: 400,
-        message: "Gagal mengirim Angpau!",
+        message: "Gagal menambahkan Rsvp!",
         success: false,
       });
       break;

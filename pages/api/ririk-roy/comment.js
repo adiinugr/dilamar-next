@@ -1,5 +1,5 @@
 import dbConnect from "../../../utils/dbConnect";
-import Comment from "../../../models/kharnisa-imam/Comment";
+import Comment from "../../../models/ririk-roy/Comment";
 
 export default async (req, res) => {
   const { method } = req;
