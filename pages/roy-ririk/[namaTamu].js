@@ -298,12 +298,13 @@ const Page = ({ messages }) => {
           nameTextSize="text-4xl md:text-8xl"
           imagePath="/ririk-roy/picture-2.JPG"
           overlayColor="bg-gray-700"
+          snowColor="#ffffff"
         />
 
         <TidakMengundang
           bgColor="bg-nurul-gold"
           textColor="text-gray-200"
-          name="Ririk & Roy"
+          name="Roy & Ririk"
         />
 
         <BigTitle
@@ -441,7 +442,7 @@ const Page = ({ messages }) => {
         />
 
         <Terimakasih
-          namaPengantin="Ririk & Roy"
+          namaPengantin="Roy & Ririk"
           bgColor="bg-nurul-gold"
           textColor="text-gray-100"
         />
