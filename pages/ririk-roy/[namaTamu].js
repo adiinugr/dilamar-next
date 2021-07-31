@@ -288,7 +288,7 @@ const Page = ({ messages }) => {
 
         <HeroTwo
           name="Ririk & Roy"
-          date="11 Juli 2021"
+          date="07 agustus 2021"
           textColor="text-gray-100"
           nameTextSize="text-4xl md:text-8xl"
           imagePath="/ririk-roy/picture-2.JPG"
