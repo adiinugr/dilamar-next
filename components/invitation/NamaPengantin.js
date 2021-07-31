@@ -106,14 +106,17 @@ export const NamaPengantinThree = ({
   textColor = "text-gray-800",
   imagePathPria,
   imagePathWanita,
+  manFirst,
 }) => {
+  const coupleOrder = () => (manFirst ? "flex-col-reverse" : "flex-col");
+
   return (
     <div
       className={`relative ${bgColor} ${textColor} py-6 px-8 md:px-40 overflow-hidden`}
     >
-      <div className="flex flex-col items-center justify-center">
+      <div className={`flex ${coupleOrder()} items-center justify-center`}>
         <div
-          className="flex flex-col md:flex-row w-full items-center font-body mb-8 md:mb-0"
+          className={`flex flex-col md:flex-row w-full items-center font-body mb-8 md:mb-0`}
           data-aos="fade-left"
         >
           <div className="w-full md:w-1/2 mx-4 mb-6 md:mb-0">

@@ -33,47 +33,52 @@ const imageData = [
   {
     id: 1,
     type: "image",
-    src: "/ririk-roy/picture-1.JPG",
+    src: "/ririk-roy/image/01-min.jpg",
   },
   {
     id: 2,
     type: "image",
-    src: "/ririk-roy/picture-2.JPG",
+    src: "/ririk-roy/image/02-min.jpg",
   },
   {
     id: 3,
     type: "image",
-    src: "/ririk-roy/picture-3.JPG",
+    src: "/ririk-roy/image/03-min.jpg",
   },
   {
     id: 4,
     type: "image",
-    src: "/ririk-roy/picture-4.JPG",
+    src: "/ririk-roy/image/04-min.jpg",
   },
   {
     id: 5,
     type: "image",
-    src: "/ririk-roy/picture-5.jpg",
+    src: "/ririk-roy/image/05-min.jpg",
   },
   {
     id: 6,
     type: "image",
-    src: "/ririk-roy/picture-6.jpg",
+    src: "/ririk-roy/image/06-min.jpg",
   },
   {
     id: 7,
     type: "image",
-    src: "/ririk-roy/picture-7.JPG",
+    src: "/ririk-roy/image/07-min.JPG",
   },
   {
     id: 8,
     type: "image",
-    src: "/ririk-roy/picture-8.JPG",
+    src: "/ririk-roy/image/08-min.JPG",
   },
   {
     id: 9,
     type: "image",
-    src: "/ririk-roy/picture-9.jpg",
+    src: "/ririk-roy/image/09-min.JPG",
+  },
+  {
+    id: 10,
+    type: "image",
+    src: "/ririk-roy/image/10-min.JPG",
   },
 ];
 
@@ -189,7 +194,7 @@ const Page = ({ messages }) => {
       setAngpauError("Harus diisi semua ya!");
       setAngpauIsLoading(false);
     } else {
-      const res = await fetch(`/api/ririk-roy/angpau`, {
+      const res = await fetch(`/api/roy-ririk/angpau`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -220,7 +225,7 @@ const Page = ({ messages }) => {
       setGuestBookError("Harus diisi semua ya!");
       setGuestBookIsLoading(false);
     } else {
-      const res = await fetch(`/api/ririk-roy/comment`, {
+      const res = await fetch(`/api/roy-ririk/comment`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -249,11 +254,11 @@ const Page = ({ messages }) => {
   return (
     <>
       <InvitationHead
-        title="Ririk & Roy Wedding"
+        title="Roy & Ririk Wedding"
         description="Mohon doa restu atas
           pernikahan kami berdua. Tak lupa kami memohon maaf apa bila tidak
           dapat memberikan undangan, karena keadaan yang tidak memungkinkan."
-        link="https://dilamar.vercel.app/ririk-roy/Nama+Tamu"
+        link="https://dilamar.vercel.app/roy-ririk/Nama+Tamu"
         imagePath="/ririk-roy/meta-image-com.png"
       />
       <BottomMenuGeneral
@@ -287,7 +292,7 @@ const Page = ({ messages }) => {
         </Modal>
 
         <HeroTwo
-          name="Ririk & Roy"
+          name="Roy & Ririk"
           date="07 Agustus 2021"
           textColor="text-gray-100"
           nameTextSize="text-4xl md:text-8xl"
@@ -319,6 +324,7 @@ const Page = ({ messages }) => {
           imagePathWanita="/ririk-roy/wanita.JPG"
           bgColor="bg-nindya-andhika-gold"
           textColor="text-nurul-gold"
+          manFirst
         />
         <DateCountdown
           date={date}
@@ -448,7 +454,7 @@ const Page = ({ messages }) => {
 };
 
 export async function getServerSideProps() {
-  const res = await fetch(`https://dilamar.vercel.app/api/ririk-roy/comment`, {
+  const res = await fetch(`https://dilamar.vercel.app/api/roy-ririk/comment`, {
     method: "GET",
     headers: {
       "User-Agent":
