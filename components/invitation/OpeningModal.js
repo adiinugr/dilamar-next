@@ -174,7 +174,7 @@ export const OpeningModalNoInvitation = ({
   withOverlay,
 }) => {
   const overlayClassName = () =>
-    withOverlay ? "bg-gray-600 bg-opacity-40" : "";
+    withOverlay ? "bg-gray-800 bg-opacity-60" : "";
 
   return (
     <div className={`h-full relative ${bgColor} ${textColor} overflow-hidden`}>
