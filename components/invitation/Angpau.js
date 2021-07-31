@@ -64,8 +64,8 @@ const Angpau = ({
               <option value="BNI - Roy Prasetyo (0297685799)">
                 BNI - Roy Prasetyo (0297685799)
               </option>
-              <option value="BNI - Ririk Endah W. (0304324421)">
-                BNI - Ririk Endah W. (0304324421)
+              <option value="BNI - Ririk Indah W. (0304324421)">
+                BNI - Ririk Indah W. (0304324421)
               </option>
             </select>
             <CurrencyInput
