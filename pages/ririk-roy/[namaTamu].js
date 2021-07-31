@@ -313,7 +313,7 @@ const Page = ({ messages }) => {
         <NamaPengantinThree
           namaWanita="Ririk Indah Wiyanti, S.T."
           ortuWanita="Putri pertama dari Bpk Rasioto & Ibu Jaining"
-          namaPria="Roy Prasetyo, S.T."
+          namaPria="Roy Prasetyo, S.H."
           ortuPria="Putra kedua dari Alm. Bpk. Semin & Ibu Tiningsih"
           imagePathPria="/ririk-roy/pria.JPG"
           imagePathWanita="/ririk-roy/wanita.JPG"
@@ -435,7 +435,7 @@ const Page = ({ messages }) => {
         />
 
         <Terimakasih
-          namaPengantin="Nindya & Andhika"
+          namaPengantin="Ririk & Roy"
           bgColor="bg-nurul-gold"
           textColor="text-gray-100"
         />
