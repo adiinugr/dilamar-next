@@ -18,6 +18,8 @@ import { BottomMenuGeneral } from "../../components/BottomMenu";
 import { GalleryList } from "../../components/invitation/Gallery";
 import PlayerButton from "../../components/PlayerButton";
 import DateCountdown from "../../components/invitation/DateCountdown";
+import Angpau from "../../components/invitation/Angpau";
+
 import {
   HiOutlineCalendar,
   HiOutlineHeart,
@@ -116,6 +118,13 @@ const Page = ({ messages }) => {
   const [guestBookIsLoading, setGuestBookIsLoading] = useState(false);
   const [guestBookError, setGuestBookError] = useState("");
 
+  const [angpauName, setAngpauName] = useState("");
+  const [angpauBank, setAngpauBank] = useState("");
+  const [angpauNominal, setAngpauNominal] = useState("");
+  const [angpauIsLoading, setAngpauIsLoading] = useState(false);
+  const [angpauError, setAngpauError] = useState("");
+  const [angpauSuccess, setAngpauSuccess] = useState("");
+
   const [modalIsOpen, setModalIsOpen] = useState(true);
 
   const [audio, setAudio] = useState(null);
@@ -151,6 +160,38 @@ const Page = ({ messages }) => {
     setModalIsOpen(false);
     setShowPlayButton(true);
     handlePlayMusic();
+  };
+
+  const handleAngpauSubmit = async (event) => {
+    event.preventDefault();
+
+    setAngpauIsLoading(true);
+
+    if (angpauName === "" && angpauBank === "" && angpauNominal === "") {
+      setAngpauSuccess("");
+      setAngpauError("Harus diisi semua ya!");
+      setAngpauIsLoading(false);
+    } else {
+      const res = await fetch(`/api/ririk-roy/angpau`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: angpauName,
+          bank: angpauBank,
+          nominal: angpauNominal,
+        }),
+      });
+
+      setAngpauIsLoading(false);
+      setAngpauError("");
+      setAngpauSuccess("Konfirmasi Angpau Online Berhasil Dikirim!");
+
+      setAngpauName("");
+      setAngpauBank("");
+      setAngpauNominal("");
+    }
   };
 
   const handleGuestBookSubmit = async (event) => {
@@ -323,6 +364,32 @@ const Page = ({ messages }) => {
           imageData={imageData}
           bgColor="bg-nindya-andhika-gold"
           textColor="text-nurul-gold"
+        />
+
+        <BigTitle
+          title="Angpau Online"
+          textSize="text-3xl md:text-5xl"
+          bgColor="bg-nurul-gold"
+          textColor="text-gray-200"
+          borderColor="border-gray-200"
+        />
+
+        <Angpau
+          name={angpauName}
+          setName={setAngpauName}
+          bank={angpauBank}
+          setBank={setAngpauBank}
+          nominal={angpauNominal}
+          setNominal={setAngpauNominal}
+          error={angpauError}
+          succcess={angpauSuccess}
+          handleSubmit={handleAngpauSubmit}
+          isLoading={angpauIsLoading}
+          bgColor="bg-nurul-gold"
+          textColor="text-gray-200"
+          buttonBgColor="bg-gray-200"
+          buttonTextColor="text-gray-600"
+          inputTextColor="text-gray-800"
         />
 
         <BigTitle
