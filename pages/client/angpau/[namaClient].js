@@ -25,21 +25,22 @@ const Angpau = ({ angpau }) => {
       width: "20%",
     },
     {
-      title: "Status Kehadiran",
-      dataIndex: "status",
-      key: "status",
+      title: "Rekening Tujuan",
+      dataIndex: "bank",
+      key: "bank",
       width: "15%",
     },
     {
-      title: "Pesan",
-      dataIndex: "message",
-      key: "message",
+      title: "Nominal",
+      dataIndex: "nominal",
+      key: "nominal",
+      render: (value) => <p>{`Rp ${value}`}</p>,
     },
   ];
 
   return (
     <div className="bg-gray-200">
-      <ClientHeader namaClient={namaClient} />
+      <ClientHeader namaClient={namaClient} headerTitle="DAFTAR ANGPAU" />
       <section className="px-4 md:px-36 py-6 mb-4 pt-36">
         <div className="flex flex-col md:flex-row justify-between items-center bg-gray-50 p-3 mb-4">
           <div className="self-end">

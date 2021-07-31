@@ -121,6 +121,7 @@ const Page = ({ messages }) => {
   const [angpauName, setAngpauName] = useState("");
   const [angpauBank, setAngpauBank] = useState("");
   const [angpauNominal, setAngpauNominal] = useState("");
+  const [rawValue, setRawValue] = useState(" ");
   const [angpauIsLoading, setAngpauIsLoading] = useState(false);
   const [angpauError, setAngpauError] = useState("");
   const [angpauSuccess, setAngpauSuccess] = useState("");
@@ -160,6 +161,22 @@ const Page = ({ messages }) => {
     setModalIsOpen(false);
     setShowPlayButton(true);
     handlePlayMusic();
+  };
+
+  const handleAngpauOnValueChange = (value) => {
+    setRawValue(value === undefined ? "undefined" : value || " ");
+
+    if (!value) {
+      setAngpauNominalNominal("");
+      return;
+    }
+
+    if (Number.isNaN(Number(value))) {
+      setAngpauError("Masukkan Angka Saja!");
+      return;
+    }
+
+    setAngpauNominal(value);
   };
 
   const handleAngpauSubmit = async (event) => {
@@ -237,7 +254,7 @@ const Page = ({ messages }) => {
           pernikahan kami berdua. Tak lupa kami memohon maaf apa bila tidak
           dapat memberikan undangan, karena keadaan yang tidak memungkinkan."
         link="https://dilamar.vercel.app/ririk-roy/Nama+Tamu"
-        imagePath="/nindya-andhika/meta-image.png"
+        imagePath="/ririk-roy/meta-image-min.JPG"
       />
       <BottomMenuGeneral
         bgColor="bg-kharnisa-imam-silver"
@@ -380,7 +397,7 @@ const Page = ({ messages }) => {
           bank={angpauBank}
           setBank={(e) => setAngpauBank(e.target.value)}
           nominal={angpauNominal}
-          setNominal={(e) => setAngpauNominal(e.target.value)}
+          setNominal={handleAngpauOnValueChange}
           error={angpauError}
           succcess={angpauSuccess}
           handleSubmit={handleAngpauSubmit}

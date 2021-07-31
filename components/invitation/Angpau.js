@@ -1,8 +1,7 @@
 import React from "react";
-import {
-  AiOutlineLoading3Quarters,
-  AiOutlineRedEnvelope,
-} from "react-icons/ai";
+import { AiOutlineLoading3Quarters, AiOutlineGift } from "react-icons/ai";
+
+import CurrencyInput from "react-currency-input-field";
 
 const Angpau = ({
   name,
@@ -26,12 +25,14 @@ const Angpau = ({
   return (
     <div className={`${bgColor} ${textColor} flex flex-col md:px-80`}>
       <div className="flex flex-col items-center justify-center py-6">
-        <AiOutlineRedEnvelope size={50} />
-        <div className="text-center mt-4">
+        <AiOutlineGift size={50} />
+        <div className="text-center mt-4 mb-2">
           Terimakasih atas doa dan restu yang telah Anda berikan. Namun apabila
           Anda ingin mengirimkan kado, silakan kirim ke rekening di bawah ini.
           Kami mengucapkan banyak terimakasih.
         </div>
+        <div>BNI - Roy Prasetyo (0297685799)</div>
+        <div>BNI - Ririk Endah W. (0304324421)</div>
       </div>
       <div className={`w-4/5 ${borderColor} border-t-2 py-4 mx-auto`}>
         <form onSubmit={handleSubmit}>
@@ -67,13 +68,14 @@ const Angpau = ({
                 BNI - Ririk Endah W. (0304324421)
               </option>
             </select>
-            <input
+            <CurrencyInput
               className={`${inputBgColor} ${inputTextColor} p-2 mb-4 outline-none font-body`}
               spellCheck="false"
+              prefix="Rp "
+              groupSeparator="."
               placeholder="Nominal"
               value={nominal}
-              onChange={setNominal}
-              type="text"
+              onValueChange={setNominal}
             />
             <div className="buttons flex">
               <button

@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const ClientHeader = ({ namaClient }) => {
+const ClientHeader = ({ headerTitle = "RSVP", namaClient }) => {
   const nama = namaClient || "Nama Client";
 
   const formatedNama = nama.replace("-", " & ").toUpperCase();
@@ -19,7 +19,7 @@ const ClientHeader = ({ namaClient }) => {
       <div className="flex justify-center py-4">
         <Link href="/client/rsvp">
           <div className="mr-4 cursor-pointer bg-green-700 px-4 py-1 rounded-sm">
-            RSVP
+            {headerTitle}
           </div>
         </Link>
         {/* <Link href="/client/whatsapp-sender">
