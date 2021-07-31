@@ -254,7 +254,7 @@ const Page = ({ messages }) => {
           pernikahan kami berdua. Tak lupa kami memohon maaf apa bila tidak
           dapat memberikan undangan, karena keadaan yang tidak memungkinkan."
         link="https://dilamar.vercel.app/ririk-roy/Nama+Tamu"
-        imagePath="/ririk-roy/meta-image-min.JPG"
+        imagePath="/ririk-roy/meta-image-com.png"
       />
       <BottomMenuGeneral
         bgColor="bg-kharnisa-imam-silver"
