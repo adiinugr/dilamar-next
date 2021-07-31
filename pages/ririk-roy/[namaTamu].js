@@ -376,11 +376,11 @@ const Page = ({ messages }) => {
 
         <Angpau
           name={angpauName}
-          setName={setAngpauName}
+          setName={(e) => setAngpauName(e.target.value)}
           bank={angpauBank}
-          setBank={setAngpauBank}
+          setBank={(e) => setAngpauBank(e.target.value)}
           nominal={angpauNominal}
-          setNominal={setAngpauNominal}
+          setNominal={(e) => setAngpauNominal(e.target.value)}
           error={angpauError}
           succcess={angpauSuccess}
           handleSubmit={handleAngpauSubmit}

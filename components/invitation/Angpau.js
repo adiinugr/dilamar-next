@@ -17,6 +17,7 @@ const Angpau = ({
   isLoading,
   bgColor = "bg-gray-200",
   textColor = "text-gray-800",
+  borderColor,
   inputTextColor,
   inputBgColor = "bg-gray-100",
   buttonTextColor,
@@ -32,14 +33,18 @@ const Angpau = ({
           Kami mengucapkan banyak terimakasih.
         </div>
       </div>
-      <div className="w-4/5 border-kharnisa-imam-gold border-t-2 py-4 mx-auto">
+      <div className={`w-4/5 ${borderColor} border-t-2 py-4 mx-auto`}>
         <form onSubmit={handleSubmit}>
-          <div className="editor flex flex-col  max-w-2xl mt-6">
+          <div className="editor flex flex-col  max-w-2xl mt-2">
             {error && (
-              <div className="mb-2 font-body text-red-800">{error}</div>
+              <div className="mb-6 font-body bg-gray-200 p-2 rounded-md text-red-800">
+                {error}
+              </div>
             )}
             {succcess && (
-              <div className="mb-2 font-body text-green-800">{succcess}</div>
+              <div className="mb-6 font-body bg-gray-200 p-2 rounded-md text-green-800">
+                {succcess}
+              </div>
             )}
             <input
               className={`${inputBgColor} ${inputTextColor} p-2 mb-4 outline-none font-body`}
