@@ -1,4 +1,5 @@
 import { IoIosWarning } from "react-icons/io";
+import { GoBook } from "react-icons/go";
 
 export const QsAnNur32 = ({ bgColor, textColor }) => {
   const containerClassName = () =>

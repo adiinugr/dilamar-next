@@ -22,6 +22,7 @@ module.exports = {
         "may-kamal-sonic-silver": "#797979",
         "may-kamal-platinum": "#E5E5E5",
         "nindya-andhika-gold": "#F5F2EC",
+        "rosy-alfan-blue": "#1A374D",
       },
     },
     fontFamily: {

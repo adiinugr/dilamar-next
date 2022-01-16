@@ -318,6 +318,7 @@ export const WaktuAlamatAcaraFour = ({
   akadImagePath,
   resepsiImagePath,
   overlayBgColor = "bg-gray-800",
+  overlayOpacity = "opacity-80",
   buttonBgColor = "bg-gray-800",
   buttonTextColor = "text-gray-200",
   isResepsi = true,
@@ -339,7 +340,7 @@ export const WaktuAlamatAcaraFour = ({
           />
         )}
         <div
-          className={`h-full w-full ${overlayBgColor} absolute opacity-80`}
+          className={`h-full w-full ${overlayBgColor} absolute ${overlayOpacity}`}
         />
         <div className="flex flex-col items-center justify-center h-full w-full z-20 absolute">
           <div className="text-center">
@@ -368,7 +369,7 @@ export const WaktuAlamatAcaraFour = ({
             />
           )}
           <div
-            className={`h-full w-full ${overlayBgColor} absolute opacity-80`}
+            className={`h-full w-full ${overlayBgColor} absolute ${overlayOpacity}`}
           />
           <div className="flex flex-col items-center justify-center h-full w-full z-20 absolute">
             <div className="">

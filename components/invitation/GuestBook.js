@@ -1,5 +1,6 @@
 import React from "react";
 import { AiOutlineComment, AiOutlineLoading3Quarters } from "react-icons/ai";
+import { Link as ScrollLink } from "react-scroll";
 
 export const GuestBookOne = ({
   comments,
@@ -19,18 +20,20 @@ export const GuestBookOne = ({
   inputTextColor,
   inputBgColor = "bg-gray-100",
   inputBorder = "border border-gray-300",
-  buttonTextColor,
-  buttonBgColor,
+  buttonTextColor = "text-gray-100",
+  buttonBgColor = "bg-gray-800",
 }) => {
   return (
     <div className={`${bgColor} ${textColor}`}>
       <div className="flex flex-col items-center justify-center py-6">
-        <div
-          className={`${writeYourWishBorder} py-1 px-4 flex items-center justify-center font-body cursor-pointer`}
-        >
-          <AiOutlineComment size={20} />
-          <div className="ml-2">Write your wish</div>
-        </div>
+        <ScrollLink to="comment-form" smooth={true} duration={500}>
+          <div
+            className={`${writeYourWishBorder} py-1 px-4 flex items-center justify-center font-body cursor-pointer`}
+          >
+            <AiOutlineComment size={20} />
+            <div className="ml-2">Write your wish</div>
+          </div>
+        </ScrollLink>
       </div>
       <div
         className={`${wishBgColor} ${wishTextColor} ${wishBorder} w-4/5 py-4 mx-auto`}
@@ -42,7 +45,10 @@ export const GuestBookOne = ({
           </div>
         ))}
         <form onSubmit={handleSubmit}>
-          <div className="editor flex flex-col max-w-2xl mt-6">
+          <div
+            id="comment-form"
+            className="editor flex flex-col max-w-2xl mt-6"
+          >
             {error && (
               <div className="mb-2 font-body text-red-800">
                 Harus diisi semua ya!
