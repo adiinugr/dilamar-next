@@ -36,7 +36,7 @@ export const NamaPengantin1 = ({
         </div>
         <div data-aos="fade-left" className="md:w-1/3 text-center font-body">
           <p className="font-display text-3xl mb-3">
-            {namaPria || "Hanny Suryani, S.Pd"}.
+            {namaPria || "Hanny Suryani, S.Pd"}
           </p>
           <p>
             {ortuPria ||
