@@ -169,7 +169,7 @@ const Page = ({ messages }) => {
           tanggalAkad="Sabtu, 26 Februari 2022"
           waktuAkad="Pukul 08.00 - Selesai"
           tanggalResepsi="Sabtu, 26 Februari 2022"
-          waktuResepsiSesi="Pukul 13.00 - Selesai"
+          waktuResepsi="Pukul 13.00 - Selesai"
           namaTempat="Kediaman Mempelai Putri"
           alamatTempat="Jl. Suaka Burung, RT 003 RW 009, Pangkahkulon, Ujungpangkah, Gresik "
           googleMapsUri="https://goo.gl/maps/gP5nXqoNp6vBCHPZ6"
