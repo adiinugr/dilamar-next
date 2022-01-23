@@ -5,20 +5,20 @@ import Modal from "react-modal";
 
 import "aos/dist/aos.css";
 
-import Footer from "../../components/Footer";
-import InvitationHead from "../../components/InvitationHead";
-import ProtokolKesehatan from "../../components/ProtokolKesehatan";
-import { HeroTwo } from "../../components/invitation/Hero";
-import { NamaPengantin4 } from "../../components/invitation/NamaPengantin";
-import DateCountdown from "../../components/invitation/DateCountdown";
-import { WaktuAlamatAcaraFive } from "../../components/invitation/WaktuAlamatAcara";
-import Terimakasih from "../../components/invitation/Terimakasih";
-import { OpeningModalWithTwoDynamicVar } from "../../components/invitation/OpeningModal";
-import { GuestBookOne } from "../../components/invitation/GuestBook";
-import { QsAnNur32 } from "../../components/invitation/QuranAyat";
-import PlayerButton from "../../components/PlayerButton";
-import Story from "../../components/invitation/Story";
-import { GalleryGrid } from "../../components/invitation/Gallery";
+import Footer from "../../../components/Footer";
+import InvitationHead from "../../../components/InvitationHead";
+import ProtokolKesehatan from "../../../components/ProtokolKesehatan";
+import { HeroTwo } from "../../../components/invitation/Hero";
+import { NamaPengantin4 } from "../../../components/invitation/NamaPengantin";
+import DateCountdown from "../../../components/invitation/DateCountdown";
+import { WaktuAlamatAcaraFive } from "../../../components/invitation/WaktuAlamatAcara";
+import Terimakasih from "../../../components/invitation/Terimakasih";
+import { OpeningModalWithTwoDynamicVar } from "../../../components/invitation/OpeningModal";
+import { GuestBookOne } from "../../../components/invitation/GuestBook";
+import { QsAnNur32 } from "../../../components/invitation/QuranAyat";
+import PlayerButton from "../../../components/PlayerButton";
+import Story from "../../../components/invitation/Story";
+import { GalleryGrid } from "../../../components/invitation/Gallery";
 
 const imageData = [
   {
@@ -59,8 +59,9 @@ const Page = ({ messages }) => {
   const [data, setData] = useState(messages);
 
   const router = useRouter();
-  const { namaTamu } = router.query;
+  const { jenisTamu, namaTamu } = router.query;
   const tamu = namaTamu.replace("+", " ");
+  const jTamu = jenisTamu.replace("+", " ");
 
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
@@ -162,7 +163,7 @@ const Page = ({ messages }) => {
           <OpeningModalWithTwoDynamicVar
             handleOpenModal={handleOpenModal}
             namaTamu={tamu}
-            jenisTamu="INVITED GUEST"
+            jenisTamu={jTamu}
             namaPengantin="Sari & Aby"
             buttonBgColor="bg-sari-aby-dark-orange"
             backgroundImagePath="/sari-aby/1. Sampul Undangan.jpeg"

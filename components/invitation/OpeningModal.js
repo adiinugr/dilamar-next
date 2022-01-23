@@ -240,7 +240,7 @@ export const OpeningModalWithTwoDynamicVar = ({
         <div className="mt-8 text-base text-center md:text-lg">
           <p>Dear,</p>
           <p className="mt-1 text-lg font-bold">{namaTamu}</p>
-          <p className="my-4 font-semibold">"{jenisTamu}"</p>
+          <p className="my-4 font-semibold uppercase">"{jenisTamu}"</p>
         </div>
         <div className="font-display text-4xl md:text-5xl my-4">
           {namaPengantin}
