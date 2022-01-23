@@ -262,7 +262,7 @@ const Page = ({ messages }) => {
         />
 
         <Terimakasih
-          namaPengantin="Sari & Roy"
+          namaPengantin="Sari & Aby"
           bgColor="bg-sari-aby-dark-orange"
           textColor="text-gray-100"
         />
