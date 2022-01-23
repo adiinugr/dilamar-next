@@ -166,3 +166,53 @@ export const NamaPengantinThree = ({
     </div>
   );
 };
+
+export const NamaPengantin4 = ({
+  namaPria,
+  namaLengkapPria,
+  namaWanita,
+  namaLengkapWanita,
+  ortuPria,
+  ortuWanita,
+  bgColor = "bg-gray-200",
+  textColor = "text-gray-800",
+  imagePathPria,
+  imagePathWanita,
+}) => {
+  return (
+    <div
+      className={`${bgColor} ${textColor} py-20 px-6 md:px-40 overflow-hidden`}
+    >
+      <div className="flex flex-col md:flex-row items-center justify-center">
+        <div
+          className="md:w-1/3 text-center font-body mb-8 md:mb-0"
+          data-aos="fade-right"
+        >
+          <Image
+            src={imagePathWanita}
+            width={150}
+            height={150}
+            className="rounded-full"
+          />
+          <p className="font-display text-5xl mb-3">{namaWanita}</p>
+          <p className="font-bold">{namaLengkapWanita}</p>
+          <p>{ortuWanita}</p>
+        </div>
+        <div className="md:w-1/3 text-center font-display text-8xl mb-8 md:mb-0">
+          &
+        </div>
+        <div data-aos="fade-left" className="md:w-1/3 text-center font-body">
+          <Image
+            src={imagePathPria}
+            width={150}
+            height={150}
+            className="rounded-full"
+          />
+          <p className="font-display text-5xl mb-3">{namaPria}</p>
+          <p className="font-body">{namaLengkapPria}</p>
+          <p>{ortuPria}</p>
+        </div>
+      </div>
+    </div>
+  );
+};

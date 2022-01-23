@@ -23,6 +23,11 @@ module.exports = {
         "may-kamal-platinum": "#E5E5E5",
         "nindya-andhika-gold": "#F5F2EC",
         "rosy-alfan-blue": "#1A374D",
+        "sari-aby-dark-orange": "#EF7D00",
+        "sari-aby-soft-orange": "#FBE6D3",
+      },
+      height: {
+        128: "32rem",
       },
     },
     fontFamily: {

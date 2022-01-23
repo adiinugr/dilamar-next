@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import GalleryImage from "../GalleryImage";
 import YoutubePlayer from "../YoutubePlayer";
 
 export const GalleryList = ({
@@ -43,6 +44,50 @@ export const GalleryList = ({
           );
         }
       })}
+    </div>
+  );
+};
+
+export const GalleryGrid = ({
+  bgColor = "bg-gray-200",
+  textColor = "text-gray-800",
+  imageData,
+  height,
+  width,
+  numberOfGridCols,
+}) => {
+  const gridColsClassName = () => {
+    if (numberOfGridCols === 2) {
+      return "grid grid-cols-1 md:grid-cols-2 gap-4 relative";
+    } else if (numberOfGridCols === 3) {
+      return "grid grid-cols-1 md:grid-cols-3 gap-2 relative";
+    }
+  };
+
+  return (
+    <div
+      className={`${bgColor} ${textColor} flex justify-center items-center bg-gray-500`}
+    >
+      <div className="flex flex-col py-8 md:py-10 px-6 md:px-44">
+        <div
+          data-aos="zoom-in"
+          className="text-center font-display text-4xl md:text-5xl mb-6"
+        >
+          Gallery
+        </div>
+        <div className={gridColsClassName()}>
+          {imageData.map((image) => (
+            <Image
+              data-aos="zoom-in"
+              key={image.id}
+              src={image.src}
+              height={height}
+              width={width}
+              objectFit="cover"
+            />
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
