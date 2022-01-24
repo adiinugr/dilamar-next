@@ -158,7 +158,7 @@ const Page = ({ messages }) => {
           isOpen={modalIsOpen}
           ariaHideApp={false}
           closeTimeoutMS={500}
-          className="absolute top-6 left-6 right-6 bottom-6 md:top-10 md:left-10 md:right-10 md:bottom-10 bg-gray-900"
+          className="absolute top-0 left-0 right-0 bottom-0 bg-gray-900"
         >
           <OpeningModalWithTwoDynamicVar
             handleOpenModal={handleOpenModal}
@@ -173,7 +173,7 @@ const Page = ({ messages }) => {
 
         <HeroTwo
           name="Sari & Aby"
-          date="February 16th, 2021"
+          date="February 16th, 2022"
           imagePath="/sari-aby/2. Pembukaan.jpeg"
           textColor="text-white"
           snowColor="#ffffff"
@@ -206,7 +206,7 @@ const Page = ({ messages }) => {
           firstDateImagePath="/sari-aby/first-date.jpg"
           proposalImagePath="/sari-aby/proposal.jpg"
           firstMeetText="June 19, 2019 was our first meeting as colleagues. At first everything went well and we were good friends at work without ever having imagined we would get married one day."
-          firstDateText='God "matched" us in unexpected ways. As if to be an answer to our prayers. A year later, on August 26, 2021, we decided to step up in a relationship and start to learn to love each other.'
+          firstDateText='God "matched" us in unexpected ways. As if to be an answer to our prayers. A year later, on August 26, 2020, we decided to step up in a relationship and start to learn to love each other.'
           proposalText="The distances of 600 kilometers from Jakarta to Madiun became one of the witnesses of our journey, Finally exactly 2 years since we met and right on Sari's birthday, we got engaged on June 19, 2021."
           bgColor="bg-sari-aby-soft-orange"
           textColor="text-gray-800"
@@ -219,9 +219,9 @@ const Page = ({ messages }) => {
           overlayOpacity="opacity-60"
           akadImagePath="/rosy-alfan/foto1port.jpg"
           resepsiImagePath="/rosy-alfan/foto2port.jpg"
-          tanggalAkad="Sabtu, 26 Februari 2022"
-          waktuAkad="Pukul 08.00 - Selesai"
-          waktuResepsi="Pukul 13.00 - Selesai"
+          tanggalAkad="Rabu, 16 Februari 2022"
+          waktuAkad="Pukul 10.00 - Selesai"
+          waktuResepsi="Pukul 12.00 - Selesai"
           namaTempat="Kediaman Mempelai Perempuan"
           alamatTempat="Jalan Trijaya X/276 RT.031/RW.007, Kelurahan Klegen, Kecamatan Kartoharjo, Kota Madiun"
           googleMapsUri="https://maps.app.goo.gl/rBGyVwGZUENaruMx5"
@@ -242,7 +242,7 @@ const Page = ({ messages }) => {
           textColor="text-sari-aby-dark-orange"
           imageData={imageData}
           height={300}
-          width={300}
+          width={350}
           numberOfGridCols={3}
         />
 
