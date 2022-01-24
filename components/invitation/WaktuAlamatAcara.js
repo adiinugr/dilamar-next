@@ -415,6 +415,7 @@ export const WaktuAlamatAcaraFive = ({
   waktuAkad,
   waktuResepsi,
   namaTempat,
+  namaPerumahan,
   alamatTempat,
   googleMapsUri,
   lat,
@@ -457,7 +458,8 @@ export const WaktuAlamatAcaraFive = ({
             </div>
           </div>
           <div data-aos="zoom-in" className="text-center mt-8 px-4">
-            <p className="font-semibold">{namaTempat}</p>
+            <p className="font-semibold mb-2">{namaTempat}</p>
+            <p className="font-medium">{namaPerumahan}</p>
             <p>{alamatTempat}</p>
           </div>
           <div

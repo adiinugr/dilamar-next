@@ -220,9 +220,10 @@ const Page = ({ messages }) => {
           akadImagePath="/rosy-alfan/foto1port.jpg"
           resepsiImagePath="/rosy-alfan/foto2port.jpg"
           tanggalAkad="Rabu, 16 Februari 2022"
-          waktuAkad="Pukul 10.00 - Selesai"
-          waktuResepsi="Pukul 12.00 - Selesai"
-          namaTempat="Kediaman Mempelai Perempuan"
+          waktuAkad="Pukul 10.00 WIB"
+          waktuResepsi="Pukul 12.00 - 13.00 WIB"
+          namaTempat="Kediaman Mempelai Wanita"
+          namaPerumahan="Perumahan Dumai Indah"
           alamatTempat="Jalan Trijaya X/276 RT.031/RW.007, Kelurahan Klegen, Kecamatan Kartoharjo, Kota Madiun"
           googleMapsUri="https://maps.app.goo.gl/rBGyVwGZUENaruMx5"
           lat={-7.62705}
