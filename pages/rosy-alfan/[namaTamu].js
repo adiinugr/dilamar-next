@@ -6,8 +6,8 @@ import Modal from "react-modal";
 import "aos/dist/aos.css";
 
 import Footer from "../../components/Footer";
-import InvitationHead from "../../components/InvitationHead";
-import ProtokolKesehatan from "../../components/ProtokolKesehatan";
+import InvitationHead from "../../components/invitation/comp/InvitationHead";
+import ProtokolKesehatan from "../../components/invitation/comp/ProtokolKesehatan";
 import { HeroTwo } from "../../components/invitation/Hero";
 import { NamaPengantin1 } from "../../components/invitation/NamaPengantin";
 import DateCountdown from "../../components/invitation/DateCountdown";
@@ -16,7 +16,7 @@ import Terimakasih from "../../components/invitation/Terimakasih";
 import { OpeningModalOne } from "../../components/invitation/OpeningModal";
 import { GuestBookOne } from "../../components/invitation/GuestBook";
 import { QsAnNur32 } from "../../components/invitation/QuranAyat";
-import PlayerButton from "../../components/PlayerButton";
+import PlayerButton from "../../components/invitation/comp/PlayerButton";
 
 const Page = ({ messages }) => {
   const [date] = useState("2022-02-26T08:00:00.000+07:00");

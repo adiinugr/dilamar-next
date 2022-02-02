@@ -1,9 +1,9 @@
 import { MdLocationOn } from "react-icons/md";
 import Image from "next/image";
-import GoogleMaps from "../../components/GoogleMaps";
+import GoogleMaps from "../../components/invitation/comp/GoogleMaps";
 import Countdown from "react-countdown";
 
-import { rendererTwo } from "../CountDownRenderer";
+import { rendererTwo } from "../invitation/comp/CountDownRenderer";
 
 export const WaktuAlamatAcaraOne = ({
   tanggalAkad,

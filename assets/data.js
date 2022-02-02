@@ -1,53 +1,26 @@
 import {
-  HiOutlineThumbUp,
-  HiOutlineLightBulb,
-  HiOutlineGlobe,
-  HiOutlineCurrencyDollar,
+  HiClipboardList,
+  HiClock,
+  HiDesktopComputer,
+  HiLightBulb,
+  HiPencilAlt,
+  HiPhotograph,
 } from "react-icons/hi";
-
-export const benefits = [
-  {
-    id: 1,
-    icon: <HiOutlineThumbUp size={70} className="self-center mb-3" />,
-    title: "Mudah",
-    desc:
-      "Membuat undangan online sangat mudah. Kamu tinggal kirim detail dan foto yang dipakai, sisanya biar kami yang selesaikan.",
-  },
-  {
-    id: 2,
-    icon: <HiOutlineCurrencyDollar size={70} className="self-center mb-3" />,
-    title: "Hemat",
-    desc: "Membuat undangan di Nehan Dev bisa menghemat pengeluaranmu",
-  },
-  {
-    id: 3,
-    icon: <HiOutlineGlobe size={70} className="self-center mb-3" />,
-    title: "Menjangkau Lebih Luas",
-    desc: "Kamu bisa menjangkau temanmu dimanapun dan kapanpun tanpa batas.",
-  },
-  {
-    id: 4,
-    icon: <HiOutlineLightBulb size={70} className="self-center mb-3" />,
-    title: "Atraktif",
-    desc:
-      "Undangan online mempunyai fitur yang menarik. Seperti foto, music, RSVP, comment, google maps, dan masih banyak lagi.",
-  },
-];
 
 export const basic = [
   {
     id: 1,
-    title: "Standard undangan",
+    title: "Standard Undangan",
     isAvailable: true,
   },
   {
     id: 2,
-    title: "Google maps",
+    title: "Google Maps",
     isAvailable: true,
   },
   {
     id: 3,
-    title: "Date countdown",
+    title: "Date Countdown",
     isAvailable: false,
   },
   {
@@ -57,7 +30,7 @@ export const basic = [
   },
   {
     id: 5,
-    title: "Fitur pesan",
+    title: "Fitur Pesan",
     isAvailable: false,
   },
   {
@@ -72,7 +45,7 @@ export const basic = [
   },
   {
     id: 8,
-    title: "Request fitur",
+    title: "Custom Request",
     isAvailable: false,
   },
 ];
@@ -80,17 +53,17 @@ export const basic = [
 export const standard = [
   {
     id: 1,
-    title: "Standard undangan",
+    title: "Standard Undangan",
     isAvailable: true,
   },
   {
     id: 2,
-    title: "Google maps",
+    title: "Google Maps",
     isAvailable: true,
   },
   {
     id: 3,
-    title: "Date countdown",
+    title: "Date Countdown",
     isAvailable: true,
   },
   {
@@ -100,7 +73,7 @@ export const standard = [
   },
   {
     id: 5,
-    title: "Fitur pesan",
+    title: "Fitur Pesan",
     isAvailable: true,
   },
   {
@@ -115,24 +88,24 @@ export const standard = [
   },
   {
     id: 8,
-    title: "Request fitur",
+    title: "Custom Request",
     isAvailable: false,
   },
 ];
 export const premium = [
   {
     id: 1,
-    title: "Standard undangan",
+    title: "Standard Undangan",
     isAvailable: true,
   },
   {
     id: 2,
-    title: "Google maps",
+    title: "Google Maps",
     isAvailable: true,
   },
   {
     id: 3,
-    title: "Date countdown",
+    title: "Date Countdown",
     isAvailable: true,
   },
   {
@@ -142,7 +115,7 @@ export const premium = [
   },
   {
     id: 5,
-    title: "Fitur pesan",
+    title: "Fitur Pesan",
     isAvailable: true,
   },
   {
@@ -157,7 +130,7 @@ export const premium = [
   },
   {
     id: 8,
-    title: "Request fitur",
+    title: "Custom Request",
     isAvailable: true,
   },
 ];
@@ -209,5 +182,144 @@ export const galleryImage = [
   {
     id: 5,
     url: "/images/gallery/5.png",
+  },
+];
+
+export const featuresData = [
+  {
+    id: 1,
+    icon: (
+      <HiDesktopComputer
+        className="text-dark border-2 border-main rounded-full p-4"
+        size={60}
+      />
+    ),
+    title: "Tampilan Responsive",
+    desc:
+      "Tampilan website undangan kami akan menyesuaikan media yang digunakan pengguna. Jadi tidak perlu khawatir tampilannya rusak/ kepotong ya.",
+  },
+  {
+    id: 2,
+    icon: (
+      <HiLightBulb
+        className="text-dark border-2 border-main rounded-full p-4"
+        size={60}
+      />
+    ),
+    title: "Fitur Beragam",
+    desc:
+      "Ada banyak fitur seperti Google Maps, Pesan, Gallery, RSVP, dll. Kamu bahkan bisa request fitur yang belum ada di template.",
+  },
+  {
+    id: 3,
+    icon: (
+      <HiPencilAlt
+        className="text-dark border-2 border-main rounded-full p-4"
+        size={60}
+      />
+    ),
+    title: "Custom Request",
+    desc:
+      "Keunggulan kami adalah menerima permintaan pelanggan sesuai dengan kebutuhan.",
+  },
+  {
+    id: 4,
+    icon: (
+      <HiClipboardList
+        className="text-dark border-2 border-main rounded-full p-4"
+        size={60}
+      />
+    ),
+    title: "Bebas Pilih Template",
+    desc: "Pilih desain yang kamu suka dan kami akan hadirkan untukkmu.",
+  },
+  {
+    id: 5,
+    icon: (
+      <HiPhotograph
+        className="text-dark border-2 border-main rounded-full p-4"
+        size={60}
+      />
+    ),
+    title: "Masukkin Foto Sepuasmu",
+    desc:
+      "Rasanya kurang jika sudah shoot banyak foto tapi yang bisa dimasukkin hanya satu dua. Di KataNikah tidak ada batasan dalam memasukkan foto, tenang saja.",
+  },
+  {
+    id: 6,
+    icon: (
+      <HiClock
+        className="text-dark border-2 border-main rounded-full p-4"
+        size={60}
+      />
+    ),
+    title: "Tanpa Batas Tayang",
+    desc:
+      "Tidak ada batasan berapa lama undangan bisa tayang. Bahkan setelah acara selesai, kamu masih bisa melihat undanganmu lho. ",
+  },
+];
+
+export const getStartedData = [
+  {
+    id: 1,
+    number: "01",
+    title: "Pilih Template",
+    desc: "Tunjukkan desain undangan yang kamu inginkan.",
+  },
+  {
+    id: 2,
+    number: "02",
+    title: "Sesuaikan",
+    desc: "Pilih warna favoritmu, masukkan fotomu, detail pernikahanmu.",
+  },
+  {
+    id: 3,
+    number: "03",
+    title: "Sebarkan",
+    desc: "Kirimkan undangan websitemu ke teman dan kerabat tercintamu.",
+  },
+];
+
+export const testimony = [
+  {
+    id: 1,
+    text: "Please ini kece banget unadangan web nya!!! Thank you",
+    author: "Hanny.",
+  },
+  {
+    id: 2,
+    text: "Wah.. Mantab! Terimakasi kaka. 😊😊😊",
+    author: "Nanda A.",
+  },
+  {
+    id: 3,
+    text: "Sudah tak lihat dan hasilnya luar biasa 🤩👍🏻👍🏻",
+    author: "Rosy",
+  },
+  {
+    id: 4,
+    text:
+      "Kakk undangannya udah saya liat dan baguusssssss banget saya suka 😍",
+    author: "May",
+  },
+];
+
+export const faqData = [
+  {
+    id: 1,
+    question: "Custom Request itu apa kak?",
+    answer:
+      "Semua fitur yang belum ada di KataNikah. Jadi jika kakak punya fitur yang ingin dipakai namun belum tercantum di paket, maka itu termasuk Custom Requset. Contohnya seperti RSVP, Add to Calendar, ingin tampilan khusus, dll",
+  },
+  {
+    id: 2,
+    question: "Berapa lama proses pengerjaannya?",
+    answer:
+      "Jika desain yang diinginkan sesuai template sekitar 3 hari. Namun jika ada request lain, bisa selesai sampai 1 minggu",
+  },
+  {
+    id: 3,
+    question: "Beneran bisa kasih foto sebanyak mungkin?",
+    answer: "Yups.. Untuk paket premium bebas mau kasih foto berapapun.",
   },
 ];

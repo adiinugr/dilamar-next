@@ -1,7 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import GalleryImage from "../GalleryImage";
-import YoutubePlayer from "../YoutubePlayer";
+import YoutubePlayer from "../invitation/comp/YoutubePlayer";
 
 export const GalleryList = ({
   bgColor = "bg-gray-200",

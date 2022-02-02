@@ -6,8 +6,8 @@ import Modal from "react-modal";
 import "aos/dist/aos.css";
 
 import Footer from "../../../components/Footer";
-import InvitationHead from "../../../components/InvitationHead";
-import ProtokolKesehatan from "../../../components/ProtokolKesehatan";
+import InvitationHead from "../../../components/invitation/comp/InvitationHead";
+import ProtokolKesehatan from "../../../components/invitation/comp/ProtokolKesehatan";
 import { HeroTwo } from "../../../components/invitation/Hero";
 import { NamaPengantin4 } from "../../../components/invitation/NamaPengantin";
 import DateCountdown from "../../../components/invitation/DateCountdown";
@@ -16,7 +16,7 @@ import Terimakasih from "../../../components/invitation/Terimakasih";
 import { OpeningModalWithTwoDynamicVar } from "../../../components/invitation/OpeningModal";
 import { GuestBookOne } from "../../../components/invitation/GuestBook";
 import { QsAnNur32 } from "../../../components/invitation/QuranAyat";
-import PlayerButton from "../../../components/PlayerButton";
+import PlayerButton from "../../../components/invitation/comp/PlayerButton";
 import Story from "../../../components/invitation/Story";
 import { GalleryGrid } from "../../../components/invitation/Gallery";
 
@@ -217,8 +217,6 @@ const Page = ({ messages }) => {
           textColor="text-sari-aby-dark-orange"
           overlayBgColor="bg-gray-700"
           overlayOpacity="opacity-60"
-          akadImagePath="/rosy-alfan/foto1port.jpg"
-          resepsiImagePath="/rosy-alfan/foto2port.jpg"
           tanggalAkad="Rabu, 16 Februari 2022"
           waktuAkad="Pukul 10.00 WIB"
           waktuResepsi="Pukul 12.00 - 13.00 WIB"

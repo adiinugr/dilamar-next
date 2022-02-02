@@ -25,9 +25,13 @@ module.exports = {
         "rosy-alfan-blue": "#1A374D",
         "sari-aby-dark-orange": "#EF7D00",
         "sari-aby-soft-orange": "#FBE6D3",
+        main: "#83c5be",
+        dark: "#006d77",
+        light: "#edf6f9",
       },
       height: {
         128: "32rem",
+        144: "36rem",
       },
     },
     fontFamily: {
@@ -35,6 +39,7 @@ module.exports = {
       display: ["Dancing Script", "cursive"],
       body: ["Raleway", "sans-serif"],
       noto: ["Noto Serif TC", "serif"],
+      poppins: ["Poppins", "sans-serif"],
     },
   },
   variants: {

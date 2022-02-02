@@ -1,0 +1,28 @@
+import React from "react";
+import { Fade } from "react-reveal";
+
+import { IoLogoWhatsapp } from "react-icons/io";
+
+const ContactUs = () => {
+  return (
+    <div id="contact-us" className="px-8 md:px-24 py-12 md:py-16">
+      <Fade right>
+        <div className="flex flex-col md:flex-row justify-between items-center rounded-xl bg-gradient-to-r from-green-400 to-blue-500 py-8 md:py-24 px-10 md:px-28">
+          <div className="font-semibold text-2xl md:text-3xl text-white mb-8 md:mb-0">
+            Konsultasikan Undangan Pernikahanmu!
+          </div>
+          <a
+            href="https://api.whatsapp.com/send/?phone=%2B6282192477848&text=Hai+KataNikah%2C+Saya+ingin+bertanya+tentang+undangan+online.&app_absent=0"
+            target="_blank"
+            className="flex items-center gap-3 py-4 px-6 shadow-lg rounded-3xl cursor-pointer bg-white text-dark"
+          >
+            <IoLogoWhatsapp size={30} />
+            <p className="text-xl">Hubungi Kami</p>
+          </a>
+        </div>
+      </Fade>
+    </div>
+  );
+};
+
+export default ContactUs;
