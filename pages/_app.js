@@ -1,7 +1,7 @@
 import "../styles/globals.css";
 import { AnimatePresence } from "framer-motion";
 import { AudioContextProvider } from "../context/AudioContext";
-import CustomHead from "../components/CustomHead";
+import CustomHead from "components/CustomHead";
 
 function MyApp({ Component, pageProps, router }) {
   return (
