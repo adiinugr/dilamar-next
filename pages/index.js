@@ -8,9 +8,12 @@ import Faq from "../components/homepage/Faq";
 import ContactUs from "../components/homepage/ContactUs";
 import Footer from "../components/homepage/Footer";
 
+import CustomHead from "components/CustomHead";
+
 const Home = () => {
   return (
     <div className="font-poppins">
+      <CustomHead />
       <Header />
       <Hero />
       <Service />

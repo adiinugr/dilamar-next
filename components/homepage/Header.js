@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React, { useState } from "react";
 import { HiMenu } from "react-icons/hi";
 import { Link as ScrollLink } from "react-scroll";
@@ -7,6 +8,13 @@ const Header = () => {
 
   return (
     <div className="h-20 flex justify-between items-center px-8 md:px-16 fixed w-full top-0 z-20 bg-white shadow-sm">
+      {/* <Image
+        src="/images/logo.png"
+        width={100}
+        height="auto"
+        layout="fill"
+        className="rounded-2xl"
+      /> */}
       <div className="text-2xl font-bold">KataNikah</div>
       <div className="absolute md:relative w-full md:w-auto top-20 left-0 md:top-auto md:left-auto shadow-md md:shadow-none">
         <ul
