@@ -1,6 +1,6 @@
 import {
+  HiChat,
   HiClipboardList,
-  HiClock,
   HiDesktopComputer,
   HiLightBulb,
   HiPencilAlt,
@@ -248,14 +248,14 @@ export const featuresData = [
   {
     id: 6,
     icon: (
-      <HiClock
+      <HiChat
         className="text-dark border-2 border-main rounded-full p-4"
         size={60}
       />
     ),
-    title: "Tanpa Batas Tayang",
+    title: "Konsultasi Sepuasnya",
     desc:
-      "Tidak ada batasan berapa lama undangan bisa tayang. Bahkan setelah acara selesai, kamu masih bisa melihat undanganmu lho. ",
+      "Kamu bebas merencanakan ingin membuat undangan seperti apa. Konsultasikan dengan kami.",
   },
 ];
 

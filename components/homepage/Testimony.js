@@ -26,17 +26,17 @@ const Testimony = () => {
       className="py-12 md:py-16 flex flex-col md:flex-row gap-8 md:gap-24 justify-between px-8 md:px-24 items-center"
     >
       <Fade left>
-        <div className="md:w-1/2">
+        <div className="md:w-1/2 mb-8 md:mb-0">
           <Image
             loader={ImageLoader}
-            src="pexels-photo-2959192.jpeg"
+            src="689442/pexels-photo-689442.jpeg"
             width={800}
             height={600}
             className="rounded-2xl"
           />
         </div>
         <div className="flex flex-col w-full md:w-1/2">
-          <p className="text-4xl md:text-5xl font-bold mb-8 text-gray-600">
+          <p className="text-3xl md:text-5xl font-bold mb-8 text-gray-600">
             Our Client <span className="text-dark">Love Us</span>
           </p>
           <div className="w-full">

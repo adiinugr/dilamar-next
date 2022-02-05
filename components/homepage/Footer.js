@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <div className="bg-dark flex flex-col md:flex-row justify-between items-center text-gray-200 py-8 px-10 mt-16 gap-4 md:gap-0">
       <div className="text-2xl font-bold">KataNikah</div>
-      <div>
+      <div className="my-2 md:0 text-center">
         Copyright &copy; {new Date().getFullYear()}. Nehan Dev All Rights
         Reserved
       </div>

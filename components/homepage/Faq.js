@@ -16,7 +16,7 @@ const Faq = () => {
   return (
     <div id="faq" className="px-8 md:px-24 py-12 md:py-16">
       <Fade bottom>
-        <p className="text-center text-4xl md:text-5xl font-bold mb-5 text-gray-600">
+        <p className="text-center text-3xl md:text-5xl font-bold mb-5 text-gray-600">
           You Have <span className="text-dark">Questions?</span>
         </p>
         <p className="text-gray-500 text-center mb-8 md:mb-20 md:text-lg">
@@ -31,7 +31,7 @@ const Faq = () => {
           >
             <div className={`bg-light p-6`}>
               <div className="flex justify-between ">
-                <p className="font-semibold text-lg text-gray-600">
+                <p className="font-semibold md:text-lg text-gray-600">
                   {faq.question}
                 </p>
                 <motion.div

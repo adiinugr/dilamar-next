@@ -12,10 +12,10 @@ const Hero = () => {
     >
       <Fade bottom>
         <div className="flex flex-col">
-          <p className="text-4xl md:text-5xl font-bold mb-3 uppercase text-dark">
+          <p className="text-3xl md:text-5xl font-bold mb-3 uppercase text-dark">
             Bisa Request
           </p>
-          <div className="text-4xl md:text-5xl bg-main text-white font-bold px-4 py-2 self-start transform -skew-x-12">
+          <div className="text-3xl md:text-5xl bg-main text-white font-bold px-4 py-2 self-start transform -skew-x-12">
             Semaumu
           </div>
           <p className="mt-7 text-gray-500 md:text-lg">
@@ -26,10 +26,10 @@ const Hero = () => {
             Order Now
           </button>
         </div>
-        <div>
+        <div className="mb-8 md:mb-0">
           <Image
             loader={ImageLoader}
-            src="pexels-photo-2959192.jpeg"
+            src="2959192/pexels-photo-2959192.jpeg"
             width={600}
             height={400}
             className="rounded-2xl"

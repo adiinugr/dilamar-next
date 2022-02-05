@@ -22,7 +22,7 @@ const Header = () => {
             toggle ? "flex" : "hidden"
           } md:flex flex-col md:flex-row bg-white w-full p-6 md:p-0 gap-3 md:gap-6 items-center text-gray-600`}
         >
-          <li className="cursor-pointer">
+          <li className="cursor-pointer mb-4 md:mb-0">
             <ScrollLink
               onClick={() => setToggle(false)}
               to="home"
@@ -32,7 +32,7 @@ const Header = () => {
               Home
             </ScrollLink>
           </li>
-          <li className="cursor-pointer">
+          <li className="cursor-pointer mb-4 md:mb-0">
             <ScrollLink
               onClick={() => setToggle(false)}
               to="service"
@@ -43,9 +43,9 @@ const Header = () => {
               Features
             </ScrollLink>
           </li>
-          <li className="cursor-pointer">Template</li>
+          <li className="cursor-pointer mb-4 md:mb-0">Template</li>
 
-          <li className="cursor-pointer">
+          <li className="cursor-pointer mb-4 md:mb-0">
             <ScrollLink
               onClick={() => setToggle(false)}
               to="package"
@@ -56,7 +56,7 @@ const Header = () => {
               Pricing
             </ScrollLink>
           </li>
-          <li className="cursor-pointer">
+          <li className="cursor-pointer mb-4 md:mb-0">
             <ScrollLink
               onClick={() => setToggle(false)}
               to="testimony"
@@ -67,7 +67,7 @@ const Header = () => {
               Testimony
             </ScrollLink>
           </li>
-          <li className="cursor-pointer">
+          <li className="cursor-pointer mb-4 md:mb-0">
             <ScrollLink
               onClick={() => setToggle(false)}
               to="faq"
@@ -78,7 +78,7 @@ const Header = () => {
               FAQ
             </ScrollLink>
           </li>
-          <li className="cursor-pointer">
+          <li className="cursor-pointer mb-4 md:mb-0">
             <ScrollLink
               onClick={() => setToggle(false)}
               to="contact-us"
