@@ -31,42 +31,27 @@ const imageData = [
   {
     id: 1,
     type: "image",
-    src: "/erni-gayuh/1.jpg",
+    src: "/images/couple/couple1.jpg",
   },
   {
     id: 2,
     type: "image",
-    src: "/erni-gayuh/2.jpg",
+    src: "/images/couple/couple2.jpg",
   },
   {
     id: 3,
     type: "image",
-    src: "/erni-gayuh/3.jpg",
+    src: "/images/couple/couple3.jpg",
   },
   {
     id: 4,
     type: "image",
-    src: "/erni-gayuh/4.jpg",
+    src: "/images/couple/couple4.jpg",
   },
   {
     id: 5,
     type: "image",
-    src: "/erni-gayuh/5.jpg",
-  },
-  {
-    id: 6,
-    type: "image",
-    src: "/erni-gayuh/9.JPG",
-  },
-  {
-    id: 7,
-    type: "image",
-    src: "/erni-gayuh/10.JPG",
-  },
-  {
-    id: 8,
-    type: "image",
-    src: "/erni-gayuh/11.JPG",
+    src: "/images/couple/couple5.jpg",
   },
 ];
 
@@ -98,7 +83,7 @@ const bottomMenuData = [
 ];
 
 const Page = ({ messages }) => {
-  const [date] = useState("2021-06-13T08:00:00.000+07:00");
+  const [date] = useState("2025-06-13T08:00:00.000+07:00");
 
   const [data, setData] = useState(messages);
 
@@ -157,7 +142,7 @@ const Page = ({ messages }) => {
       setGuestBookError("Harus diisi semua ya!");
       setGuestBookIsLoading(false);
     } else {
-      const res = await fetch(`/api/erni-gayuh/comment`, {
+      const res = await fetch(`/api/test-api/comment`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -186,7 +171,7 @@ const Page = ({ messages }) => {
   return (
     <>
       <InvitationHead
-        title="Erni & Gayuh Wedding Invitation"
+        title="Galih & Ratna Wedding Invitation"
         description="Kami mengundang Bapak/Ibu, saudara, dan rekan-rekan semua untuk hadir di acara pernikahan kami."
         link="https://dilamar.vercel.app/erni-gayuh/Nama+Tamu"
         imagePath="/erni-gayuh/lanscape.png"
@@ -208,22 +193,21 @@ const Page = ({ messages }) => {
           <OpeningModalTwo
             handleOpenModal={handleOpenModal}
             namaTamu={tamu}
-            namaPengantin="Erni & Gayuh"
+            namaPengantin="Galih & Ratna"
             customColor="text-gray-50"
             buttonBgColor="bg-kharnisa-imam-rosegold"
             buttonTextColor="text-gray-50"
             backgroundImagePath="/kharnisa-imam/flower2.jpg"
-            coupleImagePath="/erni-gayuh/square.jpg"
             withOverlay
           />
         </Modal>
 
         <HeroTwo
-          name="Erni & Gayuh"
+          name="Galih & Ratna"
           date="13 Juni 2021"
-          customColor="text-gray-100"
+          textColor="text-gray-100"
           overlayColor="bg-gray-900"
-          imagePath="/erni-gayuh/2.jpg"
+          imagePath="/images/couple/couple3.jpg"
         />
 
         <QsArrum
@@ -232,12 +216,12 @@ const Page = ({ messages }) => {
         />
 
         <NamaPengantinThree
-          namaWanita="Erni Tyas Pujiastuti, S.Pd."
-          ortuWanita="Putri dari Bpk. Tuyar & Ibu Suyati"
-          namaPria="Gayuh Priwibowo, S.Pd."
-          ortuPria="Putra dari Bpk. Agus Prihmiardi & Ibu Sri Winarti"
-          imagePathPria="/erni-gayuh/pria.JPG"
-          imagePathWanita="/erni-gayuh/wanita.jpg"
+          namaWanita="Ratna Yuniar."
+          ortuWanita="Putri dari Bpk. Amin & Ibu Dewi"
+          namaPria="Galih Siskandar"
+          ortuPria="Putra dari Bpk. Bagus & Ibu Dea"
+          imagePathPria="/images/man/man2.jpg"
+          imagePathWanita="/images/woman/woman2.jpg"
           customColor="bg-kharnisa-imam-silver text-kharnisa-imam-rosegold"
         />
 
@@ -255,17 +239,23 @@ const Page = ({ messages }) => {
           waktuResepsiSesi2="Pukul 13.00 - 15.00 WIB"
           waktuResepsiSesi3="Pukul 15.00 - 17.00 WIB"
           namaTempat="Kediaman Mempelai Wanita"
-          alamatTempat="Jalan Kong Rimin No. 31A, Rawa Bebek, Pulogebang, Cakung, Jakarta Timur."
+          alamatTempat="Jalan Jaksa, No 37B, Surabaya"
           googleMapsUri="https://www.google.com/maps/place/Jl.+Kong+Rimin,+RW.1,+Pulo+Gebang,+Kec.+Cakung,+Kota+Jakarta+Timur,+Daerah+Khusus+Ibukota+Jakarta+13950/@-6.209075,106.9613335,17z/data=!4m5!3m4!1s0x2e698b811463350f:0x7056c03293cf495a!8m2!3d-6.209075!4d106.9635222"
           lat={-6.20881}
           lng={106.96354}
-          customColor="bg-kharnisa-imam-silver text-gray-100"
-          buttonCustomColor="bg-kharnisa-imam-rosegold text-kharnisa-imam-silver"
-          bgImagePath="/erni-gayuh/couple.jpg"
+          textColor="text-gray-200"
+          akadImagePath="/images/hero/hero2.jpg"
+          resepsiImagePath="/images/hero/hero3.jpg"
         />
 
         <ProtokolKesehatan customColor="bg-kharnisa-imam-silver text-kharnisa-imam-rosegold" />
 
+        <BigTitle
+          title="Gallery"
+          bgColor="bg-kharnisa-imam-rosegold"
+          textColor="text-gray-200"
+          borderColor="border-kharnisa-imam-rosegold"
+        />
         <GalleryList
           imageData={imageData}
           bgColor="bg-kharnisa-imam-rosegold"
@@ -276,6 +266,7 @@ const Page = ({ messages }) => {
           title="Guest Book"
           bgColor="bg-kharnisa-imam-silver"
           textColor="text-kharnisa-imam-rosegold"
+          borderColor="border-kharnisa-imam-rosegold"
         />
         <GuestBookOne
           comments={data}
@@ -295,7 +286,7 @@ const Page = ({ messages }) => {
         />
 
         <Terimakasih
-          namaPengantin="Erni & Gayuh"
+          namaPengantin="Galih & Ratna"
           customColor="bg-kharnisa-imam-silver text-kharnisa-imam-rosegold"
         />
 
@@ -307,7 +298,7 @@ const Page = ({ messages }) => {
 };
 
 export async function getServerSideProps() {
-  const res = await fetch(`https://dilamar.vercel.app/api/erni-gayuh/comment`, {
+  const res = await fetch(`https://dilamar.vercel.app/api/test-api/comment`, {
     method: "GET",
     headers: {
       "User-Agent":

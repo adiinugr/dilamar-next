@@ -8,7 +8,7 @@ export const GalleryList = ({
   imageData,
 }) => {
   return (
-    <div className={`${bgColor} ${textColor} py-2`}>
+    <div id="gallery" className={`${bgColor} ${textColor} py-2`}>
       <div className="text-center my-6">
         Sedikit potret tentang kisah kami berdua.
       </div>

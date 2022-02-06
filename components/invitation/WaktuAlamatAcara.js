@@ -325,6 +325,7 @@ export const WaktuAlamatAcaraFour = ({
 }) => {
   return (
     <div
+      id="event"
       className={`${bgColor} ${textColor} py-8 flex flex-col items-center justify-center overflow-hidden`}
     >
       <div
