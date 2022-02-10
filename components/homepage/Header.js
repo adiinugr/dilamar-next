@@ -7,7 +7,7 @@ const Header = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <div className="h-20 flex justify-between items-center px-8 md:px-16 fixed w-full top-0 z-20 bg-white shadow-sm">
+    <header className="h-20 flex justify-between items-center px-8 md:px-16 fixed w-full top-0 z-20 bg-white shadow-sm">
       {/* <Image
         src="/images/logo.png"
         width={100}
@@ -16,7 +16,7 @@ const Header = () => {
         className="rounded-2xl"
       /> */}
       <div className="text-2xl font-bold">KataNikah</div>
-      <div className="absolute md:relative w-full md:w-auto top-20 left-0 md:top-auto md:left-auto shadow-md md:shadow-none">
+      <nav className="absolute md:relative w-full md:w-auto top-20 left-0 md:top-auto md:left-auto shadow-md md:shadow-none">
         <ul
           className={`${
             toggle ? "flex" : "hidden"
@@ -90,7 +90,7 @@ const Header = () => {
             </ScrollLink>
           </li>
         </ul>
-      </div>
+      </nav>
       <div>
         <HiMenu
           onClick={() => setToggle(!toggle)}
@@ -98,7 +98,7 @@ const Header = () => {
           className="cursor-pointer md:hidden"
         />
       </div>
-    </div>
+    </header>
   );
 };
 

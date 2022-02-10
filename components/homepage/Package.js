@@ -7,11 +7,11 @@ import { basic, premium, standard } from "../../assets/data";
 
 const Package = () => {
   return (
-    <div id="package" className="px-8 md:px-32 py-4 md:py-16">
+    <section id="package" className="px-8 md:px-32 py-4 md:py-16">
       <Fade bottom>
-        <p className="text-center text-3xl md:text-5xl font-bold mb-5 text-gray-600">
+        <h1 className="text-center text-3xl md:text-5xl font-bold mb-5 text-gray-600">
           Reasonable & Flexible <span className="text-dark">Package</span>
-        </p>
+        </h1>
         <p className="text-gray-500 text-center mb-8 md:mb-20 md:text-lg">
           Sesuaikan dengan budget dan fitur yang ingin kamu dapatkan.
         </p>
@@ -39,7 +39,7 @@ const Package = () => {
           />
         </div>
       </Fade>
-    </div>
+    </section>
   );
 };
 

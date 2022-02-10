@@ -5,12 +5,12 @@ import { IoLogoWhatsapp } from "react-icons/io";
 
 const ContactUs = () => {
   return (
-    <div id="contact-us" className="px-8 md:px-24 py-12 md:py-16">
+    <section id="contact-us" className="px-8 md:px-24 py-12 md:py-16">
       <Fade right>
         <div className="flex flex-col md:flex-row justify-between items-center rounded-xl bg-gradient-to-r from-green-400 to-blue-500 py-8 md:py-24 px-10 md:px-28">
-          <div className="font-semibold text-2xl text-center md:text-left md:text-3xl text-white mb-8 md:mb-0">
+          <h1 className="font-semibold text-2xl text-center md:text-left md:text-3xl text-white mb-8 md:mb-0">
             Konsultasikan Undangan Pernikahanmu!
-          </div>
+          </h1>
           <a
             href="https://api.whatsapp.com/send/?phone=%2B6282192477848&text=Hai+KataNikah%2C+Saya+ingin+bertanya+tentang+undangan+online.&app_absent=0"
             target="_blank"
@@ -21,7 +21,7 @@ const ContactUs = () => {
           </a>
         </div>
       </Fade>
-    </div>
+    </section>
   );
 };
 

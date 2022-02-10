@@ -6,7 +6,7 @@ import ImageLoader from "../../helpers/ImageLoader";
 
 const Hero = () => {
   return (
-    <div
+    <section
       id="home"
       className="flex flex-col-reverse md:flex-row gap-8 md:gap-24 md:justify-between px-8 md:px-24 pb-16 pt-32 md:py-0 items-center md:h-screen"
     >
@@ -22,9 +22,13 @@ const Hero = () => {
             Satu-satunya jasa undangan website yang bisa memenuhi keinginanmu.
             Mau minta desain seperti apapun? Boleh.
           </p>
-          <button className="bg-main self-start mt-7 px-8 py-3 hover:bg-dark text-white font-semibold rounded-lg focus:outline-none focus:ring focus:ring-green-200">
+          <a
+            href="https://api.whatsapp.com/send/?phone=%2B6282192477848&text=Hai+KataNikah%2C+Saya+ingin+bertanya+tentang+undangan+online.&app_absent=0"
+            target="_blank"
+            className="bg-main self-start mt-7 px-8 py-3 hover:bg-dark text-white font-semibold rounded-lg focus:outline-none focus:ring focus:ring-green-200"
+          >
             Order Now
-          </button>
+          </a>
         </div>
         <div className="mb-8 md:mb-0">
           <Image
@@ -36,7 +40,7 @@ const Hero = () => {
           />
         </div>
       </Fade>
-    </div>
+    </section>
   );
 };
 

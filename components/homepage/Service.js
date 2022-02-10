@@ -5,11 +5,11 @@ import { featuresData } from "../../assets/data";
 
 const Service = () => {
   return (
-    <div id="service" className="px-8 md:px-24 pb-12 md:pb-16">
+    <section id="service" className="px-8 md:px-24 pb-12 md:pb-16">
       <Fade bottom>
-        <p className="text-center text-3xl md:text-5xl font-bold mb-5 text-gray-600">
+        <h1 className="text-center text-3xl md:text-5xl font-bold mb-5 text-gray-600">
           We Have Amazing <span className="text-dark">Services</span>
-        </p>
+        </h1>
         <p className="text-gray-500 text-center mb-8 md:mb-20 md:text-lg">
           Beberapa fitur yang kami hadirkan mungkin tidak akan kamu temukan di
           tempat lain.
@@ -28,7 +28,7 @@ const Service = () => {
           ))}
         </div>
       </Fade>
-    </div>
+    </section>
   );
 };
 

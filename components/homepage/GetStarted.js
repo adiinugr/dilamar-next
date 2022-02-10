@@ -8,7 +8,7 @@ import { getStartedData } from "../../assets/data";
 
 const GetStarted = () => {
   return (
-    <div
+    <section
       id="get-started"
       className="py-12 md:py-16 flex flex-col md:flex-row gap-8 md:gap-24 justify-between px-8 md:px-24 items-center"
     >
@@ -23,9 +23,9 @@ const GetStarted = () => {
           />
         </div>
         <div className="flex flex-col">
-          <p className="text-3xl md:text-5xl font-bold mb-8 md:mb-12 text-gray-600">
+          <h1 className="text-3xl md:text-5xl font-bold mb-8 md:mb-12 text-gray-600">
             Easy to Get <span className="text-dark">Started</span>
-          </p>
+          </h1>
 
           {getStartedData.map((getStarted) => (
             <div key={getStarted.id} className="flex gap-5 mb-6">
@@ -42,7 +42,7 @@ const GetStarted = () => {
           ))}
         </div>
       </Fade>
-    </div>
+    </section>
   );
 };
 

@@ -21,7 +21,7 @@ const Testimony = () => {
   const [sliderRef, setSliderRef] = useState(null);
 
   return (
-    <div
+    <section
       id="testimony"
       className="py-12 md:py-16 flex flex-col md:flex-row gap-8 md:gap-24 justify-between px-8 md:px-24 items-center"
     >
@@ -36,9 +36,9 @@ const Testimony = () => {
           />
         </div>
         <div className="flex flex-col w-full md:w-1/2">
-          <p className="text-3xl md:text-5xl font-bold mb-8 text-gray-600">
+          <h1 className="text-3xl md:text-5xl font-bold mb-8 text-gray-600">
             Our Client <span className="text-dark">Love Us</span>
-          </p>
+          </h1>
           <div className="w-full">
             <p className="text-gray-500 mb-8 md:text-lg">
               Celotehan teman-teman kita yang pernah memesan undangan website di
@@ -57,7 +57,7 @@ const Testimony = () => {
           </div>
         </div>
       </Fade>
-    </div>
+    </section>
   );
 };
 
