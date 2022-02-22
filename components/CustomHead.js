@@ -5,7 +5,7 @@ const CustomHead = () => {
   return (
     <Head>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      <link rel="shortcut icon" href="/images/icon.png" type="image/png"></link>
+      <link rel="shortcut icon" type="image/x-icon" href="images/icon.ico" />
 
       <title>KataNikah - Online Wedding Invitation</title>
       <meta name="title" content="KataNikah - Online Wedding Invitation" />
@@ -24,7 +24,10 @@ const CustomHead = () => {
         property="og:description"
         content="Buat undangan pernikahanmu secara online agar bisa menjangkau teman-temanmu yang jauh. Mereka juga bisa berinteraksi dengan kamu melalui website."
       />
-      <meta property="og:image" content="/images/meta-image.jpg" />
+      <meta
+        property="og:image"
+        content="https://www.katanikah.com/images/meta-image.jpg"
+      />
 
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:url" content="https://katanikah.com" />
@@ -36,7 +39,10 @@ const CustomHead = () => {
         property="twitter:description"
         content="Buat undangan pernikahanmu secara online agar bisa menjangkau teman-temanmu yang jauh. Mereka juga bisa berinteraksi dengan kamu melalui website."
       />
-      <meta property="twitter:image" content="/images/meta-image.jpg"></meta>
+      <meta
+        property="twitter:image"
+        content="https://www.katanikah.com/images/meta-image.jpg"
+      />
     </Head>
   );
 };
