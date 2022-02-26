@@ -7,7 +7,10 @@ import { basic, premium, standard } from "../../assets/data";
 
 const Package = () => {
   return (
-    <section id="package" className="px-8 md:px-32 py-4 md:py-16">
+    <section
+      id="package"
+      className="px-8 md:px-32 py-4 md:py-16 overflow-hidden"
+    >
       <Fade bottom>
         <h1 className="text-center text-3xl md:text-5xl font-bold mb-5 text-main">
           Reasonable & Flexible <span className="text-dark">Package</span>

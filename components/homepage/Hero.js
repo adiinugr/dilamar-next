@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="flex flex-col-reverse md:flex-row gap-8 md:gap-24 md:justify-between px-8 md:px-24 pb-16 pt-32 md:py-0 items-center md:h-screen"
+      className="flex flex-col-reverse md:flex-row gap-8 md:gap-24 md:justify-between px-8 md:px-24 pb-16 pt-32 md:py-0 items-center md:h-screen overflow-hidden"
     >
       <Fade bottom>
         <div className="flex flex-col">

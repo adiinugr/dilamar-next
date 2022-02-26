@@ -14,7 +14,7 @@ const Faq = () => {
   };
 
   return (
-    <section id="faq" className="px-8 md:px-24 py-12 md:py-16">
+    <section id="faq" className="px-8 md:px-24 py-12 md:py-16 overflow-hidden">
       <Fade bottom>
         <h1 className="text-center text-3xl md:text-5xl font-bold mb-5 text-main">
           You Have <span className="text-dark">Questions?</span>

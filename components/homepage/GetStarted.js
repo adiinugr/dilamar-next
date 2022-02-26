@@ -8,7 +8,7 @@ const GetStarted = () => {
   return (
     <section
       id="get-started"
-      className="py-12 md:py-16 flex flex-col md:flex-row gap-8 md:gap-24 justify-between px-8 md:px-24 items-center"
+      className="py-12 md:py-16 flex flex-col md:flex-row gap-8 md:gap-24 justify-between px-8 md:px-24 items-center overflow-hidden"
     >
       <Fade right>
         <div className="md:w-1/2 mb-8 md:mb-0">
