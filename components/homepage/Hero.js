@@ -2,8 +2,6 @@ import Image from "next/image";
 import React from "react";
 import Fade from "react-reveal/Fade";
 
-import ImageLoader from "../../helpers/ImageLoader";
-
 const Hero = () => {
   return (
     <section
@@ -32,9 +30,9 @@ const Hero = () => {
         </div>
         <div className="mb-8 md:mb-0">
           <Image
-            loader={ImageLoader}
-            src="2959192/pexels-photo-2959192.jpeg"
-            width={600}
+            // loader={ImageLoader}
+            src="/images/phone-mockup.png"
+            width={480}
             height={400}
             className="rounded-2xl"
           />

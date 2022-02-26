@@ -8,7 +8,7 @@ const PriceCard = ({ title, data, price }) => {
 
   return (
     <div
-      className={` ${titleClassName()} border border-gray-100 text-gray-600 pt-10 mb-10 rounded-md overflow-hidden shadow-lg`}
+      className={` ${titleClassName()} border border-gray-100 text-dark pt-10 mb-10 rounded-md overflow-hidden shadow-lg`}
     >
       <div>
         <div className="p-4 text-center text-3xl font-bold uppercase">

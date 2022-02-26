@@ -36,7 +36,7 @@ const Testimony = () => {
           />
         </div>
         <div className="flex flex-col w-full md:w-1/2">
-          <h1 className="text-3xl md:text-5xl font-bold mb-8 text-gray-600">
+          <h1 className="text-3xl md:text-5xl font-bold mb-8 text-main">
             Our Client <span className="text-dark">Love Us</span>
           </h1>
           <div className="w-full">

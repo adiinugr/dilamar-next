@@ -26,7 +26,7 @@ const CustomHead = () => {
       />
       <meta
         property="og:image"
-        content="https://www.katanikah.com/images/meta-image.jpg"
+        content="https://www.katanikah.com/images/meta-image.png"
       />
 
       <meta property="twitter:card" content="summary_large_image" />
@@ -41,7 +41,7 @@ const CustomHead = () => {
       />
       <meta
         property="twitter:image"
-        content="https://www.katanikah.com/images/meta-image.jpg"
+        content="https://www.katanikah.com/images/meta-image.png"
       />
     </Head>
   );

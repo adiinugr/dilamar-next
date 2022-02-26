@@ -190,7 +190,7 @@ export const featuresData = [
     id: 1,
     icon: (
       <HiDesktopComputer
-        className="text-dark border-2 border-main rounded-full p-4"
+        className="text-dark border-2 border-dark rounded-full p-4"
         size={60}
       />
     ),
@@ -202,7 +202,7 @@ export const featuresData = [
     id: 2,
     icon: (
       <HiLightBulb
-        className="text-dark border-2 border-main rounded-full p-4"
+        className="text-dark border-2 border-dark rounded-full p-4"
         size={60}
       />
     ),
@@ -214,7 +214,7 @@ export const featuresData = [
     id: 3,
     icon: (
       <HiPencilAlt
-        className="text-dark border-2 border-main rounded-full p-4"
+        className="text-dark border-2 border-dark rounded-full p-4"
         size={60}
       />
     ),
@@ -226,7 +226,7 @@ export const featuresData = [
     id: 4,
     icon: (
       <HiClipboardList
-        className="text-dark border-2 border-main rounded-full p-4"
+        className="text-dark border-2 border-dark rounded-full p-4"
         size={60}
       />
     ),
@@ -237,7 +237,7 @@ export const featuresData = [
     id: 5,
     icon: (
       <HiPhotograph
-        className="text-dark border-2 border-main rounded-full p-4"
+        className="text-dark border-2 border-dark rounded-full p-4"
         size={60}
       />
     ),
@@ -249,7 +249,7 @@ export const featuresData = [
     id: 6,
     icon: (
       <HiChat
-        className="text-dark border-2 border-main rounded-full p-4"
+        className="text-dark border-2 border-dark rounded-full p-4"
         size={60}
       />
     ),

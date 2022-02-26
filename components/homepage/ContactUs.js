@@ -7,7 +7,7 @@ const ContactUs = () => {
   return (
     <section id="contact-us" className="px-8 md:px-24 py-12 md:py-16">
       <Fade right>
-        <div className="flex flex-col md:flex-row justify-between items-center rounded-xl bg-gradient-to-r from-green-400 to-blue-500 py-8 md:py-24 px-10 md:px-28">
+        <div className="flex flex-col md:flex-row justify-between items-center rounded-xl bg-gradient-to-r from-dark to-main py-8 md:py-24 px-10 md:px-28">
           <h1 className="font-semibold text-2xl text-center md:text-left md:text-3xl text-white mb-8 md:mb-0">
             Konsultasikan Undangan Pernikahanmu!
           </h1>

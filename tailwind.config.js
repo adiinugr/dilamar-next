@@ -25,9 +25,9 @@ module.exports = {
         "rosy-alfan-blue": "#1A374D",
         "sari-aby-dark-orange": "#EF7D00",
         "sari-aby-soft-orange": "#FBE6D3",
-        main: "#83c5be",
-        dark: "#006d77",
-        light: "#edf6f9",
+        main: "#DBAC94",
+        dark: "#604A3E",
+        light: "#F8E9DB",
       },
       height: {
         128: "32rem",
