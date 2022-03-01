@@ -17,6 +17,8 @@
     "mongoose": "^5.11.17",
     "next": "10.0.6",
     "postcss": "^8.4.6",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-preset-env": "^7.4.1",
     "react": "17.0.1",
     "react-countdown": "^2.3.1",
     "react-csv": "^2.0.3",

@@ -27,23 +27,22 @@ module.exports = {
         "sari-aby-soft-orange": "#FBE6D3",
         main: "#DBAC94",
         dark: "#604A3E",
-        light: "#F8E9DB",
+        light: "#F8E9DB"
       },
       height: {
         128: "32rem",
-        144: "36rem",
-      },
+        144: "36rem"
+      }
     },
     fontFamily: {
       sans: ["Raleway", "sans-serif"],
       display: ["Dancing Script", "cursive"],
       body: ["Raleway", "sans-serif"],
-      noto: ["Noto Serif TC", "serif"],
-      poppins: ["Poppins", "sans-serif"],
-    },
+      poppins: ["Poppins", "sans-serif"]
+    }
   },
   variants: {
-    extend: {},
+    extend: {}
   },
-  plugins: [],
+  plugins: []
 };
