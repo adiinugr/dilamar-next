@@ -106,6 +106,7 @@ const Page = ({ comments }) => {
   const [guestBookComment, setGuestBookComment] = useState("");
   const [guestBookIsLoading, setGuestBookIsLoading] = useState(false);
   const [guestBookError, setGuestBookError] = useState("");
+  const [guestBookSuccess, setGuestBookSuccess] = useState("");
 
   const handleGuestBookSubmit = async (event) => {
     event.preventDefault();
@@ -137,6 +138,7 @@ const Page = ({ comments }) => {
 
       setGuestBookIsLoading(false);
 
+      setGuestBookSuccess("Selamat! Pesanmu berhasil dikirim.");
       setGuestBookName("");
       setGuestBookComment("");
     }
@@ -234,6 +236,7 @@ const Page = ({ comments }) => {
         setComment={(e) => setGuestBookComment(e.target.value)}
         error={guestBookError}
         setError={() => setGuestBookError("")}
+        success={guestBookSuccess}
         isLoading={guestBookIsLoading}
         handleSubmit={handleGuestBookSubmit}
         bgColor="bg-white"

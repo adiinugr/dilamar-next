@@ -3,7 +3,8 @@ import { Dialog } from "@headlessui/react";
 import {
   AiOutlineComment,
   AiOutlineLoading3Quarters,
-  AiOutlineClose
+  AiOutlineClose,
+  AiFillCheckCircle
 } from "react-icons/ai";
 import { Link as ScrollLink } from "react-scroll";
 import Form from "./parts/Form";
@@ -102,6 +103,7 @@ export const GuestBookWithPopup = ({
   setComment,
   error,
   setError,
+  success,
   handleSubmit,
   isLoading,
   bgColor = "bg-gray-200",
@@ -145,20 +147,32 @@ export const GuestBookWithPopup = ({
             >
               <AiOutlineClose />
             </div>
-            <Form
-              name={name}
-              setName={setName}
-              comment={comment}
-              setComment={setComment}
-              error={error}
-              handleSubmit={handleSubmit}
-              isLoading={isLoading}
-              inputTextColor={inputTextColor}
-              inputBgColor={inputBgColor}
-              inputBorder={inputBorder}
-              buttonTextColor={buttonTextColor}
-              buttonBgColor={buttonBgColor}
-            />
+            {success ? (
+              <div className="p-6 ">
+                <div className="mb-4">
+                  <AiFillCheckCircle
+                    size={75}
+                    className="text-green-500 m-auto"
+                  />
+                </div>
+                <p>{success}</p>
+              </div>
+            ) : (
+              <Form
+                name={name}
+                setName={setName}
+                comment={comment}
+                setComment={setComment}
+                error={error}
+                handleSubmit={handleSubmit}
+                isLoading={isLoading}
+                inputTextColor={inputTextColor}
+                inputBgColor={inputBgColor}
+                inputBorder={inputBorder}
+                buttonTextColor={buttonTextColor}
+                buttonBgColor={buttonBgColor}
+              />
+            )}
           </div>
         </div>
       </Dialog>

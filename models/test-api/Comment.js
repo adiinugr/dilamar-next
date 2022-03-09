@@ -1,16 +1,17 @@
 import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
-const TestApiSchema = new Schema({
+const TestApiCommentSchema = new Schema({
   name: {
     type: String,
-    required: true,
+    required: true
   },
   message: {
     type: String,
-    required: true,
-  },
+    required: true
+  }
 });
 
 module.exports =
-  mongoose.models.TestApi || mongoose.model("TestApi", TestApiSchema);
+  mongoose.models.TestApiComment ||
+  mongoose.model("TestApiComment", TestApiCommentSchema);
