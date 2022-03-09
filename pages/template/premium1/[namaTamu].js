@@ -6,53 +6,53 @@ import Modal from "react-modal";
 import "aos/dist/aos.css";
 
 import Footer from "../../../components/Footer";
-import InvitationHead from "../../../components/invitation/comp/InvitationHead";
-import ProtokolKesehatan from "../../../components/invitation/comp/ProtokolKesehatan";
+import InvitationHead from "../../../components/invitation/parts/InvitationHead";
+import ProtokolKesehatan from "../../../components/invitation/parts/ProtokolKesehatan";
 import { HeroTwo } from "../../../components/invitation/Hero";
 import { NamaPengantinThree } from "../../../components/invitation/NamaPengantin";
 import { WaktuAlamatAcaraFour } from "../../../components/invitation/WaktuAlamatAcara";
 import { GuestBookOne } from "../../../components/invitation/GuestBook";
 import Terimakasih from "../../../components/invitation/Terimakasih";
 import { OpeningModalTwo } from "../../../components/invitation/OpeningModal";
-import { BottomMenuGeneral } from "../../../components/invitation/comp/BottomMenu";
+import { BottomMenuGeneral } from "../../../components/invitation/parts/BottomTabMenu";
 import { GalleryList } from "../../../components/invitation/Gallery";
-import PlayerButton from "../../../components/invitation/comp/PlayerButton";
-import QsArrum from "../../../components/invitation/QsArrum";
+import PlayerButton from "../../../components/invitation/parts/PlayerButton";
+import QsArrum from "../../../components/invitation/Ayyat";
 import DateCountdown from "../../../components/invitation/DateCountdown";
 import {
   HiOutlineCalendar,
   HiOutlineHeart,
   HiOutlineHome,
-  HiOutlinePhotograph,
+  HiOutlinePhotograph
 } from "react-icons/hi";
-import { BigTitle } from "../../../components/invitation/comp/BigTitle";
+import { BigTitle } from "../../../components/invitation/parts/BigTitle";
 
 const imageData = [
   {
     id: 1,
     type: "image",
-    src: "/images/couple/couple1.jpg",
+    src: "/images/couple/couple1.jpg"
   },
   {
     id: 2,
     type: "image",
-    src: "/images/couple/couple2.jpg",
+    src: "/images/couple/couple2.jpg"
   },
   {
     id: 3,
     type: "image",
-    src: "/images/couple/couple3.jpg",
+    src: "/images/couple/couple3.jpg"
   },
   {
     id: 4,
     type: "image",
-    src: "/images/couple/couple4.jpg",
+    src: "/images/couple/couple4.jpg"
   },
   {
     id: 5,
     type: "image",
-    src: "/images/couple/couple5.jpg",
-  },
+    src: "/images/couple/couple5.jpg"
+  }
 ];
 
 const bottomMenuData = [
@@ -60,26 +60,26 @@ const bottomMenuData = [
     id: 1,
     anchor: "hero",
     title: "Home",
-    iconName: <HiOutlineHome size={26} />,
+    iconName: <HiOutlineHome size={26} />
   },
   {
     id: 2,
     anchor: "couple",
     title: "Couple",
-    iconName: <HiOutlineHeart size={26} />,
+    iconName: <HiOutlineHeart size={26} />
   },
   {
     id: 3,
     anchor: "event",
     title: "Event",
-    iconName: <HiOutlineCalendar size={26} />,
+    iconName: <HiOutlineCalendar size={26} />
   },
   {
     id: 4,
     anchor: "gallery",
     title: "Gallery",
-    iconName: <HiOutlinePhotograph size={26} />,
-  },
+    iconName: <HiOutlinePhotograph size={26} />
+  }
 ];
 
 const Page = ({ messages }) => {
@@ -145,20 +145,20 @@ const Page = ({ messages }) => {
       const res = await fetch(`/api/test-api/comment`, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json"
         },
         body: JSON.stringify({
           name: guestBookName,
-          message: guestBookComment,
-        }),
+          message: guestBookComment
+        })
       });
 
       setData((prevData) => [
         ...prevData,
         {
           name: guestBookName,
-          message: guestBookComment,
-        },
+          message: guestBookComment
+        }
       ]);
 
       setGuestBookIsLoading(false);
@@ -303,8 +303,8 @@ export async function getServerSideProps() {
     headers: {
       "User-Agent":
         "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36",
-      Accept: "application/json; charset=UTF-8",
-    },
+      Accept: "application/json; charset=UTF-8"
+    }
   });
   const data = await res.json();
   const messages = await data.data;
@@ -318,7 +318,7 @@ export async function getServerSideProps() {
   };
 
   return {
-    props: { messages: getData() },
+    props: { messages: getData() }
   };
 }
 

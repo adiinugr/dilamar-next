@@ -10,7 +10,7 @@ import { GoBook } from "react-icons/go";
 import { MdLocationOn } from "react-icons/md";
 import { AiOutlineComment } from "react-icons/ai";
 
-import { renderer } from "components/invitation/comp/CountDownRenderer";
+import { renderer } from "components/invitation/parts/CountDownRenderer";
 import { AudioContext } from "context/AudioContext";
 import Footer from "components/Footer";
 
@@ -19,16 +19,16 @@ const Page = () => {
   const [comments, setComments] = useState([
     {
       name: "Sugeng",
-      comment: "Selamat ya! Semoga sakinah",
+      comment: "Selamat ya! Semoga sakinah"
     },
     {
       name: "Ita",
-      comment: "Semoga sakinah, mawadah, warohmah..",
+      comment: "Semoga sakinah, mawadah, warohmah.."
     },
     {
       name: "Intan",
-      comment: "Lancar sampai hari h yaa...",
-    },
+      comment: "Lancar sampai hari h yaa..."
+    }
   ]);
 
   const [name, setName] = useState("");
@@ -71,8 +71,8 @@ const Page = () => {
       ...prevComment,
       {
         name,
-        comment,
-      },
+        comment
+      }
     ]);
   };
 

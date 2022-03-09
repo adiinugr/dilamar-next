@@ -1,155 +1,111 @@
-import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
-import Aos from "aos";
-import Modal from "react-modal";
+import React, { useState } from "react";
 import {
-  HiOutlineBookOpen,
   HiOutlineCalendar,
   HiOutlineHeart,
   HiOutlineHome,
-  HiOutlinePhotograph,
+  HiOutlinePhotograph
 } from "react-icons/hi";
 
-import "aos/dist/aos.css";
-
-import Footer from "components/Footer";
-import InvitationHead from "components/invitation/comp/InvitationHead";
-import ProtokolKesehatan from "components/invitation/comp/ProtokolKesehatan";
-import { HeroTwo } from "components/invitation/Hero";
+import { BottomTabMenu } from "components/invitation/parts/BottomTabMenu";
+import InvitationHead from "components/invitation/parts/InvitationHead";
+import { Hero } from "components/invitation/Hero";
+import { QsArrum21 } from "components/invitation/Ayyat";
 import { NamaPengantinThree } from "components/invitation/NamaPengantin";
-import { WaktuAlamatAcaraTwo } from "components/invitation/WaktuAlamatAcara";
-import { GuestBookOne } from "components/invitation/GuestBook";
-import Terimakasih from "components/invitation/Terimakasih";
-import { OpeningModalTwo } from "components/invitation/OpeningModal";
-import { BottomMenuGeneral } from "components/invitation/comp/BottomMenu";
+import { StoryTwo } from "components/invitation/Story";
+import { DoubleWave } from "components/invitation/parts/Divider";
+import { WaktuAlamatAcaraFour } from "components/invitation/WaktuAlamatAcara";
 import RSVP from "components/invitation/RSVP";
-import { GalleryList } from "components/invitation/Gallery";
-import PlayerButton from "components/invitation/comp/PlayerButton";
-import { BigTitle } from "components/invitation/comp/BigTitle";
+import { GallerySlideShow } from "components/invitation/Gallery";
+import { GuestBookWithPopup } from "components/invitation/GuestBook";
+import Terimakasih from "components/invitation/Terimakasih";
+import InvitationFooter from "components/invitation/InvitationFooter";
 
 const bottomMenuData = [
   {
     id: 1,
     anchor: "hero",
     title: "Home",
-    iconName: <HiOutlineHome size={26} />,
+    iconName: <HiOutlineHome size={26} />
   },
   {
     id: 2,
     anchor: "couple",
     title: "Couple",
-    iconName: <HiOutlineHeart size={26} />,
+    iconName: <HiOutlineHeart size={26} />
   },
   {
     id: 3,
     anchor: "event",
     title: "Event",
-    iconName: <HiOutlineCalendar size={26} />,
+    iconName: <HiOutlineCalendar size={26} />
   },
   {
     id: 4,
     anchor: "gallery",
     title: "Gallery",
-    iconName: <HiOutlinePhotograph size={26} />,
+    iconName: <HiOutlinePhotograph size={26} />
+  }
+];
+
+const storyData = [
+  {
+    id: 1,
+    title: "First Meet",
+    description:
+      "Nibh volutpat iaculis nascetur scelerisque interdum amet tortor. Massa mauris leo nec quam ut elit lacus etiam. Vestibulum, semper morbi vel viverra in eu.",
+    imagePath: "/images/first-meet.jpg"
   },
   {
-    id: 5,
-    anchor: "rsvp",
-    title: "RSVP",
-    iconName: <HiOutlineBookOpen size={26} />,
+    id: 2,
+    title: "First Date",
+    description:
+      "Nibh volutpat iaculis nascetur scelerisque interdum amet tortor. Massa mauris leo nec quam ut elit lacus etiam. Vestibulum, semper morbi vel viverra in eu.",
+    imagePath: "/images/first-date.jpg"
   },
+  {
+    id: 3,
+    title: "The Proposal",
+    description:
+      "Nibh volutpat iaculis nascetur scelerisque interdum amet tortor. Massa mauris leo nec quam ut elit lacus etiam. Vestibulum, semper morbi vel viverra in eu.",
+    imagePath: "/images/the-proposal.jpg"
+  }
 ];
 
 const imageData = [
   {
     id: 1,
     type: "image",
-    src: "/kharnisa-imam/couple.png",
+    src: "/images/couple/couple1.jpg"
   },
   {
     id: 2,
     type: "image",
-    src: "/kharnisa-imam/couple2.png",
+    src: "/images/couple/couple2.jpg"
   },
   {
     id: 3,
     type: "image",
-    src: "/kharnisa-imam/couple3.png",
+    src: "/images/couple/couple3.jpg"
   },
   {
     id: 4,
     type: "image",
-    src: "/kharnisa-imam/couple4.png",
+    src: "/images/couple/couple4.jpg"
   },
   {
     id: 5,
     type: "image",
-    src: "/kharnisa-imam/couple5.png",
-  },
-  {
-    id: 6,
-    type: "video",
-    videoId: "n9uIqjzZS_4",
-  },
+    src: "/images/couple/couple5.jpg"
+  }
 ];
 
-const Page = ({ messages }) => {
-  const [date] = useState("2021-04-04T16:00:00.000+07:00");
-
-  const [data, setData] = useState(messages);
-
-  const router = useRouter();
-  const { namaTamu } = router.query;
-  const tamu = namaTamu.replace("+", " ");
+const Page = ({ comments }) => {
+  const [data, setData] = useState(comments);
 
   const [guestBookName, setGuestBookName] = useState("");
   const [guestBookComment, setGuestBookComment] = useState("");
   const [guestBookIsLoading, setGuestBookIsLoading] = useState(false);
   const [guestBookError, setGuestBookError] = useState("");
-
-  const [rsvpName, setRsvpName] = useState("");
-  const [rsvpStatus, setRsvpStatus] = useState("");
-  // const [rsvpMessage, setRsvpMessage] = useState("");
-  const [rsvpIsLoading, setRsvpIsLoading] = useState(false);
-  const [rsvpError, setRsvpError] = useState("");
-  const [rsvpSuccess, setRsvpSuccess] = useState("");
-
-  const [modalIsOpen, setModalIsOpen] = useState(true);
-
-  const [audio, setAudio] = useState(null);
-  const [isAudioPlaying, setIsAudioPlaying] = useState(false);
-  const [showPlayButton, setShowPlayButton] = useState(false);
-
-  useEffect(() => {
-    Aos.init({ duration: 1000 });
-  }, []);
-
-  useEffect(() => {
-    setAudio(new Audio("/kharnisa-imam/the-overtunes.mp3"));
-
-    return () => {
-      if (audio) {
-        audio.pause();
-        setIsAudioPlaying(false);
-      }
-    };
-  }, []);
-
-  const handlePlayMusic = () => {
-    audio.play();
-    setIsAudioPlaying(true);
-  };
-
-  const handlePauseMusic = () => {
-    audio.pause();
-    setIsAudioPlaying(false);
-  };
-
-  const handleOpenModal = () => {
-    setModalIsOpen(false);
-    setShowPlayButton(true);
-    handlePlayMusic();
-  };
 
   const handleGuestBookSubmit = async (event) => {
     event.preventDefault();
@@ -160,23 +116,23 @@ const Page = ({ messages }) => {
       setGuestBookError("Harus diisi semua ya!");
       setGuestBookIsLoading(false);
     } else {
-      const res = await fetch(`/api/kharnisa-imam/comment`, {
+      const res = await fetch(`/api/test-api/comment`, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json"
         },
         body: JSON.stringify({
           name: guestBookName,
-          message: guestBookComment,
-        }),
+          message: guestBookComment
+        })
       });
 
       setData((prevData) => [
         ...prevData,
         {
           name: guestBookName,
-          message: guestBookComment,
-        },
+          message: guestBookComment
+        }
       ]);
 
       setGuestBookIsLoading(false);
@@ -186,188 +142,157 @@ const Page = ({ messages }) => {
     }
   };
 
-  const handleRsvpSubmit = async (event) => {
-    event.preventDefault();
-
-    setRsvpIsLoading(true);
-
-    if (rsvpName === "" && rsvpStatus === "") {
-      setRsvpSuccess("");
-      setRsvpError("Harus diisi semua ya!");
-      setRsvpIsLoading(false);
-    } else {
-      const res = await fetch(`/api/kharnisa-imam/rsvp`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: rsvpName,
-          status: rsvpStatus,
-        }),
-      });
-
-      setRsvpIsLoading(false);
-      setRsvpError("");
-      setRsvpSuccess("Status Kehadiran Berhasil Dikirim!");
-
-      setRsvpName("");
-      setRsvpStatus("");
-    }
-  };
-
   return (
     <>
       <InvitationHead
-        title="Kharnisa & Imam Wedding Invitation"
+        title="Galih & Ratna Wedding Invitation"
         description="Kami mengundang Bapak/Ibu, saudara, dan rekan-rekan semua untuk hadir di acara pernikahan kami."
-        link="https://dilamar.vercel.app/kharnisa-imam"
-        imagePath="/kharnisa-imam/couple-square.png"
+        link="https://katanikah.com/template/premium2/Nama+Tamu"
+        imagePath="/images/jeremy-weddings.jpg"
       />
-      <BottomMenuGeneral
-        textColor="text-kharnisa-imam-gold"
-        bgColor="bg-kharnisa-imam-silver"
+
+      <BottomTabMenu
+        bgColor="bg-white"
+        textColor="text-brown-dark"
         bottomMenuData={bottomMenuData}
       />
-      {showPlayButton && (
-        <PlayerButton
-          handlePlayMusic={handlePlayMusic}
-          handlePauseMusic={handlePauseMusic}
-          isAudioPlaying={isAudioPlaying}
-        />
-      )}
-      <div>
-        <Modal
-          isOpen={modalIsOpen}
-          ariaHideApp={false}
-          className="absolute top-0 left-0 right-0 bottom-0 bg-gray-900"
-        >
-          <OpeningModalTwo
-            handleOpenModal={handleOpenModal}
-            namaTamu={tamu}
-            namaPengantin="Kharnisa & Imam"
-            customColor="text-gray-50"
-            buttonCustomColor="bg-kharnisa-imam-gold text-gray-50"
-            backgroundImagePath="/kharnisa-imam/flower2.jpg"
-            coupleImagePath="/kharnisa-imam/couple-square.png"
-            withOverlay
-          />
-        </Modal>
 
-        <HeroTwo
-          name="Kharnisa & Imam"
-          date="04 April 2021"
-          customColor="text-gray-50"
-          // overlayColor="bg-kharnisa-imam-gold"
-          imagePath="/kharnisa-imam/couple4.png"
-        />
+      <Hero
+        name="Galih & Ratna"
+        date="13 Juni 2021"
+        textColor="text-gray-100"
+        overlayClassName="bg-gradient-to-b from-brown-primary opacity-30"
+        imagePath="/images/couple/couple3.jpg"
+      >
+        <div className="absolute bg-gradient-to-t from-brown-dark h-32 w-full bottom-0 left-0 z-400" />
+      </Hero>
 
-        <NamaPengantinThree
-          namaWanita="Khairunisa Dian Lestari, S. Hum"
-          ortuWanita="Putri Bungsu dari Bpk. H. Suyoto (Alm) & Hj. Ayi Mustika"
-          namaPria="Dwi Imam Avianto, S.E"
-          ortuPria="Putra Kedua dari Bpk. Kasturi Tri Irianto, A.Md & Ibu Ati Sugiarti, S.AP, M.A"
-          imagePathPria="/kharnisa-imam/pria.png"
-          imagePathWanita="/kharnisa-imam/wanita.png"
-          customColor="bg-kharnisa-imam-silver text-kharnisa-imam-gold"
-        />
+      <QsArrum21 bgColor="bg-brown-dark" textColor="text-gray-200" />
 
-        <WaktuAlamatAcaraTwo
-          tanggalAkad="Minggu, 04 April 2021"
-          waktuAkad="Pukul 15.00 - 17.00 WIB"
-          tanggalResepsi="Minggu, 04 April 2021"
-          waktuResepsiSesi1="Pukul 17.00 - 19.00 WIB"
-          namaTempat="Bumbu Desa, Harapan Indah RT.003/RW.010, Medan Satria, Kota Bekasi"
-          googleMapsUri="https://www.google.co.id/maps/place/Bumbu+Desa+Harapan+Indah/@-6.1895096,106.9741279,17z/data=!3m1!4b1!4m5!3m4!1s0x2e698bbdd27bc41b:0x99301c03154afbd7!8m2!3d-6.1895096!4d106.9763166"
-          lat={-6.18926}
-          lng={106.97633}
-          customColor="bg-kharnisa-imam-silver text-kharnisa-imam-gold"
-          buttonCustomColor="bg-kharnisa-imam-gold text-kharnisa-imam-silver"
-          date={date}
-        />
+      <NamaPengantinThree
+        namaWanita="Ratna Yuniar"
+        ortuWanita="Putri dari Bpk. Amin & Ibu Dewi"
+        namaPria="Galih Siskandar"
+        ortuPria="Putra dari Bpk. Bagus & Ibu Dea"
+        imagePathPria="/images/man/man2.jpg"
+        imagePathWanita="/images/woman/woman2.jpg"
+        textColor="text-white"
+        bgColor="bg-brown-dark"
+      />
 
-        <ProtokolKesehatan customColor="bg-kharnisa-imam-silver text-kharnisa-imam-gold" />
+      <StoryTwo
+        textColor="text-brown-dark"
+        bgColor="bg-white"
+        imageOnePath="/images/couple/couple8.jpg"
+        imageTwoPath="/images/couple/couple11.jpg"
+        lineBorderColor="border-brown-lighter"
+        storyData={storyData}
+      >
+        <DoubleWave color="#452808" />
+        <DoubleWave color="#452808" isBottom />
+      </StoryTwo>
 
-        <GalleryList
-          imageData={imageData}
-          bgColor="bg-kharnisa-imam-silver"
-          textColor="text-kharnisa-imam-gold py-10"
-        />
+      <WaktuAlamatAcaraFour
+        tanggalAkad="Minggu, 13 Juni 2021"
+        waktuAkad="Pukul 08.00 - 09.00 WIB"
+        tanggalResepsi="Minggu, 13 Juni 2021"
+        waktuResepsi="Pukul 11.00 - 13.00 WIB"
+        namaTempat="Kediaman Mempelai Wanita"
+        alamatTempat="Jalan Jaksa, No 37B, Surabaya"
+        googleMapsUri="https://www.google.com/maps/place/Jl.+Kong+Rimin,+RW.1,+Pulo+Gebang,+Kec.+Cakung,+Kota+Jakarta+Timur,+Daerah+Khusus+Ibukota+Jakarta+13950/@-6.209075,106.9613335,17z/data=!4m5!3m4!1s0x2e698b811463350f:0x7056c03293cf495a!8m2!3d-6.209075!4d106.9635222"
+        lat={-6.20881}
+        lng={106.96354}
+        bgColor="bg-brown-dark"
+        overlayBgColor="bg-white"
+        overlayOpacity="bg-opacity-80"
+        textColor="text-brown-dark"
+        buttonBgColor="bg-brown-primary"
+        akadImagePath="/images/hero/hero2.jpg"
+        resepsiImagePath="/images/hero/hero3.jpg"
+      />
 
-        <RSVP
-          name={rsvpName}
-          setName={(e) => setRsvpName(e.target.value)}
-          status={rsvpStatus}
-          setStatus={(e) => setRsvpStatus(e.target.value)}
-          // message={rsvpMessage}
-          // setMessage={(e) => setRsvpMessage(e.target.value)}
-          error={rsvpError}
-          isLoading={rsvpIsLoading}
-          succcess={rsvpSuccess}
-          handleSubmit={handleRsvpSubmit}
-        />
+      <RSVP
+        bgColor="bg-white"
+        textColor="text-brown-dark"
+        formBgColor="bg-white"
+        buttonBgColor="bg-brown-primary"
+      >
+        <DoubleWave color="#452808" isBottom />
+      </RSVP>
 
-        <div className="px-14 md:w-2/4 py-10 bg-kharnisa-imam-silver">
-          <BigTitle
-            title="Guest Book"
-            bgColor="pattern2"
-            textColor="text-kharnisa-imam-gold"
-          />
-          <GuestBookOne
-            comments={data}
-            name={guestBookName}
-            setName={(e) => setGuestBookName(e.target.value)}
-            comment={guestBookComment}
-            setComment={(e) => setGuestBookComment(e.target.value)}
-            error={guestBookError}
-            isLoading={guestBookIsLoading}
-            handleSubmit={handleGuestBookSubmit}
-            bgColor="pattern2"
-            textColor="text-kharnisa-imam-gold"
-            writeYourWishBorder="border border-kharnisa-imam-gold"
-            wishBorder="border-t-2 border-kharnisa-imam-gold"
-            buttonBgColor="bg-kharnisa-imam-gold"
-            buttonTextColor="text-gray-200"
-          />
-        </div>
+      <GallerySlideShow
+        bgColor="bg-brown-dark"
+        textColor="text-white"
+        imageData={imageData}
+      />
 
-        <Terimakasih
-          namaPengantin="Kharnisa & Imam"
-          customColor="bg-kharnisa-imam-silver text-kharnisa-imam-gold"
-        />
+      <GuestBookWithPopup
+        comments={[
+          {
+            id: 1,
+            name: "Adi",
+            message: "Hai"
+          },
+          {
+            id: 2,
+            name: "Anwar",
+            message: "Hallo bro"
+          }
+        ]}
+        name={guestBookName}
+        setName={(e) => setGuestBookName(e.target.value)}
+        comment={guestBookComment}
+        setComment={(e) => setGuestBookComment(e.target.value)}
+        error={guestBookError}
+        setError={() => setGuestBookError("")}
+        isLoading={guestBookIsLoading}
+        handleSubmit={handleGuestBookSubmit}
+        bgColor="bg-white"
+        bgHorizontalLine="bg-brown-dark"
+        writeYourWishClassname="bg-brown-primary text-white"
+        buttonTextColor="text-white"
+        buttonBgColor="bg-brown-dark"
+      >
+        {" "}
+        <DoubleWave color="#452808" />
+        <DoubleWave color="#452808" isBottom />
+      </GuestBookWithPopup>
 
-        <Footer />
-        <div className="mb-20"></div>
-      </div>
+      <Terimakasih
+        namaPengantin="Ratna & Galih"
+        bgColor="bg-brown-dark"
+        textColor="text-white"
+      />
+
+      <InvitationFooter />
+
+      <div className="h-16"></div>
     </>
   );
 };
 
 export async function getServerSideProps() {
-  const res = await fetch(
-    `https://dilamar.vercel.app/api/kharnisa-imam/comment`,
-    {
-      method: "GET",
-      headers: {
-        "User-Agent":
-          "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36",
-        Accept: "application/json; charset=UTF-8",
-      },
+  const res = await fetch(`https://katanikah.com/api/test-api/comment`, {
+    method: "GET",
+    headers: {
+      "User-Agent":
+        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36",
+      Accept: "application/json; charset=UTF-8"
     }
-  );
+  });
   const data = await res.json();
-  const messages = await data.data;
+  const comments = await data.data;
 
   const getData = () => {
-    if (messages) {
-      return messages;
+    if (comments) {
+      return comments;
     } else {
       return [];
     }
   };
 
   return {
-    props: { messages: getData() },
+    props: { comments: getData() }
   };
 }
 

@@ -3,12 +3,11 @@ import { HiCheckCircle, HiXCircle } from "react-icons/hi";
 import "aos/dist/aos.css";
 
 const PriceCard = ({ title, data, price }) => {
-  const titleClassName = () =>
-    title === "Standard" ? "transform md:scale-110 bg-light" : "";
-
   return (
     <div
-      className={` ${titleClassName()} border border-gray-100 text-dark pt-10 mb-10 rounded-md overflow-hidden shadow-lg`}
+      className={` ${
+        title === "Standard" ? "transform md:scale-110 bg-light" : ""
+      } border border-gray-100 text-dark pt-10 mb-10 rounded-md overflow-hidden shadow-lg`}
     >
       <div>
         <div className="p-4 text-center text-3xl font-bold uppercase">
@@ -18,7 +17,9 @@ const PriceCard = ({ title, data, price }) => {
         <div className="p-6 px-10">
           {data.map((dta) => (
             <div key={dta.id} className="flex items-center mb-2">
-              {dta.isAvailable ? (
+              {(dta.isBasic && title === "Basic") ||
+              (dta.isStandard && title === "Standard") ||
+              (dta.isPremium && title === "Premium") ? (
                 <HiCheckCircle size={25} color="green" />
               ) : (
                 <HiXCircle size={25} color="red" />

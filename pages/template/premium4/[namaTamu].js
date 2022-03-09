@@ -6,17 +6,17 @@ import Modal from "react-modal";
 import "aos/dist/aos.css";
 
 import Footer from "components/Footer";
-import InvitationHead from "components/invitation/comp/InvitationHead";
-import ProtokolKesehatan from "components/invitation/comp/ProtokolKesehatan";
+import InvitationHead from "components/invitation/parts/InvitationHead";
+import ProtokolKesehatan from "components/invitation/parts/ProtokolKesehatan";
 import { HeroTwo } from "components/invitation/Hero";
 import { NamaPengantinThree } from "components/invitation/NamaPengantin";
 import { WaktuAlamatAcaraFour } from "components/invitation/WaktuAlamatAcara";
 import { GuestBookOne } from "components/invitation/GuestBook";
 import Terimakasih from "components/invitation/Terimakasih";
 import { OpeningModalNoInvitation } from "components/invitation/OpeningModal";
-import { BottomMenuGeneral } from "components/invitation/comp/BottomMenu";
+import { BottomMenuGeneral } from "components/invitation/parts/BottomTabMenu";
 import { GalleryList } from "components/invitation/Gallery";
-import PlayerButton from "components/invitation/comp/PlayerButton";
+import PlayerButton from "components/invitation/parts/PlayerButton";
 import DateCountdown from "components/invitation/DateCountdown";
 import Angpau from "components/invitation/Angpau";
 
@@ -26,7 +26,7 @@ import {
   HiOutlineHome,
   HiOutlinePhotograph,
 } from "react-icons/hi";
-import { BigTitle } from "components/invitation/comp/BigTitle";
+import { BigTitle } from "components/invitation/parts/BigTitle";
 import { TidakMengundang } from "components/invitation/QuranAyat";
 
 const imageData = [

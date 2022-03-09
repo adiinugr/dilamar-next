@@ -9,9 +9,9 @@ import "aos/dist/aos.css";
 import { GoBook } from "react-icons/go";
 import { MdLocationOn } from "react-icons/md";
 
-import { renderer } from "components/invitation/comp/CountDownRenderer";
+import { renderer } from "components/invitation/parts/CountDownRenderer";
 import { AudioContext } from "context/AudioContext";
-import GalleryImage from "components/invitation/comp/GalleryImage";
+import GalleryImage from "components/invitation/parts/GalleryImage";
 import { premiumImage } from "assets/data";
 import Footer from "components/Footer";
 import { GuestBookOne } from "components/invitation/GuestBook";
@@ -21,16 +21,16 @@ const Page = () => {
   const [comments, setComments] = useState([
     {
       name: "Sugeng",
-      message: "Selamat ya! Semoga sakinah",
+      message: "Selamat ya! Semoga sakinah"
     },
     {
       name: "Ita",
-      message: "Semoga sakinah, mawadah, warohmah..",
+      message: "Semoga sakinah, mawadah, warohmah.."
     },
     {
       name: "Intan",
-      message: "Lancar sampai hari h yaa...",
-    },
+      message: "Lancar sampai hari h yaa..."
+    }
   ]);
 
   const [name, setName] = useState("");
@@ -73,8 +73,8 @@ const Page = () => {
       ...prevComment,
       {
         name,
-        comment,
-      },
+        comment
+      }
     ]);
   };
 

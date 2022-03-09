@@ -6,9 +6,9 @@ import Modal from "react-modal";
 import "aos/dist/aos.css";
 
 import Footer from "components/Footer";
-import InvitationHead from "components/invitation/comp/InvitationHead";
-import ProtokolKesehatan from "components/invitation/comp/ProtokolKesehatan";
-import { HeroTwo } from "components/invitation/Hero";
+import InvitationHead from "components/invitation/parts/InvitationHead";
+import ProtokolKesehatan from "components/invitation/parts/ProtokolKesehatan";
+import { Hero } from "components/invitation/Hero";
 import { NamaPengantin1 } from "components/invitation/NamaPengantin";
 import DateCountdown from "components/invitation/DateCountdown";
 import { WaktuAlamatAcaraFour } from "components/invitation/WaktuAlamatAcara";
@@ -16,7 +16,7 @@ import Terimakasih from "components/invitation/Terimakasih";
 import { OpeningModalOne } from "components/invitation/OpeningModal";
 import { GuestBookOne } from "components/invitation/GuestBook";
 import { QsAnNur32 } from "components/invitation/QuranAyat";
-import PlayerButton from "components/invitation/comp/PlayerButton";
+import PlayerButton from "components/invitation/parts/PlayerButton";
 
 const Page = ({ messages }) => {
   const [date] = useState("2021-06-05T11:00:00.000+07:00");
@@ -79,20 +79,20 @@ const Page = ({ messages }) => {
       const res = await fetch(`/api/may-kamal/comment`, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json"
         },
         body: JSON.stringify({
           name,
-          message: comment,
-        }),
+          message: comment
+        })
       });
 
       setData((prevData) => [
         ...prevData,
         {
           name,
-          message: comment,
-        },
+          message: comment
+        }
       ]);
 
       setIsLoading(false);
@@ -134,7 +134,7 @@ const Page = ({ messages }) => {
           />
         </Modal>
 
-        <HeroTwo
+        <Hero
           name="May & Kamal"
           date="05 Juni 2021"
           imagePath="/may-kamal/background.jpg"
@@ -204,8 +204,8 @@ export async function getServerSideProps() {
     headers: {
       "User-Agent":
         "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36",
-      Accept: "application/json; charset=UTF-8",
-    },
+      Accept: "application/json; charset=UTF-8"
+    }
   });
   const data = await res.json();
   const messages = await data.data;
@@ -219,7 +219,7 @@ export async function getServerSideProps() {
   };
 
   return {
-    props: { messages: getData() },
+    props: { messages: getData() }
   };
 }
 

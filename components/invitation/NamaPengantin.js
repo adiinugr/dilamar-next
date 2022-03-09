@@ -1,12 +1,12 @@
 import Image from "next/image";
-import React from "react";
+import React, { Children } from "react";
 
 export const NamaPengantin1 = ({
   namaWanita,
   ortuWanita,
   namaPria,
   ortuPria,
-  customColor,
+  customColor
 }) => {
   const containerClassName = () =>
     customColor
@@ -53,7 +53,7 @@ export const NamaPengantin2 = ({
   namaWanita,
   ortuPria,
   ortuWanita,
-  customColor,
+  customColor
 }) => {
   const containerClassName = () =>
     customColor
@@ -107,21 +107,27 @@ export const NamaPengantinThree = ({
   imagePathPria,
   imagePathWanita,
   manFirst,
+  children
 }) => {
-  const coupleOrder = () => (manFirst ? "flex-col-reverse" : "flex-col");
-
   return (
     <div
       id="couple"
-      className={`relative ${bgColor} ${textColor} py-6 px-8 md:px-40 overflow-hidden`}
+      className={`relative ${bgColor} ${textColor} py-16 px-10 md:px-40 overflow-hidden`}
     >
-      <div className={`flex ${coupleOrder()} items-center justify-center`}>
+      {children}
+
+      <div
+        className={`flex ${
+          manFirst ? "flex-col-reverse" : "flex-col"
+        } items-center justify-center`}
+      >
+        <h1 className="mb-8 font-yellowtail text-3xl">The Bride & Groom </h1>
         <div
-          className={`flex flex-col md:flex-row w-full items-center font-body mb-8 md:mb-0`}
+          className={`flex flex-col md:flex-row w-full items-center font-body md:mb-0`}
           data-aos="fade-left"
         >
-          <div className="w-full md:w-1/2 mx-4 mb-6 md:mb-0">
-            <div className="bg-gray-50 w-full h-96 flex justify-center p-3 pb-8">
+          <div className="w-full md:w-1/2 mx-4 mb-6 md:mb-0 ">
+            <div className="bg-gray-50 rounded-lg w-full h-96 flex justify-center p-3 pb-8">
               <div className="w-full h-full relative">
                 <Image
                   src={imagePathWanita}
@@ -133,25 +139,27 @@ export const NamaPengantinThree = ({
             </div>
           </div>
           <div className="w-full md:w-1/2 mx-4 text-center md:text-left">
-            <p className="font-display text-3xl md:text-5xl mb-3">
+            <p className="font-yellowtail text-3xl md:text-5xl mb-3">
               {namaWanita}
             </p>
             <p>{ortuWanita}</p>
           </div>
         </div>
-        <div className=" md:w-1/3 text-center font-display text-7xl md:text-8xl my-10">
-          - & -
+        <div className=" md:w-1/3 text-center font-yellowtail text-7xl md:text-8xl my-10">
+          &
         </div>
         <div
-          className="flex flex-col-reverse md:flex-row w-full items-center font-body mb-8 md:mb-0"
+          className="flex flex-col-reverse md:flex-row w-full items-center font-body md:mb-0"
           data-aos="fade-right"
         >
           <div className="w-full md:w-1/2 mx-4 text-center md:text-left">
-            <p className="font-display text-3xl md:text-5xl mb-3">{namaPria}</p>
+            <p className="font-yellowtail text-3xl md:text-5xl mb-3">
+              {namaPria}
+            </p>
             <p>{ortuPria}</p>
           </div>
           <div className="w-full md:w-1/2 mx-4 mb-6 md:mb-0">
-            <div className="bg-gray-50 w-full h-96 flex justify-center p-3 pb-8">
+            <div className="bg-gray-50 rounded-lg w-full h-96 flex justify-center p-3 pb-8">
               <div className="w-full h-full relative">
                 <Image
                   src={imagePathPria}
@@ -178,7 +186,7 @@ export const NamaPengantin4 = ({
   bgColor = "bg-gray-200",
   textColor = "text-gray-800",
   imagePathPria,
-  imagePathWanita,
+  imagePathWanita
 }) => {
   return (
     <div

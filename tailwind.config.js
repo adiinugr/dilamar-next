@@ -27,18 +27,31 @@ module.exports = {
         "sari-aby-soft-orange": "#FBE6D3",
         main: "#DBAC94",
         dark: "#604A3E",
-        light: "#F8E9DB"
+        light: "#F8E9DB",
+        brown: {
+          primary: "#8A5010",
+          light: "#E89438",
+          lighter: "#F1BF87",
+          dark: "#452808"
+        }
       },
       height: {
         128: "32rem",
         144: "36rem"
+      },
+      boxShadow: {
+        "blur-16": "0px 0px 16px 0px rgba(0,0,0,0.25)",
+        "blur-20": "0px 0px 20px rgba(69, 40, 8, 0.2)"
       }
     },
     fontFamily: {
-      sans: ["Raleway", "sans-serif"],
+      sans: ["Cabin", "sans-serif"],
       display: ["Dancing Script", "cursive"],
-      body: ["Raleway", "sans-serif"],
-      poppins: ["Poppins", "sans-serif"]
+      body: ["Cabin", "sans-serif"],
+      poppins: ["Poppins", "sans-serif"],
+      sacramento: ["Sacramento", "cursive"],
+      shadows: ["Shadows Into Light", "cursive"],
+      yellowtail: ["Yellowtail", "cursive"]
     }
   },
   variants: {

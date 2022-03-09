@@ -7,90 +7,90 @@ import {
   HiOutlineCalendar,
   HiOutlineHeart,
   HiOutlineHome,
-  HiOutlinePhotograph,
+  HiOutlinePhotograph
 } from "react-icons/hi";
 
 import "aos/dist/aos.css";
 
 import Footer from "components/Footer";
-import InvitationHead from "components/invitation/comp/InvitationHead";
-import ProtokolKesehatan from "components/invitation/comp/ProtokolKesehatan";
-import { HeroTwo } from "components/invitation/Hero";
+import InvitationHead from "components/invitation/parts/InvitationHead";
+import ProtokolKesehatan from "components/invitation/parts/ProtokolKesehatan";
+import { Hero } from "components/invitation/Hero";
 import { NamaPengantinThree } from "components/invitation/NamaPengantin";
 import { WaktuAlamatAcaraTwo } from "components/invitation/WaktuAlamatAcara";
 import { GuestBookOne } from "components/invitation/GuestBook";
 import Terimakasih from "components/invitation/Terimakasih";
 import { OpeningModalTwo } from "components/invitation/OpeningModal";
-import { BottomMenuGeneral } from "components/invitation/comp/BottomMenu";
+import { BottomTabMenu } from "components/invitation/parts/BottomTabMenu";
 import RSVP from "components/invitation/RSVP";
 import { GalleryList } from "components/invitation/Gallery";
-import PlayerButton from "components/invitation/comp/PlayerButton";
-import { BigTitle } from "components/invitation/comp/BigTitle";
+import PlayerButton from "components/invitation/parts/PlayerButton";
+import { BigTitle } from "components/invitation/parts/BigTitle";
 
 const bottomMenuData = [
   {
     id: 1,
     anchor: "hero",
     title: "Home",
-    iconName: <HiOutlineHome size={26} />,
+    iconName: <HiOutlineHome size={26} />
   },
   {
     id: 2,
     anchor: "couple",
     title: "Couple",
-    iconName: <HiOutlineHeart size={26} />,
+    iconName: <HiOutlineHeart size={26} />
   },
   {
     id: 3,
     anchor: "event",
     title: "Event",
-    iconName: <HiOutlineCalendar size={26} />,
+    iconName: <HiOutlineCalendar size={26} />
   },
   {
     id: 4,
     anchor: "gallery",
     title: "Gallery",
-    iconName: <HiOutlinePhotograph size={26} />,
+    iconName: <HiOutlinePhotograph size={26} />
   },
   {
     id: 5,
     anchor: "rsvp",
     title: "RSVP",
-    iconName: <HiOutlineBookOpen size={26} />,
-  },
+    iconName: <HiOutlineBookOpen size={26} />
+  }
 ];
 
 const imageData = [
   {
     id: 1,
     type: "image",
-    src: "/kharnisa-imam/couple.png",
+    src: "/kharnisa-imam/couple.png"
   },
   {
     id: 2,
     type: "image",
-    src: "/kharnisa-imam/couple2.png",
+    src: "/kharnisa-imam/couple2.png"
   },
   {
     id: 3,
     type: "image",
-    src: "/kharnisa-imam/couple3.png",
+    src: "/kharnisa-imam/couple3.png"
   },
   {
     id: 4,
     type: "image",
-    src: "/kharnisa-imam/couple4.png",
+    src: "/kharnisa-imam/couple4.png"
   },
   {
     id: 5,
     type: "image",
-    src: "/kharnisa-imam/couple5.png",
+    src: "/kharnisa-imam/couple5.png"
   },
   {
     id: 6,
     type: "video",
-    videoId: "n9uIqjzZS_4",
-  },
+    videoId: "n9uIqjzZS_4"
+  }
 ];
 
 const Page = ({ messages }) => {
@@ -163,20 +163,20 @@ const Page = ({ messages }) => {
       const res = await fetch(`/api/kharnisa-imam/comment`, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json"
         },
         body: JSON.stringify({
           name: guestBookName,
-          message: guestBookComment,
-        }),
+          message: guestBookComment
+        })
       });
 
       setData((prevData) => [
         ...prevData,
         {
           name: guestBookName,
-          message: guestBookComment,
-        },
+          message: guestBookComment
+        }
       ]);
 
       setGuestBookIsLoading(false);
@@ -199,12 +199,12 @@ const Page = ({ messages }) => {
       const res = await fetch(`/api/kharnisa-imam/rsvp`, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json"
         },
         body: JSON.stringify({
           name: rsvpName,
-          status: rsvpStatus,
-        }),
+          status: rsvpStatus
+        })
       });
 
       setRsvpIsLoading(false);
@@ -224,7 +224,7 @@ const Page = ({ messages }) => {
         link="https://dilamar.vercel.app/kharnisa-imam"
         imagePath="/kharnisa-imam/couple-square.png"
       />
-      <BottomMenuGeneral
+      <BottomTabMenu
         textColor="text-kharnisa-imam-gold"
         bgColor="bg-kharnisa-imam-silver"
         bottomMenuData={bottomMenuData}
@@ -254,7 +254,7 @@ const Page = ({ messages }) => {
           />
         </Modal>
 
-        <HeroTwo
+        <Hero
           name="Kharnisa & Imam"
           date="04 April 2021"
           customColor="text-gray-50"
@@ -351,8 +351,8 @@ export async function getServerSideProps() {
       headers: {
         "User-Agent":
           "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36",
-        Accept: "application/json; charset=UTF-8",
-      },
+        Accept: "application/json; charset=UTF-8"
+      }
     }
   );
   const data = await res.json();
@@ -367,7 +367,7 @@ export async function getServerSideProps() {
   };
 
   return {
-    props: { messages: getData() },
+    props: { messages: getData() }
   };
 }
 

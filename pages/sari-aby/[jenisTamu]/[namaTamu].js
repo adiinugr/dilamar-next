@@ -6,9 +6,9 @@ import Modal from "react-modal";
 import "aos/dist/aos.css";
 
 import Footer from "../../../components/Footer";
-import InvitationHead from "../../../components/invitation/comp/InvitationHead";
-import ProtokolKesehatan from "../../../components/invitation/comp/ProtokolKesehatan";
-import { HeroTwo } from "../../../components/invitation/Hero";
+import InvitationHead from "../../../components/invitation/parts/InvitationHead";
+import ProtokolKesehatan from "../../../components/invitation/parts/ProtokolKesehatan";
+import { Hero } from "../../../components/invitation/Hero";
 import { NamaPengantin4 } from "../../../components/invitation/NamaPengantin";
 import DateCountdown from "../../../components/invitation/DateCountdown";
 import { WaktuAlamatAcaraFive } from "../../../components/invitation/WaktuAlamatAcara";
@@ -16,41 +16,41 @@ import Terimakasih from "../../../components/invitation/Terimakasih";
 import { OpeningModalWithTwoDynamicVar } from "../../../components/invitation/OpeningModal";
 import { GuestBookOne } from "../../../components/invitation/GuestBook";
 import { QsAnNur32 } from "../../../components/invitation/QuranAyat";
-import PlayerButton from "../../../components/invitation/comp/PlayerButton";
-import Story from "../../../components/invitation/Story";
+import PlayerButton from "../../../components/invitation/parts/PlayerButton";
+import { StoryOne } from "../../../components/invitation/Story";
 import { GalleryGrid } from "../../../components/invitation/Gallery";
 
 const imageData = [
   {
     id: 1,
     type: "image",
-    src: "/sari-aby/7.1 Gallery.jpeg",
+    src: "/sari-aby/7.1 Gallery.jpeg"
   },
   {
     id: 2,
     type: "image",
-    src: "/sari-aby/7.2 Gallery.jpeg",
+    src: "/sari-aby/7.2 Gallery.jpeg"
   },
   {
     id: 3,
     type: "image",
-    src: "/sari-aby/7.3 Gallery.jpeg",
+    src: "/sari-aby/7.3 Gallery.jpeg"
   },
   {
     id: 4,
     type: "image",
-    src: "/sari-aby/7.4 Gallery.jpeg",
+    src: "/sari-aby/7.4 Gallery.jpeg"
   },
   {
     id: 5,
     type: "image",
-    src: "/sari-aby/7.5 Gallery.jpeg",
+    src: "/sari-aby/7.5 Gallery.jpeg"
   },
   {
     id: 6,
     type: "image",
-    src: "/sari-aby/7.6 Gallery.jpeg",
-  },
+    src: "/sari-aby/7.6 Gallery.jpeg"
+  }
 ];
 
 const Page = ({ messages }) => {
@@ -115,20 +115,20 @@ const Page = ({ messages }) => {
       const res = await fetch(`/api/sari-aby/comment`, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json"
         },
         body: JSON.stringify({
           name,
-          message: comment,
-        }),
+          message: comment
+        })
       });
 
       setData((prevData) => [
         ...prevData,
         {
           name,
-          message: comment,
-        },
+          message: comment
+        }
       ]);
 
       setIsLoading(false);
@@ -171,7 +171,7 @@ const Page = ({ messages }) => {
           />
         </Modal>
 
-        <HeroTwo
+        <Hero
           name="Sari & Aby"
           date="February 16th, 2022"
           imagePath="/sari-aby/2. Pembukaan.jpeg"
@@ -201,7 +201,7 @@ const Page = ({ messages }) => {
           textColor="text-white"
         />
 
-        <Story
+        <StoryOne
           firstMeetImagePath="/sari-aby/first-meet.jpg"
           firstDateImagePath="/sari-aby/first-date.jpg"
           proposalImagePath="/sari-aby/proposal.jpg"
@@ -278,8 +278,8 @@ export async function getServerSideProps() {
     headers: {
       "User-Agent":
         "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36",
-      Accept: "application/json; charset=UTF-8",
-    },
+      Accept: "application/json; charset=UTF-8"
+    }
   });
   const data = await res.json();
   const messages = await data.data;
@@ -293,7 +293,7 @@ export async function getServerSideProps() {
   };
 
   return {
-    props: { messages: getData() },
+    props: { messages: getData() }
   };
 }
 

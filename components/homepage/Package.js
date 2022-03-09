@@ -3,7 +3,7 @@ import { Fade } from "react-reveal";
 
 import PriceCard from "./comp/PriceCard";
 
-import { basic, premium, standard } from "../../assets/data";
+import { packageLists } from "../../assets/data";
 
 const Package = () => {
   return (
@@ -20,21 +20,21 @@ const Package = () => {
         </p>
         <div className="grid md:grid-cols-3 gap-12">
           <PriceCard
-            data={basic}
+            data={packageLists}
             title="Basic"
             color="green"
             url="/basic"
             price="100K"
           />
           <PriceCard
-            data={standard}
+            data={packageLists}
             title="Standard"
             color="blue"
             url="/standard"
             price="120K"
           />
           <PriceCard
-            data={premium}
+            data={packageLists}
             title="Premium"
             color="gold"
             url="/premium"

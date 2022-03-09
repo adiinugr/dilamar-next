@@ -6,8 +6,8 @@ import Modal from "react-modal";
 import "aos/dist/aos.css";
 
 import Footer from "components/Footer";
-import InvitationHead from "components/invitation/comp/InvitationHead";
-import ProtokolKesehatan from "components/invitation/comp/ProtokolKesehatan";
+import InvitationHead from "components/invitation/parts/InvitationHead";
+import ProtokolKesehatan from "components/invitation/parts/ProtokolKesehatan";
 import { HeroTwo } from "components/invitation/Hero";
 import { NamaPengantinThree } from "components/invitation/NamaPengantin";
 import DateCountdown from "components/invitation/DateCountdown";
@@ -15,8 +15,8 @@ import { WaktuAlamatAcaraFour } from "components/invitation/WaktuAlamatAcara";
 import Terimakasih from "components/invitation/Terimakasih";
 import { OpeningModalNoInvitation } from "components/invitation/OpeningModal";
 import { GuestBookOne } from "components/invitation/GuestBook";
-import QsArrum from "components/invitation/QsArrum";
-import PlayerButton from "components/invitation/comp/PlayerButton";
+import QsArrum from "components/invitation/Ayyat";
+import PlayerButton from "components/invitation/parts/PlayerButton";
 import { TidakMengundang } from "components/invitation/QuranAyat";
 
 const Page = ({ messages }) => {
@@ -81,20 +81,20 @@ const Page = ({ messages }) => {
       const res = await fetch(`/api/nanda-iskandar/comment`, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json"
         },
         body: JSON.stringify({
           name: guestBookName,
-          message: guestBookComment,
-        }),
+          message: guestBookComment
+        })
       });
 
       setData((prevData) => [
         ...prevData,
         {
           name: guestBookName,
-          message: guestBookComment,
-        },
+          message: guestBookComment
+        }
       ]);
 
       setGuestBookIsLoading(false);
@@ -237,8 +237,8 @@ export async function getServerSideProps() {
       headers: {
         "User-Agent":
           "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36",
-        Accept: "application/json; charset=UTF-8",
-      },
+        Accept: "application/json; charset=UTF-8"
+      }
     }
   );
   const data = await res.json();
@@ -253,7 +253,7 @@ export async function getServerSideProps() {
   };
 
   return {
-    props: { messages: getData() },
+    props: { messages: getData() }
   };
 }
 

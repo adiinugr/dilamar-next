@@ -6,17 +6,17 @@ import Modal from "react-modal";
 import "aos/dist/aos.css";
 
 import Footer from "components/Footer";
-import InvitationHead from "components/invitation/comp/InvitationHead";
-import ProtokolKesehatan from "components/invitation/comp/ProtokolKesehatan";
-import { HeroTwo } from "components/invitation/Hero";
+import InvitationHead from "components/invitation/parts/InvitationHead";
+import ProtokolKesehatan from "components/invitation/parts/ProtokolKesehatan";
+import { Hero } from "components/invitation/Hero";
 import { NamaPengantinThree } from "components/invitation/NamaPengantin";
 import { WaktuAlamatAcaraFour } from "components/invitation/WaktuAlamatAcara";
 import { GuestBookOne } from "components/invitation/GuestBook";
 import Terimakasih from "components/invitation/Terimakasih";
 import { OpeningModalNoInvitation } from "components/invitation/OpeningModal";
-import { BottomMenuGeneral } from "components/invitation/comp/BottomMenu";
+import { BottomTabMenu } from "components/invitation/parts/BottomTabMenu";
 import { GalleryList } from "components/invitation/Gallery";
-import PlayerButton from "components/invitation/comp/PlayerButton";
+import PlayerButton from "components/invitation/parts/PlayerButton";
 import DateCountdown from "components/invitation/DateCountdown";
 import Angpau from "components/invitation/Angpau";
 
@@ -24,62 +24,62 @@ import {
   HiOutlineCalendar,
   HiOutlineHeart,
   HiOutlineHome,
-  HiOutlinePhotograph,
+  HiOutlinePhotograph
 } from "react-icons/hi";
-import { BigTitle } from "components/invitation/comp/BigTitle";
+import { BigTitle } from "components/invitation/parts/BigTitle";
 import { TidakMengundang } from "components/invitation/QuranAyat";
 
 const imageData = [
   {
     id: 1,
     type: "image",
-    src: "/ririk-roy/image/01-min.jpg",
+    src: "/ririk-roy/image/01-min.jpg"
   },
   {
     id: 2,
     type: "image",
-    src: "/ririk-roy/image/02-min.jpg",
+    src: "/ririk-roy/image/02-min.jpg"
   },
   {
     id: 3,
     type: "image",
-    src: "/ririk-roy/image/03-min.jpg",
+    src: "/ririk-roy/image/03-min.jpg"
   },
   {
     id: 4,
     type: "image",
-    src: "/ririk-roy/image/04-min.jpg",
+    src: "/ririk-roy/image/04-min.jpg"
   },
   {
     id: 5,
     type: "image",
-    src: "/ririk-roy/image/05-min.jpg",
+    src: "/ririk-roy/image/05-min.jpg"
   },
   {
     id: 6,
     type: "image",
-    src: "/ririk-roy/image/06-min.jpg",
+    src: "/ririk-roy/image/06-min.jpg"
   },
   {
     id: 7,
     type: "image",
-    src: "/ririk-roy/image/07-min.JPG",
+    src: "/ririk-roy/image/07-min.JPG"
   },
   {
     id: 8,
     type: "image",
-    src: "/ririk-roy/image/08-min.JPG",
+    src: "/ririk-roy/image/08-min.JPG"
   },
   {
     id: 9,
     type: "image",
-    src: "/ririk-roy/image/09-min.JPG",
+    src: "/ririk-roy/image/09-min.JPG"
   },
   {
     id: 10,
     type: "image",
-    src: "/ririk-roy/image/10-min.JPG",
-  },
+    src: "/ririk-roy/image/10-min.JPG"
+  }
 ];
 
 const bottomMenuData = [
@@ -87,26 +87,26 @@ const bottomMenuData = [
     id: 1,
     anchor: "hero",
     title: "Home",
-    iconName: <HiOutlineHome size={26} />,
+    iconName: <HiOutlineHome size={26} />
   },
   {
     id: 2,
     anchor: "couple",
     title: "Couple",
-    iconName: <HiOutlineHeart size={26} />,
+    iconName: <HiOutlineHeart size={26} />
   },
   {
     id: 3,
     anchor: "event",
     title: "Event",
-    iconName: <HiOutlineCalendar size={26} />,
+    iconName: <HiOutlineCalendar size={26} />
   },
   {
     id: 4,
     anchor: "gallery",
     title: "Gallery",
-    iconName: <HiOutlinePhotograph size={26} />,
-  },
+    iconName: <HiOutlinePhotograph size={26} />
+  }
 ];
 
 const Page = ({ messages }) => {
@@ -197,13 +197,13 @@ const Page = ({ messages }) => {
       const res = await fetch(`/api/roy-ririk/angpau`, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json"
         },
         body: JSON.stringify({
           name: angpauName,
           bank: angpauBank,
-          nominal: angpauNominal,
-        }),
+          nominal: angpauNominal
+        })
       });
 
       setAngpauIsLoading(false);
@@ -228,20 +228,20 @@ const Page = ({ messages }) => {
       const res = await fetch(`/api/roy-ririk/comment`, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json"
         },
         body: JSON.stringify({
           name: guestBookName,
-          message: guestBookComment,
-        }),
+          message: guestBookComment
+        })
       });
 
       setData((prevData) => [
         ...prevData,
         {
           name: guestBookName,
-          message: guestBookComment,
-        },
+          message: guestBookComment
+        }
       ]);
 
       setGuestBookIsLoading(false);
@@ -261,7 +261,7 @@ const Page = ({ messages }) => {
         link="https://dilamar.vercel.app/roy-ririk/Nama+Tamu"
         imagePath="/ririk-roy/meta-image-com.png"
       />
-      <BottomMenuGeneral
+      <BottomTabMenu
         bgColor="bg-kharnisa-imam-silver"
         textColor="text-nurul-gold"
         bottomMenuData={bottomMenuData}
@@ -291,7 +291,7 @@ const Page = ({ messages }) => {
           />
         </Modal>
 
-        <HeroTwo
+        <Hero
           name="Roy & Ririk"
           date="07 Agustus 2021"
           textColor="text-gray-100"
@@ -460,8 +460,8 @@ export async function getServerSideProps() {
     headers: {
       "User-Agent":
         "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36",
-      Accept: "application/json; charset=UTF-8",
-    },
+      Accept: "application/json; charset=UTF-8"
+    }
   });
   const data = await res.json();
   const messages = await data.data;
@@ -475,7 +475,7 @@ export async function getServerSideProps() {
   };
 
   return {
-    props: { messages: getData() },
+    props: { messages: getData() }
   };
 }
 

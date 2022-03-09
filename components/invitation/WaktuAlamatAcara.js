@@ -1,9 +1,10 @@
+import { RiMap2Line } from "react-icons/ri";
 import { MdLocationOn } from "react-icons/md";
 import Image from "next/image";
-import GoogleMaps from "../../components/invitation/comp/GoogleMaps";
+import GoogleMaps from "./parts/GoogleMaps";
 import Countdown from "react-countdown";
 
-import { rendererTwo } from "../invitation/comp/CountDownRenderer";
+import { rendererTwo } from "./parts/CountDownRenderer";
 
 export const WaktuAlamatAcaraOne = ({
   tanggalAkad,
@@ -19,7 +20,7 @@ export const WaktuAlamatAcaraOne = ({
   lng,
   imagePath,
   customColor,
-  buttonCustomColor,
+  buttonCustomColor
 }) => {
   const containerClassName = () =>
     customColor
@@ -116,7 +117,7 @@ export const WaktuAlamatAcaraTwo = ({
   imagePath,
   customColor,
   buttonCustomColor,
-  date,
+  date
 }) => {
   const containerClassName = () =>
     customColor
@@ -229,7 +230,7 @@ export const WaktuAlamatAcaraThree = ({
   lat,
   lng,
   customColor,
-  buttonCustomColor,
+  buttonCustomColor
 }) => {
   const containerClassName = () =>
     customColor
@@ -312,7 +313,7 @@ export const WaktuAlamatAcaraFour = ({
   googleMapsUri,
   lat,
   lng,
-  bgColor = "bg-gray-200",
+  bgColor = "bg-white",
   textColor = "text-gray-800",
   borderColor,
   akadImagePath,
@@ -320,16 +321,15 @@ export const WaktuAlamatAcaraFour = ({
   overlayBgColor = "bg-gray-800",
   overlayOpacity = "opacity-80",
   buttonBgColor = "bg-gray-800",
-  buttonTextColor = "text-gray-200",
-  isResepsi = true,
+  buttonTextColor = "text-white",
+  isResepsi = true
 }) => {
   return (
     <div
       id="event"
-      className={`${bgColor} ${textColor} py-8 flex flex-col items-center justify-center overflow-hidden`}
+      className={`${bgColor} ${textColor} py-16 flex flex-col items-center justify-center overflow-hidden`}
     >
       <div
-        data-aos="slide-left"
         className={`w-5/6 md:w-3/4 ${borderColor} border-2 rounded-lg overflow-hidden h-96 relative mb-4 shadow-xl`}
       >
         {akadImagePath && (
@@ -344,13 +344,13 @@ export const WaktuAlamatAcaraFour = ({
           className={`h-full w-full ${overlayBgColor} absolute ${overlayOpacity}`}
         />
         <div className="flex flex-col items-center justify-center h-full w-full z-20 absolute">
-          <div className="text-center">
-            <p className="font-display text-4xl mb-4">Akad Nikah</p>
+          <div className="text-center mb-4">
+            <p className="font-yellowtail text-4xl mb-4">Akad Nikah</p>
             <p>{tanggalAkad}</p>
-            <p className="my-4">{waktuAkad}</p>
+            <p className="">{waktuAkad}</p>
           </div>
-          <div className="text-center mt-8 px-4">
-            <p className="font-semibold">{namaTempat}</p>
+          <div className="text-center px-4">
+            <p className="font-bold text-lg">{namaTempat}</p>
             <p>{alamatTempat}</p>
           </div>
         </div>
@@ -374,28 +374,24 @@ export const WaktuAlamatAcaraFour = ({
           />
           <div className="flex flex-col items-center justify-center h-full w-full z-20 absolute">
             <div className="">
-              <div className="px-4 md:px-0 text-center font-body mb-8 md:mb-0">
-                <p className="font-display text-4xl mb-4">Resepsi</p>
+              <div className="px-4 md:px-0 text-center font-body mb-4 md:mb-0">
+                <p className="font-yellowtail text-4xl mb-4">Resepsi</p>
                 <p>{tanggalResepsi}</p>
-                {waktuResepsi && <p className="mt-4">{waktuResepsi}</p>}
-                {waktuResepsiSesi1 && (
-                  <p className="mt-4">Sesi 1: {waktuResepsiSesi1}</p>
-                )}
+                {waktuResepsi && <p>{waktuResepsi}</p>}
+                {waktuResepsiSesi1 && <p>Sesi 1: {waktuResepsiSesi1}</p>}
                 {waktuResepsiSesi2 && <p>Sesi 2: {waktuResepsiSesi2}</p>}
-                {waktuResepsiSesi3 && (
-                  <p className="mb-4">Sesi 3: {waktuResepsiSesi3}</p>
-                )}
+                {waktuResepsiSesi3 && <p>Sesi 3: {waktuResepsiSesi3}</p>}
               </div>
             </div>
-            <div className="text-center mt-8 px-4">
-              <p className="font-semibold">{namaTempat}</p>
+            <div className="text-center  px-4">
+              <p className="font-bold text-lg">{namaTempat}</p>
               <p>{alamatTempat}</p>
             </div>
           </div>
         </div>
       )}
 
-      <div className="h-80 w-5/6 md:w-3/4 mt-4 relative border-gray-200 border-2 rounded-lg overflow-hidden">
+      <div className="h-80 w-5/6 md:w-3/4 mt-4 relative border-4 border-white rounded-lg overflow-hidden">
         <GoogleMaps lat={lat} lng={lng} />
       </div>
       <a
@@ -403,9 +399,9 @@ export const WaktuAlamatAcaraFour = ({
         href={googleMapsUri}
         target="_blank"
         rel="noreferrer"
-        className={`w-5/6 md:w-3/4 ${buttonBgColor} ${buttonTextColor} mt-4 rounded-sm py-2 cursor-pointer flex items-center justify-center`}
+        className={`w-5/6 md:w-3/4 ${buttonBgColor} ${buttonTextColor} mt-4 rounded-md py-2 cursor-pointer flex items-center justify-center`}
       >
-        <MdLocationOn size={20} /> Open Google Maps
+        <RiMap2Line size={20} className="mr-2" /> <span>View Location</span>
       </a>
     </div>
   );
@@ -426,7 +422,7 @@ export const WaktuAlamatAcaraFive = ({
   textColor = "text-gray-600",
   borderColor = "border-gray-800",
   buttonBgColor = "bg-suta-seashell",
-  buttonTextColor = "text-gray-600",
+  buttonTextColor = "text-gray-600"
 }) => {
   return (
     <div

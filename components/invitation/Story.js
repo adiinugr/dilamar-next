@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-const Story = ({
+export const StoryOne = ({
   bgColor = "bg-gray-700",
   textColor = "text-gray-200",
   firstMeetText,
@@ -9,7 +9,7 @@ const Story = ({
   proposalText,
   firstMeetImagePath = "/images/first-meet.jpg",
   firstDateImagePath = "/images/first-date.jpg",
-  proposalImagePath = "/images/the-proposal.jpg",
+  proposalImagePath = "/images/the-proposal.jpg"
 }) => {
   return (
     <div
@@ -72,4 +72,70 @@ const Story = ({
   );
 };
 
-export default Story;
+export const StoryTwo = ({
+  bgColor = "bg-gray-700",
+  textColor = "text-gray-200",
+  children,
+  imageOnePath,
+  imageTwoPath,
+  storyData,
+  lineBorderColor = "border-gray-800"
+}) => {
+  return (
+    <div
+      className={`${bgColor} ${textColor} relative px-8 py-16 overflow-hidden flex flex-col items-center justify-center`}
+    >
+      {children}
+
+      <h1 className="mb-8 font-yellowtail text-3xl">Our Story</h1>
+
+      <div className="w-full h-40 relative rounded-lg overflow-hidden">
+        <Image
+          src={imageOnePath}
+          layout="fill"
+          objectFit="cover"
+          alt="katanikah website undangan pernikahan online"
+        />
+      </div>
+
+      <div className="relative my-6 w-full">
+        <div
+          className={`border-2 ${lineBorderColor} top-0 left-7 absolute h-full`}
+        />
+
+        <ul className="list-none">
+          {storyData.map((story) => (
+            <li className="mb-4 flex items-center">
+              <div className="self-start mr-4">
+                <div className="rounded-full w-14 h-14 relative overflow-hidden">
+                  <Image
+                    src={story.imagePath}
+                    layout="fill"
+                    objectFit="cover"
+                    alt="katanikah website undangan pernikahan online"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <div className="mb-2 text-lg font-semibold">{story.title}</div>
+                <div className={`${textColor} text-opacity-60`}>
+                  {story.description}
+                </div>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="w-full h-40 relative rounded-lg overflow-hidden">
+        <Image
+          src={imageTwoPath}
+          layout="fill"
+          objectFit="cover"
+          alt="katanikah website undangan pernikahan online"
+        />
+      </div>
+    </div>
+  );
+};

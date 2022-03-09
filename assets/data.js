@@ -4,185 +4,130 @@ import {
   HiDesktopComputer,
   HiLightBulb,
   HiPencilAlt,
-  HiPhotograph,
+  HiPhotograph
 } from "react-icons/hi";
 
-export const basic = [
+export const packageLists = [
   {
     id: 1,
     title: "Standard Undangan",
-    isAvailable: true,
+    isBasic: true,
+    isStandard: true,
+    isPremium: true
   },
   {
     id: 2,
     title: "Google Maps",
-    isAvailable: true,
+    isBasic: true,
+    isStandard: true,
+    isPremium: true
   },
   {
     id: 3,
     title: "Date Countdown",
-    isAvailable: false,
+    isBasic: false,
+    isStandard: true,
+    isPremium: true
   },
   {
     id: 4,
-    title: "Music",
-    isAvailable: false,
+    title: "Nama Tamu",
+    isBasic: false,
+    isStandard: true,
+    isPremium: true
   },
   {
     id: 5,
-    title: "Fitur Pesan",
-    isAvailable: false,
-  },
-  {
-    id: 6,
-    title: "Gallery",
-    isAvailable: false,
-  },
-  {
-    id: 7,
-    title: "Story",
-    isAvailable: false,
-  },
-  {
-    id: 8,
-    title: "Custom Request",
-    isAvailable: false,
-  },
-];
-
-export const standard = [
-  {
-    id: 1,
-    title: "Standard Undangan",
-    isAvailable: true,
-  },
-  {
-    id: 2,
-    title: "Google Maps",
-    isAvailable: true,
-  },
-  {
-    id: 3,
-    title: "Date Countdown",
-    isAvailable: true,
-  },
-  {
-    id: 4,
     title: "Music",
-    isAvailable: true,
-  },
-  {
-    id: 5,
-    title: "Fitur Pesan",
-    isAvailable: true,
+    isBasic: false,
+    isStandard: true,
+    isPremium: true
   },
   {
     id: 6,
-    title: "Gallery",
-    isAvailable: false,
-  },
-  {
-    id: 7,
-    title: "Story",
-    isAvailable: false,
-  },
-  {
-    id: 8,
-    title: "Custom Request",
-    isAvailable: false,
-  },
-];
-export const premium = [
-  {
-    id: 1,
-    title: "Standard Undangan",
-    isAvailable: true,
-  },
-  {
-    id: 2,
-    title: "Google Maps",
-    isAvailable: true,
-  },
-  {
-    id: 3,
-    title: "Date Countdown",
-    isAvailable: true,
-  },
-  {
-    id: 4,
-    title: "Music",
-    isAvailable: true,
-  },
-  {
-    id: 5,
     title: "Fitur Pesan",
-    isAvailable: true,
-  },
-  {
-    id: 6,
-    title: "Gallery",
-    isAvailable: true,
+    isBasic: false,
+    isStandard: true,
+    isPremium: true
   },
   {
     id: 7,
-    title: "Story",
-    isAvailable: true,
+    title: "Gallery",
+    isBasic: false,
+    isStandard: false,
+    isPremium: true
   },
   {
     id: 8,
-    title: "Custom Request",
-    isAvailable: true,
+    title: "RSVP",
+    isBasic: false,
+    isStandard: false,
+    isPremium: true
   },
+  {
+    id: 9,
+    title: "Story",
+    isBasic: false,
+    isStandard: false,
+    isPremium: true
+  },
+  {
+    id: 10,
+    title: "Custom Request",
+    isBasic: false,
+    isStandard: false,
+    isPremium: true
+  }
 ];
 
 export const premiumImage = [
   {
     id: 1,
-    url: "/images/first-meet.jpg",
+    url: "/images/first-meet.jpg"
   },
   {
     id: 2,
-    url: "/images/first-date.jpg",
+    url: "/images/first-date.jpg"
   },
   {
     id: 3,
-    url: "/images/the-proposal.jpg",
+    url: "/images/the-proposal.jpg"
   },
   {
     id: 4,
-    url: "/images/jeremy-weddings.jpg",
+    url: "/images/jeremy-weddings.jpg"
   },
   {
     id: 5,
-    url: "/images/man.jpg",
+    url: "/images/man.jpg"
   },
   {
     id: 6,
-    url: "/images/roses.jpg",
-  },
+    url: "/images/roses.jpg"
+  }
 ];
 
 export const galleryImage = [
   {
     id: 1,
-    url: "/images/gallery/1.png",
+    url: "/images/gallery/1.png"
   },
   {
     id: 2,
-    url: "/images/gallery/2.png",
+    url: "/images/gallery/2.png"
   },
   {
     id: 3,
-    url: "/images/gallery/3.png",
+    url: "/images/gallery/3.png"
   },
   {
     id: 4,
-    url: "/images/gallery/4.png",
+    url: "/images/gallery/4.png"
   },
   {
     id: 5,
-    url: "/images/gallery/5.png",
-  },
+    url: "/images/gallery/5.png"
+  }
 ];
 
 export const featuresData = [
@@ -195,8 +140,7 @@ export const featuresData = [
       />
     ),
     title: "Tampilan Responsive",
-    desc:
-      "Tampilan website undangan kami akan menyesuaikan media yang digunakan pengguna. Jadi tidak perlu khawatir tampilannya rusak/ kepotong ya.",
+    desc: "Tampilan website undangan kami akan menyesuaikan media yang digunakan pengguna. Jadi tidak perlu khawatir tampilannya rusak/ kepotong ya."
   },
   {
     id: 2,
@@ -207,8 +151,7 @@ export const featuresData = [
       />
     ),
     title: "Fitur Beragam",
-    desc:
-      "Ada banyak fitur seperti Google Maps, Pesan, Gallery, RSVP, dll. Kamu bahkan bisa request fitur yang belum ada di template.",
+    desc: "Ada banyak fitur seperti Google Maps, Pesan, Gallery, RSVP, dll. Kamu bahkan bisa request fitur yang belum ada di template."
   },
   {
     id: 3,
@@ -219,8 +162,7 @@ export const featuresData = [
       />
     ),
     title: "Custom Request",
-    desc:
-      "Keunggulan kami adalah menerima permintaan pelanggan sesuai dengan kebutuhan.",
+    desc: "Keunggulan kami adalah menerima permintaan pelanggan sesuai dengan kebutuhan."
   },
   {
     id: 4,
@@ -231,7 +173,7 @@ export const featuresData = [
       />
     ),
     title: "Bebas Pilih Template",
-    desc: "Pilih desain yang kamu suka dan kami akan hadirkan untukkmu.",
+    desc: "Pilih desain yang kamu suka dan kami akan hadirkan untukkmu."
   },
   {
     id: 5,
@@ -242,8 +184,7 @@ export const featuresData = [
       />
     ),
     title: "Masukkin Foto Sepuasmu",
-    desc:
-      "Rasanya kurang jika sudah shoot banyak foto tapi yang bisa dimasukkin hanya satu dua. Di KataNikah tidak ada batasan dalam memasukkan foto, tenang saja.",
+    desc: "Rasanya kurang jika sudah shoot banyak foto tapi yang bisa dimasukkin hanya satu dua. Di KataNikah tidak ada batasan dalam memasukkan foto, tenang saja."
   },
   {
     id: 6,
@@ -254,9 +195,8 @@ export const featuresData = [
       />
     ),
     title: "Konsultasi Sepuasnya",
-    desc:
-      "Kamu bebas merencanakan ingin membuat undangan seperti apa. Konsultasikan dengan kami.",
-  },
+    desc: "Kamu bebas merencanakan ingin membuat undangan seperti apa. Konsultasikan dengan kami."
+  }
 ];
 
 export const getStartedData = [
@@ -264,44 +204,43 @@ export const getStartedData = [
     id: 1,
     number: "01",
     title: "Pilih Template",
-    desc: "Tunjukkan desain undangan yang kamu inginkan.",
+    desc: "Tunjukkan desain undangan yang kamu inginkan."
   },
   {
     id: 2,
     number: "02",
     title: "Sesuaikan",
-    desc: "Pilih warna favoritmu, masukkan fotomu, detail pernikahanmu.",
+    desc: "Pilih warna favoritmu, masukkan fotomu, detail pernikahanmu."
   },
   {
     id: 3,
     number: "03",
     title: "Sebarkan",
-    desc: "Kirimkan undangan websitemu ke teman dan kerabat tercintamu.",
-  },
+    desc: "Kirimkan undangan websitemu ke teman dan kerabat tercintamu."
+  }
 ];
 
 export const testimony = [
   {
     id: 1,
     text: "Please ini kece banget unadangan web nya!!! Thank you",
-    author: "Hanny.",
+    author: "Hanny."
   },
   {
     id: 2,
     text: "Wah.. Mantab! Terimakasi kaka. 😊😊😊",
-    author: "Nanda A.",
+    author: "Nanda A."
   },
   {
     id: 3,
     text: "Sudah tak lihat dan hasilnya luar biasa 🤩👍🏻👍🏻",
-    author: "Rosy",
+    author: "Rosy"
   },
   {
     id: 4,
-    text:
-      "Kakk undangannya udah saya liat dan baguusssssss banget saya suka 😍",
-    author: "May",
-  },
+    text: "Kakk undangannya udah saya liat dan baguusssssss banget saya suka 😍",
+    author: "May"
+  }
 ];
 
 export const faqData = [
@@ -309,17 +248,17 @@ export const faqData = [
     id: 1,
     question: "Custom Request itu apa kak?",
     answer:
-      "Semua fitur yang belum ada di KataNikah. Jadi jika kakak punya fitur yang ingin dipakai namun belum tercantum di paket, maka itu termasuk Custom Requset. Contohnya seperti RSVP, Add to Calendar, ingin tampilan khusus, dll",
+      "Semua fitur yang belum ada di KataNikah. Jadi jika kakak punya fitur yang ingin dipakai namun belum tercantum di paket, maka itu termasuk Custom Requset. Contohnya seperti RSVP, Add to Calendar, ingin tampilan khusus, dll"
   },
   {
     id: 2,
     question: "Berapa lama proses pengerjaannya?",
     answer:
-      "Jika desain yang diinginkan sesuai template sekitar 3 hari. Namun jika ada request lain, bisa selesai sampai 1 minggu",
+      "Jika desain yang diinginkan sesuai template sekitar 3 hari. Namun jika ada request lain, bisa selesai sampai 1 minggu"
   },
   {
     id: 3,
     question: "Beneran bisa kasih foto sebanyak mungkin?",
-    answer: "Yups.. Untuk paket premium bebas mau kasih foto berapapun.",
-  },
+    answer: "Yups.. Untuk paket premium bebas mau kasih foto berapapun."
+  }
 ];

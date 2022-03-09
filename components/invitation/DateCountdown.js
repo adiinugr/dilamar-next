@@ -1,7 +1,7 @@
 import React from "react";
 import Countdown from "react-countdown";
 
-import { renderer } from "../invitation/comp/CountDownRenderer";
+import { renderer } from "./parts/CountDownRenderer";
 
 const DateCountdown = ({ date, bgColor, textColor }) => {
   const containerClassName = () =>

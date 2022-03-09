@@ -6,10 +6,10 @@ import Modal from "react-modal";
 import "aos/dist/aos.css";
 
 import Footer from "components/Footer";
-import InvitationHead from "components/invitation/comp/InvitationHead";
-import ProtokolKesehatan from "components/invitation/comp/ProtokolKesehatan";
+import InvitationHead from "components/invitation/parts/InvitationHead";
+import ProtokolKesehatan from "components/invitation/parts/ProtokolKesehatan";
 import { HeroOne } from "components/invitation/Hero";
-import QsArrum from "components/invitation/QsArrum";
+import QsArrum from "components/invitation/Ayyat";
 import { NamaPengantin2 } from "components/invitation/NamaPengantin";
 import DateCountdown from "components/invitation/DateCountdown";
 import { WaktuAlamatAcaraOne } from "components/invitation/WaktuAlamatAcara";
@@ -66,20 +66,20 @@ const Page = ({ messages }) => {
       const res = await fetch(`/api/nurul-rega`, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json"
         },
         body: JSON.stringify({
           name,
-          message: comment,
-        }),
+          message: comment
+        })
       });
 
       setData((prevData) => [
         ...prevData,
         {
           name,
-          message: comment,
-        },
+          message: comment
+        }
       ]);
 
       setIsLoading(false);
@@ -184,8 +184,8 @@ export async function getServerSideProps() {
     headers: {
       "User-Agent":
         "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36",
-      Accept: "application/json; charset=UTF-8",
-    },
+      Accept: "application/json; charset=UTF-8"
+    }
   });
   const data = await res.json();
   const messages = await data.data;
@@ -199,7 +199,7 @@ export async function getServerSideProps() {
   };
 
   return {
-    props: { messages: getData() },
+    props: { messages: getData() }
   };
 }
 
