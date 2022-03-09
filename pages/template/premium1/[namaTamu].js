@@ -8,16 +8,16 @@ import "aos/dist/aos.css";
 import Footer from "../../../components/Footer";
 import InvitationHead from "../../../components/invitation/parts/InvitationHead";
 import ProtokolKesehatan from "../../../components/invitation/parts/ProtokolKesehatan";
-import { HeroTwo } from "../../../components/invitation/Hero";
+import { Hero } from "../../../components/invitation/Hero";
 import { NamaPengantinThree } from "../../../components/invitation/NamaPengantin";
 import { WaktuAlamatAcaraFour } from "../../../components/invitation/WaktuAlamatAcara";
 import { GuestBookOne } from "../../../components/invitation/GuestBook";
 import Terimakasih from "../../../components/invitation/Terimakasih";
 import { OpeningModalTwo } from "../../../components/invitation/OpeningModal";
-import { BottomMenuGeneral } from "../../../components/invitation/parts/BottomTabMenu";
+import { BottomTabMenu } from "../../../components/invitation/parts/BottomTabMenu";
 import { GalleryList } from "../../../components/invitation/Gallery";
 import PlayerButton from "../../../components/invitation/parts/PlayerButton";
-import QsArrum from "../../../components/invitation/Ayyat";
+import { QsArrum21 } from "../../../components/invitation/Ayyat";
 import DateCountdown from "../../../components/invitation/DateCountdown";
 import {
   HiOutlineCalendar,
@@ -176,7 +176,7 @@ const Page = ({ messages }) => {
         link="https://dilamar.vercel.app/erni-gayuh/Nama+Tamu"
         imagePath="/erni-gayuh/lanscape.png"
       />
-      <BottomMenuGeneral bgColor="pattern2" bottomMenuData={bottomMenuData} />
+      <BottomTabMenu bgColor="pattern2" bottomMenuData={bottomMenuData} />
       {showPlayButton && (
         <PlayerButton
           handlePlayMusic={handlePlayMusic}
@@ -202,7 +202,7 @@ const Page = ({ messages }) => {
           />
         </Modal>
 
-        <HeroTwo
+        <Hero
           name="Galih & Ratna"
           date="13 Juni 2021"
           textColor="text-gray-100"
@@ -210,7 +210,7 @@ const Page = ({ messages }) => {
           imagePath="/images/couple/couple3.jpg"
         />
 
-        <QsArrum
+        <QsArrum21
           bgColor="bg-kharnisa-imam-rosegold"
           textColor="text-gray-200"
         />

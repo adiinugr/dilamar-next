@@ -227,18 +227,7 @@ const Page = ({ comments }) => {
       />
 
       <GuestBookWithPopup
-        comments={[
-          {
-            id: 1,
-            name: "Adi",
-            message: "Hai"
-          },
-          {
-            id: 2,
-            name: "Anwar",
-            message: "Hallo bro"
-          }
-        ]}
+        comments={data}
         name={guestBookName}
         setName={(e) => setGuestBookName(e.target.value)}
         comment={guestBookComment}

@@ -8,13 +8,13 @@ import "aos/dist/aos.css";
 import Footer from "components/Footer";
 import InvitationHead from "components/invitation/parts/InvitationHead";
 import ProtokolKesehatan from "components/invitation/parts/ProtokolKesehatan";
-import { HeroTwo } from "components/invitation/Hero";
+import { Hero } from "components/invitation/Hero";
 import { NamaPengantinThree } from "components/invitation/NamaPengantin";
 import { WaktuAlamatAcaraFour } from "components/invitation/WaktuAlamatAcara";
 import { GuestBookOne } from "components/invitation/GuestBook";
 import Terimakasih from "components/invitation/Terimakasih";
 import { OpeningModalNoInvitation } from "components/invitation/OpeningModal";
-import { BottomMenuGeneral } from "components/invitation/parts/BottomTabMenu";
+import { BottomTabMenu } from "components/invitation/parts/BottomTabMenu";
 import { GalleryList } from "components/invitation/Gallery";
 import PlayerButton from "components/invitation/parts/PlayerButton";
 import DateCountdown from "components/invitation/DateCountdown";
@@ -203,7 +203,7 @@ const Page = ({ messages }) => {
         link="https://dilamar.vercel.app/nindya-andhika/Nama+Tamu"
         imagePath="/nindya-andhika/meta-image.png"
       />
-      <BottomMenuGeneral
+      <BottomTabMenu
         bgColor="bg-kharnisa-imam-silver"
         textColor="text-nurul-gold"
         bottomMenuData={bottomMenuData}
@@ -232,7 +232,7 @@ const Page = ({ messages }) => {
           />
         </Modal>
 
-        <HeroTwo
+        <Hero
           name="Nindya & Andhika"
           date="11 Juli 2021"
           textColor="text-nurul-gold"

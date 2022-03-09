@@ -8,14 +8,14 @@ import "aos/dist/aos.css";
 import Footer from "components/Footer";
 import InvitationHead from "components/invitation/parts/InvitationHead";
 import ProtokolKesehatan from "components/invitation/parts/ProtokolKesehatan";
-import { HeroTwo } from "components/invitation/Hero";
+import { Hero } from "components/invitation/Hero";
 import { NamaPengantinThree } from "components/invitation/NamaPengantin";
 import DateCountdown from "components/invitation/DateCountdown";
 import { WaktuAlamatAcaraFour } from "components/invitation/WaktuAlamatAcara";
 import Terimakasih from "components/invitation/Terimakasih";
 import { OpeningModalNoInvitation } from "components/invitation/OpeningModal";
 import { GuestBookOne } from "components/invitation/GuestBook";
-import QsArrum from "components/invitation/Ayyat";
+import { QsArrum21 } from "components/invitation/Ayyat";
 import PlayerButton from "components/invitation/parts/PlayerButton";
 import { TidakMengundang } from "components/invitation/QuranAyat";
 
@@ -140,7 +140,7 @@ const Page = ({ messages }) => {
           />
         </Modal>
 
-        <HeroTwo
+        <Hero
           name="Nanda & Iskandar"
           date="16 Juli 2021"
           textColor="text-gray-100"
@@ -156,7 +156,7 @@ const Page = ({ messages }) => {
           name="Nanda & Iskandar"
         />
 
-        <QsArrum bgColor="bg-nurul-gold" textColor="text-gray-200" />
+        <QsArrum21 bgColor="bg-nurul-gold" textColor="text-gray-200" />
 
         <NamaPengantinThree
           namaWanita="Nanda Aristya"

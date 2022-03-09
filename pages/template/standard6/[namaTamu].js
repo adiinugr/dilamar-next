@@ -8,14 +8,14 @@ import "aos/dist/aos.css";
 import Footer from "components/Footer";
 import InvitationHead from "components/invitation/parts/InvitationHead";
 import ProtokolKesehatan from "components/invitation/parts/ProtokolKesehatan";
-import { HeroTwo } from "components/invitation/Hero";
+import { Hero } from "components/invitation/Hero";
 import { NamaPengantin1 } from "components/invitation/NamaPengantin";
 import DateCountdown from "components/invitation/DateCountdown";
 import { WaktuAlamatAcaraFour } from "components/invitation/WaktuAlamatAcara";
 import Terimakasih from "components/invitation/Terimakasih";
 import { OpeningModalOne } from "components/invitation/OpeningModal";
 import { GuestBookOne } from "components/invitation/GuestBook";
-import QsArrum from "components/invitation/Ayyat";
+import { QsArrum21 } from "components/invitation/Ayyat";
 import PlayerButton from "components/invitation/parts/PlayerButton";
 
 const Page = ({ messages }) => {
@@ -134,14 +134,14 @@ const Page = ({ messages }) => {
           />
         </Modal>
 
-        <HeroTwo
+        <Hero
           name="Metta & Adi"
           date="05 Juni 2021"
           imagePath="/metta-adi/roses.jpg"
           customColor="text-may-kamal-platinum"
         />
 
-        <QsArrum
+        <QsArrum21
           bgColor="bg-kharnisa-imam-rosegold"
           textColor="text-gray-200"
         />

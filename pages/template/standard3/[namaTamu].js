@@ -8,8 +8,8 @@ import "aos/dist/aos.css";
 import Footer from "components/Footer";
 import InvitationHead from "components/invitation/parts/InvitationHead";
 import ProtokolKesehatan from "components/invitation/parts/ProtokolKesehatan";
-import { HeroOne } from "components/invitation/Hero";
-import QsArrum from "components/invitation/Ayyat";
+import { Hero } from "components/invitation/Hero";
+import { QsArrum21 } from "components/invitation/Ayyat";
 import { NamaPengantin2 } from "components/invitation/NamaPengantin";
 import DateCountdown from "components/invitation/DateCountdown";
 import { WaktuAlamatAcaraOne } from "components/invitation/WaktuAlamatAcara";
@@ -115,13 +115,13 @@ const Page = ({ messages }) => {
           />
         </Modal>
 
-        <HeroOne
+        <Hero
           name="Indah & Rega"
           date="04 April 2021"
           customColor="bg-suta-seashell text-nurul-gold"
         />
 
-        <QsArrum bgColor="bg-nurul-color4" textColor="text-nurul-color2" />
+        <QsArrum21 bgColor="bg-nurul-color4" textColor="text-nurul-color2" />
 
         <NamaPengantin2
           namaWanita="Nurul Indah Suhartinah"

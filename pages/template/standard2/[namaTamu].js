@@ -8,7 +8,7 @@ import "aos/dist/aos.css";
 import Footer from "components/Footer";
 import InvitationHead from "components/invitation/parts/InvitationHead";
 import ProtokolKesehatan from "components/invitation/parts/ProtokolKesehatan";
-import { HeroTwo } from "components/invitation/Hero";
+import { Hero } from "components/invitation/Hero";
 import { NamaPengantin1 } from "components/invitation/NamaPengantin";
 import DateCountdown from "components/invitation/DateCountdown";
 import { WaktuAlamatAcaraFour } from "components/invitation/WaktuAlamatAcara";
@@ -134,7 +134,7 @@ const Page = ({ messages }) => {
           />
         </Modal>
 
-        <HeroTwo
+        <Hero
           name="May & Kamal"
           date="05 Juni 2021"
           imagePath="/may-kamal/background.jpg"
