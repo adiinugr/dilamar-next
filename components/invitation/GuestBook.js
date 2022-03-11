@@ -118,6 +118,7 @@ export const GuestBookWithPopup = ({
   inputBorder = "border border-gray-300",
   buttonTextColor = "text-gray-100",
   buttonBgColor = "bg-gray-800",
+  commentDisable,
   children
 }) => {
   const [isOpenModal, setIsOpenModal] = useState(false);
@@ -181,7 +182,7 @@ export const GuestBookWithPopup = ({
         <div className="font-yellowtail text-4xl">Guest Book</div>
       </div>
       <div
-        onClick={() => setIsOpenModal(true)}
+        onClick={commentDisable ? null : () => setIsOpenModal(true)}
         className={`${writeYourWishClassname} py-2 px-4 flex items-center w-auto justify-center cursor-pointer`}
       >
         <AiOutlineComment size={20} />

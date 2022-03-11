@@ -1,31 +1,25 @@
-import Image from "next/image";
 import React from "react";
+import { HiPlay, HiPause } from "react-icons/hi";
 
 const PlayerButton = ({
   handlePlayMusic,
   handlePauseMusic,
   isAudioPlaying,
+  buttonPlayTextColor = "text-green-500",
+  buttonPauseTextColor = "text-red-500"
 }) => {
   return (
-    <div className="fixed z-30 h-10 w-10 right-4 top-1/3">
+    <div className="fixed z-30 h-10 w-10 right-5 top-1/2">
       {isAudioPlaying ? (
-        <div onClick={handlePauseMusic} className="cursor-pointer">
-          <Image
-            src="/images/player-button/pause.png"
-            layout="fill"
-            objectFit="cover"
-            className="absolute"
-          />
-        </div>
+        <HiPause
+          className={`cursor-pointer w-full h-full ${buttonPauseTextColor}`}
+          onClick={handlePauseMusic}
+        />
       ) : (
-        <div onClick={handlePlayMusic} className="cursor-pointer">
-          <Image
-            src="/images/player-button/play.png"
-            layout="fill"
-            objectFit="cover"
-            className="absolute"
-          />
-        </div>
+        <HiPlay
+          className={`cursor-pointer w-full h-full ${buttonPlayTextColor}`}
+          onClick={handlePlayMusic}
+        />
       )}
     </div>
   );

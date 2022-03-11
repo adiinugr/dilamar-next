@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Lottie from "react-lottie";
+import { MdMailOutline } from "react-icons/md";
+
 import animationLetter from "../../assets/lottie-letter.json";
 
 export const OpeningModalOne = ({
@@ -11,39 +13,42 @@ export const OpeningModalOne = ({
   buttonBgColor = "bg-gray-700",
   buttonTextColor = "text-gray-200",
   backgroundImagePath,
-  withOverlay,
+  overlayClassName,
+  children
 }) => {
-  const overlayClassName = () =>
-    withOverlay ? "bg-gray-600 bg-opacity-40" : "";
-
-  const containerClassName = () => (backgroundImagePath ? "" : bgColor);
-
   return (
-    <div
-      className={`h-full relative ${containerClassName()} ${textColor} overflow-hidden`}
-    >
+    <div className={`h-full relative ${bgColor} ${textColor} overflow-hidden`}>
       {backgroundImagePath && (
-        <Image src={backgroundImagePath} layout="fill" objectFit="cover" />
+        <Image
+          src={backgroundImagePath}
+          layout="fill"
+          objectFit="cover"
+          placeholder="blur"
+        />
       )}
 
+      <div className={`h-full w-full absolute ${overlayClassName}`} />
+
+      {children}
+
       <div
-        className={`h-full w-full absolute flex flex-col justify-center items-center px-8 ${overlayClassName()}`}
+        className={`h-full w-full absolute flex flex-col justify-center items-center px-8`}
       >
-        <div className="text-xl text-center md:text-2xl font-semibold">
-          <p>Dear</p>
-          <p className="uppercase text-2xl mt-2 mb-8">{namaTamu}</p>
-          <p>you are invited to</p>
+        <div className="text-lg text-center md:text-2xl">
+          <p>
+            Dear, <span className="font-bold">{namaTamu}</span>
+          </p>
+          <p>You Are Invited to</p>
         </div>
-        <div className="font-display text-4xl md:text-7xl my-4">
+        <div className="font-yellowtail text-5xl md:text-7xl my-4">
           {namaPengantin}
         </div>
-        <div className="text-xl md:text-2xl font-semibold">
-          Wedding Ceremony
-        </div>
+        <div className="text-lg md:text-2xl">Wedding Ceremony</div>
         <div
           onClick={handleOpenModal}
-          className={`text-xl mt-12 md:mt-8 ${buttonBgColor} ${buttonTextColor} py-2 w-full md:w-1/2 text-center cursor-pointer rounded-md flex justify-center items-center`}
+          className={`text-lg mt-12 md:mt-8 ${buttonBgColor} ${buttonTextColor} py-2 px-8 text-center cursor-pointer rounded-md flex justify-center items-center`}
         >
+          <MdMailOutline size={28} className="mr-2" />
           Open Invitation
         </div>
       </div>
@@ -60,23 +65,19 @@ export const OpeningModalTwo = ({
   buttonBgColor = "bg-gray-700",
   buttonTextColor = "text-gray-200",
   backgroundImagePath,
-  withOverlay,
+  bgOverlay,
+  children
 }) => {
-  const overlayClassName = () =>
-    withOverlay ? "bg-gray-600 bg-opacity-40" : "";
-
-  const containerClassName = () => (backgroundImagePath ? "" : bgColor);
-
   return (
-    <div
-      className={`h-full relative ${containerClassName()} ${textColor} overflow-hidden`}
-    >
+    <div className={`h-full relative ${bgColor} ${textColor} overflow-hidden`}>
       {backgroundImagePath && (
         <Image src={backgroundImagePath} layout="fill" objectFit="cover" />
       )}
 
+      {children}
+
       <div
-        className={`h-full w-full absolute flex flex-col justify-center items-center px-8 ${overlayClassName()}`}
+        className={`h-full w-full absolute flex flex-col justify-center items-center px-8 ${bgOverlay}`}
       >
         <div className="text-xl text-center md:text-2xl font-semibold">
           <p>
@@ -90,8 +91,8 @@ export const OpeningModalTwo = ({
             autoplay: true,
             animationData: animationLetter,
             rendererSettings: {
-              preserveAspectRatio: "xMidYMid slice",
-            },
+              preserveAspectRatio: "xMidYMid slice"
+            }
           }}
           height={120}
           width={120}
@@ -119,7 +120,7 @@ export const OpeningModalThree = ({
   buttonTextColor = "text-gray-200",
   backgroundImagePath,
   coupleImagePath,
-  withOverlay,
+  withOverlay
 }) => {
   const overlayClassName = () =>
     withOverlay ? "bg-gray-600 bg-opacity-40" : "";
@@ -174,7 +175,7 @@ export const OpeningModalNoInvitation = ({
   buttonTextColor = "text-gray-200",
   backgroundImagePath,
   coupleImagePath,
-  withOverlay,
+  withOverlay
 }) => {
   const overlayClassName = () =>
     withOverlay ? "bg-gray-800 bg-opacity-60" : "";
@@ -223,7 +224,7 @@ export const OpeningModalWithTwoDynamicVar = ({
   buttonBgColor = "bg-gray-800",
   buttonTextColor = "text-gray-200",
   backgroundImagePath,
-  withOverlay,
+  withOverlay
 }) => {
   const overlayClassName = () =>
     withOverlay ? "bg-gray-800 bg-opacity-60" : "";

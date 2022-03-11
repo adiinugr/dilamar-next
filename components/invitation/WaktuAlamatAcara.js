@@ -322,13 +322,16 @@ export const WaktuAlamatAcaraFour = ({
   overlayOpacity = "opacity-80",
   buttonBgColor = "bg-gray-800",
   buttonTextColor = "text-white",
-  isResepsi = true
+  padding,
+  isResepsi = true,
+  children
 }) => {
   return (
     <div
       id="event"
-      className={`${bgColor} ${textColor} py-16 flex flex-col items-center justify-center overflow-hidden`}
+      className={`${bgColor} ${textColor} relative py-16 flex flex-col items-center justify-center overflow-hidden ${padding}`}
     >
+      {children}
       <div
         className={`w-5/6 md:w-3/4 ${borderColor} border-2 rounded-lg overflow-hidden h-96 relative mb-4 shadow-xl`}
       >
@@ -338,6 +341,8 @@ export const WaktuAlamatAcaraFour = ({
             layout="fill"
             objectFit="cover"
             className="absolute"
+            alt="katanikah website undangan pernikahan online"
+            placeholder="blur"
           />
         )}
         <div
@@ -367,6 +372,8 @@ export const WaktuAlamatAcaraFour = ({
               layout="fill"
               objectFit="cover"
               className="absolute"
+              alt="katanikah website undangan pernikahan online"
+              placeholder="blur"
             />
           )}
           <div

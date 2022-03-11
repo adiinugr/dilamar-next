@@ -134,6 +134,8 @@ export const NamaPengantinThree = ({
                   layout="fill"
                   objectFit="cover"
                   className="absolute"
+                  placeholder="blur"
+                  alt="katanikah website undangan pernikahan online"
                 />
               </div>
             </div>
@@ -166,6 +168,8 @@ export const NamaPengantinThree = ({
                   layout="fill"
                   objectFit="cover"
                   className="absolute"
+                  placeholder="blur"
+                  alt="katanikah website undangan pernikahan online"
                 />
               </div>
             </div>

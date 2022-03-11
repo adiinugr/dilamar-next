@@ -1,4 +1,15 @@
-export const renderer = ({ days, hours, minutes, seconds, completed }) => {
+export const renderer = ({
+  days,
+  hours,
+  minutes,
+  seconds,
+  completed,
+  itemContainerBorder = "border-gray-400"
+}) => {
+  const itemContainerClassname = `text-center rounded-lg border p-3 ${itemContainerBorder}`;
+  const paragraphValueClassname = `md:text-3xl font-medium`;
+  const paragraphPlaceholderClassname = `text-sm`;
+
   if (completed) {
     return (
       <div className="flex items-center justify-center font-body">
@@ -7,22 +18,22 @@ export const renderer = ({ days, hours, minutes, seconds, completed }) => {
     );
   } else {
     return (
-      <div className="grid grid-cols-4 gap-4 items-center justify-between font-body">
-        <div className="text-center rounded-lg border p-2 border-gray-100">
-          <p className="text-lg md:text-3xl font-medium">{days}</p>
-          <p>Day(s)</p>
+      <div className="grid grid-cols-4 gap-2 items-center justify-between font-body">
+        <div className={itemContainerClassname}>
+          <p className={paragraphValueClassname}>{days}</p>
+          <p className={paragraphPlaceholderClassname}>Day(s)</p>
         </div>
-        <div className="text-center rounded-lg border p-2 border-gray-100">
-          <p className="text-lg md:text-3xl font-medium">{hours}</p>
-          <p>Hour(s)</p>
+        <div className={itemContainerClassname}>
+          <p className={paragraphValueClassname}>{hours}</p>
+          <p className={paragraphPlaceholderClassname}>Hour(s)</p>
         </div>
-        <div className="text-center rounded-lg border p-2 border-gray-100">
-          <p className="text-lg md:text-3xl font-medium">{minutes}</p>
-          <p>Min(s)</p>
+        <div className={itemContainerClassname}>
+          <p className={paragraphValueClassname}>{minutes}</p>
+          <p className={paragraphPlaceholderClassname}>Min(s)</p>
         </div>
-        <div className="text-center rounded-lg border p-2 border-gray-100">
-          <p className="text-lg md:text-3xl font-medium">{seconds}</p>
-          <p>Sec(s)</p>
+        <div className={itemContainerClassname}>
+          <p className={paragraphValueClassname}>{seconds}</p>
+          <p className={paragraphPlaceholderClassname}>Sec(s)</p>
         </div>
       </div>
     );

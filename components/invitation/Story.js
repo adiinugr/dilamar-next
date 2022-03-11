@@ -95,6 +95,7 @@ export const StoryTwo = ({
           layout="fill"
           objectFit="cover"
           alt="katanikah website undangan pernikahan online"
+          placeholder="blur"
         />
       </div>
 
@@ -113,6 +114,7 @@ export const StoryTwo = ({
                     layout="fill"
                     objectFit="cover"
                     alt="katanikah website undangan pernikahan online"
+                    placeholder="blur"
                   />
                 </div>
               </div>
@@ -134,6 +136,7 @@ export const StoryTwo = ({
           layout="fill"
           objectFit="cover"
           alt="katanikah website undangan pernikahan online"
+          placeholder="blur"
         />
       </div>
     </div>

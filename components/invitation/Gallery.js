@@ -131,6 +131,8 @@ export const GallerySlideShow = ({
               src={image.src}
               layout="fill"
               objectFit="cover"
+              alt="katanikah website undangan pernikahan online"
+              placeholder="blur"
             />
           </div>
         ))}

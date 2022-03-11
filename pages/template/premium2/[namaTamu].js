@@ -1,13 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import ReactModal from "react-modal";
+import { useRouter } from "next/router";
 import {
   HiOutlineCalendar,
   HiOutlineHeart,
   HiOutlineHome,
-  HiOutlinePhotograph
+  HiOutlinePhotograph,
+  HiOutlineBookOpen
 } from "react-icons/hi";
 
 import { BottomTabMenu } from "components/invitation/parts/BottomTabMenu";
 import InvitationHead from "components/invitation/parts/InvitationHead";
+import {
+  OpeningModalOne,
+  OpeningModalTwo
+} from "components/invitation/OpeningModal";
 import { Hero } from "components/invitation/Hero";
 import { QsArrum21 } from "components/invitation/Ayyat";
 import { NamaPengantinThree } from "components/invitation/NamaPengantin";
@@ -19,6 +26,8 @@ import { GallerySlideShow } from "components/invitation/Gallery";
 import { GuestBookWithPopup } from "components/invitation/GuestBook";
 import Terimakasih from "components/invitation/Terimakasih";
 import InvitationFooter from "components/invitation/InvitationFooter";
+import DateCountdown from "components/invitation/DateCountdown";
+import PlayerButton from "components/invitation/parts/PlayerButton";
 
 const bottomMenuData = [
   {
@@ -41,6 +50,12 @@ const bottomMenuData = [
   },
   {
     id: 4,
+    anchor: "rsvp",
+    title: "RSVP",
+    iconName: <HiOutlineBookOpen size={26} />
+  },
+  {
+    id: 5,
     anchor: "gallery",
     title: "Gallery",
     iconName: <HiOutlinePhotograph size={26} />
@@ -102,11 +117,51 @@ const imageData = [
 const Page = ({ comments }) => {
   const [data, setData] = useState(comments);
 
+  const router = useRouter();
+  const { namaTamu } = router.query;
+  const tamu = namaTamu.replace("+", " ");
+
   const [guestBookName, setGuestBookName] = useState("");
   const [guestBookComment, setGuestBookComment] = useState("");
   const [guestBookIsLoading, setGuestBookIsLoading] = useState(false);
   const [guestBookError, setGuestBookError] = useState("");
   const [guestBookSuccess, setGuestBookSuccess] = useState("");
+
+  const [modalIsOpen, setModalIsOpen] = useState(true);
+
+  const [audio, setAudio] = useState(null);
+  const [isAudioPlaying, setIsAudioPlaying] = useState(false);
+  const [showPlayButton, setShowPlayButton] = useState(false);
+
+  const date = new Date("11 March 2023 06:15 UTC+7");
+  const isoDate = date.toISOString();
+
+  useEffect(() => {
+    setAudio(new Audio("/musics/beautiful-in-white.mp3"));
+
+    return () => {
+      if (audio) {
+        audio.pause();
+        setIsAudioPlaying(false);
+      }
+    };
+  }, []);
+
+  const handlePlayMusic = () => {
+    audio.play();
+    setIsAudioPlaying(true);
+  };
+
+  const handlePauseMusic = () => {
+    audio.pause();
+    setIsAudioPlaying(false);
+  };
+
+  const handleOpenModal = () => {
+    setModalIsOpen(false);
+    setShowPlayButton(true);
+    handlePlayMusic();
+  };
 
   const handleGuestBookSubmit = async (event) => {
     event.preventDefault();
@@ -150,8 +205,34 @@ const Page = ({ comments }) => {
         title="Galih & Ratna Wedding Invitation"
         description="Kami mengundang Bapak/Ibu, saudara, dan rekan-rekan semua untuk hadir di acara pernikahan kami."
         link="https://katanikah.com/template/premium2/Nama+Tamu"
-        imagePath="/images/jeremy-weddings.jpg"
+        imagePath="/images/couple/meta-image.png"
       />
+
+      <ReactModal
+        isOpen={modalIsOpen}
+        closeTimeoutMS={500}
+        ariaHideApp={false}
+        className="absolute top-0 left-0 right-0 bottom-0"
+      >
+        <OpeningModalOne
+          handleOpenModal={handleOpenModal}
+          namaTamu={tamu}
+          namaPengantin="Galih & Ratna"
+          customColor="text-gray-50"
+          buttonBgColor="bg-brown-primary opacity-80"
+          buttonTextColor="text-white"
+          backgroundImagePath="/images/couple/couple3.jpg"
+          overlayClassName="bg-gradient-to-b from-brown-primary opacity-30"
+        />
+      </ReactModal>
+
+      {showPlayButton && (
+        <PlayerButton
+          handlePlayMusic={handlePlayMusic}
+          handlePauseMusic={handlePauseMusic}
+          isAudioPlaying={isAudioPlaying}
+        />
+      )}
 
       <BottomTabMenu
         bgColor="bg-white"
@@ -211,6 +292,7 @@ const Page = ({ comments }) => {
         buttonBgColor="bg-brown-primary"
         akadImagePath="/images/hero/hero2.jpg"
         resepsiImagePath="/images/hero/hero3.jpg"
+        padding="pb-32"
       />
 
       <RSVP
@@ -218,7 +300,14 @@ const Page = ({ comments }) => {
         textColor="text-brown-dark"
         formBgColor="bg-white"
         buttonBgColor="bg-brown-primary"
+        padding="pt-32"
       >
+        <DateCountdown
+          date={isoDate}
+          bgColor="bg-white"
+          shadow="shadow-blur-20"
+          position="-top-20"
+        />
         <DoubleWave color="#452808" isBottom />
       </RSVP>
 
@@ -244,6 +333,7 @@ const Page = ({ comments }) => {
         writeYourWishClassname="bg-brown-primary text-white"
         buttonTextColor="text-white"
         buttonBgColor="bg-brown-dark"
+        commentDisable
       >
         {" "}
         <DoubleWave color="#452808" />

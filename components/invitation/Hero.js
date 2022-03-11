@@ -20,7 +20,15 @@ export const Hero = ({
       id="hero"
       className={`h-screen relative ${bgColor} ${textColor} overflow-hidden`}
     >
-      {imagePath && <Image src={imagePath} layout="fill" objectFit="cover" />}
+      {imagePath && (
+        <Image
+          src={imagePath}
+          layout="fill"
+          objectFit="cover"
+          placeholder="blur"
+          alt="katanikah website undangan pernikahan online"
+        />
+      )}
 
       <div className={`h-full w-full absolute ${overlayClassName}`} />
 

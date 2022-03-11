@@ -17,12 +17,13 @@ const RSVP = ({
   buttonBgColor = "bg-gray-600",
   buttonTextColor = "text-gray-200",
   formBgColor = "bg-gray-200",
+  padding,
   children
 }) => {
   return (
     <div
       id="rsvp"
-      className={`${bgColor} ${textColor} relative max-w-2xl m-auto overflow-hidden py-16 px-8`}
+      className={`${bgColor} ${textColor} relative max-w-2xl m-auto py-16 px-8 ${padding}`}
     >
       {children}
 

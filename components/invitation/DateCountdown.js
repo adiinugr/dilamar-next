@@ -3,20 +3,20 @@ import Countdown from "react-countdown";
 
 import { renderer } from "./parts/CountDownRenderer";
 
-const DateCountdown = ({ date, bgColor, textColor }) => {
-  const containerClassName = () =>
-    bgColor && textColor
-      ? `${bgColor} ${textColor} flex justify-center items-center overflow-hidden`
-      : "flex justify-center items-center bg-suta-gunmetal text-suta-seashell overflow-hidden";
-
+const DateCountdown = ({
+  date,
+  bgColor = "bg-gray-200",
+  textColor = "text-gray-700",
+  shadow,
+  position
+}) => {
   return (
-    <div className={containerClassName()}>
-      <div
-        data-aos="zoom-in"
-        className="px-6 flex flex-col py-8 md:py-10 md:px-44 "
-      >
-        <div className="text-center font-display text-4xl md:text-5xl mb-6">
-          Save The Date
+    <div
+      className={`${bgColor} ${textColor} ${shadow} ${position} absolute flex justify-center items-center overflow-hidden rounded-bl-3xl rounded-tr-3xl z-50`}
+    >
+      <div className="px-4 flex flex-col py-6 md:py-10 md:px-44 ">
+        <div className="text-center font-yellowtail text-2xl md:text-5xl mb-6">
+          Counting Down to Our Beautiful Day
         </div>
         <Countdown date={Date.parse(date)} renderer={renderer} />
       </div>
