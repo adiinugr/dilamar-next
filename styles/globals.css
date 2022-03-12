@@ -27,3 +27,20 @@
 .flip-vertical {
   transform: scaleY(-1);
 }
+
+.slick-arrow.slick-prev {
+  left: 10px;
+  z-index: 1;
+}
+
+.slick-arrow.slick-prev:before {
+  font-size: 30px;
+}
+
+.slick-arrow.slick-next {
+  right: 20px;
+}
+
+.slick-arrow.slick-next:before {
+  font-size: 30px;
+}

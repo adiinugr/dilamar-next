@@ -1,5 +1,7 @@
 import Image from "next/image";
 import React, { Children } from "react";
+import { Fade } from "react-reveal";
+import { TitleH1 } from "./parts/BigTitle";
 
 export const NamaPengantin1 = ({
   namaWanita,
@@ -112,68 +114,80 @@ export const NamaPengantinThree = ({
   return (
     <div
       id="couple"
-      className={`relative ${bgColor} ${textColor} py-16 px-10 md:px-40 overflow-hidden`}
+      className={`relative ${bgColor} ${textColor} py-16 px-10 md:px-32 overflow-hidden`}
     >
       {children}
 
+      <Fade top>
+        <TitleH1>The Bride & Groom</TitleH1>
+      </Fade>
+
       <div
         className={`flex ${
-          manFirst ? "flex-col-reverse" : "flex-col"
+          manFirst
+            ? "flex-col-reverse md:flex-row-reverse"
+            : "flex-col md:flex-row"
         } items-center justify-center`}
       >
-        <h1 className="mb-8 font-yellowtail text-3xl">The Bride & Groom </h1>
-        <div
-          className={`flex flex-col md:flex-row w-full items-center font-body md:mb-0`}
-          data-aos="fade-left"
-        >
-          <div className="w-full md:w-1/2 mx-4 mb-6 md:mb-0 ">
-            <div className="bg-gray-50 rounded-lg w-full h-96 flex justify-center p-3 pb-8">
-              <div className="w-full h-full relative">
-                <Image
-                  src={imagePathWanita}
-                  layout="fill"
-                  objectFit="cover"
-                  className="absolute"
-                  placeholder="blur"
-                  alt="katanikah website undangan pernikahan online"
-                />
+        <div className={`flex flex-col w-full items-center font-body md:mb-0`}>
+          <Fade top>
+            <div className="w-full mx-4 mb-6 md:mb-0 ">
+              <div className="bg-gray-50 rounded-lg w-full h-96 flex justify-center p-3 pb-8">
+                <div className="w-full h-full relative">
+                  <Image
+                    src={imagePathWanita}
+                    layout="fill"
+                    objectFit="cover"
+                    className="absolute"
+                    placeholder="blur"
+                    alt="katanikah website undangan pernikahan online"
+                  />
+                </div>
               </div>
             </div>
-          </div>
-          <div className="w-full md:w-1/2 mx-4 text-center md:text-left">
-            <p className="font-yellowtail text-3xl md:text-5xl mb-3">
-              {namaWanita}
-            </p>
-            <p>{ortuWanita}</p>
-          </div>
+          </Fade>
+          <Fade top>
+            <div className="w-full mx-4 text-center md:mt-8">
+              <p className="font-yellowtail text-3xl md:text-4xl mb-3">
+                {namaWanita}
+              </p>
+              <p>{ortuWanita}</p>
+            </div>
+          </Fade>
         </div>
-        <div className=" md:w-1/3 text-center font-yellowtail text-7xl md:text-8xl my-10">
-          &
-        </div>
+        <Fade top>
+          <div className=" md:w-1/3 text-center font-yellowtail text-6xl md:text-8xl my-10">
+            &
+          </div>
+        </Fade>
         <div
-          className="flex flex-col-reverse md:flex-row w-full items-center font-body md:mb-0"
+          className="flex flex-col-reverse w-full items-center font-body md:mb-0"
           data-aos="fade-right"
         >
-          <div className="w-full md:w-1/2 mx-4 text-center md:text-left">
-            <p className="font-yellowtail text-3xl md:text-5xl mb-3">
-              {namaPria}
-            </p>
-            <p>{ortuPria}</p>
-          </div>
-          <div className="w-full md:w-1/2 mx-4 mb-6 md:mb-0">
-            <div className="bg-gray-50 rounded-lg w-full h-96 flex justify-center p-3 pb-8">
-              <div className="w-full h-full relative">
-                <Image
-                  src={imagePathPria}
-                  layout="fill"
-                  objectFit="cover"
-                  className="absolute"
-                  placeholder="blur"
-                  alt="katanikah website undangan pernikahan online"
-                />
+          <Fade top>
+            <div className="w-full mx-4 text-center md:mt-8">
+              <p className="font-yellowtail text-3xl md:text-4xl mb-3">
+                {namaPria}
+              </p>
+              <p>{ortuPria}</p>
+            </div>
+          </Fade>
+          <Fade top>
+            <div className="w-full mx-4 mb-6 md:mb-0">
+              <div className="bg-gray-50 rounded-lg w-full h-96 flex justify-center p-3 pb-8">
+                <div className="w-full h-full relative">
+                  <Image
+                    src={imagePathPria}
+                    layout="fill"
+                    objectFit="cover"
+                    className="absolute"
+                    placeholder="blur"
+                    alt="katanikah website undangan pernikahan online"
+                  />
+                </div>
               </div>
             </div>
-          </div>
+          </Fade>
         </div>
       </div>
     </div>

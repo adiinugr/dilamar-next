@@ -24,7 +24,7 @@ import {
   HiOutlineHome,
   HiOutlinePhotograph
 } from "react-icons/hi";
-import { BigTitle } from "components/invitation/parts/BigTitle";
+import { TitleWithBackground } from "components/invitation/parts/BigTitle";
 import { TidakMengundang } from "components/invitation/QuranAyat";
 
 const imageData = [
@@ -246,7 +246,7 @@ const Page = ({ messages }) => {
           name="Nindya & Andhika"
         />
 
-        <BigTitle
+        <TitleWithBackground
           anchorId="couple"
           title="We Are Getting Married"
           textSize="text-3xl md:text-5xl"
@@ -271,7 +271,7 @@ const Page = ({ messages }) => {
           textColor="text-gray-200"
         />
 
-        <BigTitle
+        <TitleWithBackground
           anchorId="event"
           title="Akad"
           textSize="text-3xl md:text-5xl"
@@ -300,7 +300,7 @@ const Page = ({ messages }) => {
           isResepsi={false}
         />
 
-        <BigTitle
+        <TitleWithBackground
           title="Protokol Kesehatan"
           textSize="text-3xl md:text-5xl"
           bgColor="bg-nindya-andhika-gold"
@@ -313,7 +313,7 @@ const Page = ({ messages }) => {
           textColor="text-nurul-gold"
         />
 
-        <BigTitle
+        <TitleWithBackground
           anchorId="gallery"
           title="Our Gallery"
           textSize="text-3xl md:text-5xl"
@@ -328,7 +328,7 @@ const Page = ({ messages }) => {
           textColor="text-nurul-gold"
         />
 
-        <BigTitle
+        <TitleWithBackground
           title="Guest Book"
           textSize="text-3xl md:text-5xl"
           bgColor="bg-nindya-andhika-gold"

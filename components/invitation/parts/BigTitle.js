@@ -1,4 +1,4 @@
-export const BigTitle = ({
+export const TitleWithBackground = ({
   title,
   anchorId,
   bgColor = "bg-gray-200",
@@ -18,5 +18,13 @@ export const BigTitle = ({
         {title}
       </div>
     </div>
+  );
+};
+
+export const TitleH1 = ({ children }) => {
+  return (
+    <h1 className="text-center mb-8 md:mb-16 font-yellowtail text-3xl md:text-5xl">
+      {children}
+    </h1>
   );
 };

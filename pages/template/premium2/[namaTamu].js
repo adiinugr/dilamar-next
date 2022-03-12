@@ -11,10 +11,7 @@ import {
 
 import { BottomTabMenu } from "components/invitation/parts/BottomTabMenu";
 import InvitationHead from "components/invitation/parts/InvitationHead";
-import {
-  OpeningModalOne,
-  OpeningModalTwo
-} from "components/invitation/OpeningModal";
+import { OpeningModalOne } from "components/invitation/OpeningModal";
 import { Hero } from "components/invitation/Hero";
 import { QsArrum21 } from "components/invitation/Ayyat";
 import { NamaPengantinThree } from "components/invitation/NamaPengantin";
@@ -67,21 +64,21 @@ const storyData = [
     id: 1,
     title: "First Meet",
     description:
-      "Nibh volutpat iaculis nascetur scelerisque interdum amet tortor. Massa mauris leo nec quam ut elit lacus etiam. Vestibulum, semper morbi vel viverra in eu.",
+      "June 19, 2019 was our first meeting as colleagues. At first everything went well and we were good friends at work without ever having imagined we would get married one day.",
     imagePath: "/images/first-meet.jpg"
   },
   {
     id: 2,
     title: "First Date",
     description:
-      "Nibh volutpat iaculis nascetur scelerisque interdum amet tortor. Massa mauris leo nec quam ut elit lacus etiam. Vestibulum, semper morbi vel viverra in eu.",
+      "God 'matched' us in unexpected ways. As if to be an answer to our prayers. A year later, on August 26, 2020, we decided to step up in a relationship and start to learn to love each other.",
     imagePath: "/images/first-date.jpg"
   },
   {
     id: 3,
     title: "The Proposal",
     description:
-      "Nibh volutpat iaculis nascetur scelerisque interdum amet tortor. Massa mauris leo nec quam ut elit lacus etiam. Vestibulum, semper morbi vel viverra in eu.",
+      "The distances of 600 kilometers from Jakarta to Madiun became one of the witnesses of our journey, Finally exactly 2 years since we met and right on Sari's birthday, we got engaged on June 19, 2021.",
     imagePath: "/images/the-proposal.jpg"
   }
 ];
@@ -127,6 +124,13 @@ const Page = ({ comments }) => {
   const [guestBookError, setGuestBookError] = useState("");
   const [guestBookSuccess, setGuestBookSuccess] = useState("");
 
+  const [rsvpName, setRsvpName] = useState("");
+  const [rsvpAddress, setRsvpAddress] = useState("");
+  const [rsvpStatus, setRsvpStatus] = useState("");
+  const [rsvpIsLoading, setRsvpIsLoading] = useState(false);
+  const [rsvpError, setRsvpError] = useState("");
+  const [rsvpSuccess, setRsvpSuccess] = useState("");
+
   const [modalIsOpen, setModalIsOpen] = useState(true);
 
   const [audio, setAudio] = useState(null);
@@ -168,7 +172,7 @@ const Page = ({ comments }) => {
 
     setGuestBookIsLoading(true);
 
-    if (guestBookName === "" && guestBookComment === "") {
+    if (guestBookName === "" || guestBookComment === "") {
       setGuestBookError("Harus diisi semua ya!");
       setGuestBookIsLoading(false);
     } else {
@@ -199,6 +203,38 @@ const Page = ({ comments }) => {
     }
   };
 
+  const handleRsvpSubmit = async (event) => {
+    event.preventDefault();
+
+    setRsvpIsLoading(true);
+
+    if (rsvpName === "" || rsvpStatus === "" || rsvpAddress === "") {
+      setRsvpSuccess("");
+      setRsvpError("Harus diisi semua ya!");
+      setRsvpIsLoading(false);
+    } else {
+      const res = await fetch(`/api/test-api/rsvp`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          name: rsvpName,
+          address: rsvpAddress,
+          status: rsvpStatus
+        })
+      });
+
+      setRsvpIsLoading(false);
+      setRsvpError("");
+      setRsvpSuccess("Status Kehadiran Berhasil Dikirim!");
+
+      setRsvpName("");
+      setRsvpAddress("");
+      setRsvpStatus("");
+    }
+  };
+
   return (
     <>
       <InvitationHead
@@ -212,7 +248,7 @@ const Page = ({ comments }) => {
         isOpen={modalIsOpen}
         closeTimeoutMS={500}
         ariaHideApp={false}
-        className="absolute top-0 left-0 right-0 bottom-0"
+        className="absolute top-0 left-0 right-0 bottom-0 z-40"
       >
         <OpeningModalOne
           handleOpenModal={handleOpenModal}
@@ -292,21 +328,31 @@ const Page = ({ comments }) => {
         buttonBgColor="bg-brown-primary"
         akadImagePath="/images/hero/hero2.jpg"
         resepsiImagePath="/images/hero/hero3.jpg"
-        padding="pb-32"
+        padding="pb-32 md:pb-52"
       />
 
       <RSVP
+        name={rsvpName}
+        setName={(e) => setRsvpName(e.target.value)}
+        address={rsvpAddress}
+        setAddress={(e) => setRsvpAddress(e.target.value)}
+        status={rsvpStatus}
+        setStatus={(e) => setRsvpStatus(e.target.value)}
+        error={rsvpError}
+        isLoading={rsvpIsLoading}
+        succcess={rsvpSuccess}
+        handleSubmit={handleRsvpSubmit}
         bgColor="bg-white"
         textColor="text-brown-dark"
         formBgColor="bg-white"
         buttonBgColor="bg-brown-primary"
-        padding="pt-32"
+        padding="pt-32 md:pt-44"
       >
         <DateCountdown
           date={isoDate}
           bgColor="bg-white"
           shadow="shadow-blur-20"
-          position="-top-20"
+          position="left-1/2 transform -translate-x-1/2 -top-20 md:-top-32"
         />
         <DoubleWave color="#452808" isBottom />
       </RSVP>

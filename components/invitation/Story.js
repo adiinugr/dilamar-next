@@ -1,5 +1,7 @@
 import Image from "next/image";
 import React from "react";
+import { Fade } from "react-reveal";
+import { TitleH1 } from "./parts/BigTitle";
 
 export const StoryOne = ({
   bgColor = "bg-gray-700",
@@ -83,62 +85,74 @@ export const StoryTwo = ({
 }) => {
   return (
     <div
-      className={`${bgColor} ${textColor} relative px-8 py-16 overflow-hidden flex flex-col items-center justify-center`}
+      className={`${bgColor} ${textColor} relative px-8 py-16 md:px-32 md:py-60 overflow-hidden flex flex-col items-center justify-center`}
     >
       {children}
 
-      <h1 className="mb-8 font-yellowtail text-3xl">Our Story</h1>
+      <Fade top>
+        <TitleH1>Our Story</TitleH1>
+      </Fade>
 
-      <div className="w-full h-40 relative rounded-lg overflow-hidden">
-        <Image
-          src={imageOnePath}
-          layout="fill"
-          objectFit="cover"
-          alt="katanikah website undangan pernikahan online"
-          placeholder="blur"
-        />
-      </div>
+      <Fade left>
+        <div className="w-full h-40 md:h-96 relative rounded-lg overflow-hidden">
+          <Image
+            src={imageOnePath}
+            layout="fill"
+            objectFit="cover"
+            alt="katanikah website undangan pernikahan online"
+            placeholder="blur"
+          />
+        </div>
+      </Fade>
 
-      <div className="relative my-6 w-full">
-        <div
-          className={`border-2 ${lineBorderColor} top-0 left-7 absolute h-full`}
-        />
+      <div className="relative my-6 md:my-20 w-full md:max-w-xl">
+        <Fade left>
+          <div
+            className={`border-2 ${lineBorderColor} top-0 left-7 md:left-9 absolute h-full`}
+          />
+        </Fade>
 
         <ul className="list-none">
           {storyData.map((story) => (
-            <li className="mb-4 flex items-center">
-              <div className="self-start mr-4">
-                <div className="rounded-full w-14 h-14 relative overflow-hidden">
-                  <Image
-                    src={story.imagePath}
-                    layout="fill"
-                    objectFit="cover"
-                    alt="katanikah website undangan pernikahan online"
-                    placeholder="blur"
-                  />
+            <Fade key={story.id} top>
+              <li className="mb-4 md:mb-14 flex items-center">
+                <div className="self-start mr-4">
+                  <div className="rounded-full w-14 h-14 md:w-20 md:h-20 relative overflow-hidden">
+                    <Image
+                      src={story.imagePath}
+                      layout="fill"
+                      objectFit="cover"
+                      alt="katanikah website undangan pernikahan online"
+                      placeholder="blur"
+                    />
+                  </div>
                 </div>
-              </div>
 
-              <div>
-                <div className="mb-2 text-lg font-semibold">{story.title}</div>
-                <div className={`${textColor} text-opacity-60`}>
-                  {story.description}
+                <div>
+                  <div className="mb-2 text-lg font-semibold">
+                    {story.title}
+                  </div>
+                  <div className={`${textColor} text-opacity-60`}>
+                    {story.description}
+                  </div>
                 </div>
-              </div>
-            </li>
+              </li>
+            </Fade>
           ))}
         </ul>
       </div>
 
-      <div className="w-full h-40 relative rounded-lg overflow-hidden">
-        <Image
-          src={imageTwoPath}
-          layout="fill"
-          objectFit="cover"
-          alt="katanikah website undangan pernikahan online"
-          placeholder="blur"
-        />
-      </div>
+      <Fade right>
+        <div className="w-full h-40 md:h-96 relative rounded-lg overflow-hidden">
+          <Image
+            src={imageTwoPath}
+            layout="fill"
+            objectFit="cover"
+            alt="katanikah website undangan pernikahan online"
+            placeholder="blur"
+          />
+        </div>
+      </Fade>
     </div>
   );
 };

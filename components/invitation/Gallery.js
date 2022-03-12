@@ -5,6 +5,7 @@ import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Fade } from "react-reveal";
 
 export const GalleryList = ({
   bgColor = "bg-gray-200",
@@ -105,38 +106,47 @@ export const GallerySlideShow = ({
     infinite: true,
     speed: 400,
     autoplay: true,
-    arrows: false,
     fade: true
   };
 
   return (
     <div
       id="gallery"
-      className={`${bgColor} ${textColor} relative max-w-2xl m-auto overflow-hidden py-16 px-8`}
+      className={`${bgColor} ${textColor} relative overflow-hidden py-16 px-8`}
     >
       {children}
 
-      <div className="flex flex-col items-center justify-center mb-8">
-        <div className="font-yellowtail text-4xl mb-3">Our Moment Together</div>
-        <div className="text-center">
-          We start our journey from the very bottom.
-        </div>
-      </div>
-
-      <Slider {...settings}>
-        {imageData.map((image) => (
-          <div className="h-80 w-full relative rounded-lg overflow-hidden">
-            <Image
-              key={image.id}
-              src={image.src}
-              layout="fill"
-              objectFit="cover"
-              alt="katanikah website undangan pernikahan online"
-              placeholder="blur"
-            />
+      <div className="max-w-2xl m-auto">
+        <Fade top>
+          <div className="flex flex-col items-center justify-center mb-8">
+            <div className="font-yellowtail text-4xl mb-3">
+              Our Moment Together
+            </div>
+            <div className="text-center">
+              We start our journey from the very bottom.
+            </div>
           </div>
-        ))}
-      </Slider>
+        </Fade>
+
+        <Fade>
+          <Slider {...settings} className="slick-arrow">
+            {imageData.map((image) => (
+              <div
+                key={image.id}
+                className="h-80 md:h-96 w-full relative rounded-lg overflow-hidden"
+              >
+                <Image
+                  src={image.src}
+                  layout="fill"
+                  objectFit="cover"
+                  alt="katanikah website undangan pernikahan online"
+                  placeholder="blur"
+                />
+              </div>
+            ))}
+          </Slider>
+        </Fade>
+      </div>
     </div>
   );
 };

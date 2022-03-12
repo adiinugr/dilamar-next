@@ -25,7 +25,7 @@ import { BottomTabMenu } from "components/invitation/parts/BottomTabMenu";
 import RSVP from "components/invitation/RSVP";
 import { GalleryList } from "components/invitation/Gallery";
 import PlayerButton from "components/invitation/parts/PlayerButton";
-import { BigTitle } from "components/invitation/parts/BigTitle";
+import { TitleWithBackground } from "components/invitation/parts/BigTitle";
 
 const bottomMenuData = [
   {
@@ -308,7 +308,7 @@ const Page = ({ messages }) => {
         />
 
         <div className="px-14 md:w-2/4 py-10 bg-kharnisa-imam-silver">
-          <BigTitle
+          <TitleWithBackground
             title="Guest Book"
             bgColor="pattern2"
             textColor="text-kharnisa-imam-gold"

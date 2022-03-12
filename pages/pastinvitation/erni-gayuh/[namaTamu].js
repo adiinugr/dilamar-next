@@ -25,7 +25,7 @@ import {
   HiOutlineHome,
   HiOutlinePhotograph
 } from "react-icons/hi";
-import { BigTitle } from "../../../components/invitation/parts/BigTitle";
+import { TitleWithBackground } from "../../../components/invitation/parts/BigTitle";
 
 const imageData = [
   {
@@ -272,7 +272,7 @@ const Page = ({ messages }) => {
           textColor="text-gray-200"
         />
 
-        <BigTitle
+        <TitleWithBackground
           title="Guest Book"
           bgColor="bg-kharnisa-imam-silver"
           textColor="text-kharnisa-imam-rosegold"

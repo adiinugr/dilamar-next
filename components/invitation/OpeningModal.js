@@ -3,6 +3,7 @@ import Lottie from "react-lottie";
 import { MdMailOutline } from "react-icons/md";
 
 import animationLetter from "../../assets/lottie-letter.json";
+import { Bounce } from "react-reveal";
 
 export const OpeningModalOne = ({
   handleOpenModal,
@@ -34,23 +35,25 @@ export const OpeningModalOne = ({
       <div
         className={`h-full w-full absolute flex flex-col justify-center items-center px-8`}
       >
-        <div className="text-lg text-center md:text-2xl">
+        <div className="text-lg text-center md:text-xl">
           <p>
             Dear, <span className="font-bold">{namaTamu}</span>
           </p>
           <p>You Are Invited to</p>
         </div>
-        <div className="font-yellowtail text-5xl md:text-7xl my-4">
+        <div className="font-yellowtail text-5xl md:text-6xl my-4">
           {namaPengantin}
         </div>
-        <div className="text-lg md:text-2xl">Wedding Ceremony</div>
-        <div
-          onClick={handleOpenModal}
-          className={`text-lg mt-12 md:mt-8 ${buttonBgColor} ${buttonTextColor} py-2 px-8 text-center cursor-pointer rounded-md flex justify-center items-center`}
-        >
-          <MdMailOutline size={28} className="mr-2" />
-          Open Invitation
-        </div>
+        <div className="text-lg md:text-xl">Wedding Ceremony</div>
+        <Bounce delay={500}>
+          <div
+            onClick={handleOpenModal}
+            className={`text-lg mt-12 md:mt-8 ${buttonBgColor} ${buttonTextColor} py-2 px-8 text-center cursor-pointer rounded-md flex justify-center items-center`}
+          >
+            <MdMailOutline size={28} className="mr-2" />
+            Open Invitation
+          </div>
+        </Bounce>
       </div>
     </div>
   );

@@ -8,9 +8,9 @@ const InvitationFooter = ({
 }) => {
   return (
     <footer
-      className={`${bgColor} ${textColor} grid grid-cols-4 gap-y-3 py-8 px-10 `}
+      className={`${bgColor} ${textColor} grid grid-cols-4 gap-y-3 py-8 px-10 md:px-32 `}
     >
-      <div className="text-2xl font-bold flex items-center justify-center col-start-1 col-end-3">
+      <div className="text-2xl font-bold flex items-center justify-start col-start-1 col-end-3">
         <Image
           src="/images/icon.png"
           className="rounded-full"
@@ -30,10 +30,6 @@ const InvitationFooter = ({
         <a href="https://www.instagram.com/kata.nikah" target="_blank">
           <AiOutlineInstagram size={30} />
         </a>
-      </div>
-      <div className="mb-3 md:mb-0 text-center col-start-1 col-end-5">
-        Copyright &copy; {new Date().getFullYear()}. KataNikah All Rights
-        Reserved
       </div>
     </footer>
   );

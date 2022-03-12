@@ -8,7 +8,7 @@ export const Hero = ({
   date,
   bgColor = "bg-gray-200",
   textColor = "text-gray-800",
-  nameTextSize = "text-5xl md:text-8xl",
+  nameTextSize = "text-5xl md:text-7xl",
   overlayClassName,
   imagePath,
   snowColor = "#ffffff",
@@ -35,9 +35,9 @@ export const Hero = ({
       {children}
 
       <div className="h-full w-full absolute flex flex-col justify-center items-center">
-        <div className="text-lg md:text-2xl">We Are Getting Married</div>
+        <div className="text-lg md:text-xl">We Are Getting Married</div>
         <div className={`font-yellowtail ${nameTextSize} my-4`}>{name}</div>
-        <div className="text-xl md:text-2xl">{date}</div>
+        <div className="text-xl md:text-xl">{date}</div>
       </div>
 
       {isSnow && (

@@ -8,7 +8,7 @@ export const BottomTabMenu = ({
 }) => {
   return (
     <div
-      className={`fixed flex ${textColor} ${bgColor} items-center justify-around h-16 z-30 w-full bottom-0 left-0 shadow-blur-16 rounded-tl-2xl rounded-tr-2xl`}
+      className={`fixed flex ${textColor} ${bgColor} items-center justify-around h-16 z-30 w-full md:max-w-2xl bottom-0 left-0 md:left-1/2 md:transform md:-translate-x-1/2 shadow-blur-16 rounded-tl-2xl rounded-tr-2xl`}
     >
       {bottomMenuData.map((menu) => (
         <ScrollLink to={menu.anchor} smooth={true} duration={500} key={menu.id}>

@@ -1,5 +1,6 @@
 import React from "react";
 import Countdown from "react-countdown";
+import { Fade } from "react-reveal";
 
 import { renderer } from "./parts/CountDownRenderer";
 
@@ -12,14 +13,16 @@ const DateCountdown = ({
 }) => {
   return (
     <div
-      className={`${bgColor} ${textColor} ${shadow} ${position} absolute flex justify-center items-center overflow-hidden rounded-bl-3xl rounded-tr-3xl z-50`}
+      className={`${bgColor} ${textColor} ${shadow} ${position} px-6 py-5 md:px-12 md:py-10 min-w-max max-w-3xl absolute flex justify-center items-center overflow-hidden rounded-bl-3xl rounded-tr-3xl`}
     >
-      <div className="px-4 flex flex-col py-6 md:py-10 md:px-44 ">
-        <div className="text-center font-yellowtail text-2xl md:text-5xl mb-6">
-          Counting Down to Our Beautiful Day
+      <Fade>
+        <div className="flex flex-col">
+          <div className="text-center font-yellowtail text-2xl md:text-3xl mb-6">
+            Counting Down to Our Beautiful Day
+          </div>
+          <Countdown date={Date.parse(date)} renderer={renderer} />
         </div>
-        <Countdown date={Date.parse(date)} renderer={renderer} />
-      </div>
+      </Fade>
     </div>
   );
 };
