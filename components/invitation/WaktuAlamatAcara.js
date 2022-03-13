@@ -327,6 +327,7 @@ export const WaktuAlamatAcaraFour = ({
   buttonTextColor = "text-white",
   padding,
   isResepsi = true,
+  isWithGoogleMaps = true,
   children
 }) => {
   return (
@@ -417,22 +418,27 @@ export const WaktuAlamatAcaraFour = ({
         )}
       </div>
 
-      <Fade top>
-        <div className="h-80 w-full mt-4 relative border-4 border-white rounded-lg overflow-hidden z-0 mx-auto">
-          <GoogleMaps lat={lat} lng={lng} />
-        </div>
-      </Fade>
-      <Fade top>
-        <a
-          data-aos="zoom-in"
-          href={googleMapsUri}
-          target="_blank"
-          rel="noreferrer"
-          className={`w-full ${buttonBgColor} ${buttonTextColor} mt-4 rounded-md py-2 cursor-pointer flex items-center justify-center mx-auto`}
-        >
-          <RiMap2Line size={20} className="mr-2" /> <span>View Location</span>
-        </a>
-      </Fade>
+      {isWithGoogleMaps && (
+        <>
+          <Fade top>
+            <div className="h-80 w-full mt-4 relative border-4 border-white rounded-lg overflow-hidden z-0 mx-auto">
+              <GoogleMaps lat={lat} lng={lng} />
+            </div>
+          </Fade>
+          <Fade top>
+            <a
+              data-aos="zoom-in"
+              href={googleMapsUri}
+              target="_blank"
+              rel="noreferrer"
+              className={`w-full ${buttonBgColor} ${buttonTextColor} mt-4 rounded-md py-2 cursor-pointer flex items-center justify-center mx-auto`}
+            >
+              <RiMap2Line size={20} className="mr-2" />{" "}
+              <span>View Location</span>
+            </a>
+          </Fade>
+        </>
+      )}
     </div>
   );
 };

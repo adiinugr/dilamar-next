@@ -277,7 +277,7 @@ const Page = ({ comments }) => {
 
       <BottomTabMenu
         bgColor="bg-white"
-        textColor="text-green-primary"
+        textColor="text-purple-primary"
         bottomMenuData={bottomMenuData}
       />
 
@@ -285,7 +285,7 @@ const Page = ({ comments }) => {
         name="Galih & Ratna"
         date="13 Juni 2021"
         textColor="text-gray-100"
-        overlayPosition="inset-4"
+        overlayPosition="top-4 right-4 bottom-0 left-4"
         overlayClassName="glass border-4 border-white border-opacity-80 rounded-xl"
         imagePath="/images/background/purple-bg.png"
       >
