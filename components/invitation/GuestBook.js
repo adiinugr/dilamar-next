@@ -119,6 +119,7 @@ export const GuestBookWithPopup = ({
   inputBorder = "border border-gray-300",
   buttonTextColor = "text-gray-100",
   buttonBgColor = "bg-gray-800",
+  padding,
   commentDisable,
   children
 }) => {
@@ -131,7 +132,7 @@ export const GuestBookWithPopup = ({
 
   return (
     <div
-      className={`${bgColor} ${textColor} relative overflow-hidden py-16 px-8 md:px-32 md:py-72`}
+      className={`${bgColor} ${textColor} relative py-16 px-8 md:px-32 md:py-72 ${padding}`}
     >
       {children}
 
