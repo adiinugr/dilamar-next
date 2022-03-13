@@ -11,7 +11,7 @@ import {
 
 import { BottomTabMenu } from "components/invitation/parts/BottomTabMenu";
 import InvitationHead from "components/invitation/parts/InvitationHead";
-import { OpeningModalOne } from "components/invitation/OpeningModal";
+import { OpeningModalStandard } from "components/invitation/OpeningModal";
 import { Hero } from "components/invitation/Hero";
 import { QsArrum21 } from "components/invitation/Ayyat";
 import { NamaPengantinThree } from "components/invitation/NamaPengantin";
@@ -78,7 +78,7 @@ const storyData = [
     id: 3,
     title: "The Proposal",
     description:
-      "The distances of 600 kilometers from Jakarta to Madiun became one of the witnesses of our journey, Finally exactly 2 years since we met and right on Sari's birthday, we got engaged on June 19, 2021.",
+      "The distances of 600 kilometers from Jakarta to Madiun became one of the witnesses of our journey, Finally exactly 2 years since we met and right on Ratna's birthday, we got engaged on June 19, 2021.",
     imagePath: "/images/the-proposal.jpg"
   }
 ];
@@ -241,7 +241,7 @@ const Page = ({ comments }) => {
         title="Galih & Ratna Wedding Invitation"
         description="Kami mengundang Bapak/Ibu, saudara, dan rekan-rekan semua untuk hadir di acara pernikahan kami."
         link="https://katanikah.com/template/premium2/Nama+Tamu"
-        imagePath="/images/couple/meta-image.png"
+        imagePath="/images/couple/meta-image-min.png"
       />
 
       <ReactModal
@@ -250,7 +250,7 @@ const Page = ({ comments }) => {
         ariaHideApp={false}
         className="absolute top-0 left-0 right-0 bottom-0 z-40"
       >
-        <OpeningModalOne
+        <OpeningModalStandard
           handleOpenModal={handleOpenModal}
           namaTamu={tamu}
           namaPengantin="Galih & Ratna"
@@ -328,7 +328,7 @@ const Page = ({ comments }) => {
         buttonBgColor="bg-brown-primary"
         akadImagePath="/images/hero/hero2.jpg"
         resepsiImagePath="/images/hero/hero3.jpg"
-        padding="pb-32 md:pb-52"
+        padding="pb-40 md:pb-52"
       />
 
       <RSVP
@@ -346,13 +346,14 @@ const Page = ({ comments }) => {
         textColor="text-brown-dark"
         formBgColor="bg-white"
         buttonBgColor="bg-brown-primary"
-        padding="pt-32 md:pt-44"
+        padding="pt-40 pb-24 md:pt-44"
+        buttonDisable
       >
         <DateCountdown
           date={isoDate}
           bgColor="bg-white"
           shadow="shadow-blur-20"
-          position="left-1/2 transform -translate-x-1/2 -top-20 md:-top-32"
+          position="left-1/2 transform -translate-x-1/2 -top-24 md:-top-32"
         />
         <DoubleWave color="#452808" isBottom />
       </RSVP>

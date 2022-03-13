@@ -13,7 +13,7 @@ const DateCountdown = ({
 }) => {
   return (
     <div
-      className={`${bgColor} ${textColor} ${shadow} ${position} px-6 py-5 md:px-12 md:py-10 min-w-max max-w-3xl absolute flex justify-center items-center overflow-hidden rounded-bl-3xl rounded-tr-3xl`}
+      className={`${bgColor} ${textColor} ${shadow} ${position} px-8 py-6 md:px-12 md:py-10 w-10/12 md:w-1/3 absolute flex justify-center items-center overflow-hidden rounded-bl-3xl rounded-tr-3xl`}
     >
       <Fade>
         <div className="flex flex-col">

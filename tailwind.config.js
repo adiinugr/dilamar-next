@@ -33,6 +33,17 @@ module.exports = {
           light: "#E89438",
           lighter: "#F1BF87",
           dark: "#452808"
+        },
+        green: {
+          primary: "#14686A",
+          light: "#AEC8C5",
+          dark: "#051A1B"
+        },
+        purple: {
+          primary: "#8359FB",
+          secondary: "#D459FB",
+          light: "#EFEAFF",
+          dark: "#0C012A"
         }
       },
       height: {

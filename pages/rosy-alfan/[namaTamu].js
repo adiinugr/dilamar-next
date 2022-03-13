@@ -13,7 +13,7 @@ import { NamaPengantin1 } from "../../components/invitation/NamaPengantin";
 import DateCountdown from "../../components/invitation/DateCountdown";
 import { WaktuAlamatAcaraFour } from "../../components/invitation/WaktuAlamatAcara";
 import Terimakasih from "../../components/invitation/Terimakasih";
-import { OpeningModalOne } from "../../components/invitation/OpeningModal";
+import { OpeningModalStandard } from "../../components/invitation/OpeningModal";
 import { GuestBookOne } from "../../components/invitation/GuestBook";
 import { QsAnNur32 } from "../../components/invitation/QuranAyat";
 import PlayerButton from "../../components/invitation/parts/PlayerButton";
@@ -124,7 +124,7 @@ const Page = ({ messages }) => {
           closeTimeoutMS={500}
           className="absolute top-6 left-6 right-6 bottom-6 md:top-10 md:left-10 md:right-10 md:bottom-10 bg-gray-900"
         >
-          <OpeningModalOne
+          <OpeningModalStandard
             handleOpenModal={handleOpenModal}
             namaTamu={tamu}
             namaPengantin="Rosy & Alfan"

@@ -130,9 +130,9 @@ export const NamaPengantinThree = ({
         } items-center justify-center`}
       >
         <div className={`flex flex-col w-full items-center font-body md:mb-0`}>
-          <Fade top>
-            <div className="w-full mx-4 mb-6 md:mb-0 ">
-              <div className="bg-gray-50 rounded-lg w-full h-96 flex justify-center p-3 pb-8">
+          <div className="w-full mx-4 mb-6 md:mb-0 ">
+            <Fade top>
+              <div className="bg-gray-50 rounded-lg shadow-blur-20 w-full h-96 flex justify-center p-3 pb-8">
                 <div className="w-full h-full relative">
                   <Image
                     src={imagePathWanita}
@@ -144,16 +144,16 @@ export const NamaPengantinThree = ({
                   />
                 </div>
               </div>
-            </div>
-          </Fade>
-          <Fade top>
-            <div className="w-full mx-4 text-center md:mt-8">
+            </Fade>
+          </div>
+          <div className="w-full mx-4 text-center md:mt-8">
+            <Fade top>
               <p className="font-yellowtail text-3xl md:text-4xl mb-3">
                 {namaWanita}
               </p>
               <p>{ortuWanita}</p>
-            </div>
-          </Fade>
+            </Fade>
+          </div>
         </div>
         <Fade top>
           <div className=" md:w-1/3 text-center font-yellowtail text-6xl md:text-8xl my-10">
@@ -164,17 +164,17 @@ export const NamaPengantinThree = ({
           className="flex flex-col-reverse w-full items-center font-body md:mb-0"
           data-aos="fade-right"
         >
-          <Fade top>
-            <div className="w-full mx-4 text-center md:mt-8">
+          <div className="w-full mx-4 text-center md:mt-8">
+            <Fade top>
               <p className="font-yellowtail text-3xl md:text-4xl mb-3">
                 {namaPria}
               </p>
               <p>{ortuPria}</p>
-            </div>
-          </Fade>
-          <Fade top>
-            <div className="w-full mx-4 mb-6 md:mb-0">
-              <div className="bg-gray-50 rounded-lg w-full h-96 flex justify-center p-3 pb-8">
+            </Fade>
+          </div>
+          <div className="w-full mx-4 mb-6 md:mb-0">
+            <Fade top>
+              <div className="bg-gray-50 rounded-lg shadow-blur-20 w-full h-96 flex justify-center p-3 pb-8">
                 <div className="w-full h-full relative">
                   <Image
                     src={imagePathPria}
@@ -186,8 +186,8 @@ export const NamaPengantinThree = ({
                   />
                 </div>
               </div>
-            </div>
-          </Fade>
+            </Fade>
+          </div>
         </div>
       </div>
     </div>

@@ -19,7 +19,8 @@ const RSVP = ({
   buttonTextColor = "text-gray-200",
   formBgColor = "bg-gray-200",
   padding,
-  children
+  children,
+  buttonDisable
 }) => {
   return (
     <div
@@ -28,7 +29,7 @@ const RSVP = ({
     >
       {children}
 
-      <div className="max-w-xl m-auto overflow-hidden">
+      <div className="max-w-xl m-auto">
         <Fade top>
           <div className="flex flex-col items-center justify-center mb-8">
             <div className="font-yellowtail text-4xl mb-3">RSVP</div>
@@ -79,6 +80,7 @@ const RSVP = ({
                 </select>
                 <button
                   type="submit"
+                  disabled={buttonDisable}
                   className={`btn ${buttonTextColor} ${buttonBgColor} border py-2 px-4 font-body cursor-pointer ml-auto mt-4 flex justify-center items-center rounded-md`}
                 >
                   {isLoading && (

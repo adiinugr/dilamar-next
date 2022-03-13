@@ -5,7 +5,7 @@ import { MdMailOutline } from "react-icons/md";
 import animationLetter from "../../assets/lottie-letter.json";
 import { Bounce } from "react-reveal";
 
-export const OpeningModalOne = ({
+export const OpeningModalStandard = ({
   handleOpenModal,
   namaTamu,
   namaPengantin,
@@ -25,6 +25,7 @@ export const OpeningModalOne = ({
           layout="fill"
           objectFit="cover"
           placeholder="blur"
+          priority={true}
         />
       )}
 
@@ -50,7 +51,7 @@ export const OpeningModalOne = ({
             onClick={handleOpenModal}
             className={`text-lg mt-12 md:mt-8 ${buttonBgColor} ${buttonTextColor} py-2 px-8 text-center cursor-pointer rounded-md flex justify-center items-center`}
           >
-            <MdMailOutline size={28} className="mr-2" />
+            <MdMailOutline size={24} className="mr-2" />
             Open Invitation
           </div>
         </Bounce>
@@ -114,7 +115,7 @@ export const OpeningModalTwo = ({
   );
 };
 
-export const OpeningModalThree = ({
+export const OpeningModalWithCoupleImage = ({
   handleOpenModal,
   namaTamu,
   bgColor = "bg-gray-700",
@@ -123,47 +124,53 @@ export const OpeningModalThree = ({
   buttonTextColor = "text-gray-200",
   backgroundImagePath,
   coupleImagePath,
-  withOverlay
+  coupleClassName,
+  overlayClassName,
+  overlayPosition = "inset-0",
+  children
 }) => {
-  const overlayClassName = () =>
-    withOverlay ? "bg-gray-600 bg-opacity-40" : "";
-
   return (
     <div className={`h-full relative ${bgColor} ${textColor} overflow-hidden`}>
       {backgroundImagePath && (
         <Image src={backgroundImagePath} layout="fill" objectFit="cover" />
       )}
 
+      <div className={`absolute ${overlayPosition} ${overlayClassName}`} />
+
+      {children}
+
       <div
-        className={`h-full w-full absolute flex flex-col justify-center items-center px-8 ${overlayClassName()}`}
+        className={`h-full w-full absolute flex flex-col justify-center items-center`}
       >
         {coupleImagePath && (
-          <Image
-            src={coupleImagePath}
-            width={150}
-            height={150}
-            className="rounded-full shadow-lg"
-            objectFit="cover"
-          />
+          <div
+            className={`relative h-36 w-36 rounded-full overflow-hidden ${coupleClassName}`}
+          >
+            <Image
+              src={coupleImagePath}
+              className="absolute"
+              layout="fill"
+              objectFit="cover"
+            />
+          </div>
         )}
 
-        <div className="mt-8 text-base text-center md:text-lg">
+        <div className="mt-12 text-center md:text-lg">
           <p>Kepada Yth.</p>
           <p>Bapak/Ibu/Saudara/i</p>
         </div>
-        <div className="font-display text-4xl md:text-5xl my-4">{namaTamu}</div>
-        <div
-          onClick={handleOpenModal}
-          className={`mt-12 md:mt-8 ${buttonBgColor} ${buttonTextColor} py-2 w-full md:w-1/4 text-center cursor-pointer rounded-md flex justify-center items-center`}
-        >
-          <Image
-            src="/images/love-letter.png"
-            width={30}
-            height={30}
-            objectFit="cover"
-          />
-          <p className="ml-4">Open Invitation</p>
+        <div className="font-yellowtail text-4xl md:text-5xl mt-2">
+          {namaTamu}
         </div>
+        <Bounce delay={500}>
+          <div
+            onClick={handleOpenModal}
+            className={`text-lg mt-12 md:mt-8 ${buttonBgColor} ${buttonTextColor} py-2 px-8 text-center cursor-pointer rounded-md flex justify-center items-center`}
+          >
+            <MdMailOutline size={24} className="mr-2" />
+            Open Invitation
+          </div>
+        </Bounce>
       </div>
     </div>
   );

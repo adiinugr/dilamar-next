@@ -317,10 +317,12 @@ export const WaktuAlamatAcaraFour = ({
   bgColor = "bg-white",
   textColor = "text-gray-800",
   borderColor,
+  bgImagePath,
   akadImagePath,
   resepsiImagePath,
   overlayBgColor = "bg-gray-800",
   overlayOpacity = "opacity-80",
+  overlayClassName,
   buttonBgColor = "bg-gray-800",
   buttonTextColor = "text-white",
   padding,
@@ -333,6 +335,16 @@ export const WaktuAlamatAcaraFour = ({
       className={`${bgColor} ${textColor} relative px-8 py-16 md:px-32 overflow-hidden ${padding}`}
     >
       {children}
+
+      {bgImagePath && (
+        <Image
+          src={bgImagePath}
+          layout="fill"
+          objectFit="cover"
+          placeholder="blur"
+          alt="katanikah website undangan pernikahan online"
+        />
+      )}
 
       <div className="flex flex-col md:flex-row md:gap-24 justify-center">
         <Fade top>
@@ -350,7 +362,7 @@ export const WaktuAlamatAcaraFour = ({
               />
             )}
             <div
-              className={`h-full w-full ${overlayBgColor} absolute ${overlayOpacity}`}
+              className={`h-full w-full ${overlayBgColor} absolute ${overlayOpacity} ${overlayClassName}`}
             />
             <div className="flex flex-col items-center justify-center h-full w-full absolute">
               <div className="text-center mb-4">
@@ -382,7 +394,7 @@ export const WaktuAlamatAcaraFour = ({
                 />
               )}
               <div
-                className={`h-full w-full ${overlayBgColor} absolute ${overlayOpacity}`}
+                className={`h-full w-full ${overlayBgColor} absolute ${overlayOpacity} ${overlayClassName}`}
               />
               <div className="flex flex-col items-center justify-center h-full w-full absolute">
                 <div className="">

@@ -183,7 +183,7 @@ export const GuestBookWithPopup = ({
         <TitleH1>Guest Book</TitleH1>
         <div
           onClick={commentDisable ? null : () => setIsOpenModal(true)}
-          className={`${writeYourWishClassname} py-2 px-4 flex items-center w-auto justify-center cursor-pointer`}
+          className={`${writeYourWishClassname} py-2 px-4 flex items-center w-auto justify-center cursor-pointer rounded-md`}
         >
           <AiOutlineComment size={20} />
           <div className="ml-2">Write your wish</div>

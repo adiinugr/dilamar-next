@@ -13,6 +13,7 @@ export const Hero = ({
   imagePath,
   snowColor = "#ffffff",
   isSnow = true,
+  overlayPosition = "inset-0",
   children
 }) => {
   return (
@@ -27,10 +28,11 @@ export const Hero = ({
           objectFit="cover"
           placeholder="blur"
           alt="katanikah website undangan pernikahan online"
+          priority={true}
         />
       )}
 
-      <div className={`h-full w-full absolute ${overlayClassName}`} />
+      <div className={`absolute ${overlayPosition} ${overlayClassName}`} />
 
       {children}
 
