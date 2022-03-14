@@ -44,6 +44,36 @@ module.exports = {
           secondary: "#D459FB",
           light: "#EFEAFF",
           dark: "#0C012A"
+        },
+        orchid: {
+          primary: "#C26DBC",
+          light: "#F7EDF7",
+          dark: "#1B0B1A"
+        },
+        "blue-green": {
+          primary: "#3CACAE",
+          light: "#E5F6F6",
+          dark: "#081616"
+        },
+        "rose-red": {
+          primary: "#C85250",
+          light: "#F8E9E9",
+          dark: "#1B0908"
+        },
+        indigo: {
+          primary: "#5E376D",
+          light: "#EDE2F0",
+          dark: "#170E1B"
+        },
+        lochinvar: {
+          primary: "#508A7B",
+          light: "#E8F2EF",
+          dark: "#14231F"
+        },
+        copperfield: {
+          primary: "#D59066",
+          light: "#FAF1EC",
+          dark: "#1F1108"
         }
       },
       height: {

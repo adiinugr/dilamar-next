@@ -37,6 +37,8 @@ const Page = ({ comments }) => {
   const date = new Date("11 March 2023 06:15 UTC+7");
   const isoDate = date.toISOString();
 
+  const waveColor = "#FAF1EC";
+
   useEffect(() => {
     setAudio(new Audio("/musics/beautiful-in-white.mp3"));
 
@@ -119,9 +121,9 @@ const Page = ({ comments }) => {
           handleOpenModal={handleOpenModal}
           namaTamu={tamu}
           namaPengantin="Galih & Ratna"
-          backgroundImagePath="/images/background/purple-bg.png"
+          backgroundImagePath="/images/couple/couple2.jpg"
           textColor="text-white"
-          buttonBgColor="bg-purple-primary opacity-60 shadow-blur-20"
+          buttonBgColor="bg-copperfield-primary opacity-60 shadow-blur-20"
           buttonTextColor="text-white"
           coupleImagePath="/images/couple/couple5.jpg"
           coupleClassName="border-4 border-white shadow-blur-20"
@@ -143,13 +145,16 @@ const Page = ({ comments }) => {
         date="13 Juni 2021"
         textColor="text-gray-100"
         overlayPosition="top-4 right-4 bottom-0 left-4"
-        overlayClassName="glass border-4 border-white border-opacity-80 rounded-xl"
-        imagePath="/images/background/purple-bg.png"
+        overlayClassName="border-4 border-white border-opacity-80 rounded-xl"
+        imagePath="/images/couple/couple2.jpg"
       >
-        <SingleWave color="#EFEAFF" waveClassName="svg-shadow" isBottom />
+        <SingleWave color={waveColor} waveClassName="svg-shadow" isBottom />
       </Hero>
 
-      <QsArrum21 bgColor="bg-purple-light" textColor="text-purple-dark" />
+      <QsArrum21
+        bgColor="bg-copperfield-light"
+        textColor="text-copperfield-dark"
+      />
 
       <NamaPengantinThree
         namaWanita="Ratna Yuniar"
@@ -158,8 +163,8 @@ const Page = ({ comments }) => {
         ortuPria="Putra dari Bpk. Bagus & Ibu Dea"
         imagePathPria="/images/man/man2.jpg"
         imagePathWanita="/images/woman/woman2.jpg"
-        textColor="text-purple-dark"
-        bgColor="bg-purple-light"
+        textColor="text-copperfield-dark"
+        bgColor="bg-copperfield-light"
       />
 
       <WaktuAlamatAcaraFour
@@ -175,7 +180,7 @@ const Page = ({ comments }) => {
         bgImagePath="/images/couple/couple19.png"
         overlayClassName="glass"
         textColor="text-white"
-        buttonBgColor="bg-purple-primary"
+        buttonBgColor="bg-copperfield-primary"
         padding="pb-40 md:pb-52"
       />
 
@@ -191,10 +196,10 @@ const Page = ({ comments }) => {
         isLoading={guestBookIsLoading}
         handleSubmit={handleGuestBookSubmit}
         bgColor="bg-white"
-        bgHorizontalLine="bg-purple-dark"
-        writeYourWishClassname="bg-purple-primary text-white"
+        bgHorizontalLine="bg-copperfield-dark"
+        writeYourWishClassname="bg-copperfield-primary text-white"
         buttonTextColor="text-white"
-        buttonBgColor="bg-purple-primary"
+        buttonBgColor="bg-copperfield-primary"
         padding="pt-40  md:pt-44"
         commentDisable
       >
@@ -204,13 +209,13 @@ const Page = ({ comments }) => {
           shadow="shadow-blur-20"
           position="left-1/2 transform -translate-x-1/2 -top-24 md:-top-32"
         />
-        <DoubleWave color="#EFEAFF" isBottom />
+        <DoubleWave color={waveColor} isBottom />
       </GuestBookWithPopup>
 
       <Terimakasih
         namaPengantin="Ratna & Galih"
-        bgColor="bg-purple-light"
-        textColor="text-purple-dark"
+        bgColor="bg-copperfield-light"
+        textColor="text-copperfield-dark"
       />
 
       <InvitationFooter />

@@ -37,6 +37,8 @@ const Page = ({ comments }) => {
   const date = new Date("11 March 2023 06:15 UTC+7");
   const isoDate = date.toISOString();
 
+  const waveColor = "#508A7B";
+
   useEffect(() => {
     setAudio(new Audio("/musics/beautiful-in-white.mp3"));
 
@@ -120,10 +122,10 @@ const Page = ({ comments }) => {
           namaTamu={tamu}
           namaPengantin="Galih & Ratna"
           customColor="text-gray-50"
-          buttonBgColor="bg-brown-primary opacity-80"
+          buttonBgColor="bg-lochinvar-primary opacity-80"
           buttonTextColor="text-white"
-          backgroundImagePath="/images/couple/couple3.jpg"
-          overlayClassName="bg-gradient-to-b from-brown-primary opacity-30"
+          backgroundImagePath="/images/couple/couple7.jpg"
+          overlayClassName="bg-gradient-to-b from-lochinvar-primary opacity-30"
         />
       </ReactModal>
 
@@ -139,13 +141,13 @@ const Page = ({ comments }) => {
         name="Galih & Ratna"
         date="13 Juni 2021"
         textColor="text-gray-100"
-        overlayClassName="bg-gradient-to-b from-brown-primary opacity-30"
-        imagePath="/images/couple/couple3.jpg"
+        overlayClassName="bg-gradient-to-b from-lochinvar-primary opacity-30"
+        imagePath="/images/couple/couple7.jpg"
       >
-        <div className="absolute bg-gradient-to-t from-brown-dark h-32 w-full bottom-0 left-0 z-400" />
+        <div className="absolute bg-gradient-to-t from-lochinvar-primary h-32 w-full bottom-0 left-0 z-400" />
       </Hero>
 
-      <QsArrum21 bgColor="bg-brown-dark" textColor="text-gray-200" />
+      <QsArrum21 bgColor="bg-lochinvar-primary" textColor="text-gray-200" />
 
       <NamaPengantinThree
         namaWanita="Ratna Yuniar"
@@ -155,7 +157,7 @@ const Page = ({ comments }) => {
         imagePathPria="/images/man/man2.jpg"
         imagePathWanita="/images/woman/woman2.jpg"
         textColor="text-white"
-        bgColor="bg-brown-dark"
+        bgColor="bg-lochinvar-primary"
       />
 
       <WaktuAlamatAcaraFour
@@ -168,11 +170,11 @@ const Page = ({ comments }) => {
         googleMapsUri="https://www.google.com/maps/place/Jl.+Kong+Rimin,+RW.1,+Pulo+Gebang,+Kec.+Cakung,+Kota+Jakarta+Timur,+Daerah+Khusus+Ibukota+Jakarta+13950/@-6.209075,106.9613335,17z/data=!4m5!3m4!1s0x2e698b811463350f:0x7056c03293cf495a!8m2!3d-6.209075!4d106.9635222"
         lat={-6.20881}
         lng={106.96354}
-        bgColor="bg-brown-dark"
+        bgColor="bg-lochinvar-primary"
         overlayBgColor="bg-white"
         overlayOpacity="bg-opacity-80"
-        textColor="text-brown-dark"
-        buttonBgColor="bg-brown-primary"
+        textColor="text-lochinvar-primary"
+        buttonBgColor="bg-lochinvar-primary"
         akadImagePath="/images/hero/hero2.jpg"
         resepsiImagePath="/images/hero/hero3.jpg"
         padding="pb-40 md:pb-52"
@@ -190,10 +192,10 @@ const Page = ({ comments }) => {
         isLoading={guestBookIsLoading}
         handleSubmit={handleGuestBookSubmit}
         bgColor="bg-white"
-        bgHorizontalLine="bg-brown-dark"
-        writeYourWishClassname="bg-brown-primary text-white"
+        bgHorizontalLine="bg-lochinvar-primary"
+        writeYourWishClassname="bg-lochinvar-primary text-white"
         buttonTextColor="text-white"
-        buttonBgColor="bg-brown-dark"
+        buttonBgColor="bg-lochinvar-primary"
         padding="pt-40 md:pt-44"
         commentDisable
       >
@@ -203,12 +205,12 @@ const Page = ({ comments }) => {
           shadow="shadow-blur-20"
           position="left-1/2 transform -translate-x-1/2 -top-24 md:-top-32"
         />
-        <DoubleWave color="#452808" isBottom />
+        <DoubleWave color={waveColor} isBottom />
       </GuestBookWithPopup>
 
       <Terimakasih
         namaPengantin="Ratna & Galih"
-        bgColor="bg-brown-dark"
+        bgColor="bg-lochinvar-primary"
         textColor="text-white"
       />
 

@@ -20,13 +20,13 @@ const Page = () => {
         name="Galih & Ratna"
         date="13 Juni 2021"
         textColor="text-gray-100"
-        overlayClassName="bg-gradient-to-b from-brown-primary opacity-30"
+        overlayClassName="bg-gradient-to-b from-blue-green-primary opacity-30"
         imagePath="/images/couple/couple3.jpg"
       >
-        <div className="absolute bg-gradient-to-t from-brown-dark h-32 w-full bottom-0 left-0 z-400" />
+        <div className="absolute bg-gradient-to-t from-blue-green-primary h-32 w-full bottom-0 left-0 z-400" />
       </Hero>
 
-      <QsArrum21 bgColor="bg-brown-dark" textColor="text-gray-200" />
+      <QsArrum21 bgColor="bg-blue-green-primary" textColor="text-gray-200" />
 
       <NamaPengantinThree
         namaWanita="Ratna Yuniar"
@@ -36,7 +36,7 @@ const Page = () => {
         imagePathPria="/images/man/man2.jpg"
         imagePathWanita="/images/woman/woman2.jpg"
         textColor="text-white"
-        bgColor="bg-brown-dark"
+        bgColor="bg-blue-green-primary"
       />
 
       <WaktuAlamatAcaraFour
@@ -46,10 +46,10 @@ const Page = () => {
         waktuResepsi="Pukul 11.00 - 13.00 WIB"
         namaTempat="Kediaman Mempelai Wanita"
         alamatTempat="Jalan Jaksa, No 37B, Surabaya"
-        bgColor="bg-brown-dark"
+        bgColor="bg-blue-green-primary"
         overlayBgColor="bg-white"
         overlayOpacity="bg-opacity-80"
-        textColor="text-brown-dark"
+        textColor="text-blue-green-dark"
         akadImagePath="/images/hero/hero2.jpg"
         resepsiImagePath="/images/hero/hero3.jpg"
         isWithGoogleMaps={false}
@@ -57,7 +57,7 @@ const Page = () => {
 
       <Terimakasih
         namaPengantin="Ratna & Galih"
-        bgColor="bg-brown-dark"
+        bgColor="bg-blue-green-primary"
         textColor="text-white"
       />
 

@@ -8,6 +8,8 @@ import Terimakasih from "components/invitation/Terimakasih";
 import InvitationFooter from "components/invitation/InvitationFooter";
 
 const Page = () => {
+  const waveColor = "#C85250";
+
   return (
     <>
       <InvitationHead
@@ -22,13 +24,13 @@ const Page = () => {
         date="13 Juni 2021"
         textColor="text-gray-100"
         overlayPosition="top-4 right-4 bottom-0 left-4"
-        overlayClassName="glass border-4 border-white border-opacity-80 rounded-xl"
-        imagePath="/images/background/purple-bg.png"
+        overlayClassName=" border-4 border-white border-opacity-80 rounded-xl"
+        imagePath="/images/couple/couple18.jpg"
       >
-        <SingleWave color="#EFEAFF" waveClassName="svg-shadow" isBottom />
+        <SingleWave color={waveColor} waveClassName="svg-shadow" isBottom />
       </Hero>
 
-      <QsArrum21 bgColor="bg-purple-light" textColor="text-purple-dark" />
+      <QsArrum21 bgColor="bg-rose-red-primary" textColor="text-white" />
 
       <NamaPengantinThree
         namaWanita="Ratna Yuniar"
@@ -37,8 +39,8 @@ const Page = () => {
         ortuPria="Putra dari Bpk. Bagus & Ibu Dea"
         imagePathPria="/images/man/man2.jpg"
         imagePathWanita="/images/woman/woman2.jpg"
-        textColor="text-purple-dark"
-        bgColor="bg-purple-light"
+        textColor="text-white"
+        bgColor="bg-rose-red-primary"
       />
 
       <WaktuAlamatAcaraFour
@@ -56,8 +58,8 @@ const Page = () => {
 
       <Terimakasih
         namaPengantin="Ratna & Galih"
-        bgColor="bg-purple-light"
-        textColor="text-purple-dark"
+        bgColor="bg-rose-red-primary"
+        textColor="text-white"
       />
 
       <InvitationFooter />

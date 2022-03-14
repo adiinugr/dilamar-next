@@ -8,6 +8,7 @@ import Terimakasih from "components/invitation/Terimakasih";
 import InvitationFooter from "components/invitation/InvitationFooter";
 
 const Page = () => {
+  const waveColor = "#5E376D";
   return (
     <>
       <InvitationHead
@@ -21,13 +22,13 @@ const Page = () => {
         name="Galih & Ratna"
         date="13 Juni 2021"
         textColor="text-gray-100"
-        overlayClassName="bg-gradient-to-b from-green-primary opacity-60"
-        imagePath="/images/background/green-leaf-2.png"
+        overlayClassName="bg-gradient-to-b from-indigo-primary opacity-60"
+        imagePath="/images/couple/couple7.jpg"
       >
-        <DoubleWave color="#14686A" isBottom />
+        <DoubleWave color={waveColor} isBottom />
       </Hero>
 
-      <QsArrum21 bgColor="bg-green-primary" textColor="text-gray-200" />
+      <QsArrum21 bgColor="bg-indigo-primary" textColor="text-gray-200" />
 
       <NamaPengantinThree
         namaWanita="Ratna Yuniar"
@@ -37,7 +38,7 @@ const Page = () => {
         imagePathPria="/images/man/man2.jpg"
         imagePathWanita="/images/woman/woman2.jpg"
         textColor="text-white"
-        bgColor="bg-green-primary"
+        bgColor="bg-indigo-primary"
       />
 
       <WaktuAlamatAcaraFour
@@ -50,13 +51,13 @@ const Page = () => {
         bgImagePath="/images/couple/couple18.jpg"
         overlayBgColor="bg-white"
         overlayOpacity="bg-opacity-60"
-        textColor="text-green-dark"
+        textColor="text-indigo-dark"
         isWithGoogleMaps={false}
       />
 
       <Terimakasih
         namaPengantin="Ratna & Galih"
-        bgColor="bg-green-primary"
+        bgColor="bg-indigo-primary"
         textColor="text-white"
       />
 

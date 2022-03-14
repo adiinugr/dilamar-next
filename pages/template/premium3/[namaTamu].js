@@ -256,7 +256,7 @@ const Page = ({ comments }) => {
           handleOpenModal={handleOpenModal}
           namaTamu={tamu}
           namaPengantin="Galih & Ratna"
-          backgroundImagePath="/images/background/purple-bg.png"
+          backgroundImagePath="/images/background/pastel-purple.jpg"
           textColor="text-white"
           buttonBgColor="bg-purple-primary opacity-60 shadow-blur-20"
           buttonTextColor="text-white"
@@ -287,7 +287,7 @@ const Page = ({ comments }) => {
         textColor="text-gray-100"
         overlayPosition="top-4 right-4 bottom-0 left-4"
         overlayClassName="glass border-4 border-white border-opacity-80 rounded-xl"
-        imagePath="/images/background/purple-bg.png"
+        imagePath="/images/background/pastel-purple.jpg"
       >
         <SingleWave color="#EFEAFF" waveClassName="svg-shadow" isBottom />
       </Hero>

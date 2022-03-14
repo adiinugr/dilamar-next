@@ -38,6 +38,8 @@ const Page = ({ comments }) => {
   const date = new Date("11 March 2023 06:15 UTC+7");
   const isoDate = date.toISOString();
 
+  const waveColor = "#C26DBC";
+
   useEffect(() => {
     setAudio(new Audio("/musics/beautiful-in-white.mp3"));
 
@@ -120,11 +122,11 @@ const Page = ({ comments }) => {
           handleOpenModal={handleOpenModal}
           namaTamu={tamu}
           namaPengantin="Galih & Ratna"
-          buttonBgColor="bg-green-primary opacity-80"
+          buttonBgColor="bg-orchid-primary opacity-80"
           buttonTextColor="text-white"
-          backgroundImagePath="/images/background/green-leaf-1.png"
+          backgroundImagePath="/images/background/purple-leaf-1.jpg"
           coupleImagePath="/images/couple/couple5.jpg"
-          overlayClassName="bg-gradient-to-b from-green-dark to-green-primary opacity-50"
+          overlayClassName="bg-gradient-to-b from-orchid-dark to-orchid-primary opacity-50"
         />
       </ReactModal>
 
@@ -140,17 +142,17 @@ const Page = ({ comments }) => {
         name="Galih & Ratna"
         date="13 Juni 2021"
         textColor="text-gray-100"
-        overlayClassName="bg-gradient-to-b from-green-primary opacity-60"
-        imagePath="/images/background/green-leaf-2.png"
+        overlayClassName="bg-gradient-to-b from-orchid-primary opacity-60"
+        imagePath="/images/background/purple-leaf-2.jpg"
       >
-        <DoubleWave color="#14686A" isBottom />
+        <DoubleWave color={waveColor} isBottom />
       </Hero>
 
-      <QsArrum21 bgColor="bg-green-primary" textColor="text-gray-200" />
+      <QsArrum21 bgColor="bg-orchid-primary" textColor="text-gray-200" />
 
       <CoupleQuoteStandard
-        textColor="text-green-dark"
-        bgColor="bg-green-primary"
+        textColor="text-orchid-dark"
+        bgColor="bg-orchid-primary"
         imagePathWanita="/images/woman/woman7.jpg"
         imagePathPria="/images/man/man4.jpg"
         quoteWanita="Mencintai seseorang memberikan kita kekuatan, dicintai memberikan kita keberanian."
@@ -165,7 +167,7 @@ const Page = ({ comments }) => {
         imagePathPria="/images/man/man2.jpg"
         imagePathWanita="/images/woman/woman2.jpg"
         textColor="text-white"
-        bgColor="bg-green-primary"
+        bgColor="bg-orchid-primary"
       />
 
       <WaktuAlamatAcaraFour
@@ -181,8 +183,8 @@ const Page = ({ comments }) => {
         bgImagePath="/images/couple/couple18.jpg"
         overlayBgColor="bg-white"
         overlayOpacity="bg-opacity-60"
-        textColor="text-green-dark"
-        buttonBgColor="bg-green-primary"
+        textColor="text-orchid-dark"
+        buttonBgColor="bg-orchid-primary"
         padding="pb-40 md:pb-52"
       />
 
@@ -198,10 +200,10 @@ const Page = ({ comments }) => {
         isLoading={guestBookIsLoading}
         handleSubmit={handleGuestBookSubmit}
         bgColor="bg-white"
-        bgHorizontalLine="bg-green-dark"
-        writeYourWishClassname="bg-green-primary text-white"
+        bgHorizontalLine="bg-orchid-dark"
+        writeYourWishClassname="bg-orchid-primary text-white"
         buttonTextColor="text-white"
-        buttonBgColor="bg-green-primary"
+        buttonBgColor="bg-orchid-primary"
         padding="pt-40 md:pt-52"
         commentDisable
       >
@@ -211,12 +213,12 @@ const Page = ({ comments }) => {
           shadow="shadow-blur-20"
           position="left-1/2 transform -translate-x-1/2 -top-24 md:-top-32"
         />
-        <DoubleWave color="#14686A" isBottom />
+        <DoubleWave color={waveColor} isBottom />
       </GuestBookWithPopup>
 
       <Terimakasih
         namaPengantin="Ratna & Galih"
-        bgColor="bg-green-primary"
+        bgColor="bg-orchid-primary"
         textColor="text-white"
       />
 
