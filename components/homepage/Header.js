@@ -43,8 +43,17 @@ const Header = () => {
               Features
             </ScrollLink>
           </li>
-          <li className="cursor-pointer mb-4 md:mb-0">Template</li>
-
+          <li className="cursor-pointer mb-4 md:mb-0">
+            <ScrollLink
+              onClick={() => setToggle(false)}
+              to="template"
+              smooth={true}
+              duration={500}
+              offset={-60}
+            >
+              Template
+            </ScrollLink>
+          </li>
           <li className="cursor-pointer mb-4 md:mb-0">
             <ScrollLink
               onClick={() => setToggle(false)}

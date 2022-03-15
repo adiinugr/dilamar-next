@@ -7,6 +7,63 @@ import {
   HiPhotograph
 } from "react-icons/hi";
 
+export const templateData = [
+  {
+    id: 1,
+    name: "Basic 1",
+    imageSrc: "/images/mockup/basic-1.png",
+    link: "/template/basic1"
+  },
+  {
+    id: 2,
+    name: "Basic 2",
+    imageSrc: "/images/mockup/basic-2.png",
+    link: "/template/basic2"
+  },
+  {
+    id: 3,
+    name: "Basic 2",
+    imageSrc: "/images/mockup/basic-3.png",
+    link: "/template/basic2"
+  },
+  {
+    id: 4,
+    name: "Standard 1",
+    imageSrc: "/images/mockup/standard-1.png",
+    link: "/template/standard1/Nama+Tamu"
+  },
+  {
+    id: 5,
+    name: "Standard 2",
+    imageSrc: "/images/mockup/standard-2.png",
+    link: "/template/standard2/Nama+Tamu"
+  },
+  {
+    id: 6,
+    name: "Standard 3",
+    imageSrc: "/images/mockup/standard-3.png",
+    link: "/template/standard3/Nama+Tamu"
+  },
+  {
+    id: 7,
+    name: "Premium 1",
+    imageSrc: "/images/mockup/premium-1.png",
+    link: "/template/premium1/Nama+Tamu"
+  },
+  {
+    id: 8,
+    name: "Premium 2",
+    imageSrc: "/images/mockup/premium-2.png",
+    link: "/template/premium2/Nama+Tamu"
+  },
+  {
+    id: 9,
+    name: "Premium 3",
+    imageSrc: "/images/mockup/premium-3.png",
+    link: "/template/premium3/Nama+Tamu"
+  }
+];
+
 export const packageLists = [
   {
     id: 1,
@@ -67,13 +124,6 @@ export const packageLists = [
   {
     id: 9,
     title: "Story",
-    isBasic: false,
-    isStandard: false,
-    isPremium: true
-  },
-  {
-    id: 10,
-    title: "Custom Request",
     isBasic: false,
     isStandard: false,
     isPremium: true
