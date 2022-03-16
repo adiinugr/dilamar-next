@@ -13,7 +13,7 @@ const Page = () => {
         title="Galih & Ratna Wedding Invitation"
         description="Kami mengundang Bapak/Ibu, saudara, dan rekan-rekan semua untuk hadir di acara pernikahan kami."
         link="https://katanikah.com/template/basic2"
-        imagePath="/images/couple/meta-image-min.png"
+        imagePath="/images/couple/meta-image.jpg"
       />
 
       <Hero

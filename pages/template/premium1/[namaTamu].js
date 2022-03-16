@@ -243,7 +243,7 @@ const Page = ({ comments }) => {
         title="Galih & Ratna Wedding Invitation"
         description="Kami mengundang Bapak/Ibu, saudara, dan rekan-rekan semua untuk hadir di acara pernikahan kami."
         link="https://katanikah.com/template/premium2/Nama+Tamu"
-        imagePath="/images/couple/meta-image-min.png"
+        imagePath="/images/couple/meta-image.jpg"
       />
 
       <ReactModal
