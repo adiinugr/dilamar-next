@@ -398,7 +398,7 @@ export const WaktuAlamatAcaraFour = ({
                 className={`h-full w-full ${overlayBgColor} absolute ${overlayOpacity} ${overlayClassName}`}
               />
               <div className="flex flex-col items-center justify-center h-full w-full absolute">
-                <div className="">
+                <div className="mb-4">
                   <div className="px-4 md:px-0 text-center font-body mb-4 md:mb-0">
                     <p className="font-yellowtail text-4xl mb-4">Resepsi</p>
                     <p>{tanggalResepsi}</p>

@@ -4,6 +4,7 @@ import { Fade } from "react-reveal";
 import PriceCard from "./comp/PriceCard";
 
 import { packageLists } from "../../assets/data";
+import Image from "next/image";
 
 const Package = () => {
   return (
@@ -42,6 +43,45 @@ const Package = () => {
           />
         </div>
       </Fade>
+      <div className="flex justify-between mt-32 bg-main rounded-xl">
+        <div className="relative w-1/3 h-80 mt-6">
+          <Image
+            src="/images/confuse.png"
+            layout="fill"
+            objectFit="contain"
+            className="left-0 -bottom-10 absolute"
+          />
+        </div>
+        <div className="w-2/3 py-10 pr-16">
+          <h1 className="text-xl md:text-2xl font-bold text-white ">
+            <span className="text-dark">Yah!</span> Desain favoritku tidak ada
+            di template!
+          </h1>
+          <p className="text-white my-4">
+            Bagi kamu yang punya desain sendiri atau tampilan yang kamu
+            ingkinkan tidak ada di template, bisa banget request sesuka hati.
+            Cukup pesan saja{" "}
+            <span className="text-dark font-bold">Paket Request</span>. Namun
+            pembelian paket ini harus disertai dengan{" "}
+            <span className="text-dark font-bold">Paket Premium</span>.
+          </p>
+
+          <div
+            className={` border border-gray-100 text-dark rounded-md overflow-hidden shadow-lg`}
+          >
+            <div>
+              <div className="p-4 text-center text-3xl font-bold uppercase">
+                asas
+              </div>
+
+              <div className="p-6 px-10">asas</div>
+              <div className="p-6 font-bold text-4xl text-center bg-main text-white">
+                Rp 30.000
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };

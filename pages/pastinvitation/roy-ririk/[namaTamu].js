@@ -18,7 +18,7 @@ import { BottomTabMenu } from "components/invitation/parts/BottomTabMenu";
 import { GalleryList } from "components/invitation/Gallery";
 import PlayerButton from "components/invitation/parts/PlayerButton";
 import DateCountdown from "components/invitation/DateCountdown";
-import Angpau from "components/invitation/Angpau";
+import { AngpauWithConfirmation } from "components/invitation/Angpau";
 
 import {
   HiOutlineCalendar,
@@ -398,7 +398,7 @@ const Page = ({ messages }) => {
           borderColor="border-gray-200"
         />
 
-        <Angpau
+        <AngpauWithConfirmation
           name={angpauName}
           setName={(e) => setAngpauName(e.target.value)}
           bank={angpauBank}

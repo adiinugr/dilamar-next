@@ -2,8 +2,48 @@ import React from "react";
 import { AiOutlineLoading3Quarters, AiOutlineGift } from "react-icons/ai";
 
 import CurrencyInput from "react-currency-input-field";
+import { Fade } from "react-reveal";
 
-const Angpau = ({
+export const AngpauWithoutConfirmation = ({
+  bgColor = "bg-gray-200",
+  textColor = "text-gray-800",
+  padding,
+  children,
+  rekening1,
+  rekening2,
+  rekening3
+}) => {
+  return (
+    <div
+      id="angpau"
+      className={`${bgColor} ${textColor} relative py-16 px-8 md:px-32 md:py-72 ${padding}`}
+    >
+      {children}
+
+      <Fade top>
+        <div className="flex flex-col items-center justify-center">
+          <div className="font-yellowtail text-4xl mb-3">Angpau Online</div>
+        </div>
+      </Fade>
+
+      <Fade top>
+        <div className="flex flex-col items-center justify-center py-6">
+          <AiOutlineGift size={50} />
+          <div className="text-center mt-4 mb-4">
+            Terimakasih atas doa dan restu yang telah Anda berikan. Namun
+            apabila Anda ingin mengirimkan kado, silakan kirim ke rekening di
+            bawah ini. Kami mengucapkan banyak terimakasih.
+          </div>
+          <div>{rekening1}</div>
+          <div>{rekening2}</div>
+          <div>{rekening3}</div>
+        </div>
+      </Fade>
+    </div>
+  );
+};
+
+export const AngpauWithConfirmation = ({
   name,
   setName,
   bank,
@@ -20,7 +60,7 @@ const Angpau = ({
   inputTextColor,
   inputBgColor = "bg-gray-100",
   buttonTextColor,
-  buttonBgColor,
+  buttonBgColor
 }) => {
   return (
     <div className={`${bgColor} ${textColor} flex flex-col md:px-80`}>
@@ -96,5 +136,3 @@ const Angpau = ({
     </div>
   );
 };
-
-export default Angpau;
