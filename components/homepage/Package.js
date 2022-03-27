@@ -43,7 +43,7 @@ const Package = () => {
           />
         </div>
       </Fade>
-      <div className="flex justify-between mt-32 bg-main rounded-xl">
+      {/* <div className="flex justify-between mt-32 bg-main rounded-xl">
         <div className="relative w-1/3 h-80 mt-6">
           <Image
             src="/images/confuse.png"
@@ -81,7 +81,7 @@ const Package = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };

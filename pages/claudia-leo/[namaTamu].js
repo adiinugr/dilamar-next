@@ -311,7 +311,6 @@ const Page = ({ comments }) => {
         formBgColor="bg-white"
         buttonBgColor="bg-brown-primary"
         padding="pt-40 md:pt-44 md:pb-32"
-        buttonDisable
       >
         <DateCountdown
           date={isoDate}
@@ -353,7 +352,6 @@ const Page = ({ comments }) => {
         writeYourWishClassname="bg-brown-primary text-white"
         buttonTextColor="text-white"
         buttonBgColor="bg-brown-dark"
-        commentDisable
       >
         {" "}
         <DoubleWave color="#452808" />

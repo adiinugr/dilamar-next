@@ -127,6 +127,13 @@ export const packageLists = [
     isBasic: false,
     isStandard: false,
     isPremium: true
+  },
+  {
+    id: 10,
+    title: "Request Fitur",
+    isBasic: false,
+    isStandard: false,
+    isPremium: true
   }
 ];
 
@@ -296,9 +303,9 @@ export const testimony = [
 export const faqData = [
   {
     id: 1,
-    question: "Custom Request itu apa kak?",
+    question: "Request Fitur itu apa kak?",
     answer:
-      "Semua fitur yang belum ada di KataNikah. Jadi jika kakak punya fitur yang ingin dipakai namun belum tercantum di paket, maka itu termasuk Custom Requset. Contohnya seperti RSVP, Add to Calendar, ingin tampilan khusus, dll"
+      "Jika kakak punya fitur yang ingin dipakai namun belum tercantum di paket, kakak boleh request kepada kami untuk membuatkannya. Namun fitur ini hanya ada di paket Premium."
   },
   {
     id: 2,
