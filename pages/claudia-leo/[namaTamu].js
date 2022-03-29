@@ -64,27 +64,47 @@ const imageData = [
   {
     id: 1,
     type: "image",
-    src: "/images/couple/couple1.jpg"
+    src: "/clients/claudia-leo/image1.jpeg"
   },
   {
     id: 2,
     type: "image",
-    src: "/images/couple/couple2.jpg"
+    src: "/clients/claudia-leo/image-2.jpeg"
   },
   {
     id: 3,
     type: "image",
-    src: "/images/couple/couple3.jpg"
+    src: "/clients/claudia-leo/image-3.jpeg"
   },
   {
     id: 4,
     type: "image",
-    src: "/images/couple/couple4.jpg"
+    src: "/clients/claudia-leo/image-4.jpeg"
   },
   {
     id: 5,
     type: "image",
-    src: "/images/couple/couple5.jpg"
+    src: "/clients/claudia-leo/image-5.jpeg"
+  },
+  {
+    id: 6,
+    type: "image",
+    src: "/clients/claudia-leo/image-7.jpeg"
+  },
+  {
+    id: 7,
+    type: "image",
+    src: "/clients/claudia-leo/image-9.jpeg"
+  },
+  {
+    id: 8,
+    type: "image",
+    src: "/clients/claudia-leo/image-11.jpeg"
+  },
+  {
+    id: 9,
+    type: "image",
+    src: "/clients/claudia-leo/image-12.jpeg"
   }
 ];
 
@@ -116,6 +136,8 @@ const Page = ({ comments }) => {
 
   const date = new Date("28 May 2022 08:00 UTC+7");
   const isoDate = date.toISOString();
+
+  const waveColor = "#8EB7A2";
 
   useEffect(() => {
     setAudio(new Audio("/musics/beautiful-in-white.mp3"));
@@ -231,11 +253,11 @@ const Page = ({ comments }) => {
           handleOpenModal={handleOpenModal}
           namaTamu={tamu}
           namaPengantin="Claudia & Leo"
-          customColor="text-gray-50"
-          buttonBgColor="bg-brown-primary opacity-80"
+          customColor="text-white"
+          buttonBgColor="bg-green-wardah-primary"
           buttonTextColor="text-white"
-          backgroundImagePath="/images/couple/couple3.jpg"
-          overlayClassName="bg-gradient-to-b from-brown-primary opacity-30"
+          backgroundImagePath="/clients/claudia-leo/modal-image-2.jpeg"
+          overlayClassName="bg-gradient-to-b from-green-wardah-dark opacity-50"
         />
       </ReactModal>
 
@@ -249,7 +271,7 @@ const Page = ({ comments }) => {
 
       <BottomTabMenu
         bgColor="bg-white"
-        textColor="text-brown-dark"
+        textColor="text-green-wardah-dark"
         bottomMenuData={bottomMenuData}
       />
 
@@ -257,23 +279,23 @@ const Page = ({ comments }) => {
         name="Claudia & Leo"
         date="28 Mei 2022"
         textColor="text-gray-100"
-        overlayClassName="bg-gradient-to-b from-brown-primary opacity-30"
-        imagePath="/images/couple/couple3.jpg"
+        overlayClassName="bg-gradient-to-b from-green-wardah-dark opacity-50"
+        imagePath="/clients/claudia-leo/modal-image.jpeg"
       >
-        <div className="absolute bg-gradient-to-t from-brown-dark h-32 w-full bottom-0 left-0 z-400" />
+        <div className="absolute bg-gradient-to-t from-green-wardah-primary h-32 w-full bottom-0 left-0 z-400" />
       </Hero>
 
-      <QsArrum21 bgColor="bg-brown-dark" textColor="text-gray-200" />
+      <QsArrum21 bgColor="bg-green-wardah-primary" textColor="text-gray-200" />
 
       <NamaPengantinThree
         namaWanita="Fristzy Claudia Permatasari, M.Pd"
         ortuWanita="Putri dari Bapak Moh. Bace & Ibu Ika Puspitasari"
         namaPria="Leonardo Lilipaly, A.Md"
         ortuPria="Putra dari Bapak N. David Lilipaly & Ibu Erna"
-        imagePathPria="/images/man/man2.jpg"
-        imagePathWanita="/images/woman/woman2.jpg"
+        imagePathPria="/clients/claudia-leo/man.png"
+        imagePathWanita="/clients/claudia-leo/woman.png"
         textColor="text-white"
-        bgColor="bg-brown-dark"
+        bgColor="bg-green-wardah-primary"
       />
 
       <WaktuAlamatAcaraFour
@@ -285,13 +307,13 @@ const Page = ({ comments }) => {
         googleMapsUri="https://goo.gl/maps/RRrcT9Sj9sg6bL5HA"
         lat={-6.10467}
         lng={106.56652}
-        bgColor="bg-brown-dark"
+        bgColor="bg-green-wardah-primary"
         overlayBgColor="bg-white"
-        overlayOpacity="bg-opacity-80"
-        textColor="text-brown-dark"
-        buttonBgColor="bg-brown-primary"
-        akadImagePath="/images/hero/hero2.jpg"
-        resepsiImagePath="/images/hero/hero3.jpg"
+        overlayOpacity="bg-opacity-60"
+        textColor="text-green-wardah-dark"
+        buttonBgColor="bg-green-wardah-dark"
+        akadImagePath="/clients/claudia-leo/image1.jpeg"
+        resepsiImagePath="/clients/claudia-leo/modal-image.jpeg"
         padding="pb-40 md:pb-52"
       />
 
@@ -307,9 +329,9 @@ const Page = ({ comments }) => {
         succcess={rsvpSuccess}
         handleSubmit={handleRsvpSubmit}
         bgColor="bg-white"
-        textColor="text-brown-dark"
+        textColor="text-green-wardah-dark"
         formBgColor="bg-white"
-        buttonBgColor="bg-brown-primary"
+        buttonBgColor="bg-green-wardah-dark"
         padding="pt-40 md:pt-44 md:pb-32"
       >
         <DateCountdown
@@ -322,16 +344,16 @@ const Page = ({ comments }) => {
 
       <AngpauWithoutConfirmation
         bgColor="bg-white"
-        textColor="text-brown-dark"
+        textColor="text-green-wardah-dark"
         padding="pt-0 md:pt-0 pb-32"
         rekening1="BCA 4971036197 a/n Fristzy Claudia"
         rekening2="Seabank 901000004057 a/n Fristzy Claudia"
       >
-        <DoubleWave color="#452808" isBottom />
+        <DoubleWave color={waveColor} isBottom />
       </AngpauWithoutConfirmation>
 
       <GallerySlideShow
-        bgColor="bg-brown-dark"
+        bgColor="bg-green-wardah-primary"
         textColor="text-white"
         imageData={imageData}
       />
@@ -348,19 +370,19 @@ const Page = ({ comments }) => {
         isLoading={guestBookIsLoading}
         handleSubmit={handleGuestBookSubmit}
         bgColor="bg-white"
-        bgHorizontalLine="bg-brown-dark"
-        writeYourWishClassname="bg-brown-primary text-white"
+        bgHorizontalLine="bg-green-wardah-dark"
+        writeYourWishClassname="bg-green-wardah-dark text-white"
         buttonTextColor="text-white"
-        buttonBgColor="bg-brown-dark"
+        buttonBgColor="bg-green-wardah-dark"
       >
         {" "}
-        <DoubleWave color="#452808" />
-        <DoubleWave color="#452808" isBottom />
+        <DoubleWave color={waveColor} />
+        <DoubleWave color={waveColor} isBottom />
       </GuestBookWithPopup>
 
       <Terimakasih
         namaPengantin="Claudia & Leo"
-        bgColor="bg-brown-dark"
+        bgColor="bg-green-wardah-primary"
         textColor="text-white"
       />
 

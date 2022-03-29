@@ -74,6 +74,11 @@ module.exports = {
           primary: "#D59066",
           light: "#FAF1EC",
           dark: "#1F1108"
+        },
+        "green-wardah": {
+          primary: "#8EB7A2",
+          light: "#F1F6F3",
+          dark: "#101914"
         }
       },
       height: {
