@@ -11,7 +11,7 @@ import "antd/dist/antd.css";
 const csvHeaders = [
   { label: "Nama", key: "name" },
   { label: "Status Kehadiran", key: "status" },
-  { label: "Pesan", key: "message" }
+  { label: "Alamat", key: "address" }
 ];
 
 const Rsvp = ({ rsvp }) => {

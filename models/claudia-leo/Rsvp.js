@@ -10,7 +10,7 @@ const ClaudiaLeoRsvpSchema = new Schema({
     type: String,
     required: true
   },
-  message: {
+  address: {
     type: String
   }
 });
