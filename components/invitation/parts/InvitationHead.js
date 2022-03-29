@@ -15,20 +15,13 @@ const InvitationHead = ({ title, description, link, imagePath }) => {
       <meta property="og:url" content={link} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta
-        property="og:image"
-        itemProp="image"
-        content={imagePath || "/suta-hanny/photo.jpeg"}
-      />
+      <meta property="og:image" itemProp="image" content={imagePath} />
 
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:url" content={link} />
       <meta property="twitter:title" content={title} />
       <meta property="twitter:description" content={description} />
-      <meta
-        property="twitter:image"
-        content={imagePath || "/suta-hanny/photo.jpeg"}
-      ></meta>
+      <meta property="twitter:image" content={imagePath}></meta>
     </Head>
   );
 };

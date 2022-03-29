@@ -240,7 +240,7 @@ const Page = ({ comments }) => {
         title="Claudia & Leo Wedding Invitation"
         description="Kami mengundang Bapak/Ibu, saudara, dan rekan-rekan semua untuk hadir di acara pernikahan kami."
         link="https://katanikah.com/claudia-leo/Nama+Tamu"
-        imagePath="/clients/claudia-leo/meta-image-min.png"
+        imagePath="https://katanikah.com/clients/claudia-leo/meta-image-min.png"
       />
 
       <ReactModal
