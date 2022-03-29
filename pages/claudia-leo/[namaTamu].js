@@ -140,7 +140,7 @@ const Page = ({ comments }) => {
   const waveColor = "#8EB7A2";
 
   useEffect(() => {
-    setAudio(new Audio("/musics/beautiful-in-white.mp3"));
+    setAudio(new Audio("/clients/claudia-leo/amin.mp3"));
 
     return () => {
       if (audio) {
@@ -240,7 +240,7 @@ const Page = ({ comments }) => {
         title="Claudia & Leo Wedding Invitation"
         description="Kami mengundang Bapak/Ibu, saudara, dan rekan-rekan semua untuk hadir di acara pernikahan kami."
         link="https://katanikah.com/claudia-leo/Nama+Tamu"
-        imagePath="/images/couple/meta-image.jpg"
+        imagePath="/clients/claudia-leo/image-4.jpeg"
       />
 
       <ReactModal
