@@ -32,9 +32,9 @@ const Rsvp = ({ rsvp }) => {
       width: "15%"
     },
     {
-      title: "Pesan",
-      dataIndex: "message",
-      key: "message"
+      title: "Alamat",
+      dataIndex: "address",
+      key: "address"
     }
   ];
 
