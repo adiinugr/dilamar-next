@@ -289,7 +289,8 @@ const Page = ({ comments }) => {
 
       <NamaPengantinThree
         namaWanita="Fristzy Claudia Permatasari, M.Pd"
-        ortuWanita="Putri dari Bapak Moh. Bace & Ibu Ika Puspitasari"
+        ortuWanita="Putri dari Bapak Serka Mohamad Bace S.ip (Denpomjaya-1/Tangerang) &
+Ibu Ika Puspitasari S.Pd (Pengawas Korwil Periuk)"
         namaPria="Leonardo Lilipaly, A.Md"
         ortuPria="Putra dari Bapak N. David Lilipaly & Ibu Erna"
         imagePathPria="/clients/claudia-leo/man.png"
@@ -332,7 +333,7 @@ const Page = ({ comments }) => {
         textColor="text-green-wardah-dark"
         formBgColor="bg-white"
         buttonBgColor="bg-green-wardah-dark"
-        padding="pt-40 md:pt-44 md:pb-32"
+        padding="pt-40 md:pt-44 pb-24 md:pb-72"
       >
         <DateCountdown
           date={isoDate}
@@ -340,17 +341,16 @@ const Page = ({ comments }) => {
           shadow="shadow-blur-20"
           position="left-1/2 transform -translate-x-1/2 -top-24 md:-top-32"
         />
+        <DoubleWave color={waveColor} isBottom />
       </RSVP>
 
-      <AngpauWithoutConfirmation
+      {/* <AngpauWithoutConfirmation
         bgColor="bg-white"
         textColor="text-green-wardah-dark"
         padding="pt-0 md:pt-0 pb-32"
         rekening1="BCA 4971036197 a/n Fristzy Claudia"
         rekening2="Seabank 901000004057 a/n Fristzy Claudia"
-      >
-        <DoubleWave color={waveColor} isBottom />
-      </AngpauWithoutConfirmation>
+      ></AngpauWithoutConfirmation> */}
 
       <GallerySlideShow
         bgColor="bg-green-wardah-primary"
