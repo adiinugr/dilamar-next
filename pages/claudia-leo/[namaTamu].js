@@ -140,7 +140,7 @@ const Page = ({ comments }) => {
   const waveColor = "#8EB7A2";
 
   useEffect(() => {
-    setAudio(new Audio("/clients/claudia-leo/amin.mp3"));
+    setAudio(new Audio("/clients/claudia-leo/naif.mp3"));
 
     return () => {
       if (audio) {
