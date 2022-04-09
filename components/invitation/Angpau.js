@@ -3,6 +3,7 @@ import { AiOutlineLoading3Quarters, AiOutlineGift } from "react-icons/ai";
 
 import CurrencyInput from "react-currency-input-field";
 import { Fade } from "react-reveal";
+import Image from "next/image";
 
 export const AngpauWithoutConfirmation = ({
   bgColor = "bg-gray-200",
@@ -11,7 +12,9 @@ export const AngpauWithoutConfirmation = ({
   children,
   rekening1,
   rekening2,
-  rekening3
+  rekening3,
+  bank1Path,
+  bank2Path
 }) => {
   return (
     <div
@@ -29,14 +32,36 @@ export const AngpauWithoutConfirmation = ({
       <Fade top>
         <div className="flex flex-col items-center justify-center py-6">
           <AiOutlineGift size={50} />
-          <div className="text-center mt-4 mb-4">
+          <div className="text-center mt-4 mb-6">
             Terimakasih atas doa dan restu yang telah Anda berikan. Namun
             apabila Anda ingin mengirimkan kado, silakan kirim ke rekening di
             bawah ini. Kami mengucapkan banyak terimakasih.
           </div>
-          <div>{rekening1}</div>
+          <div className="text-lg text-center font-bold">{rekening1}</div>
           <div>{rekening2}</div>
           <div>{rekening3}</div>
+          <div className="flex flex-col gap-6 mt-8">
+            {bank1Path && (
+              <Image
+                src={bank1Path}
+                width={250}
+                height={250}
+                objectFit="cover"
+                alt="katanikah website undangan pernikahan online"
+                placeholder="blur"
+              />
+            )}
+            {bank2Path && (
+              <Image
+                src={bank2Path}
+                width={250}
+                height={250}
+                objectFit="cover"
+                alt="katanikah website undangan pernikahan online"
+                placeholder="blur"
+              />
+            )}
+          </div>
         </div>
       </Fade>
     </div>
