@@ -290,7 +290,7 @@ const Page = ({ comments }) => {
       <NamaPengantinThree
         namaWanita="Fristzy Claudia Permatasari, M.Pd"
         ortuWanita="Putri dari Bapak Serka Mohamad Bace S.ip (Denpomjaya-1/Tangerang) &
-Ibu Ika Puspitasari S.Pd (Pengawas Korwil Periuk)"
+Ibu Ika Puspitasari S.Pd (Pengawas Korwil Cibodas)"
         namaPria="Leonardo Lilipaly, A.Md"
         ortuPria="Putra dari Bapak N. David Lilipaly & Ibu Erna"
         imagePathPria="/clients/claudia-leo/man.png"
