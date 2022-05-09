@@ -242,7 +242,7 @@ const Page = ({ comments }) => {
       setAngpauError("Harus diisi semua ya!")
       setAngpauIsLoading(false)
     } else {
-      const res = await fetch(`/api/roy-ririk/angpau`, {
+      const res = await fetch(`/api/ayu-iqbal/angpau`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
