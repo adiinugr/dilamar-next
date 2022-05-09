@@ -55,3 +55,34 @@
   filter: drop-shadow(0 0px 20px rgb(0 0 0 / 0.08));
   -webkit-filter: drop-shadow(0 0px 20px rgb(0 0 0 / 0.08));
 }
+
+/* Google chrome */
+@-webkit-keyframes svg-text-anim {
+  40% {
+    stroke-dashoffset: 0;
+    fill: transparent;
+  }
+  60% {
+    stroke-dashoffset: 0;
+    fill: #e0dcdc;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill: #e0dcdc;
+  }
+}
+/* Most browsers */
+@keyframes svg-text-anim {
+  40% {
+    stroke-dashoffset: 0;
+    fill: transparent;
+  }
+  60% {
+    stroke-dashoffset: 0;
+    fill: #e0dcdc;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill: #e0dcdc;
+  }
+}

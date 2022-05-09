@@ -1,11 +1,11 @@
-import { RiMap2Line } from "react-icons/ri";
-import { MdLocationOn } from "react-icons/md";
-import Image from "next/image";
-import GoogleMaps from "./parts/GoogleMaps";
-import Countdown from "react-countdown";
+import { RiMap2Line } from "react-icons/ri"
+import { MdLocationOn } from "react-icons/md"
+import Image from "next/image"
+import GoogleMaps from "./parts/GoogleMaps"
+import Countdown from "react-countdown"
 
-import { rendererTwo } from "./parts/CountDownRenderer";
-import { Fade } from "react-reveal";
+import { rendererTwo } from "./parts/CountDownRenderer"
+import { Fade } from "react-reveal"
 
 export const WaktuAlamatAcaraOne = ({
   tanggalAkad,
@@ -26,12 +26,12 @@ export const WaktuAlamatAcaraOne = ({
   const containerClassName = () =>
     customColor
       ? `${customColor} py-16 flex flex-col items-center justify-center overflow-hidden`
-      : "bg-suta-seashell text-gray-600 py-16 flex flex-col items-center justify-center overflow-hidden";
+      : "bg-suta-seashell text-gray-600 py-16 flex flex-col items-center justify-center overflow-hidden"
 
   const buttonClassName = () =>
     buttonCustomColor
       ? `w-5/6 md:w-3/4 ${buttonCustomColor} mt-4 rounded-sm py-2 cursor-pointer flex items-center justify-center`
-      : "w-5/6 md:w-3/4 bg-gray-700 mt-4 text-gray-200 rounded-sm py-2 cursor-pointer flex items-center justify-center";
+      : "w-5/6 md:w-3/4 bg-gray-700 mt-4 text-gray-200 rounded-sm py-2 cursor-pointer flex items-center justify-center"
 
   return (
     <div className={containerClassName()}>
@@ -100,8 +100,8 @@ export const WaktuAlamatAcaraOne = ({
         <MdLocationOn size={20} /> Open Google Maps
       </a>
     </div>
-  );
-};
+  )
+}
 
 export const WaktuAlamatAcaraTwo = ({
   tanggalAkad,
@@ -123,12 +123,12 @@ export const WaktuAlamatAcaraTwo = ({
   const containerClassName = () =>
     customColor
       ? `${customColor} flex flex-col items-center justify-center overflow-hidden`
-      : "bg-suta-seashell text-gray-600 flex flex-col items-center justify-center overflow-hidden";
+      : "bg-suta-seashell text-gray-600 flex flex-col items-center justify-center overflow-hidden"
 
   const buttonClassName = () =>
     buttonCustomColor
       ? `w-5/6 md:w-3/4 ${buttonCustomColor} mt-4 rounded-sm py-2 cursor-pointer flex items-center justify-center`
-      : "w-5/6 md:w-3/4 bg-gray-700 mt-4 text-gray-200 rounded-sm py-2 cursor-pointer flex items-center justify-center";
+      : "w-5/6 md:w-3/4 bg-gray-700 mt-4 text-gray-200 rounded-sm py-2 cursor-pointer flex items-center justify-center"
 
   return (
     <div id="event" className={containerClassName()}>
@@ -213,8 +213,8 @@ export const WaktuAlamatAcaraTwo = ({
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
 export const WaktuAlamatAcaraThree = ({
   bgImagePath,
@@ -236,12 +236,12 @@ export const WaktuAlamatAcaraThree = ({
   const containerClassName = () =>
     customColor
       ? `${customColor} py-16 flex flex-col items-center justify-center overflow-hidden`
-      : "bg-suta-seashell text-suta-seashell py-16 flex flex-col items-center justify-center overflow-hidden";
+      : "bg-suta-seashell text-suta-seashell py-16 flex flex-col items-center justify-center overflow-hidden"
 
   const buttonClassName = () =>
     buttonCustomColor
       ? `w-5/6 md:w-3/4 ${buttonCustomColor} mt-4 rounded-sm py-2 cursor-pointer flex items-center justify-center`
-      : "w-5/6 md:w-3/4 bg-gray-300 mt-4 rounded-sm py-2 cursor-pointer flex items-center justify-center";
+      : "w-5/6 md:w-3/4 bg-gray-300 mt-4 rounded-sm py-2 cursor-pointer flex items-center justify-center"
   return (
     <div id="event" className={containerClassName()}>
       <div className="w-5/6 md:w-3/4 border-suta-seashell border-2 rounded-lg overflow-hidden h-screen md:h-96 relative">
@@ -298,8 +298,8 @@ export const WaktuAlamatAcaraThree = ({
         <MdLocationOn size={20} /> Open Google Maps
       </a>
     </div>
-  );
-};
+  )
+}
 
 export const WaktuAlamatAcaraFour = ({
   tanggalAkad,
@@ -440,8 +440,8 @@ export const WaktuAlamatAcaraFour = ({
         </>
       )}
     </div>
-  );
-};
+  )
+}
 
 export const WaktuAlamatAcaraFive = ({
   tanggalAkad,
@@ -516,5 +516,83 @@ export const WaktuAlamatAcaraFive = ({
         <MdLocationOn size={20} /> Open Google Maps
       </a>
     </div>
-  );
-};
+  )
+}
+
+export const WaktuAlamatAcaraSix = ({
+  tanggalAcara,
+  hariAcara,
+  bulanAcara,
+  tahunAcara,
+  waktuAkad,
+  waktuResepsi,
+  namaTempat,
+  alamatTempat,
+  googleMapsUri,
+  bgColor = "bg-white",
+  textColor = "text-gray-800",
+  bgImagePath,
+  overlayBgColor = "bg-gray-800",
+  overlayOpacity = "opacity-80",
+  overlayClassName,
+  buttonBgColor = "bg-gray-800",
+  buttonTextColor = "text-white",
+  padding,
+  children
+}) => {
+  return (
+    <div
+      id="event"
+      className={`${bgColor} ${textColor} relative px-8 py-16 md:px-32 overflow-hidden ${padding}`}
+    >
+      {children}
+
+      {bgImagePath && (
+        <Image
+          src={bgImagePath}
+          layout="fill"
+          objectFit="cover"
+          placeholder="blur"
+          alt="katanikah website undangan pernikahan online"
+        />
+      )}
+
+      <div className="text-center">
+        <p className="text-lg mb-8">
+          Merupakan suatu kehormatan dan kebahagiaan bagi kami, apabila
+          Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu kepada
+          mempelai
+        </p>
+        <p className="text-lg font-semibold">{hariAcara}</p>
+        <div className="flex justify-center items-center h-20">
+          <p className="text-8xl">{tanggalAcara}</p>
+          <div className="text-left font-semibold ml-1 text-lg flex flex-col justify-around h-full">
+            <p>{bulanAcara}</p>
+            <p>{tahunAcara}</p>
+          </div>
+        </div>
+        <div className="flex justify-around my-4">
+          <div>
+            <p className="font-yellowtail text-3xl">Akad Nikah</p>
+            <p>{waktuAkad}</p>
+          </div>
+          <div>
+            <p className="font-yellowtail text-3xl">Resepsi</p>
+            <p>{waktuResepsi}</p>
+          </div>
+        </div>
+        <div className="mt-8">
+          <p className="text-lg font-semibold mb-4">{alamatTempat}</p>
+          <a
+            href={googleMapsUri}
+            target="_blank"
+            rel="noreferrer"
+            className={`${buttonBgColor} ${buttonTextColor} mt-4 rounded-md py-2 px-6 cursor-pointer`}
+          >
+            <MdLocationOn size={20} className="inline" /> Open Google Maps
+          </a>
+        </div>
+      </div>
+    </div>
+  )
+}

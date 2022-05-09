@@ -1,9 +1,9 @@
-import React from "react";
-import { AiOutlineLoading3Quarters, AiOutlineGift } from "react-icons/ai";
+import React from "react"
+import { AiOutlineLoading3Quarters, AiOutlineGift } from "react-icons/ai"
 
-import CurrencyInput from "react-currency-input-field";
-import { Fade } from "react-reveal";
-import Image from "next/image";
+import CurrencyInput from "react-currency-input-field"
+import { Fade } from "react-reveal"
+import Image from "next/image"
 
 export const AngpauWithoutConfirmation = ({
   bgColor = "bg-gray-200",
@@ -65,8 +65,8 @@ export const AngpauWithoutConfirmation = ({
         </div>
       </Fade>
     </div>
-  );
-};
+  )
+}
 
 export const AngpauWithConfirmation = ({
   name,
@@ -79,6 +79,8 @@ export const AngpauWithConfirmation = ({
   succcess,
   handleSubmit,
   isLoading,
+  rekeningArray = [],
+  bankOptionArray = [],
   bgColor = "bg-gray-200",
   textColor = "text-gray-800",
   borderColor,
@@ -96,8 +98,13 @@ export const AngpauWithConfirmation = ({
           Anda ingin mengirimkan kado, silakan kirim ke rekening di bawah ini.
           Kami mengucapkan banyak terimakasih.
         </div>
-        <div>BNI - Roy Prasetyo (0297685799)</div>
-        <div>BNI - Ririk Endah W. (0304324421)</div>
+        {rekeningArray.map((rekening) => (
+          <div key={rekening.id} className="text-center mb-2">
+            <p className="font-bold">{rekening.bankName}</p>
+            <p className="font-semibold">{rekening.bankNo}</p>
+            <p>{rekening.bankUserName}</p>
+          </div>
+        ))}
       </div>
       <div className={`w-4/5 ${borderColor} border-t-2 py-4 mx-auto`}>
         <form onSubmit={handleSubmit}>
@@ -126,12 +133,11 @@ export const AngpauWithConfirmation = ({
               className={`${inputBgColor} ${inputTextColor} mb-4 p-2 w-full`}
             >
               <option value="">- Pilih salah satu -</option>
-              <option value="BNI - Roy Prasetyo (0297685799)">
-                BNI - Roy Prasetyo (0297685799)
-              </option>
-              <option value="BNI - Ririk Indah W. (0304324421)">
-                BNI - Ririk Indah W. (0304324421)
-              </option>
+              {bankOptionArray.map((bankOption) => (
+                <option key={bankOption.id} value={bankOption.title}>
+                  {bankOption.title}
+                </option>
+              ))}
             </select>
             <CurrencyInput
               className={`${inputBgColor} ${inputTextColor} p-2 mb-4 outline-none font-body`}
@@ -159,5 +165,5 @@ export const AngpauWithConfirmation = ({
         </form>
       </div>
     </div>
-  );
-};
+  )
+}

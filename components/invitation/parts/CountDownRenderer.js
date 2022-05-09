@@ -4,18 +4,18 @@ export const renderer = ({
   minutes,
   seconds,
   completed,
-  itemContainerBorder = "border-gray-400"
+  itemContainerBorder
 }) => {
-  const itemContainerClassname = `text-center rounded-lg border p-3 ${itemContainerBorder}`;
-  const paragraphValueClassname = `md:text-3xl font-medium`;
-  const paragraphPlaceholderClassname = `text-sm`;
+  const itemContainerClassname = `text-center rounded-lg border p-3 ${itemContainerBorder}`
+  const paragraphValueClassname = `md:text-3xl font-medium`
+  const paragraphPlaceholderClassname = `text-sm`
 
   if (completed) {
     return (
       <div className="flex items-center justify-center font-body">
         <p className="text-xl md:text-3xl font-medium">4 Desember 2021</p>
       </div>
-    );
+    )
   } else {
     return (
       <div className="grid grid-cols-4 gap-2 items-center justify-between font-body">
@@ -36,9 +36,9 @@ export const renderer = ({
           <p className={paragraphPlaceholderClassname}>Sec(s)</p>
         </div>
       </div>
-    );
+    )
   }
-};
+}
 
 export const rendererTwo = ({ days, hours, minutes, seconds, completed }) => {
   if (completed) {
@@ -46,7 +46,7 @@ export const rendererTwo = ({ days, hours, minutes, seconds, completed }) => {
       <div className="flex items-center justify-center font-body">
         <p className="text-xl md:text-3xl font-medium">4 Desember 2021</p>
       </div>
-    );
+    )
   } else {
     return (
       <div className="flex justify-between font-body">
@@ -75,6 +75,6 @@ export const rendererTwo = ({ days, hours, minutes, seconds, completed }) => {
           <div>Second(s)</div>
         </div>
       </div>
-    );
+    )
   }
-};
+}

@@ -1,7 +1,8 @@
-import Image from "next/image";
-import React, { Children } from "react";
-import { Fade } from "react-reveal";
-import { TitleH1 } from "./parts/BigTitle";
+import Image from "next/image"
+import React, { Children } from "react"
+import { Fade } from "react-reveal"
+import { TitleH1 } from "./parts/BigTitle"
+import { FaInstagram } from "react-icons/fa"
 
 export const NamaPengantin1 = ({
   namaWanita,
@@ -13,15 +14,12 @@ export const NamaPengantin1 = ({
   const containerClassName = () =>
     customColor
       ? `${customColor} py-20 px-8 md:px-40 overflow-hidden`
-      : "bg-suta-seashell text-suta-lapis-lazuli py-20 px-8 md:px-40 overflow-hidden";
+      : "bg-suta-seashell text-suta-lapis-lazuli py-20 px-8 md:px-40 overflow-hidden"
 
   return (
     <div className={containerClassName()}>
       <div className="flex flex-col md:flex-row items-center justify-center h-full w-full z-20">
-        <div
-          className="md:w-1/3 text-center font-body mb-8 md:mb-0"
-          data-aos="fade-right"
-        >
+        <div className="md:w-1/3 text-center font-body mb-8 md:mb-0">
           <p className="font-display text-3xl mb-3">
             {namaWanita || "Dliyan Purwana Suta, S.H."}
           </p>
@@ -30,13 +28,10 @@ export const NamaPengantin1 = ({
               "Putra dari Bapak Drs. Zaenal Hayat dan Ibu Kuraesin"}
           </p>
         </div>
-        <div
-          data-aos="zoom-in"
-          className="md:w-1/3 text-center font-display text-8xl mb-8 md:mb-0"
-        >
+        <div className="md:w-1/3 text-center font-display text-8xl mb-8 md:mb-0">
           &
         </div>
-        <div data-aos="fade-left" className="md:w-1/3 text-center font-body">
+        <div className="md:w-1/3 text-center font-body">
           <p className="font-display text-3xl mb-3">
             {namaPria || "Hanny Suryani, S.Pd"}
           </p>
@@ -47,8 +42,8 @@ export const NamaPengantin1 = ({
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
 export const NamaPengantin2 = ({
   namaPria,
@@ -60,44 +55,32 @@ export const NamaPengantin2 = ({
   const containerClassName = () =>
     customColor
       ? `${customColor} relative py-20 px-8 md:px-40 overflow-hidden`
-      : "relative bg-suta-seashell text-suta-lapis-lazuli py-20 px-8 md:px-40 overflow-hidden";
+      : "relative bg-suta-seashell text-suta-lapis-lazuli py-20 px-8 md:px-40 overflow-hidden"
 
   return (
     <div className={containerClassName()}>
-      <div
-        data-aos="slide-right"
-        className="absolute -left-10 -bottom-20 w-full h-1/2 md:h-full md:w-1/4"
-      >
+      <div className="absolute -left-10 -bottom-20 w-full h-1/2 md:h-full md:w-1/4">
         <Image src="/rustic-gold/1/left.png" layout="fill" />
       </div>
-      <div
-        data-aos="slide-left"
-        className="absolute -right-10 -top-20 w-full h-1/2 md:h-full md:w-1/4"
-      >
+      <div className="absolute -right-10 -top-20 w-full h-1/2 md:h-full md:w-1/4">
         <Image src="/rustic-gold/1/right.png" layout="fill" />
       </div>
       <div className="flex flex-col md:flex-row items-center justify-center h-full w-full z-20 ">
-        <div
-          className="md:w-1/3 text-center font-body mb-8 md:mb-0"
-          data-aos="fade-right"
-        >
+        <div className="md:w-1/3 text-center font-body mb-8 md:mb-0">
           <p className="font-display text-3xl mb-3">{namaWanita}</p>
           <p>{ortuWanita}</p>
         </div>
-        <div
-          data-aos="zoom-in"
-          className="md:w-1/3 text-center font-display text-8xl mb-8 md:mb-0"
-        >
+        <div className="md:w-1/3 text-center font-display text-8xl mb-8 md:mb-0">
           &
         </div>
-        <div data-aos="fade-left" className="md:w-1/3 text-center font-body">
+        <div className="md:w-1/3 text-center font-body">
           <p className="font-display text-3xl mb-3">{namaPria}</p>
           <p>{ortuPria}</p>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
 export const NamaPengantinThree = ({
   namaPria,
@@ -160,10 +143,7 @@ export const NamaPengantinThree = ({
             &
           </div>
         </Fade>
-        <div
-          className="flex flex-col-reverse w-full items-center font-body md:mb-0"
-          data-aos="fade-right"
-        >
+        <div className="flex flex-col-reverse w-full items-center font-body md:mb-0">
           <div className="w-full mx-4 text-center md:mt-8">
             <Fade top>
               <p className="font-yellowtail text-3xl md:text-4xl mb-3">
@@ -191,8 +171,8 @@ export const NamaPengantinThree = ({
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
 export const NamaPengantin4 = ({
   namaPria,
@@ -201,6 +181,8 @@ export const NamaPengantin4 = ({
   namaLengkapWanita,
   ortuPria,
   ortuWanita,
+  igWanita,
+  igPria,
   bgColor = "bg-gray-200",
   textColor = "text-gray-800",
   imagePathPria,
@@ -210,36 +192,53 @@ export const NamaPengantin4 = ({
     <div
       className={`${bgColor} ${textColor} py-20 px-6 md:px-40 overflow-hidden`}
     >
-      <div className="flex flex-col md:flex-row items-center justify-center">
-        <div
-          className="md:w-1/3 text-center font-body mb-8 md:mb-0"
-          data-aos="fade-right"
-        >
+      <div className="flex flex-col items-center justify-center">
+        <div className="text-center font-body">
           <Image
             src={imagePathWanita}
-            width={150}
-            height={150}
+            width={250}
+            height={250}
             className="rounded-full"
           />
-          <p className="font-display text-5xl mb-3">{namaWanita}</p>
+          <p className="font-yellowtail text-4xl mb-1">{namaWanita}</p>
           <p className="font-bold">{namaLengkapWanita}</p>
           <p>{ortuWanita}</p>
+          {igWanita && (
+            <div className="mt-3">
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                className="font-bold"
+              >
+                <FaInstagram className="inline font-bold" /> @{igWanita}
+              </a>
+            </div>
+          )}
         </div>
-        <div className="md:w-1/3 text-center font-display text-8xl mb-8 md:mb-0">
-          &
-        </div>
-        <div data-aos="fade-left" className="md:w-1/3 text-center font-body">
+        <div className="text-center font-yellowtail text-9xl my-10">&</div>
+        <div className="text-center font-body">
           <Image
             src={imagePathPria}
-            width={150}
-            height={150}
+            width={250}
+            height={250}
             className="rounded-full"
           />
-          <p className="font-display text-5xl mb-3">{namaPria}</p>
+          <p className="font-yellowtail text-4xl mb-1">{namaPria}</p>
           <p className="font-body">{namaLengkapPria}</p>
           <p>{ortuPria}</p>
+          {igPria && (
+            <div className="mt-3">
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                className="font-bold"
+              >
+                <FaInstagram className="inline font-bold" /> @{igPria}
+              </a>
+            </div>
+          )}
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

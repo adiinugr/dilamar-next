@@ -1,0 +1,418 @@
+import React, { useEffect, useState } from "react"
+import ReactModal from "react-modal"
+import { useRouter } from "next/router"
+import {
+  HiOutlineCalendar,
+  HiOutlineHeart,
+  HiOutlineHome,
+  HiOutlinePhotograph,
+  HiOutlineBookOpen
+} from "react-icons/hi"
+
+import { BottomTabMenu } from "components/invitation/parts/BottomTabMenu"
+import InvitationHead from "components/invitation/parts/InvitationHead"
+import { OpeningModalStandard } from "components/invitation/OpeningModal"
+import { Hero } from "components/invitation/Hero"
+import { Bismillah, QsArrum21 } from "components/invitation/Ayyat"
+import {
+  NamaPengantin1,
+  NamaPengantin2,
+  NamaPengantin4,
+  NamaPengantinThree
+} from "components/invitation/NamaPengantin"
+import { StoryTwo } from "components/invitation/Story"
+import { DoubleWave } from "components/invitation/parts/Divider"
+import {
+  WaktuAlamatAcaraFour,
+  WaktuAlamatAcaraSix
+} from "components/invitation/WaktuAlamatAcara"
+import RSVP from "components/invitation/RSVP"
+import { GalleryGrid, GallerySlideShow } from "components/invitation/Gallery"
+import { GuestBookWithPopup } from "components/invitation/GuestBook"
+import Terimakasih from "components/invitation/Terimakasih"
+import InvitationFooter from "components/invitation/InvitationFooter"
+import DateCountdown from "components/invitation/DateCountdown"
+import PlayerButton from "components/invitation/parts/PlayerButton"
+import { GuestName } from "components/invitation/GuestName"
+import {
+  AngpauWithConfirmation,
+  AngpauWithoutConfirmation
+} from "components/invitation/Angpau"
+import TextAnimation from "components/invitation/parts/TextAnimation"
+import Image from "next/image"
+
+const imageData = [
+  {
+    id: 1,
+    type: "image",
+    src: "/clients/claudia-leo/image1.jpeg"
+  },
+  {
+    id: 2,
+    type: "image",
+    src: "/clients/claudia-leo/image-2.jpeg"
+  },
+  {
+    id: 3,
+    type: "image",
+    src: "/clients/claudia-leo/image-3.jpeg"
+  },
+  {
+    id: 4,
+    type: "image",
+    src: "/clients/claudia-leo/image-4.jpeg"
+  },
+  {
+    id: 5,
+    type: "image",
+    src: "/clients/claudia-leo/image-5.jpeg"
+  },
+  {
+    id: 6,
+    type: "image",
+    src: "/clients/claudia-leo/image-7.jpeg"
+  },
+  {
+    id: 7,
+    type: "image",
+    src: "/clients/claudia-leo/image-9.jpeg"
+  },
+  {
+    id: 8,
+    type: "image",
+    src: "/clients/claudia-leo/image-11.jpeg"
+  },
+  {
+    id: 9,
+    type: "image",
+    src: "/clients/claudia-leo/image-12.jpeg"
+  }
+]
+
+const Page = ({ comments }) => {
+  const [data, setData] = useState(comments)
+
+  const router = useRouter()
+  const { namaTamu } = router.query
+  const tamu = namaTamu.replace("+", " ")
+
+  const [guestBookName, setGuestBookName] = useState("")
+  const [guestBookComment, setGuestBookComment] = useState("")
+  const [guestBookIsLoading, setGuestBookIsLoading] = useState(false)
+  const [guestBookError, setGuestBookError] = useState("")
+  const [guestBookSuccess, setGuestBookSuccess] = useState("")
+
+  const [rsvpName, setRsvpName] = useState("")
+  const [rsvpAddress, setRsvpAddress] = useState("")
+  const [rsvpStatus, setRsvpStatus] = useState("")
+  const [rsvpIsLoading, setRsvpIsLoading] = useState(false)
+  const [rsvpError, setRsvpError] = useState("")
+  const [rsvpSuccess, setRsvpSuccess] = useState("")
+
+  const [modalIsOpen, setModalIsOpen] = useState(true)
+
+  const [audio, setAudio] = useState(null)
+  const [isAudioPlaying, setIsAudioPlaying] = useState(false)
+  const [showPlayButton, setShowPlayButton] = useState(false)
+
+  const date = new Date("12 May 2022 08:00 UTC+7")
+  const isoDate = date.toISOString()
+
+  const waveColor = "#8EB7A2"
+
+  useEffect(() => {
+    setAudio(new Audio("/clients/claudia-leo/naif.mp3"))
+
+    return () => {
+      if (audio) {
+        audio.pause()
+        setIsAudioPlaying(false)
+      }
+    }
+  }, [])
+
+  const handlePlayMusic = () => {
+    audio.play()
+    setIsAudioPlaying(true)
+  }
+
+  const handlePauseMusic = () => {
+    audio.pause()
+    setIsAudioPlaying(false)
+  }
+
+  const handleGuestBookSubmit = async (event) => {
+    event.preventDefault()
+
+    setGuestBookIsLoading(true)
+
+    if (guestBookName === "" || guestBookComment === "") {
+      setGuestBookError("Harus diisi semua ya!")
+      setGuestBookIsLoading(false)
+    } else {
+      const res = await fetch(`/api/ayu-iqbal/comment`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          name: guestBookName,
+          message: guestBookComment
+        })
+      })
+
+      setData((prevData) => [
+        ...prevData,
+        {
+          name: guestBookName,
+          message: guestBookComment
+        }
+      ])
+
+      setGuestBookIsLoading(false)
+
+      setGuestBookSuccess("Selamat! Pesanmu berhasil dikirim.")
+      setGuestBookName("")
+      setGuestBookComment("")
+    }
+  }
+
+  const handleRsvpSubmit = async (event) => {
+    event.preventDefault()
+
+    setRsvpIsLoading(true)
+
+    if (rsvpName === "" || rsvpStatus === "" || rsvpAddress === "") {
+      setRsvpSuccess("")
+      setRsvpError("Harus diisi semua ya!")
+      setRsvpIsLoading(false)
+    } else {
+      const res = await fetch(`/api/ayu-iqbal/rsvp`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          name: rsvpName,
+          address: rsvpAddress,
+          status: rsvpStatus
+        })
+      })
+
+      setRsvpIsLoading(false)
+      setRsvpError("")
+      setRsvpSuccess("Status Kehadiran Berhasil Dikirim!")
+
+      setRsvpName("")
+      setRsvpAddress("")
+      setRsvpStatus("")
+    }
+  }
+
+  return (
+    <>
+      <InvitationHead
+        title="Ayu & Iqbal Wedding Invitation"
+        description="Kami mengundang Bapak/Ibu, saudara, dan rekan-rekan semua untuk hadir di acara pernikahan kami."
+        link="https://katanikah.com/ayu-iqbal/Nama+Tamu"
+        imagePath="https://katanikah.com/clients/claudia-leo/meta-image-min.png"
+      />
+
+      <Hero
+        name="Ayu & Iqbal"
+        date="12 - 05 - 2022"
+        textColor="text-gray-100"
+        titleText="The Wedding of"
+        initialText="AI"
+        overlayClassName="bg-gray-800 opacity-60"
+        imagePath="/clients/ayu-iqbal/image (2).jpg"
+      />
+      <GuestName
+        bgColor="bg-rose-gold-primary"
+        textColor="text-white"
+        namaTamu={tamu}
+      />
+
+      <Bismillah bgColor="bg-rose-gold-primary" textColor="text-white" />
+
+      <NamaPengantin4
+        namaWanita="Bdn. Rahma Ayu Yusnita, S.Tr.Keb"
+        ortuWanita="Putri dari H. Sugeng Hariyanto, S.AP (Alm) & Hj. Sri Zunani, S.Pd"
+        namaPria="Mohammad Iqbal Ali Maghrobi, S.Pd"
+        ortuPria="Putra dari Drs. Imam Syafi'i (Alm) & Sukmaningsih, S.Pd"
+        igPria="iqball"
+        igWanita="ayuuuuu"
+        imagePathPria="/clients/claudia-leo/man.png"
+        imagePathWanita="/clients/claudia-leo/woman.png"
+        textColor="text-rose-gold-dark"
+        bgColor="bg-rose-gold-light"
+      />
+
+      <section className="relative w-full bg-rose-gold-primary px-8 py-16 text-center">
+        <p className="font-yellowtail text-4xl mb-7 text-white">12 Mei 2022</p>
+        <TextAnimation />
+        <DateCountdown
+          position="static mx-auto"
+          date={isoDate}
+          bgColor="bg-none"
+          textColor="text-white"
+          countdownTitle={false}
+        />
+        <Image
+          src="/clients/claudia-leo/woman.png"
+          height={400}
+          width={400}
+          placeholder="blur"
+          className="absolute top-0 left-0"
+          alt="katanikah website undangan pernikahan online"
+        />
+      </section>
+
+      <WaktuAlamatAcaraSix
+        tanggalAcara="12"
+        hariAcara="Kamis"
+        bulanAcara="Mei"
+        tahunAcara="2022"
+        waktuAkad="Pukul 08.00 WIB"
+        waktuResepsi="Pukul 11.00 WIB"
+        alamatTempat="Dsn. Pudakpulo RT. 11 RW.4 Ds. Puloniti Bangsal, Kab. Mojokerto, Jawa Timur (Depan Poliklinik SPN)"
+        googleMapsUri="https://maps.google.com/?q=-7.499777,112.487473"
+        bgColor="bg-green-wardah-primary"
+        overlayBgColor="bg-white"
+        overlayOpacity="bg-opacity-80"
+        textColor="text-rose-gold-dark"
+        buttonBgColor="bg-rose-gold-dark"
+        akadImagePath="/clients/claudia-leo/image1.jpeg"
+        resepsiImagePath="/clients/claudia-leo/image-5.jpeg"
+      />
+
+      <RSVP
+        name={rsvpName}
+        setName={(e) => setRsvpName(e.target.value)}
+        address={rsvpAddress}
+        setAddress={(e) => setRsvpAddress(e.target.value)}
+        status={rsvpStatus}
+        setStatus={(e) => setRsvpStatus(e.target.value)}
+        error={rsvpError}
+        isLoading={rsvpIsLoading}
+        succcess={rsvpSuccess}
+        handleSubmit={handleRsvpSubmit}
+        bgColor="bg-white"
+        textColor="text-green-wardah-dark"
+        formBgColor="bg-white"
+        buttonBgColor="bg-green-wardah-dark"
+        padding="pt-40 md:pt-44 md:pb-32"
+      ></RSVP>
+
+      <AngpauWithConfirmation
+        bgColor="bg-white"
+        textColor="text-green-wardah-dark"
+        padding="pt-0 md:pt-0 pb-32"
+        rekeningArray={[
+          {
+            id: 1,
+            bankName: "Bank Mandiri",
+            bankNo: "144-001-705-707-3",
+            bankUserName: "A.n Mohammad Iqbal Ali. M"
+          },
+          {
+            id: 2,
+            bankName: "Dana",
+            bankNo: "087755744463",
+            bankUserName: "A.n Mohammad Iqbal Ali. M"
+          },
+          {
+            id: 3,
+            bankName: "OVO",
+            bankNo: "087755744364",
+            bankUserName: "A.n Mohammad Iqbal Ali. M"
+          }
+        ]}
+        bankOptionArray={[
+          {
+            id: 1,
+            title: "Bank Mandiri"
+          },
+          {
+            id: 2,
+            title: "Dana"
+          },
+          {
+            id: 3,
+            title: "OVO"
+          }
+        ]}
+      >
+        {" "}
+        <DoubleWave color={waveColor} isBottom />
+      </AngpauWithConfirmation>
+
+      <GallerySlideShow
+        bgColor="bg-green-wardah-primary"
+        textColor="text-white"
+        imageData={imageData}
+      />
+
+      <GalleryGrid height={400} width={400} imageData={imageData} />
+
+      <GuestBookWithPopup
+        comments={data}
+        name={guestBookName}
+        setName={(e) => setGuestBookName(e.target.value)}
+        comment={guestBookComment}
+        setComment={(e) => setGuestBookComment(e.target.value)}
+        error={guestBookError}
+        setError={() => setGuestBookError("")}
+        success={guestBookSuccess}
+        isLoading={guestBookIsLoading}
+        handleSubmit={handleGuestBookSubmit}
+        bgColor="bg-white"
+        bgHorizontalLine="bg-green-wardah-dark"
+        writeYourWishClassname="bg-green-wardah-dark text-white"
+        buttonTextColor="text-white"
+        buttonBgColor="bg-green-wardah-dark"
+      >
+        {" "}
+        <DoubleWave color={waveColor} />
+        <DoubleWave color={waveColor} isBottom />
+      </GuestBookWithPopup>
+
+      <Terimakasih
+        namaPengantin="Claudia & Leo"
+        bgColor="bg-green-wardah-primary"
+        textColor="text-white"
+      />
+
+      <InvitationFooter />
+
+      <div className="h-16"></div>
+    </>
+  )
+}
+
+export async function getServerSideProps() {
+  const res = await fetch(`https://katanikah.com/api/ayu-iqbal/comment`, {
+    method: "GET",
+    headers: {
+      "User-Agent":
+        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36",
+      Accept: "application/json; charset=UTF-8"
+    }
+  })
+  const data = await res.json()
+  const comments = await data.data
+
+  const getData = () => {
+    if (comments) {
+      return comments
+    } else {
+      return []
+    }
+  }
+
+  return {
+    props: { comments: getData() }
+  }
+}
+
+export default Page

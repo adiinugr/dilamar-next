@@ -1,11 +1,13 @@
-import Image from "next/image";
-import dynamic from "next/dynamic";
+import Image from "next/image"
+import dynamic from "next/dynamic"
 
-const Snowfall = dynamic(() => import("react-snowfall"), { ssr: false });
+const Snowfall = dynamic(() => import("react-snowfall"), { ssr: false })
 
 export const Hero = ({
   name,
   date,
+  titleText = "We Are Getting Married",
+  initialText,
   bgColor = "bg-gray-200",
   textColor = "text-gray-800",
   nameTextSize = "text-5xl md:text-7xl",
@@ -37,7 +39,12 @@ export const Hero = ({
       {children}
 
       <div className="h-full w-full absolute flex flex-col justify-center items-center">
-        <div className="text-lg md:text-xl">We Are Getting Married</div>
+        {initialText && (
+          <div className="text-lg md:text-8xl mb-16 font-display">
+            {initialText}
+          </div>
+        )}
+        <div className="text-lg md:text-xl">{titleText}</div>
         <div className={`font-yellowtail ${nameTextSize} my-4`}>{name}</div>
         <div className="text-xl md:text-xl">{date}</div>
       </div>
@@ -46,5 +53,5 @@ export const Hero = ({
         <Snowfall speed={[0.5, 0.8]} wind={[0, 0.5]} color={snowColor} />
       )}
     </section>
-  );
-};
+  )
+}

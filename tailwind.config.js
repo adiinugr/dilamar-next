@@ -79,6 +79,11 @@ module.exports = {
           primary: "#8EB7A2",
           light: "#F1F6F3",
           dark: "#101914"
+        },
+        "rose-gold": {
+          primary: "#B76E79",
+          light: "#F6EDEE",
+          dark: "#180C0E"
         }
       },
       height: {
@@ -104,4 +109,4 @@ module.exports = {
     extend: {}
   },
   plugins: []
-};
+}
