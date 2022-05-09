@@ -543,7 +543,7 @@ export const WaktuAlamatAcaraSix = ({
   return (
     <div
       id="event"
-      className={`${bgColor} ${textColor} relative px-8 py-16 md:px-32 overflow-hidden ${padding}`}
+      className={`${bgColor} ${textColor} relative px-8 py-16 md:px-32 overflow-hidden h-160 ${padding}`}
     >
       {children}
 
@@ -556,8 +556,9 @@ export const WaktuAlamatAcaraSix = ({
           alt="katanikah website undangan pernikahan online"
         />
       )}
+      <div className="bg-gray-700 opacity-50 absolute h-full z-10 w-full top-0 left-0"></div>
 
-      <div className="text-center">
+      <div className="text-center z-20 absolute h-full top-0 left-0 p-10">
         <p className="text-lg mb-8">
           Merupakan suatu kehormatan dan kebahagiaan bagi kami, apabila
           Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu kepada

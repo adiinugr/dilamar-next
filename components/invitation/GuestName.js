@@ -8,7 +8,7 @@ export const GuestName = ({
 }) => {
   return (
     <section
-      className={`${bgColor} ${textColor} py-16 px-8 md:px-48 flex flex-col items-center justify-center overflow-hidden`}
+      className={`${bgColor} ${textColor} p-16 px-8 md:px-48 flex flex-col items-center justify-center overflow-hidden`}
     >
       <div className="flex flex-col items-center justify-center">
         <Fade bottom>

@@ -88,7 +88,8 @@ module.exports = {
       },
       height: {
         128: "32rem",
-        144: "36rem"
+        144: "36rem",
+        160: "40rem"
       },
       boxShadow: {
         "blur-16": "0px 0px 16px 0px rgba(0,0,0,0.25)",

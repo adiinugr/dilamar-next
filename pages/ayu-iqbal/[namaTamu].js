@@ -45,47 +45,47 @@ const imageData = [
   {
     id: 1,
     type: "image",
-    src: "/clients/claudia-leo/image1.jpeg"
+    src: "/clients/ayu-iqbal/image (2).jpg"
   },
   {
     id: 2,
     type: "image",
-    src: "/clients/claudia-leo/image-2.jpeg"
+    src: "/clients/ayu-iqbal/image (3).jpg"
   },
   {
     id: 3,
     type: "image",
-    src: "/clients/claudia-leo/image-3.jpeg"
+    src: "/clients/ayu-iqbal/image (4).jpg"
   },
   {
     id: 4,
     type: "image",
-    src: "/clients/claudia-leo/image-4.jpeg"
+    src: "/clients/ayu-iqbal/image (5).jpg"
   },
   {
     id: 5,
     type: "image",
-    src: "/clients/claudia-leo/image-5.jpeg"
+    src: "/clients/ayu-iqbal/image (6).jpg"
   },
   {
     id: 6,
     type: "image",
-    src: "/clients/claudia-leo/image-7.jpeg"
+    src: "/clients/ayu-iqbal/image (7).jpg"
   },
   {
     id: 7,
     type: "image",
-    src: "/clients/claudia-leo/image-9.jpeg"
+    src: "/clients/ayu-iqbal/image (8).jpg"
   },
   {
     id: 8,
     type: "image",
-    src: "/clients/claudia-leo/image-11.jpeg"
+    src: "/clients/ayu-iqbal/image (9).jpg"
   },
   {
     id: 9,
     type: "image",
-    src: "/clients/claudia-leo/image-12.jpeg"
+    src: "/clients/ayu-iqbal/image (10).jpg"
   }
 ]
 
@@ -113,12 +113,12 @@ const Page = ({ comments }) => {
 
   const [audio, setAudio] = useState(null)
   const [isAudioPlaying, setIsAudioPlaying] = useState(false)
-  const [showPlayButton, setShowPlayButton] = useState(false)
+  const [showPlayButton, setShowPlayButton] = useState(true)
 
   const date = new Date("12 May 2022 08:00 UTC+7")
   const isoDate = date.toISOString()
 
-  const waveColor = "#8EB7A2"
+  const waveColor = "#B76E79"
 
   useEffect(() => {
     setAudio(new Audio("/clients/claudia-leo/naif.mp3"))
@@ -215,8 +215,16 @@ const Page = ({ comments }) => {
         title="Ayu & Iqbal Wedding Invitation"
         description="Kami mengundang Bapak/Ibu, saudara, dan rekan-rekan semua untuk hadir di acara pernikahan kami."
         link="https://katanikah.com/ayu-iqbal/Nama+Tamu"
-        imagePath="https://katanikah.com/clients/claudia-leo/meta-image-min.png"
+        // imagePath="https://katanikah.com/clients/claudia-leo/meta-image-min.png"
       />
+
+      {showPlayButton && (
+        <PlayerButton
+          handlePlayMusic={handlePlayMusic}
+          handlePauseMusic={handlePauseMusic}
+          isAudioPlaying={isAudioPlaying}
+        />
+      )}
 
       <Hero
         name="Ayu & Iqbal"
@@ -240,10 +248,10 @@ const Page = ({ comments }) => {
         ortuWanita="Putri dari H. Sugeng Hariyanto, S.AP (Alm) & Hj. Sri Zunani, S.Pd"
         namaPria="Mohammad Iqbal Ali Maghrobi, S.Pd"
         ortuPria="Putra dari Drs. Imam Syafi'i (Alm) & Sukmaningsih, S.Pd"
-        igPria="iqball"
-        igWanita="ayuuuuu"
-        imagePathPria="/clients/claudia-leo/man.png"
-        imagePathWanita="/clients/claudia-leo/woman.png"
+        igPria="owlbal"
+        igWanita="rahmaayuyusnitaa"
+        imagePathPria="/clients/ayu-iqbal/men.jpg"
+        imagePathWanita="/clients/ayu-iqbal/women.jpg"
         textColor="text-rose-gold-dark"
         bgColor="bg-rose-gold-light"
       />
@@ -258,14 +266,6 @@ const Page = ({ comments }) => {
           textColor="text-white"
           countdownTitle={false}
         />
-        <Image
-          src="/clients/claudia-leo/woman.png"
-          height={400}
-          width={400}
-          placeholder="blur"
-          className="absolute top-0 left-0"
-          alt="katanikah website undangan pernikahan online"
-        />
       </section>
 
       <WaktuAlamatAcaraSix
@@ -277,13 +277,12 @@ const Page = ({ comments }) => {
         waktuResepsi="Pukul 11.00 WIB"
         alamatTempat="Dsn. Pudakpulo RT. 11 RW.4 Ds. Puloniti Bangsal, Kab. Mojokerto, Jawa Timur (Depan Poliklinik SPN)"
         googleMapsUri="https://maps.google.com/?q=-7.499777,112.487473"
-        bgColor="bg-green-wardah-primary"
+        bgColor="bg-rose-gold-primary"
         overlayBgColor="bg-white"
         overlayOpacity="bg-opacity-80"
-        textColor="text-rose-gold-dark"
+        textColor="text-white"
         buttonBgColor="bg-rose-gold-dark"
-        akadImagePath="/clients/claudia-leo/image1.jpeg"
-        resepsiImagePath="/clients/claudia-leo/image-5.jpeg"
+        bgImagePath="/clients/ayu-iqbal/image (2).jpg"
       />
 
       <RSVP
@@ -298,15 +297,17 @@ const Page = ({ comments }) => {
         succcess={rsvpSuccess}
         handleSubmit={handleRsvpSubmit}
         bgColor="bg-white"
-        textColor="text-green-wardah-dark"
+        textColor="text-rose-gold-dark"
         formBgColor="bg-white"
-        buttonBgColor="bg-green-wardah-dark"
+        buttonBgColor="bg-rose-gold-dark"
         padding="pt-40 md:pt-44 md:pb-32"
-      ></RSVP>
+      >
+        <DoubleWave color={waveColor} />
+      </RSVP>
 
       <AngpauWithConfirmation
         bgColor="bg-white"
-        textColor="text-green-wardah-dark"
+        textColor="text-rose-gold-dark"
         padding="pt-0 md:pt-0 pb-32"
         rekeningArray={[
           {
@@ -348,12 +349,12 @@ const Page = ({ comments }) => {
       </AngpauWithConfirmation>
 
       <GallerySlideShow
-        bgColor="bg-green-wardah-primary"
+        bgColor="bg-rose-gold-primary"
         textColor="text-white"
         imageData={imageData}
       />
 
-      <GalleryGrid height={400} width={400} imageData={imageData} />
+      {/* <GalleryGrid height={400} width={400} imageData={imageData} /> */}
 
       <GuestBookWithPopup
         comments={data}
@@ -367,10 +368,10 @@ const Page = ({ comments }) => {
         isLoading={guestBookIsLoading}
         handleSubmit={handleGuestBookSubmit}
         bgColor="bg-white"
-        bgHorizontalLine="bg-green-wardah-dark"
-        writeYourWishClassname="bg-green-wardah-dark text-white"
+        bgHorizontalLine="bg-rose-gold-dark"
+        writeYourWishClassname="bg-rose-gold-dark text-white"
         buttonTextColor="text-white"
-        buttonBgColor="bg-green-wardah-dark"
+        buttonBgColor="bg-rose-gold-dark"
       >
         {" "}
         <DoubleWave color={waveColor} />
@@ -378,20 +379,18 @@ const Page = ({ comments }) => {
       </GuestBookWithPopup>
 
       <Terimakasih
-        namaPengantin="Claudia & Leo"
-        bgColor="bg-green-wardah-primary"
+        namaPengantin="Ayu & Iqbal"
+        bgColor="bg-rose-gold-primary"
         textColor="text-white"
       />
 
       <InvitationFooter />
-
-      <div className="h-16"></div>
     </>
   )
 }
 
 export async function getServerSideProps() {
-  const res = await fetch(`https://katanikah.com/api/ayu-iqbal/comment`, {
+  const res = await fetch(`https://katanikah.com/api/claudia-leo/comment`, {
     method: "GET",
     headers: {
       "User-Agent":

@@ -34,14 +34,14 @@ export const Bismillah = ({
 }) => {
   return (
     <section
-      className={`${bgColor} ${textColor} py-16 px-8 md:px-48 flex flex-col items-center justify-center overflow-hidden`}
+      className={`${bgColor} ${textColor} pb-16 px-8 md:px-48 flex flex-col items-center justify-center overflow-hidden`}
     >
       <div className="flex flex-col items-center justify-center">
         <Fade bottom>
-          <p className="text-center mb-2 text-4xl">
+          <p className="text-center mb-4 text-2xl md:text-4xl">
             بِسْمِ اللهِ الرَّحْمنِ الرَّحِيمِ
           </p>
-          <p className="font-medium text-lg text-center">
+          <p className="text-lg text-center">
             In the Prayers and love of our parent, they raised us their
             daughter's and son's. Allah SWT unites our hearts to share love,
             hope and life together. We are pleased to announce our wedding :

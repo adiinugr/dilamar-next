@@ -40,7 +40,7 @@ export const Hero = ({
 
       <div className="h-full w-full absolute flex flex-col justify-center items-center">
         {initialText && (
-          <div className="text-lg md:text-8xl mb-16 font-display">
+          <div className="text-5xl md:text-8xl mb-16 font-display">
             {initialText}
           </div>
         )}

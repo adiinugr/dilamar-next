@@ -90,7 +90,9 @@ export const AngpauWithConfirmation = ({
   buttonBgColor
 }) => {
   return (
-    <div className={`${bgColor} ${textColor} flex flex-col md:px-80`}>
+    <div
+      className={`${bgColor} ${textColor} flex flex-col pb-6 px-8 pt-0 md:px-80`}
+    >
       <div className="flex flex-col items-center justify-center py-6">
         <AiOutlineGift size={50} />
         <div className="text-center mt-4 mb-2">
@@ -106,7 +108,7 @@ export const AngpauWithConfirmation = ({
           </div>
         ))}
       </div>
-      <div className={`w-4/5 ${borderColor} border-t-2 py-4 mx-auto`}>
+      {/* <div className={`w-4/5 ${borderColor} border-t-2 py-4 mx-auto`}>
         <form onSubmit={handleSubmit}>
           <div className="editor flex flex-col  max-w-2xl mt-2">
             {error && (
@@ -163,7 +165,7 @@ export const AngpauWithConfirmation = ({
             </div>
           </div>
         </form>
-      </div>
+      </div> */}
     </div>
   )
 }
