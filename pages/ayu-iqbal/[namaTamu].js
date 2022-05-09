@@ -216,7 +216,7 @@ const Page = ({ comments }) => {
         title="Ayu & Iqbal Wedding Invitation"
         description="Kami mengundang Bapak/Ibu, saudara, dan rekan-rekan semua untuk hadir di acara pernikahan kami."
         link="https://katanikah.com/ayu-iqbal/Nama+Tamu"
-        // imagePath="https://katanikah.com/clients/claudia-leo/meta-image-min.png"
+        imagePath="https://katanikah.com/clients/ayu-iqbal/meta-image.jpg"
       />
 
       {showPlayButton && (
@@ -324,7 +324,7 @@ const Page = ({ comments }) => {
           {
             id: 2,
             bankName: "Dana",
-            bankNo: "087755744464",
+            bankNo: "087755744364",
             bankUserName: "A.n Mohammad Iqbal Ali. M"
           },
           {
