@@ -110,7 +110,13 @@ const Page = ({ comments }) => {
   const [rsvpError, setRsvpError] = useState("")
   const [rsvpSuccess, setRsvpSuccess] = useState("")
 
-  const [modalIsOpen, setModalIsOpen] = useState(true)
+  const [angpauName, setAngpauName] = useState("")
+  const [angpauBank, setAngpauBank] = useState("")
+  const [angpauNominal, setAngpauNominal] = useState("")
+  const [rawValue, setRawValue] = useState(" ")
+  const [angpauIsLoading, setAngpauIsLoading] = useState(false)
+  const [angpauError, setAngpauError] = useState("")
+  const [angpauSuccess, setAngpauSuccess] = useState("")
 
   const [audio, setAudio] = useState(null)
   const [isAudioPlaying, setIsAudioPlaying] = useState(false)
@@ -210,6 +216,54 @@ const Page = ({ comments }) => {
     }
   }
 
+  const handleAngpauOnValueChange = (value) => {
+    setRawValue(value === undefined ? "undefined" : value || " ")
+
+    if (!value) {
+      setAngpauNominalNominal("")
+      return
+    }
+
+    if (Number.isNaN(Number(value))) {
+      setAngpauError("Masukkan Angka Saja!")
+      return
+    }
+
+    setAngpauNominal(value)
+  }
+
+  const handleAngpauSubmit = async (event) => {
+    event.preventDefault()
+
+    setAngpauIsLoading(true)
+
+    if (angpauName === "" && angpauBank === "" && angpauNominal === "") {
+      setAngpauSuccess("")
+      setAngpauError("Harus diisi semua ya!")
+      setAngpauIsLoading(false)
+    } else {
+      const res = await fetch(`/api/roy-ririk/angpau`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          name: angpauName,
+          bank: angpauBank,
+          nominal: angpauNominal
+        })
+      })
+
+      setAngpauIsLoading(false)
+      setAngpauError("")
+      setAngpauSuccess("Konfirmasi Angpau Online Berhasil Dikirim!")
+
+      setAngpauName("")
+      setAngpauBank("")
+      setAngpauNominal("")
+    }
+  }
+
   return (
     <>
       <InvitationHead
@@ -279,7 +333,7 @@ const Page = ({ comments }) => {
         bulanAcara="Mei"
         tahunAcara="2022"
         waktuAkad="Pukul 08.00 WIB"
-        waktuResepsi="Pukul 11.00 WIB"
+        waktuResepsi="Pukul 11.00 - 18.00 WIB"
         alamatTempat="Dsn. Pudakpulo RT. 11 RW.4 Ds. Puloniti Bangsal, Kab. Mojokerto, Jawa Timur (Depan Poliklinik SPN)"
         googleMapsUri="https://maps.google.com/?q=-7.499777,112.487473"
         bgColor="bg-rose-gold-primary"
@@ -287,7 +341,7 @@ const Page = ({ comments }) => {
         overlayOpacity="bg-opacity-80"
         textColor="text-white"
         buttonBgColor="bg-rose-gold-dark"
-        bgImagePath="/clients/ayu-iqbal/image (2).jpg"
+        bgImagePath="/clients/ayu-iqbal/image (23).jpg"
       />
 
       <RSVP
@@ -311,6 +365,16 @@ const Page = ({ comments }) => {
       </RSVP>
 
       <AngpauWithConfirmation
+        name={angpauName}
+        setName={(e) => setAngpauName(e.target.value)}
+        bank={angpauBank}
+        setBank={(e) => setAngpauBank(e.target.value)}
+        nominal={angpauNominal}
+        setNominal={handleAngpauOnValueChange}
+        error={angpauError}
+        succcess={angpauSuccess}
+        handleSubmit={handleAngpauSubmit}
+        isLoading={angpauIsLoading}
         bgColor="bg-white"
         textColor="text-rose-gold-dark"
         padding="pt-0 md:pt-0 pb-32"

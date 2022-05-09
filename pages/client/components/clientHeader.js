@@ -1,9 +1,9 @@
-import Link from "next/link";
+import Link from "next/link"
 
 const ClientHeader = ({ headerTitle = "RSVP", namaClient }) => {
-  const nama = namaClient || "Nama Client";
+  const nama = namaClient || "Nama Client"
 
-  const formatedNama = nama.replace("-", " & ").toUpperCase();
+  const formatedNama = nama.replace("-", " & ").toUpperCase()
 
   return (
     <header className="bg-dark text-gray-50 px-4 md:px-36 fixed z-20 w-screen">
@@ -13,9 +13,9 @@ const ClientHeader = ({ headerTitle = "RSVP", namaClient }) => {
           <div className="mr-4 font-poppins">{formatedNama}</div>
         </div>
       </div>
-      <h1 className="text-white text-center py-4 text-2xl">RSVP</h1>
+      <h1 className="text-white text-center py-4 text-2xl">{headerTitle}</h1>
     </header>
-  );
-};
+  )
+}
 
-export default ClientHeader;
+export default ClientHeader
