@@ -390,7 +390,7 @@ const Page = ({ comments }) => {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch(`https://katanikah.com/api/claudia-leo/comment`, {
+  const res = await fetch(`https://katanikah.com/api/ayu-iqbal/comment`, {
     method: "GET",
     headers: {
       "User-Agent":
