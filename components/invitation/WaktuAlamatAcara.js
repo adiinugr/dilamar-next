@@ -558,40 +558,56 @@ export const WaktuAlamatAcaraSix = ({
       )}
       <div className="bg-gray-700 opacity-50 absolute h-full z-10 w-full top-0 left-0"></div>
 
-      <div className="text-center z-20 absolute h-full top-0 left-0 p-10">
-        <p className="text-lg mb-8">
-          Merupakan suatu kehormatan dan kebahagiaan bagi kami, apabila
-          Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu kepada
-          mempelai
-        </p>
-        <p className="text-lg font-semibold">{hariAcara}</p>
+      <div className="text-center z-20 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full px-8">
+        <Fade top>
+          <p className="text-lg mb-8">
+            Merupakan suatu kehormatan dan kebahagiaan bagi kami, apabila
+            Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu kepada
+            mempelai
+          </p>
+        </Fade>
+        <Fade top>
+          <p className="text-lg font-semibold">{hariAcara}</p>
+        </Fade>
         <div className="flex justify-center items-center h-20">
-          <p className="text-8xl">{tanggalAcara}</p>
-          <div className="text-left font-semibold ml-1 text-lg flex flex-col justify-around h-full">
-            <p>{bulanAcara}</p>
-            <p>{tahunAcara}</p>
-          </div>
+          <Fade left>
+            <p className="text-8xl">{tanggalAcara}</p>
+          </Fade>
+          <Fade right>
+            <div className="text-left font-semibold ml-1 text-lg flex flex-col justify-around h-full">
+              <p>{bulanAcara}</p>
+              <p>{tahunAcara}</p>
+            </div>
+          </Fade>
         </div>
         <div className="flex justify-around my-4">
-          <div>
-            <p className="font-yellowtail text-3xl">Akad Nikah</p>
-            <p>{waktuAkad}</p>
-          </div>
-          <div>
-            <p className="font-yellowtail text-3xl">Resepsi</p>
-            <p>{waktuResepsi}</p>
-          </div>
+          <Fade bottom>
+            <div>
+              <p className="font-yellowtail text-3xl">Akad Nikah</p>
+              <p>{waktuAkad}</p>
+            </div>
+          </Fade>
+          <Fade bottom>
+            <div>
+              <p className="font-yellowtail text-3xl">Resepsi</p>
+              <p>{waktuResepsi}</p>
+            </div>
+          </Fade>
         </div>
         <div className="mt-8">
-          <p className="text-lg font-semibold mb-4">{alamatTempat}</p>
-          <a
-            href={googleMapsUri}
-            target="_blank"
-            rel="noreferrer"
-            className={`${buttonBgColor} ${buttonTextColor} mt-4 rounded-md py-2 px-6 cursor-pointer`}
-          >
-            <MdLocationOn size={20} className="inline" /> Open Google Maps
-          </a>
+          <Fade bottom>
+            <p className="text-lg font-semibold mb-4">{alamatTempat}</p>
+          </Fade>
+          <Fade bottom>
+            <a
+              href={googleMapsUri}
+              target="_blank"
+              rel="noreferrer"
+              className={`${buttonBgColor} ${buttonTextColor} mt-4 rounded-md py-2 px-6 cursor-pointer`}
+            >
+              <MdLocationOn size={20} className="inline" /> Open Google Maps
+            </a>
+          </Fade>
         </div>
       </div>
     </div>

@@ -40,6 +40,7 @@ import {
 } from "components/invitation/Angpau"
 import TextAnimation from "components/invitation/parts/TextAnimation"
 import Image from "next/image"
+import { Fade } from "react-reveal"
 
 const imageData = [
   {
@@ -257,7 +258,11 @@ const Page = ({ comments }) => {
       />
 
       <section className="relative w-full bg-rose-gold-primary px-8 py-16 text-center">
-        <p className="font-yellowtail text-4xl mb-7 text-white">12 Mei 2022</p>
+        <Fade top>
+          <p className="font-yellowtail text-4xl mb-7 text-white">
+            12 Mei 2022
+          </p>
+        </Fade>
         <TextAnimation />
         <DateCountdown
           position="static mx-auto"
@@ -319,7 +324,7 @@ const Page = ({ comments }) => {
           {
             id: 2,
             bankName: "Dana",
-            bankNo: "087755744463",
+            bankNo: "087755744464",
             bankUserName: "A.n Mohammad Iqbal Ali. M"
           },
           {

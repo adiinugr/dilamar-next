@@ -1,5 +1,6 @@
 import Image from "next/image"
 import dynamic from "next/dynamic"
+import { Fade } from "react-reveal"
 
 const Snowfall = dynamic(() => import("react-snowfall"), { ssr: false })
 
@@ -40,13 +41,17 @@ export const Hero = ({
 
       <div className="h-full w-full absolute flex flex-col justify-center items-center">
         {initialText && (
-          <div className="text-5xl md:text-8xl mb-16 font-display">
-            {initialText}
-          </div>
+          <Fade bottom>
+            <div className="text-5xl md:text-8xl mb-16 font-display">
+              {initialText}
+            </div>
+          </Fade>
         )}
-        <div className="text-lg md:text-xl">{titleText}</div>
-        <div className={`font-yellowtail ${nameTextSize} my-4`}>{name}</div>
-        <div className="text-xl md:text-xl">{date}</div>
+        <Fade bottom>
+          <div className="text-lg md:text-xl">{titleText}</div>
+          <div className={`font-yellowtail ${nameTextSize} my-4`}>{name}</div>
+          <div className="text-xl md:text-xl">{date}</div>
+        </Fade>
       </div>
 
       {isSnow && (

@@ -94,18 +94,24 @@ export const AngpauWithConfirmation = ({
       className={`${bgColor} ${textColor} flex flex-col pb-6 px-8 pt-0 md:px-80`}
     >
       <div className="flex flex-col items-center justify-center py-6">
-        <AiOutlineGift size={50} />
-        <div className="text-center mt-4 mb-2">
-          Terimakasih atas doa dan restu yang telah Anda berikan. Namun apabila
-          Anda ingin mengirimkan kado, silakan kirim ke rekening di bawah ini.
-          Kami mengucapkan banyak terimakasih.
-        </div>
-        {rekeningArray.map((rekening) => (
-          <div key={rekening.id} className="text-center mb-2">
-            <p className="font-bold">{rekening.bankName}</p>
-            <p className="font-semibold">{rekening.bankNo}</p>
-            <p>{rekening.bankUserName}</p>
+        <Fade bottom>
+          <AiOutlineGift size={50} />
+        </Fade>
+        <Fade bottom>
+          <div className="text-center mt-4 mb-2">
+            Terimakasih atas doa dan restu yang telah Anda berikan. Namun
+            apabila Anda ingin mengirimkan kado, silakan kirim ke rekening di
+            bawah ini. Kami mengucapkan banyak terimakasih.
           </div>
+        </Fade>
+        {rekeningArray.map((rekening) => (
+          <Fade bottom>
+            <div key={rekening.id} className="text-center mb-2">
+              <p className="font-bold">{rekening.bankName}</p>
+              <p className="font-semibold">{rekening.bankNo}</p>
+              <p>{rekening.bankUserName}</p>
+            </div>
+          </Fade>
         ))}
       </div>
       {/* <div className={`w-4/5 ${borderColor} border-t-2 py-4 mx-auto`}>

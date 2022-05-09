@@ -194,48 +194,71 @@ export const NamaPengantin4 = ({
     >
       <div className="flex flex-col items-center justify-center">
         <div className="text-center font-body">
-          <Image
-            src={imagePathWanita}
-            width={250}
-            height={250}
-            className="rounded-full"
-          />
-          <p className="font-yellowtail text-4xl mb-1">{namaWanita}</p>
-          <p className="font-bold">{namaLengkapWanita}</p>
-          <p>{ortuWanita}</p>
+          <Fade bottom>
+            <Image
+              src={imagePathWanita}
+              width={250}
+              height={250}
+              className="rounded-full"
+            />
+          </Fade>
+          <Fade bottom>
+            <p className="font-yellowtail text-4xl mb-1">{namaWanita}</p>
+          </Fade>
+          <Fade bottom>
+            <p className="font-bold">{namaLengkapWanita}</p>
+          </Fade>
+          <Fade bottom>
+            <p>{ortuWanita}</p>
+          </Fade>
           {igWanita && (
-            <div className="mt-3">
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                className="font-bold"
-              >
-                <FaInstagram className="inline font-bold" /> @{igWanita}
-              </a>
-            </div>
+            <Fade bottom>
+              <div className="mt-3">
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  className="font-bold"
+                >
+                  <FaInstagram className="inline font-bold" /> @{igWanita}
+                </a>
+              </div>
+            </Fade>
           )}
         </div>
-        <div className="text-center font-yellowtail text-9xl my-10">&</div>
+        <Fade bottom>
+          <div className="text-center font-yellowtail text-9xl my-10">&</div>
+        </Fade>
         <div className="text-center font-body">
-          <Image
-            src={imagePathPria}
-            width={250}
-            height={250}
-            className="rounded-full"
-          />
-          <p className="font-yellowtail text-4xl mb-1">{namaPria}</p>
-          <p className="font-body">{namaLengkapPria}</p>
-          <p>{ortuPria}</p>
+          <Fade bottom>
+            <Image
+              src={imagePathPria}
+              width={250}
+              height={250}
+              className="rounded-full"
+            />
+          </Fade>
+          <Fade bottom>
+            <p className="font-yellowtail text-4xl mb-1">{namaPria}</p>
+          </Fade>
+
+          <Fade bottom>
+            <p className="font-body">{namaLengkapPria}</p>
+          </Fade>
+          <Fade bottom>
+            <p>{ortuPria}</p>
+          </Fade>
           {igPria && (
-            <div className="mt-3">
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                className="font-bold"
-              >
-                <FaInstagram className="inline font-bold" /> @{igPria}
-              </a>
-            </div>
+            <Fade bottom>
+              <div className="mt-3">
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  className="font-bold"
+                >
+                  <FaInstagram className="inline font-bold" /> @{igPria}
+                </a>
+              </div>
+            </Fade>
           )}
         </div>
       </div>
