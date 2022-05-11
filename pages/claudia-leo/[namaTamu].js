@@ -1,31 +1,31 @@
-import React, { useEffect, useState } from "react";
-import ReactModal from "react-modal";
-import { useRouter } from "next/router";
+import React, { useEffect, useState } from "react"
+import ReactModal from "react-modal"
+import { useRouter } from "next/router"
 import {
   HiOutlineCalendar,
   HiOutlineHeart,
   HiOutlineHome,
   HiOutlinePhotograph,
   HiOutlineBookOpen
-} from "react-icons/hi";
+} from "react-icons/hi"
 
-import { BottomTabMenu } from "components/invitation/parts/BottomTabMenu";
-import InvitationHead from "components/invitation/parts/InvitationHead";
-import { OpeningModalStandard } from "components/invitation/OpeningModal";
-import { Hero } from "components/invitation/Hero";
-import { QsArrum21 } from "components/invitation/Ayyat";
-import { NamaPengantinThree } from "components/invitation/NamaPengantin";
-import { StoryTwo } from "components/invitation/Story";
-import { DoubleWave } from "components/invitation/parts/Divider";
-import { WaktuAlamatAcaraFour } from "components/invitation/WaktuAlamatAcara";
-import RSVP from "components/invitation/RSVP";
-import { GallerySlideShow } from "components/invitation/Gallery";
-import { GuestBookWithPopup } from "components/invitation/GuestBook";
-import Terimakasih from "components/invitation/Terimakasih";
-import InvitationFooter from "components/invitation/InvitationFooter";
-import DateCountdown from "components/invitation/DateCountdown";
-import PlayerButton from "components/invitation/parts/PlayerButton";
-import { AngpauWithoutConfirmation } from "components/invitation/Angpau";
+import { BottomTabMenu } from "components/invitation/parts/BottomTabMenu"
+import InvitationHead from "components/invitation/parts/InvitationHead"
+import { OpeningModalStandard } from "components/invitation/OpeningModal"
+import { Hero } from "components/invitation/Hero"
+import { QsArrum21 } from "components/invitation/Ayyat"
+import { NamaPengantinThree } from "components/invitation/NamaPengantin"
+import { StoryTwo } from "components/invitation/Story"
+import { DoubleWave } from "components/invitation/parts/Divider"
+import { WaktuAlamatAcaraFour } from "components/invitation/WaktuAlamatAcara"
+import RSVP from "components/invitation/RSVP"
+import { GallerySlideShow } from "components/invitation/Gallery"
+import { GuestBookWithPopup } from "components/invitation/GuestBook"
+import Terimakasih from "components/invitation/Terimakasih"
+import InvitationFooter from "components/invitation/InvitationFooter"
+import DateCountdown from "components/invitation/DateCountdown"
+import PlayerButton from "components/invitation/parts/PlayerButton"
+import { AngpauWithoutConfirmation } from "components/invitation/Angpau"
 
 const bottomMenuData = [
   {
@@ -58,7 +58,7 @@ const bottomMenuData = [
     title: "Gallery",
     iconName: <HiOutlinePhotograph size={26} />
   }
-];
+]
 
 const imageData = [
   {
@@ -106,74 +106,74 @@ const imageData = [
     type: "image",
     src: "/clients/claudia-leo/image-12.jpeg"
   }
-];
+]
 
 const Page = ({ comments }) => {
-  const [data, setData] = useState(comments);
+  const [data, setData] = useState(comments)
 
-  const router = useRouter();
-  const { namaTamu } = router.query;
-  const tamu = namaTamu.replace("+", " ");
+  const router = useRouter()
+  const { namaTamu } = router.query
+  const tamu = namaTamu.replace("+", " ")
 
-  const [guestBookName, setGuestBookName] = useState("");
-  const [guestBookComment, setGuestBookComment] = useState("");
-  const [guestBookIsLoading, setGuestBookIsLoading] = useState(false);
-  const [guestBookError, setGuestBookError] = useState("");
-  const [guestBookSuccess, setGuestBookSuccess] = useState("");
+  const [guestBookName, setGuestBookName] = useState("")
+  const [guestBookComment, setGuestBookComment] = useState("")
+  const [guestBookIsLoading, setGuestBookIsLoading] = useState(false)
+  const [guestBookError, setGuestBookError] = useState("")
+  const [guestBookSuccess, setGuestBookSuccess] = useState("")
 
-  const [rsvpName, setRsvpName] = useState("");
-  const [rsvpAddress, setRsvpAddress] = useState("");
-  const [rsvpStatus, setRsvpStatus] = useState("");
-  const [rsvpIsLoading, setRsvpIsLoading] = useState(false);
-  const [rsvpError, setRsvpError] = useState("");
-  const [rsvpSuccess, setRsvpSuccess] = useState("");
+  const [rsvpName, setRsvpName] = useState("")
+  const [rsvpAddress, setRsvpAddress] = useState("")
+  const [rsvpStatus, setRsvpStatus] = useState("")
+  const [rsvpIsLoading, setRsvpIsLoading] = useState(false)
+  const [rsvpError, setRsvpError] = useState("")
+  const [rsvpSuccess, setRsvpSuccess] = useState("")
 
-  const [modalIsOpen, setModalIsOpen] = useState(true);
+  const [modalIsOpen, setModalIsOpen] = useState(true)
 
-  const [audio, setAudio] = useState(null);
-  const [isAudioPlaying, setIsAudioPlaying] = useState(false);
-  const [showPlayButton, setShowPlayButton] = useState(false);
+  const [audio, setAudio] = useState(null)
+  const [isAudioPlaying, setIsAudioPlaying] = useState(false)
+  const [showPlayButton, setShowPlayButton] = useState(false)
 
-  const date = new Date("28 May 2022 08:00 UTC+7");
-  const isoDate = date.toISOString();
+  const date = new Date("28 May 2022 08:00 UTC+7")
+  const isoDate = date.toISOString()
 
-  const waveColor = "#8EB7A2";
+  const waveColor = "#8EB7A2"
 
   useEffect(() => {
-    setAudio(new Audio("/clients/claudia-leo/naif.mp3"));
+    setAudio(new Audio("/clients/claudia-leo/naif.mp3"))
 
     return () => {
       if (audio) {
-        audio.pause();
-        setIsAudioPlaying(false);
+        audio.pause()
+        setIsAudioPlaying(false)
       }
-    };
-  }, []);
+    }
+  }, [])
 
   const handlePlayMusic = () => {
-    audio.play();
-    setIsAudioPlaying(true);
-  };
+    audio.play()
+    setIsAudioPlaying(true)
+  }
 
   const handlePauseMusic = () => {
-    audio.pause();
-    setIsAudioPlaying(false);
-  };
+    audio.pause()
+    setIsAudioPlaying(false)
+  }
 
   const handleOpenModal = () => {
-    setModalIsOpen(false);
-    setShowPlayButton(true);
-    handlePlayMusic();
-  };
+    setModalIsOpen(false)
+    setShowPlayButton(true)
+    handlePlayMusic()
+  }
 
   const handleGuestBookSubmit = async (event) => {
-    event.preventDefault();
+    event.preventDefault()
 
-    setGuestBookIsLoading(true);
+    setGuestBookIsLoading(true)
 
     if (guestBookName === "" || guestBookComment === "") {
-      setGuestBookError("Harus diisi semua ya!");
-      setGuestBookIsLoading(false);
+      setGuestBookError("Harus diisi semua ya!")
+      setGuestBookIsLoading(false)
     } else {
       const res = await fetch(`/api/claudia-leo/comment`, {
         method: "POST",
@@ -184,7 +184,7 @@ const Page = ({ comments }) => {
           name: guestBookName,
           message: guestBookComment
         })
-      });
+      })
 
       setData((prevData) => [
         ...prevData,
@@ -192,25 +192,25 @@ const Page = ({ comments }) => {
           name: guestBookName,
           message: guestBookComment
         }
-      ]);
+      ])
 
-      setGuestBookIsLoading(false);
+      setGuestBookIsLoading(false)
 
-      setGuestBookSuccess("Selamat! Pesanmu berhasil dikirim.");
-      setGuestBookName("");
-      setGuestBookComment("");
+      setGuestBookSuccess("Selamat! Pesanmu berhasil dikirim.")
+      setGuestBookName("")
+      setGuestBookComment("")
     }
-  };
+  }
 
   const handleRsvpSubmit = async (event) => {
-    event.preventDefault();
+    event.preventDefault()
 
-    setRsvpIsLoading(true);
+    setRsvpIsLoading(true)
 
     if (rsvpName === "" || rsvpStatus === "" || rsvpAddress === "") {
-      setRsvpSuccess("");
-      setRsvpError("Harus diisi semua ya!");
-      setRsvpIsLoading(false);
+      setRsvpSuccess("")
+      setRsvpError("Harus diisi semua ya!")
+      setRsvpIsLoading(false)
     } else {
       const res = await fetch(`/api/claudia-leo/rsvp`, {
         method: "POST",
@@ -222,17 +222,17 @@ const Page = ({ comments }) => {
           address: rsvpAddress,
           status: rsvpStatus
         })
-      });
+      })
 
-      setRsvpIsLoading(false);
-      setRsvpError("");
-      setRsvpSuccess("Status Kehadiran Berhasil Dikirim!");
+      setRsvpIsLoading(false)
+      setRsvpError("")
+      setRsvpSuccess("Status Kehadiran Berhasil Dikirim!")
 
-      setRsvpName("");
-      setRsvpAddress("");
-      setRsvpStatus("");
+      setRsvpName("")
+      setRsvpAddress("")
+      setRsvpStatus("")
     }
-  };
+  }
 
   return (
     <>
@@ -339,7 +339,7 @@ Ibu Ika Puspitasari S.Pd (Pengawas Korwil Cibodas)"
           date={isoDate}
           bgColor="bg-white"
           shadow="shadow-blur-20"
-          position="left-1/2 transform -translate-x-1/2 -top-24 md:-top-32"
+          position="w-5/6 absolute left-1/2 transform -translate-x-1/2 -top-24 md:-top-32"
         />
       </RSVP>
 
@@ -393,8 +393,8 @@ Ibu Ika Puspitasari S.Pd (Pengawas Korwil Cibodas)"
 
       <div className="h-16"></div>
     </>
-  );
-};
+  )
+}
 
 export async function getServerSideProps() {
   const res = await fetch(`https://katanikah.com/api/claudia-leo/comment`, {
@@ -404,21 +404,21 @@ export async function getServerSideProps() {
         "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36",
       Accept: "application/json; charset=UTF-8"
     }
-  });
-  const data = await res.json();
-  const comments = await data.data;
+  })
+  const data = await res.json()
+  const comments = await data.data
 
   const getData = () => {
     if (comments) {
-      return comments;
+      return comments
     } else {
-      return [];
+      return []
     }
-  };
+  }
 
   return {
     props: { comments: getData() }
-  };
+  }
 }
 
-export default Page;
+export default Page
