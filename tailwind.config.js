@@ -1,6 +1,9 @@
 module.exports = {
-  purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
-  darkMode: false, // or 'media' or 'class'
+  mode: "jit",
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}"
+  ],
   theme: {
     extend: {
       colors: {
@@ -28,6 +31,8 @@ module.exports = {
         main: "#DBAC94",
         dark: "#604A3E",
         light: "#F8E9DB",
+        black: "#0e1111",
+        lanzones: "#ddc277",
         brown: {
           primary: "#8A5010",
           light: "#E89438",
@@ -86,7 +91,7 @@ module.exports = {
           dark: "#180C0E"
         }
       },
-      height: {
+      spacing: {
         128: "32rem",
         144: "36rem",
         160: "40rem"
@@ -94,6 +99,10 @@ module.exports = {
       boxShadow: {
         "blur-16": "0px 0px 16px 0px rgba(0,0,0,0.25)",
         "blur-20": "0px 0px 20px rgba(69, 40, 8, 0.2)"
+      },
+      rotate: {
+        17: "17deg",
+        20: "20deg"
       }
     },
     fontFamily: {
@@ -103,7 +112,8 @@ module.exports = {
       poppins: ["Poppins", "sans-serif"],
       sacramento: ["Sacramento", "cursive"],
       shadows: ["Shadows Into Light", "cursive"],
-      yellowtail: ["Yellowtail", "cursive"]
+      yellowtail: ["Yellowtail", "cursive"],
+      "honey-carrot": ["honey-carrot", "cursive"]
     }
   },
   variants: {

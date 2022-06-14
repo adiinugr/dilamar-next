@@ -24,6 +24,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  @font-face {
+    font-family: "honey-carrot";
+    src: url("/fonts/Honey-Carrot.woff2") format("woff2");
+    font-weight: 500;
+    font-display: swap;
+    font-style: normal;
+  }
+}
+
 .flip-vertical {
   transform: scaleY(-1);
 }
@@ -84,5 +94,63 @@
   100% {
     stroke-dashoffset: 0;
     fill: #e0dcdc;
+  }
+}
+
+/* Gunungan */
+
+.gunungan-left {
+  transform: rotate(20deg);
+}
+
+.gunungan-right {
+  transform: rotate(-20deg);
+}
+
+.rotate-right {
+  animation: rotate-right 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.rotate-left {
+  animation: rotate-left 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes rotate-right {
+  0% {
+    transform: rotate(0);
+    transform-origin: 100% 100%;
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes rotate-left {
+  0% {
+    transform: rotate(0);
+    transform-origin: 0 100%;
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+    opacity: 0;
+  }
+}
+
+/* Modal Opacity */
+.modal-opacity {
+  animation: modal-opacity 1s ease-in-out forwards;
+}
+
+@keyframes modal-opacity {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -100%;
   }
 }

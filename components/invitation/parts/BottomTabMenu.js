@@ -1,5 +1,5 @@
-import React from "react";
-import { Link as ScrollLink } from "react-scroll";
+import React from "react"
+import { Link as ScrollLink } from "react-scroll"
 
 export const BottomTabMenu = ({
   textColor = "text-gray-800",
@@ -19,5 +19,5 @@ export const BottomTabMenu = ({
         </ScrollLink>
       ))}
     </div>
-  );
-};
+  )
+}

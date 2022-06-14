@@ -10,11 +10,11 @@ const DateCountdown = ({
   textColor = "text-gray-700",
   shadow,
   countdownTitle = " Counting Down to Our Beautiful Day",
-  position = "absolute"
+  position
 }) => {
   return (
     <div
-      className={`${bgColor} ${textColor} ${shadow} ${position} px-8 py-6 md:px-12 md:py-10 md:w-1/3 flex justify-center items-center overflow-hidden rounded-bl-3xl rounded-tr-3xl`}
+      className={`${bgColor} ${textColor} ${shadow} ${position} px-8 py-6 w-5/6 md:px-12 md:py-10 md:w-1/3 flex justify-center items-center overflow-hidden rounded-bl-3xl rounded-tr-3xl absolute`}
     >
       <Fade>
         <div className="flex flex-col">
