@@ -26,7 +26,7 @@ function Gunungan({
 
   return (
     <div
-      className={`w-full h-full absolute overflow-hidden ${modalOpacity} z-30 sticky`}
+      className={`w-full h-full absolute overflow-hidden ${modalOpacity} z-30`}
     >
       <div className="absolute h-full w-full">
         <Image
