@@ -2,6 +2,9 @@ import Image from "next/image"
 import { Fade } from "react-reveal"
 import Slider from "react-slick"
 
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
+
 export const SlideShow = ({
   bgColor = "bg-gray-600",
   textColor = "text-gray-200",
