@@ -220,7 +220,7 @@ const Page = ({ comments }) => {
       : (document.body.style.overflow = "hidden")
 
     return () => {
-      isScroll(true)
+      setIsScroll(true)
     }
   }, [isScroll])
 
