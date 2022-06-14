@@ -218,6 +218,10 @@ const Page = ({ comments }) => {
     isScroll
       ? (document.body.style.overflow = "unset")
       : (document.body.style.overflow = "hidden")
+
+    return () => {
+      isScroll(true)
+    }
   }, [isScroll])
 
   const handlePlayMusic = () => {
