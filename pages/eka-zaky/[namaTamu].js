@@ -25,6 +25,8 @@ import { SlideShow } from "components/invitation/gallery/SlideShow"
 import Grid from "components/invitation/gallery/Grid"
 import SimpleForm from "components/invitation/rsvp/SimpleForm"
 import WithModal from "components/invitation/guest-book/WithModal"
+import Image from "next/image"
+import RectangularFadeImage from "components/invitation/couple/RectangularFadeImage"
 
 const bottomMenuData = [
   {
@@ -319,6 +321,25 @@ const Page = ({ comments }) => {
         />
       )}
 
+      <div className="fixed top-1/2 -left-10 z-10">
+        <Image
+          src="/clients/eka-zaky/wayang-right.png"
+          width={160}
+          height={250}
+          objectFit="contain"
+          className="opacity-10"
+        />
+      </div>
+      <div className="fixed top-1/2 -right-10 z-10">
+        <Image
+          src="/clients/eka-zaky/wayang-left.png"
+          width={160}
+          height={250}
+          objectFit="contain"
+          className="opacity-10"
+        />
+      </div>
+
       <BottomTabMenu
         textColor="text-lanzones"
         bgColor="bg-black"
@@ -345,13 +366,13 @@ const Page = ({ comments }) => {
 
       <ImageAndMessage
         message="Kanthi nyadhong rahmating  Gusti Allah SWT Ingkang Maha Asih, keparenga kula hangaturi rawuh Panjenengan sami wonten adicara pahargyan pawiwahan kula"
-        imageUrl="/clients/eka-zaky/javanese-couple.png"
+        imageUrl="/clients/eka-zaky/wayang-tegak.png"
         bgColor="bg-black"
         textColor="text-lanzones"
         padding="pt-0 pb-0"
       />
 
-      <RusticCircleImage
+      <RectangularFadeImage
         namaWanita="Eka Praditya Muslikhah Cahyani, S.Pd"
         ortuWanita="Putra estri Bpk Agus Supriyanta & Ibu Siwi Catur Handayani"
         namaPria="Muhamad Rozzaqi, S.Pd"
@@ -370,7 +391,7 @@ const Page = ({ comments }) => {
             className="mb-4 mx-auto"
           />
         </Fade>
-      </RusticCircleImage>
+      </RectangularFadeImage>
 
       <OnlyText
         tanggalAkad="Rebo Pon, 6 Juli 2022"
@@ -395,6 +416,7 @@ const Page = ({ comments }) => {
       />
 
       <BigDay
+        title="Wektu Mundur"
         bgColor="bg-black"
         textColor="text-lanzones"
         date={isoDate}
@@ -402,6 +424,7 @@ const Page = ({ comments }) => {
       />
 
       <SimpleForm
+        subTitle="Mugi saged rawuh"
         name={rsvpName}
         setName={(e) => setRsvpName(e.target.value)}
         address={rsvpAddress}
@@ -430,6 +453,8 @@ const Page = ({ comments }) => {
       />
 
       <WithModal
+        title="Buku Tamu"
+        buttonTitle="Pangajab"
         comments={data}
         name={guestBookName}
         setName={(e) => setGuestBookName(e.target.value)}

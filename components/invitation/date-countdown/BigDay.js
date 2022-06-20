@@ -1,6 +1,7 @@
 import Image from "next/image"
 import React from "react"
 import Countdown from "react-countdown"
+import Moment from "react-moment"
 import { Fade } from "react-reveal"
 
 const Renderer = ({ days, hours, minutes, seconds, completed }) => {
@@ -40,7 +41,14 @@ const Renderer = ({ days, hours, minutes, seconds, completed }) => {
   }
 }
 
-function BigDay({ bgColor, textColor, padding, children, date }) {
+function BigDay({
+  title = "Waktu Mundur",
+  bgColor,
+  textColor,
+  padding,
+  children,
+  date
+}) {
   return (
     <div
       className={`${bgColor} ${textColor} relative py-16 px-8 md:px-32 md:py-72 ${padding}`}
@@ -58,10 +66,12 @@ function BigDay({ bgColor, textColor, padding, children, date }) {
       </Fade>
       <Fade>
         <h1 className="font-honey-carrot text-center text-[44px] mb-4">
-          Wektu Mundur
+          {title}
         </h1>
         <Countdown date={Date.parse(date)} renderer={Renderer} />
-        <p className="text-center mt-3 font-poppins">12 Juni 2021</p>
+        <p className="text-center mt-3 font-poppins">
+          <Moment format="DD MMM YYYY">{date}</Moment>
+        </p>
       </Fade>
       <div className="text-center transform rotate-180">
         <Fade bottom>

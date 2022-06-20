@@ -9,6 +9,8 @@ import { Fade } from "react-reveal"
 import Form from "../parts/Form"
 
 const WithModal = ({
+  title = "Guest Book",
+  buttonTitle = "Write your wish",
   comments,
   name,
   setName,
@@ -96,14 +98,14 @@ const WithModal = ({
 
         <Fade bottom>
           <h1 className="text-center font-honey-carrot text-5xl mb-8">
-            Guest Book
+            {title}
           </h1>
           <div
             onClick={commentDisable ? null : () => setIsOpenModal(true)}
             className={`${writeYourWishClassname} py-2 px-4 flex items-center w-auto justify-center cursor-pointer rounded-md`}
           >
             <AiOutlineComment size={20} />
-            <div className="ml-2">Write your wish</div>
+            <div className="ml-2">{buttonTitle}</div>
           </div>
           <hr className={`${bgHorizontalLine} h-1 my-8`} />
         </Fade>

@@ -1,5 +1,5 @@
-import React from "react";
-import { HiPlay, HiPause } from "react-icons/hi";
+import React from "react"
+import { HiPlay, HiPause } from "react-icons/hi"
 
 const PlayerButton = ({
   handlePlayMusic,
@@ -9,7 +9,7 @@ const PlayerButton = ({
   buttonPauseTextColor = "text-red-700"
 }) => {
   return (
-    <div className="fixed z-30 h-10 w-10 right-5 top-1/2">
+    <div className="fixed z-40 h-10 w-10 right-5 top-1/2">
       {isAudioPlaying ? (
         <HiPause
           className={`cursor-pointer w-full h-full bg-white rounded-full ${buttonPauseTextColor}`}
@@ -22,7 +22,7 @@ const PlayerButton = ({
         />
       )}
     </div>
-  );
-};
+  )
+}
 
-export default PlayerButton;
+export default PlayerButton

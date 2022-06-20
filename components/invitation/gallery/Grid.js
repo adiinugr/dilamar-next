@@ -36,7 +36,7 @@ const Grid = ({
               height={height}
               width={width}
               objectFit="cover"
-              className="rounded-lg"
+              className="rounded-lg z-20"
             />
           ))}
         </div>

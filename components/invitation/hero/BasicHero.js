@@ -23,7 +23,7 @@ const BasicHero = ({
   return (
     <section
       id="hero"
-      className={`h-screen relative ${bgColor} ${textColor} overflow-hidden`}
+      className={`h-screen relative ${bgColor} ${textColor} overflow-hidden z-30`}
     >
       {imagePath && (
         <Image

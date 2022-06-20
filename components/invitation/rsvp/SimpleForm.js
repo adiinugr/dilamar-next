@@ -1,6 +1,7 @@
 import { Fade } from "react-reveal"
 
 const SimpleForm = ({
+  subTitle = "Konfirmasi kehadiranmu di sini!",
   name,
   setName,
   address,
@@ -32,7 +33,7 @@ const SimpleForm = ({
         <Fade bottom>
           <div className="flex flex-col items-center justify-center mb-8">
             <div className="font-honey-carrot text-4xl mb-3">RSVP</div>
-            <div className="text-center">Konfirmasi kehadiranmu di sini!</div>
+            <div className="text-center">{subTitle}</div>
           </div>
         </Fade>
         <Fade bottom>

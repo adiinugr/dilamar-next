@@ -12,7 +12,7 @@ function ImageAndMessage({
 }) {
   return (
     <section
-      className={`${bgColor} ${textColor} py-16 px-8 md:px-48 flex flex-col items-center justify-center overflow-hidden ${padding}`}
+      className={`${bgColor} ${textColor} py-16 px-8 md:px-48 flex flex-col items-center justify-center overflow-hidden ${padding} relative`}
     >
       <div className="flex flex-col items-center justify-center">
         <Fade bottom>
