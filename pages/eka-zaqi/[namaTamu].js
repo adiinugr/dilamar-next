@@ -309,7 +309,7 @@ const Page = ({ comments }) => {
         title="Eka & Zaky Wedding Invitation"
         description="Kami mengundang Bapak/Ibu, saudara, dan rekan-rekan semua untuk hadir di acara pernikahan kami."
         link="https://katanikah.com/eka-zaky/Nama+Tamu"
-        imagePath="/clients/eka-zaky/meta-image.jpg"
+        imagePath="/clients/eka-zaky/meta-image.png"
       />
 
       {showPlayButton && (
