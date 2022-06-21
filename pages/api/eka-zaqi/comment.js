@@ -1,5 +1,5 @@
 import dbConnect from "utils/dbConnect"
-import Comment from "models/eka-zaky/Comment"
+import Comment from "models/eka-zaqi/Comment"
 
 export default async (req, res) => {
   const { method } = req

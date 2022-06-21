@@ -17,7 +17,6 @@ import PlayerButton from "components/invitation/parts/PlayerButton"
 import { Fade } from "react-reveal"
 import Gunungan from "components/invitation/modal/Gunungan"
 import BasicHero from "components/invitation/hero/BasicHero"
-import RusticCircleImage from "components/invitation/couple/RusticCircleImage"
 import ImageAndMessage from "components/invitation/greating/ImageAndMessage"
 import OnlyText from "components/invitation/place-and-date/OnlyText"
 import BigDay from "components/invitation/date-countdown/BigDay"
@@ -245,7 +244,7 @@ const Page = ({ comments }) => {
       setGuestBookError("Harus diisi semua ya!")
       setGuestBookIsLoading(false)
     } else {
-      const res = await fetch(`/api/eka-zaky/comment`, {
+      const res = await fetch(`/api/eka-zaqi/comment`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -395,9 +394,9 @@ const Page = ({ comments }) => {
 
       <OnlyText
         tanggalAkad="Rebo Pon, 6 Juli 2022"
-        waktuAkad="Pukul 08.00 WIB"
+        waktuAkad="Tabuh 08.00 WIB"
         tanggalResepsi="Rebo Pon, 6 Juli 2022"
-        waktuResepsi="Pukul 12.00 - 17.00 WIB"
+        waktuResepsi="Tabuh 12.00 - 17.00 WIB"
         namaTempat="Dalemipun Penganten Kakung"
         alamatTempat="Dsn Kemambang RT 01 RW 06, Ds Diwek, Kec Diwek, Jombang"
         googleMapsUri="https://www.google.com/maps/place/6P4JC65V%2B9G5/@-7.5916623,112.2430997,17z/data=!4m5!3m4!1s0x0:0x326441ab11f19fca!8m2!3d-7.5916125!4d112.2438594?hl=en"
@@ -507,7 +506,7 @@ const Page = ({ comments }) => {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch(`https://katanikah.com/api/eka-zaky/comment`, {
+  const res = await fetch(`https://katanikah.com/api/eka-zaqi/comment`, {
     method: "GET",
     headers: {
       "User-Agent":

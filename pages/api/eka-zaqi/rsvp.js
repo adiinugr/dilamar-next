@@ -1,5 +1,5 @@
 import dbConnect from "utils/dbConnect"
-import Rsvp from "models/eka-zaky/Rsvp"
+import Rsvp from "models/eka-zaqi/Rsvp"
 
 export default async (req, res) => {
   const { method } = req
