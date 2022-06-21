@@ -1,3 +1,4 @@
+import { AiOutlineLoading3Quarters } from "react-icons/ai"
 import { Fade } from "react-reveal"
 
 const SimpleForm = ({
@@ -69,7 +70,7 @@ const SimpleForm = ({
                 <select
                   value={status}
                   onChange={setStatus}
-                  className="bg-gray-100 border text-gray-800 border-gray-300 mb-4 p-2 w-full rounded-md text-gray-900"
+                  className="bg-gray-100 border text-gray-800 border-gray-300 mb-4 p-2 w-full rounded-md"
                 >
                   <option defaultChecked value="">
                     - Pilih salah satu -

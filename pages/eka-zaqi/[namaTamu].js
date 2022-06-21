@@ -60,30 +60,6 @@ const bottomMenuData = [
   }
 ]
 
-const storyData = [
-  {
-    id: 1,
-    title: "First Meet",
-    description:
-      "June 19, 2019 was our first meeting as colleagues. At first everything went well and we were good friends at work without ever having imagined we would get married one day.",
-    imagePath: "/images/first-meet.jpg"
-  },
-  {
-    id: 2,
-    title: "First Date",
-    description:
-      "God 'matched' us in unexpected ways. As if to be an answer to our prayers. A year later, on August 26, 2020, we decided to step up in a relationship and start to learn to love each other.",
-    imagePath: "/images/first-date.jpg"
-  },
-  {
-    id: 3,
-    title: "The Proposal",
-    description:
-      "The distances of 600 kilometers from Jakarta to Madiun became one of the witnesses of our journey, Finally exactly 2 years since we met and right on Ratna's birthday, we got engaged on June 19, 2021.",
-    imagePath: "/images/the-proposal.jpg"
-  }
-]
-
 const gridImageData = [
   {
     id: 1,
@@ -306,10 +282,10 @@ const Page = ({ comments }) => {
   return (
     <div className="overflow-hidden">
       <InvitationHead
-        title="Eka & Zaky Wedding Invitation"
+        title="Eka & Zaqi Wedding Invitation"
         description="Kami mengundang Bapak/Ibu, saudara, dan rekan-rekan semua untuk hadir di acara pernikahan kami."
         link="https://katanikah.com/eka-zaky/Nama+Tamu"
-        imagePath="/clients/eka-zaky/meta-image.png"
+        imagePath="/clients/eka-zaky/meta-image.jpg"
       />
 
       {showPlayButton && (
