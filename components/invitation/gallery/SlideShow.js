@@ -40,7 +40,7 @@ export const SlideShow = ({
         </Fade>
 
         <Fade bottom>
-          <div className="flex flex-col items-center justify-center mb-8 px-6 md:px-44">
+          <div className="flex flex-col items-center justify-center mb-8 px-6 md:px-16">
             <div className="text-center">{subtitle}</div>
           </div>
         </Fade>

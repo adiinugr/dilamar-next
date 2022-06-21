@@ -281,7 +281,7 @@ const Page = ({ comments }) => {
       setRsvpError("Harus diisi semua ya!")
       setRsvpIsLoading(false)
     } else {
-      const res = await fetch(`/api/eka-zaky/rsvp`, {
+      const res = await fetch(`/api/eka-zaqi/rsvp`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -476,7 +476,7 @@ const Page = ({ comments }) => {
         buttonBgColor="bg-lanzones"
         commentBorder="border border-lanzones rounded-md p-2"
       />
-      <div className="px-8 md:px-32 md:py-72 bg-black text-lanzones">
+      <div className="px-8 md:px-32 md:py-16 bg-black text-lanzones">
         <p className="text-center mb-6">
           Menawi Panjenengan kersa rawuh kula namung saged hangaturaken agunging
           panuwun. Mugi Gusti Ingkang Maha Kuwaos paring berkah dhumateng kita

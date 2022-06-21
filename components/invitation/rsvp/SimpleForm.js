@@ -25,7 +25,7 @@ const SimpleForm = ({
   return (
     <div
       id="rsvp"
-      className={`${bgColor} ${textColor} relative py-16 px-8 md:px-32 md:py-72 ${padding}`}
+      className={`${bgColor} ${textColor} relative py-16 px-8 md:px-16 md:py-16 ${padding}`}
     >
       {children}
 
@@ -51,7 +51,7 @@ const SimpleForm = ({
                   </div>
                 )}
                 <input
-                  className="bg-gray-100 border border-gray-300 p-2 mb-4 outline-none font-body rounded-md"
+                  className="bg-gray-100 border text-gray-800 border-gray-300 p-2 mb-4 outline-none font-body rounded-md"
                   spellCheck="false"
                   placeholder="Nama"
                   value={name}
@@ -59,7 +59,7 @@ const SimpleForm = ({
                   type="text"
                 />
                 <input
-                  className="bg-gray-100 border border-gray-300 p-2 mb-4 outline-none font-body rounded-md"
+                  className="bg-gray-100 border text-gray-800 border-gray-300 p-2 mb-4 outline-none font-body rounded-md"
                   spellCheck="false"
                   placeholder="Alamat"
                   value={address}
@@ -69,7 +69,7 @@ const SimpleForm = ({
                 <select
                   value={status}
                   onChange={setStatus}
-                  className="bg-gray-100 border border-gray-300 mb-4 p-2 w-full rounded-md text-gray-900"
+                  className="bg-gray-100 border text-gray-800 border-gray-300 mb-4 p-2 w-full rounded-md text-gray-900"
                 >
                   <option defaultChecked value="">
                     - Pilih salah satu -

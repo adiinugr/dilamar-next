@@ -16,7 +16,7 @@ const RectangularFadeImage = ({
   return (
     <div
       id="couple"
-      className={`relative ${bgColor} ${textColor} py-16 md:px-32 overflow-hidden ${padding}`}
+      className={`relative ${bgColor} ${textColor} py-16 md:px-16 overflow-hidden ${padding}`}
     >
       {children}
 
@@ -27,7 +27,7 @@ const RectangularFadeImage = ({
       </Fade>
 
       <div className={`flex items-center justify-center flex-col md:flex-row`}>
-        <div className={`flex flex-col items-center font-body`}>
+        <div className="flex flex-col w-full md:w-2/5 items-center font-body">
           <Fade bottom>
             <div className="w-full h-64 relative">
               <div className="absolute w-full h-14 top-0 left-0 z-30 bg-gradient-to-b from-black"></div>
@@ -45,19 +45,17 @@ const RectangularFadeImage = ({
 
           <div className="w-full mx-4 text-center mt-4 px-8">
             <Fade bottom>
-              <p className="font-yellowtail text-3xl md:text-4xl mb-3">
-                {namaWanita}
-              </p>
+              <p className="font-yellowtail text-3xl mb-3">{namaWanita}</p>
               <p className="text-lg font-poppins">{ortuWanita}</p>
             </Fade>
           </div>
         </div>
         <Fade bottom>
-          <div className=" md:w-1/3 text-center font-honey-carrot text-7xl md:text-8xl my-10 px-8">
+          <div className="md:w-1/5 text-center font-honey-carrot text-7xl md:text-8xl my-10 px-8">
             &
           </div>
         </Fade>
-        <div className="flex flex-col w-full items-center font-body">
+        <div className="flex flex-col w-full md:w-2/5 items-center font-body">
           <Fade bottom>
             <div className="w-full h-64 relative">
               <div className="absolute w-full h-14 top-0 left-0 z-30 bg-gradient-to-b from-black"></div>
@@ -75,9 +73,7 @@ const RectangularFadeImage = ({
 
           <div className="w-full mx-4 text-center mt-2">
             <Fade bottom>
-              <p className="font-yellowtail text-3xl md:text-4xl mb-3">
-                {namaPria}
-              </p>
+              <p className="font-yellowtail text-3xl mb-3">{namaPria}</p>
               <p className="text-lg font-poppins">{ortuPria}</p>
             </Fade>
           </div>

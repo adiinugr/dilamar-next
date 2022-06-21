@@ -51,7 +51,7 @@ function BigDay({
 }) {
   return (
     <div
-      className={`${bgColor} ${textColor} relative py-16 px-8 md:px-32 md:py-72 ${padding}`}
+      className={`${bgColor} ${textColor} relative py-16 px-8 md:px-32 md:py-16 ${padding}`}
     >
       {children}
       <Fade botom>
