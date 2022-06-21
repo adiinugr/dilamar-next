@@ -9,11 +9,12 @@ export const SlideShow = ({
   bgColor = "bg-gray-600",
   textColor = "text-gray-200",
   children,
-  imageData
+  imageData,
+  subtitle
 }) => {
   const settings = {
     infinite: true,
-    speed: 400,
+    speed: 1000,
     autoplay: true,
     fade: true,
     arrows: false
@@ -40,11 +41,7 @@ export const SlideShow = ({
 
         <Fade bottom>
           <div className="flex flex-col items-center justify-center mb-8 px-6 md:px-44">
-            <div className="text-center">
-              “Gegaraning wong akrami Dudu bandha dudu rupa Amung ati pawitane
-              Luput pisan kena pisan Yen gampang luwih gampang Yen angel, angel
-              kalangkung Tan kena tinumbas arta”
-            </div>
+            <div className="text-center">{subtitle}</div>
           </div>
         </Fade>
 

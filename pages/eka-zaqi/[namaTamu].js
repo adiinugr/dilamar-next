@@ -347,12 +347,12 @@ const Page = ({ comments }) => {
       />
 
       <BasicHero
-        name="Eka & Zaky"
+        name="Eka & Zaqi"
         date="6 Juli 2022"
         textColor="text-lanzones"
         overlayClassName="bg-gradient-to-b from-black opacity-70"
         imagePath="/clients/eka-zaky/hero-image.jpg"
-        titleText="Pernikahan Kami"
+        titleText="Layang Ulem"
         isSnow={false}
       >
         <Gunungan
@@ -413,6 +413,9 @@ const Page = ({ comments }) => {
         bgColor="bg-black"
         textColor="text-lanzones"
         imageData={slideShowImageData}
+        subtitle='"Gegaraning wong akrami || Dudu bandha dudu rupa || Amung ati pawitane ||
+              Luput pisan kena pisan || Yen gampang luwih gampang || Yen angel, angel
+              kalangkung || Tan kena tinumbas arta"'
       />
 
       <BigDay
@@ -444,6 +447,7 @@ const Page = ({ comments }) => {
       />
 
       <Grid
+        subtitle="Amemangun bale wisma kanthi sakinah, mawadah, warohmah"
         imageData={gridImageData}
         height={400}
         width={400}
@@ -489,7 +493,8 @@ const Page = ({ comments }) => {
       </div>
 
       <Terimakasih
-        namaPengantin="Eka & Zaky"
+        title="Matur Nuwun"
+        namaPengantin="Eka & Zaqi"
         bgColor="bg-black"
         textColor="text-lanzones"
       />

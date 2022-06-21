@@ -54,8 +54,8 @@ const OnlyText = ({
           <div className="flex flex-col items-center justify-center h-full w-full">
             <div className="text-center mb-4">
               <p className="font-honey-carrot text-4xl mb-4">Akad Nikah</p>
-              <p>{tanggalAkad}</p>
-              <p className="">{waktuAkad}</p>
+              <p className="text-lg">{tanggalAkad}</p>
+              <p className="text-lg">{waktuAkad}</p>
             </div>
             <div className="text-center px-4">
               <p className="font-bold text-lg">{namaTempat}</p>
@@ -69,8 +69,8 @@ const OnlyText = ({
             <div className="mb-4">
               <div className="px-4 md:px-0 text-center font-body mb-4 md:mb-0">
                 <p className="font-honey-carrot text-4xl mb-4">Resepsi</p>
-                <p>{tanggalResepsi}</p>
-                {waktuResepsi && <p>{waktuResepsi}</p>}
+                <p className="text-lg">{tanggalResepsi}</p>
+                {waktuResepsi && <p className="text-lg">{waktuResepsi}</p>}
               </div>
             </div>
             <div className="text-center  px-4">

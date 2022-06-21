@@ -7,7 +7,8 @@ const Grid = ({
   imageData,
   height,
   width,
-  numberOfGridCols
+  numberOfGridCols,
+  subtitle = "Merajut mimpi menuju sakinah, mawadah, warohmah."
 }) => {
   const gridColsClassName = () => {
     if (numberOfGridCols === 2) {
@@ -24,9 +25,7 @@ const Grid = ({
           <div className="text-center font-honey-carrot text-5xl md:text-5xl mb-6">
             Moment Kebersamaan
           </div>
-          <p className="text-center">
-            Merajut mimpi menuju sakinah, mawadah, warohmah.
-          </p>
+          <p className="text-center">{subtitle}</p>
         </Fade>
         <div className={gridColsClassName()}>
           {imageData.map((image) => (
