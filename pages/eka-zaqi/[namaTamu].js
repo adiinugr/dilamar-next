@@ -26,6 +26,7 @@ import SimpleForm from "components/invitation/rsvp/SimpleForm"
 import WithModal from "components/invitation/guest-book/WithModal"
 import Image from "next/image"
 import RectangularFadeImage from "components/invitation/couple/RectangularFadeImage"
+import RusticRectangularImage from "components/invitation/couple/RusticRectangularImage"
 
 const bottomMenuData = [
   {
@@ -347,7 +348,7 @@ const Page = ({ comments }) => {
         padding="pt-0 pb-0"
       />
 
-      <RectangularFadeImage
+      <RusticRectangularImage
         namaWanita="Eka Praditya Muslikhah Cahyani, S.Pd"
         ortuWanita="Putra estri Bpk Agus Supriyanta & Ibu Siwi Catur Handayani"
         namaPria="Muhamad Rozzaqi, S.Pd"
@@ -366,7 +367,7 @@ const Page = ({ comments }) => {
             className="mb-4 mx-auto"
           />
         </Fade>
-      </RectangularFadeImage>
+      </RusticRectangularImage>
 
       <OnlyText
         tanggalAkad="Rebo Pon, 6 Juli 2022"
