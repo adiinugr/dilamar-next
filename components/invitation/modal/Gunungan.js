@@ -41,7 +41,9 @@ function Gunungan({
       <div className="h-full">
         <div className="h-2/6 relative flex flex-col items-center justify-end">
           <div className="mb-2 text-lg">Kepada</div>
-          <div className="font-poppins text-2xl font-semibold">{namaTamu}</div>
+          <div className="font-poppins text-2xl font-semibold px-8">
+            {namaTamu}
+          </div>
         </div>
         <div className="h-3/6 w-full relative">
           <div
