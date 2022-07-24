@@ -173,7 +173,7 @@ const Page = ({ comments }) => {
         tanggalResepsi="Minggu, 07 Agustus 2022"
         waktuResepsi="Pukul 11.00 - Selesai"
         namaTempat="Aula Muzdalifah - Islamic Centre Bekasi "
-        alamatTempat="Jl. Kemakmuran No. 72, Marga Jaya, Kec. Bekasi Selatan, Kota Bekasi"
+        alamatTempat="Jl. Jend. Achmad Yani, No. 22, Marga Jaya, Kec. Bekasi Selatan, Kota Bekasi"
         googleMapsUri="https://maps.app.goo.gl/5daMWbTopUnRtg3G9"
         lat={-6.245769}
         lng={106.9958104}
