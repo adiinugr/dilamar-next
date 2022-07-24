@@ -19,7 +19,9 @@ const Renderer = ({ props, countdownClassname }) => {
     return (
       <>
         <div className={`mb-3 flex items-center justify-center`}>
-          <div className={`${countdownClassname} py-2 px-6 rounded-lg`}>
+          <div
+            className={`${countdownClassname} py-2 px-6 rounded-lg text-center`}
+          >
             <p className="text-2xl">{props.days}</p>
             <p className="text-md">Day(s)</p>
           </div>

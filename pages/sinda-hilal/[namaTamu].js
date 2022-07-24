@@ -3,18 +3,11 @@ import ReactModal from "react-modal"
 import { useRouter } from "next/router"
 
 import InvitationHead from "components/invitation/parts/InvitationHead"
-import { OpeningModalWithCoupleImage } from "components/invitation/OpeningModal"
-import { Hero } from "components/invitation/Hero"
-import { QsArrum21 } from "components/invitation/Ayyat"
-import { NamaPengantinThree } from "components/invitation/NamaPengantin"
+
 import { DoubleWave } from "components/invitation/parts/Divider"
-import { WaktuAlamatAcaraFour } from "components/invitation/WaktuAlamatAcara"
-import { GuestBookWithPopup } from "components/invitation/GuestBook"
 import Terimakasih from "components/invitation/Terimakasih"
 import InvitationFooter from "components/invitation/InvitationFooter"
-import DateCountdown from "components/invitation/DateCountdown"
 import PlayerButton from "components/invitation/parts/PlayerButton"
-import { CoupleQuoteStandard } from "components/invitation/CoupleQuote"
 import ModalStandard from "components/invitation/modal/Standard"
 import BasicHero from "components/invitation/hero/BasicHero"
 import QsAzzariyat49 from "components/invitation/ayyat/QsAzzariyat49"
@@ -22,6 +15,7 @@ import SimpleImage from "components/invitation/couple/SimpleImage"
 import WithBackgroundImage from "components/invitation/place-and-date/WithBackgroundImage"
 import WithModal from "components/invitation/guest-book/WithModal"
 import BigDay from "components/invitation/date-countdown/BigDay"
+import Image from "next/image"
 
 const Page = ({ comments }) => {
   const [data, setData] = useState(comments)
@@ -42,7 +36,7 @@ const Page = ({ comments }) => {
   const [isAudioPlaying, setIsAudioPlaying] = useState(false)
   const [showPlayButton, setShowPlayButton] = useState(false)
 
-  const date = new Date("11 March 2023 06:15 UTC+7")
+  const date = new Date("07 August 2022 08:00 UTC+7")
   const isoDate = date.toISOString()
 
   const waveColor = "#E4CFCA"
@@ -70,8 +64,8 @@ const Page = ({ comments }) => {
 
   const handleOpenModal = () => {
     setModalIsOpen(false)
-    setShowPlayButton(true)
-    handlePlayMusic()
+    // setShowPlayButton(true)
+    // handlePlayMusic()
   }
 
   const handleGuestBookSubmit = async (event) => {
@@ -166,7 +160,7 @@ const Page = ({ comments }) => {
         namaWanita="Sinda Intandiana"
         ortuWanita="Putri dari Bpk. Harun & Ibu Rudatin Endah W"
         namaPria="Hilal Najmudin"
-        ortuPria="Putra dari Bpl. Endang (rahimahullah) & Ibu Dedah"
+        ortuPria="Putra dari Bpk. Endang (rahimahullah) & Ibu Dedah"
         imagePathPria="/clients/sinda-hilal/man.png"
         imagePathWanita="/clients/sinda-hilal/woman.png"
         textColor="text-dust-storm-dark"
@@ -194,11 +188,41 @@ const Page = ({ comments }) => {
       <BigDay
         title="Waktu Mundur"
         bgColor="bg-dust-storm-light"
-        textColor="text-dust-storm"
+        textColor="text-dust-storm-dark"
         countdownClassname="bg-dust-storm-primary bg-opacity-75"
         date={isoDate}
         padding="pb-0"
       />
+
+      <section
+        className={`bg-dust-storm-light text-dust-storm-dark py-16 px-8 md:px-32 md:py-16`}
+      >
+        <div className="w-full h-64 relative mb-8">
+          <Image
+            src="/clients/sinda-hilal/couple.png"
+            layout="fill"
+            objectFit="contain"
+            placeholder="blur"
+            alt="katanikah website undangan pernikahan online"
+            priority={true}
+          />
+        </div>
+        <div>
+          <p className="text-3xl text-center font-bold mb-6">
+            بَارَكَ اللهُ لَكُماَ وَبَارَكَ عَلَيْكُماَ وَجَمَعَ بَيْنَكُمَا فِي
+            خَيْرٍ
+          </p>
+          <p className="mb-3 text-center">
+            Barakallahu lakuma wa baa raka ‘alaika wa jama’a bainakumaa fii
+            khoiir
+          </p>
+          <p className="text-center">
+            Semoga Allah memberi berkah kepadamu dan atasmu serta mengumpulkan
+            kalian berdua dalam kebaikan.{" "}
+            <span className="font-bold">(HR Abu Daud)</span>
+          </p>
+        </div>
+      </section>
 
       <WithModal
         comments={data}
@@ -212,7 +236,7 @@ const Page = ({ comments }) => {
         isLoading={guestBookIsLoading}
         handleSubmit={handleGuestBookSubmit}
         bgColor="bg-dust-storm-light"
-        textColor="text-dust-storm"
+        textColor="text-dust-storm-dark"
         bgHorizontalLine="bg-orchid-dark"
         writeYourWishClassname="bg-dust-storm-dark text-white"
         buttonTextColor="text-white"
