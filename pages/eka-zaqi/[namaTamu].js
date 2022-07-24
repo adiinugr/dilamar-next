@@ -398,6 +398,8 @@ const Page = ({ comments }) => {
         title="Wektu Mundur"
         bgColor="bg-black"
         textColor="text-lanzones"
+        topBorderImageUrl="/clients/eka-zaky/quotes_decor.webp"
+        bottomBorderImageUrl="/clients/eka-zaky/quotes_decor.webp"
         date={isoDate}
         padding="pb-0"
       />

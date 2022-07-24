@@ -89,6 +89,11 @@ module.exports = {
           primary: "#B76E79",
           light: "#F6EDEE",
           dark: "#180C0E"
+        },
+        "dust-storm": {
+          primary: "#DAC4BD",
+          light: "#E4CFCA",
+          dark: "#5F3E24"
         }
       },
       spacing: {

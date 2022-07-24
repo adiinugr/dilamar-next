@@ -18,12 +18,23 @@ const BasicHero = ({
   snowColor = "#ffffff",
   isSnow = true,
   overlayPosition = "inset-0",
+  textPos = "middle",
   children
 }) => {
+  const textPosition = () => {
+    if (textPos === "top") {
+      return "top-20"
+    } else if (textPos === "bottom") {
+      return "bottom-20"
+    } else {
+      return "top-1/2 -translate-y-1/2"
+    }
+  }
+
   return (
     <section
       id="hero"
-      className={`h-screen relative ${bgColor} ${textColor} overflow-hidden z-30`}
+      className={`h-screen relative ${bgColor} ${textColor} overflow-hidden`}
     >
       {imagePath && (
         <Image
@@ -40,7 +51,9 @@ const BasicHero = ({
 
       {children}
 
-      <div className="absolute w-full left-1/2 transform -translate-x-1/2 top-20 flex flex-col justify-end items-center">
+      <div
+        className={`absolute w-full left-1/2 transform -translate-x-1/2 ${textPosition()} flex flex-col justify-end items-center`}
+      >
         {initialText && (
           <Fade bottom>
             <div className="text-5xl md:text-8xl mb-16 font-display">
