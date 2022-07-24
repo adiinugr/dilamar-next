@@ -168,9 +168,9 @@ const Page = ({ comments }) => {
       />
 
       <WithBackgroundImage
-        tanggalAkad="Minggu, 07 Agustus 2022"
+        tanggalAkad="Ahad, 07 Agustus 2022"
         waktuAkad="Pukul 08.00 - Selesai"
-        tanggalResepsi="Minggu, 07 Agustus 2022"
+        tanggalResepsi="Ahad, 07 Agustus 2022"
         waktuResepsi="Pukul 11.00 - Selesai"
         namaTempat="Aula Muzdalifah - Islamic Centre Bekasi "
         alamatTempat="Jl. Jend. Achmad Yani, No. 22, Marga Jaya, Kec. Bekasi Selatan, Kota Bekasi"
