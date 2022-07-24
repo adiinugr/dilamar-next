@@ -161,8 +161,8 @@ const Page = ({ comments }) => {
         ortuWanita="Putri dari Bpk. Harun & Ibu Rudatin Endah W"
         namaPria="Hilal Najmudin"
         ortuPria="Putra dari Bpk. Endang (rahimahullah) & Ibu Dedah"
-        imagePathPria="/clients/sinda-hilal/man.png"
-        imagePathWanita="/clients/sinda-hilal/woman.png"
+        // imagePathPria="/clients/sinda-hilal/man.png"
+        // imagePathWanita="/clients/sinda-hilal/woman.png"
         textColor="text-dust-storm-dark"
         bgColor="bg-dust-storm-light"
       />
@@ -197,7 +197,7 @@ const Page = ({ comments }) => {
       <section
         className={`bg-dust-storm-light text-dust-storm-dark py-16 px-8 md:px-32 md:py-16`}
       >
-        <div className="w-full h-64 relative mb-8">
+        {/* <div className="w-full h-64 relative mb-8">
           <Image
             src="/clients/sinda-hilal/couple.png"
             layout="fill"
@@ -206,7 +206,7 @@ const Page = ({ comments }) => {
             alt="katanikah website undangan pernikahan online"
             priority={true}
           />
-        </div>
+        </div> */}
         <div>
           <p className="text-3xl text-center font-bold mb-6">
             بَارَكَ اللهُ لَكُماَ وَبَارَكَ عَلَيْكُماَ وَجَمَعَ بَيْنَكُمَا فِي
