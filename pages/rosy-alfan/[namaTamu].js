@@ -107,8 +107,8 @@ const Page = ({ messages }) => {
       <InvitationHead
         title="Rosy & Alfan Wedding Invitation"
         description="Kami mengundang Bapak/Ibu, saudara, dan rekan-rekan semua untuk hadir di acara pernikahan kami."
-        link="https://dilamar.vercel.app/clients/rosy-alfan/Nama+Tamu"
-        imagePath="/clients/rosy-alfan/foto1.jpg"
+        link="https://katanikah/clients/rosy-alfan/Nama+Tamu"
+        imagePath="https://katanikah.com/clients/rosy-alfan/foto1.jpg"
       />
       {showPlayButton && (
         <PlayerButton
