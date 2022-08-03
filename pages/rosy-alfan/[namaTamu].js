@@ -1,80 +1,80 @@
-import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
-import Aos from "aos";
-import Modal from "react-modal";
+import { useEffect, useState } from "react"
+import { useRouter } from "next/router"
+import Aos from "aos"
+import Modal from "react-modal"
 
-import "aos/dist/aos.css";
+import "aos/dist/aos.css"
 
-import Footer from "../../components/Footer";
-import InvitationHead from "../../components/invitation/parts/InvitationHead";
-import ProtokolKesehatan from "../../components/invitation/parts/ProtokolKesehatan";
-import { Hero } from "../../components/invitation/Hero";
-import { NamaPengantin1 } from "../../components/invitation/NamaPengantin";
-import DateCountdown from "../../components/invitation/DateCountdown";
-import { WaktuAlamatAcaraFour } from "../../components/invitation/WaktuAlamatAcara";
-import Terimakasih from "../../components/invitation/Terimakasih";
-import { OpeningModalStandard } from "../../components/invitation/OpeningModal";
-import { GuestBookOne } from "../../components/invitation/GuestBook";
-import { QsAnNur32 } from "../../components/invitation/QuranAyat";
-import PlayerButton from "../../components/invitation/parts/PlayerButton";
+import Footer from "../../components/Footer"
+import InvitationHead from "../../components/invitation/parts/InvitationHead"
+import ProtokolKesehatan from "../../components/invitation/parts/ProtokolKesehatan"
+import { Hero } from "../../components/invitation/Hero"
+import { NamaPengantin1 } from "../../components/invitation/NamaPengantin"
+import DateCountdown from "../../components/invitation/DateCountdown"
+import { WaktuAlamatAcaraFour } from "../../components/invitation/WaktuAlamatAcara"
+import Terimakasih from "../../components/invitation/Terimakasih"
+import { OpeningModalStandard } from "../../components/invitation/OpeningModal"
+import { GuestBookOne } from "../../components/invitation/GuestBook"
+import { QsAnNur32 } from "../../components/invitation/QuranAyat"
+import PlayerButton from "../../components/invitation/parts/PlayerButton"
 
 const Page = ({ messages }) => {
-  const [date] = useState("2022-02-26T08:00:00.000+07:00");
+  const [date] = useState("2022-02-26T08:00:00.000+07:00")
 
-  const [data, setData] = useState(messages);
+  const [data, setData] = useState(messages)
 
-  const router = useRouter();
-  const { namaTamu } = router.query;
-  const tamu = namaTamu.replace("+", " ");
+  const router = useRouter()
+  const { namaTamu } = router.query
+  const tamu = namaTamu.replace("+", " ")
 
-  const [name, setName] = useState("");
-  const [comment, setComment] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [name, setName] = useState("")
+  const [comment, setComment] = useState("")
+  const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState("")
 
-  const [modalIsOpen, setModalIsOpen] = useState(true);
+  const [modalIsOpen, setModalIsOpen] = useState(true)
 
-  const [audio, setAudio] = useState(null);
-  const [isAudioPlaying, setIsAudioPlaying] = useState(false);
-  const [showPlayButton, setShowPlayButton] = useState(false);
-
-  useEffect(() => {
-    Aos.init({ duration: 1000 });
-  }, []);
+  const [audio, setAudio] = useState(null)
+  const [isAudioPlaying, setIsAudioPlaying] = useState(false)
+  const [showPlayButton, setShowPlayButton] = useState(false)
 
   useEffect(() => {
-    setAudio(new Audio("/rosy-alfan/atta-aurel-cut.mp3"));
+    Aos.init({ duration: 1000 })
+  }, [])
+
+  useEffect(() => {
+    setAudio(new Audio("/rosy-alfan/atta-aurel-cut.mp3"))
 
     return () => {
       if (audio) {
-        audio.pause();
+        audio.pause()
       }
-    };
-  }, []);
+    }
+  }, [])
 
   const handleOpenModal = () => {
-    setModalIsOpen(false);
-    setShowPlayButton(true);
-    handlePlayMusic();
-  };
+    setModalIsOpen(false)
+    setShowPlayButton(true)
+    handlePlayMusic()
+  }
 
   const handlePlayMusic = () => {
-    audio.play();
-    setIsAudioPlaying(true);
-  };
+    audio.play()
+    setIsAudioPlaying(true)
+  }
 
   const handlePauseMusic = () => {
-    audio.pause();
-    setIsAudioPlaying(false);
-  };
+    audio.pause()
+    setIsAudioPlaying(false)
+  }
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
+    event.preventDefault()
 
-    setIsLoading(true);
+    setIsLoading(true)
 
     if (name === "" && comment === "") {
-      setError("Harus diisi semua ya!");
+      setError("Harus diisi semua ya!")
     } else {
       const res = await fetch(`/api/rosy-alfan/comment`, {
         method: "POST",
@@ -85,7 +85,7 @@ const Page = ({ messages }) => {
           name,
           message: comment
         })
-      });
+      })
 
       setData((prevData) => [
         ...prevData,
@@ -93,22 +93,22 @@ const Page = ({ messages }) => {
           name,
           message: comment
         }
-      ]);
+      ])
 
-      setIsLoading(false);
+      setIsLoading(false)
 
-      setName("");
-      setComment("");
+      setName("")
+      setComment("")
     }
-  };
+  }
 
   return (
     <>
       <InvitationHead
         title="Rosy & Alfan Wedding Invitation"
         description="Kami mengundang Bapak/Ibu, saudara, dan rekan-rekan semua untuk hadir di acara pernikahan kami."
-        link="https://dilamar.vercel.app/rosy-alfan/Nama+Tamu"
-        imagePath="/rosy-alfan/foto1.jpg"
+        link="https://dilamar.vercel.app/clients/rosy-alfan/Nama+Tamu"
+        imagePath="/clients/rosy-alfan/foto1.jpg"
       />
       {showPlayButton && (
         <PlayerButton
@@ -129,7 +129,7 @@ const Page = ({ messages }) => {
             namaTamu={tamu}
             namaPengantin="Rosy & Alfan"
             buttonBgColor="bg-rosy-alfan-blue"
-            backgroundImagePath="/rosy-alfan/blue-flower.jpg"
+            backgroundImagePath="/clients/rosy-alfan/blue-flower.jpg"
             withOverlay
           />
         </Modal>
@@ -137,7 +137,7 @@ const Page = ({ messages }) => {
         <Hero
           name="Rosy & Alfan"
           date="26 Februari 2022"
-          imagePath="/rosy-alfan/foto1port.jpg"
+          imagePath="/clients/rosy-alfan/foto1port.jpg"
           textColor="text-white"
           snowColor="#ffffff"
           overlayColor="bg-gray-800"
@@ -164,8 +164,8 @@ const Page = ({ messages }) => {
           textColor="text-white"
           overlayBgColor="bg-gray-700"
           overlayOpacity="opacity-60"
-          akadImagePath="/rosy-alfan/foto1port.jpg"
-          resepsiImagePath="/rosy-alfan/foto2port.jpg"
+          akadImagePath="/clients/rosy-alfan/foto1port.jpg"
+          resepsiImagePath="/clients/rosy-alfan/foto2port.jpg"
           tanggalAkad="Sabtu, 26 Februari 2022"
           waktuAkad="Pukul 08.00 - Selesai"
           tanggalResepsi="Sabtu, 26 Februari 2022"
@@ -205,8 +205,8 @@ const Page = ({ messages }) => {
         <Footer />
       </div>
     </>
-  );
-};
+  )
+}
 
 export async function getServerSideProps() {
   const res = await fetch(`https://dilamar.vercel.app/api/rosy-alfan/comment`, {
@@ -216,21 +216,21 @@ export async function getServerSideProps() {
         "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36",
       Accept: "application/json; charset=UTF-8"
     }
-  });
-  const data = await res.json();
-  const messages = await data.data;
+  })
+  const data = await res.json()
+  const messages = await data.data
 
   const getData = () => {
     if (messages) {
-      return messages;
+      return messages
     } else {
-      return [];
+      return []
     }
-  };
+  }
 
   return {
     props: { messages: getData() }
-  };
+  }
 }
 
-export default Page;
+export default Page
