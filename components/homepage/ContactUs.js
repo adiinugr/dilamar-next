@@ -1,7 +1,7 @@
-import React from "react";
-import { Fade } from "react-reveal";
+import React from "react"
+import { Fade } from "react-reveal"
 
-import { IoLogoWhatsapp } from "react-icons/io";
+import { IoLogoWhatsapp } from "react-icons/io"
 
 const ContactUs = () => {
   return (
@@ -15,7 +15,7 @@ const ContactUs = () => {
             Konsultasikan Undangan Pernikahanmu!
           </h1>
           <a
-            href="https://api.whatsapp.com/send/?phone=%2B6282192477848&text=Hai+KataNikah%2C+Saya+ingin+bertanya+tentang+undangan+online.&app_absent=0"
+            href="https://api.whatsapp.com/send/?phone=%2B62895335501192&text=Hai+KataNikah%2C+Saya+ingin+bertanya+tentang+undangan+online.&app_absent=0"
             target="_blank"
             className="flex items-center gap-3 py-4 px-6 shadow-lg rounded-3xl cursor-pointer bg-white text-dark"
           >
@@ -25,7 +25,7 @@ const ContactUs = () => {
         </div>
       </Fade>
     </section>
-  );
-};
+  )
+}
 
-export default ContactUs;
+export default ContactUs

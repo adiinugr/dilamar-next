@@ -1,6 +1,6 @@
-import React from "react";
-import Image from "next/image";
-import { AiOutlineInstagram, AiOutlineWhatsApp } from "react-icons/ai";
+import React from "react"
+import Image from "next/image"
+import { AiOutlineInstagram, AiOutlineWhatsApp } from "react-icons/ai"
 
 const Footer = () => {
   return (
@@ -20,7 +20,7 @@ const Footer = () => {
       </div>
       <div className="flex items-center">
         <a
-          href="https://api.whatsapp.com/send/?phone=%2B6282192477848&text=Hai+KataNikah%2C+Saya+ingin+bertanya+tentang+undangan+online.&app_absent=0"
+          href="https://api.whatsapp.com/send/?phone=%2B62895335501192&text=Hai+KataNikah%2C+Saya+ingin+bertanya+tentang+undangan+online.&app_absent=0"
           target="_blank"
           className="mr-2"
         >
@@ -31,7 +31,7 @@ const Footer = () => {
         </a>
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

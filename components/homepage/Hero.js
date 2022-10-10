@@ -1,6 +1,6 @@
-import Image from "next/image";
-import React from "react";
-import Fade from "react-reveal/Fade";
+import Image from "next/image"
+import React from "react"
+import Fade from "react-reveal/Fade"
 
 const Hero = () => {
   return (
@@ -21,7 +21,7 @@ const Hero = () => {
             Mau minta desain seperti apapun? Boleh.
           </p>
           <a
-            href="https://api.whatsapp.com/send/?phone=%2B6282192477848&text=Hai+KataNikah%2C+Saya+ingin+bertanya+tentang+undangan+online.&app_absent=0"
+            href="https://api.whatsapp.com/send/?phone=%2B62895335501192&text=Hai+KataNikah%2C+Saya+ingin+bertanya+tentang+undangan+online.&app_absent=0"
             target="_blank"
             className="bg-main self-start mt-7 px-8 py-3 hover:bg-dark text-white font-semibold rounded-lg focus:outline-none focus:ring focus:ring-green-200"
           >
@@ -39,7 +39,7 @@ const Hero = () => {
         </div>
       </Fade>
     </section>
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero
