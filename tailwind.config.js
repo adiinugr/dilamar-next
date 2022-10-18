@@ -94,6 +94,11 @@ module.exports = {
           primary: "#DAC4BD",
           light: "#E4CFCA",
           dark: "#5F3E24"
+        },
+        "moderate-cyan": {
+          primary: "#347f7f",
+          light: "#d7efef",
+          dark: "#122b2b"
         }
       },
       spacing: {

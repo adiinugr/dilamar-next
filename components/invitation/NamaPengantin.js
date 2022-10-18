@@ -110,7 +110,7 @@ export const NamaPengantinThree = ({
           manFirst
             ? "flex-col-reverse md:flex-row-reverse"
             : "flex-col md:flex-row"
-        } items-center justify-center`}
+        } items-start justify-center`}
       >
         <div className={`flex flex-col w-full items-center font-body md:mb-0`}>
           <div className="w-full mx-4 mb-6 md:mb-0 ">
@@ -139,7 +139,7 @@ export const NamaPengantinThree = ({
           </div>
         </div>
         <Fade top>
-          <div className=" md:w-1/3 text-center font-yellowtail text-6xl md:text-8xl my-10">
+          <div className="w-full md:w-1/3 text-center font-yellowtail text-6xl md:text-8xl my-10 md:my-auto">
             &
           </div>
         </Fade>
