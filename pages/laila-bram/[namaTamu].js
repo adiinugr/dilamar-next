@@ -15,6 +15,7 @@ import DateCountdown from "components/invitation/DateCountdown"
 import PlayerButton from "components/invitation/parts/PlayerButton"
 
 import WithBackground from "components/invitation/couple/WithBackground"
+import WithBackgroundImage from "components/invitation/place-and-date/WithBackgroundImage"
 
 const Page = ({ comments }) => {
   const [data, setData] = useState(comments)
@@ -109,7 +110,7 @@ const Page = ({ comments }) => {
         title="Laila & Bram Wedding Invitation"
         description="Kami mengundang Bapak/Ibu, saudara, dan rekan-rekan semua untuk hadir di acara pernikahan kami."
         link="https://katanikah.com/template/premium2/Nama+Tamu"
-        imagePath="/images/couple/meta-image-min.png"
+        imagePath="/clients/laila-bram/image1.jpeg"
       />
 
       <ReactModal
@@ -150,15 +151,6 @@ const Page = ({ comments }) => {
 
       <QsArrum21 bgColor="bg-moderate-cyan-primary" textColor="text-gray-200" />
 
-      {/* <CoupleQuoteStandard
-        textColor="text-moderate-cyan-dark"
-        bgColor="bg-moderate-cyan-primary"
-        imagePathWanita="/images/woman/woman7.jpg"
-        imagePathPria="/images/man/man4.jpg"
-        quoteWanita="Mencintai seseorang memberikan kita kekuatan, dicintai memberikan kita keberanian."
-        quotePria="Dalam pernikahan, yang terpenting adalah sah, bukan wah. Yang wajib adalah mahar, bukan mahal."
-      /> */}
-
       <WithBackground
         title="Couple"
         namaWanita="Lailatul Zahro, S.Ag"
@@ -171,7 +163,7 @@ const Page = ({ comments }) => {
         overlayClassName="bg-gradient-to-t from-moderate-cyan-primary from-moderate-cyan-dark opacity-80"
       />
 
-      <WaktuAlamatAcaraFour
+      <WithBackgroundImage
         tanggalAkad="Minggu, 06 November 2022"
         waktuAkad="Pukul 09.00 - Selesai"
         tanggalResepsi="Minggu, 06 November 2022"
@@ -187,6 +179,7 @@ const Page = ({ comments }) => {
         textColor="text-moderate-cyan-dark"
         buttonBgColor="bg-moderate-cyan-primary"
         padding="pb-40 md:pb-52"
+        isAkad={false}
       />
 
       <GuestBookWithPopup

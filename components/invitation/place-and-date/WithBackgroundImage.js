@@ -29,6 +29,7 @@ const WithBackgroundImage = ({
   buttonTextColor = "text-white",
   padding,
   isResepsi = true,
+  isAkad = true,
   isWithGoogleMaps = true,
   children
 }) => {
@@ -50,36 +51,38 @@ const WithBackgroundImage = ({
       )}
 
       <div className="flex flex-col md:flex-row md:gap-24 justify-center">
-        <Fade top>
-          <div
-            className={`w-full ${borderColor} border-2 rounded-lg overflow-hidden h-96 relative mb-4 shadow-xl`}
-          >
-            {akadImagePath && (
-              <Image
-                src={akadImagePath}
-                layout="fill"
-                objectFit="cover"
-                className="absolute"
-                alt="katanikah website undangan pernikahan online"
-                placeholder="blur"
-              />
-            )}
+        {isAkad && (
+          <Fade top>
             <div
-              className={`h-full w-full ${overlayBgColor} absolute ${overlayOpacity} ${overlayClassName}`}
-            />
-            <div className="flex flex-col items-center justify-center h-full w-full absolute">
-              <div className="text-center mb-4">
-                <p className="font-yellowtail text-4xl mb-4">Akad Nikah</p>
-                <p>{tanggalAkad}</p>
-                <p className="">{waktuAkad}</p>
-              </div>
-              <div className="text-center px-4">
-                <p className="font-bold text-lg">{namaTempat}</p>
-                <p>{alamatTempat}</p>
+              className={`w-full ${borderColor} border-2 rounded-lg overflow-hidden h-96 relative mb-4 shadow-xl`}
+            >
+              {akadImagePath && (
+                <Image
+                  src={akadImagePath}
+                  layout="fill"
+                  objectFit="cover"
+                  className="absolute"
+                  alt="katanikah website undangan pernikahan online"
+                  placeholder="blur"
+                />
+              )}
+              <div
+                className={`h-full w-full ${overlayBgColor} absolute ${overlayOpacity} ${overlayClassName}`}
+              />
+              <div className="flex flex-col items-center justify-center h-full w-full absolute">
+                <div className="text-center mb-4">
+                  <p className="font-yellowtail text-4xl mb-4">Akad Nikah</p>
+                  <p>{tanggalAkad}</p>
+                  <p className="">{waktuAkad}</p>
+                </div>
+                <div className="text-center px-4">
+                  <p className="font-bold text-lg">{namaTempat}</p>
+                  <p>{alamatTempat}</p>
+                </div>
               </div>
             </div>
-          </div>
-        </Fade>
+          </Fade>
+        )}
 
         {isResepsi && (
           <Fade top>

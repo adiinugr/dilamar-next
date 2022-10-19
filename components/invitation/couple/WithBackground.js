@@ -53,7 +53,7 @@ const WithBackground = ({
               manFirst
                 ? "flex-col-reverse md:flex-row-reverse"
                 : "flex-col md:flex-row"
-            } items-center justify-center absolute h-full p-6 `}
+            } items-center justify-center absolute h-full p-6 w-full`}
           >
             <div
               className={`flex flex-col w-full items-center font-body md:mb-0`}
