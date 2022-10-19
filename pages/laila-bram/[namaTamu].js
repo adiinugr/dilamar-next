@@ -199,7 +199,6 @@ const Page = ({ comments }) => {
         buttonTextColor="text-white"
         buttonBgColor="bg-moderate-cyan-primary"
         padding="pt-40 md:pt-52"
-        commentDisable
       >
         <DateCountdown
           date={isoDate}
