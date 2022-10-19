@@ -168,7 +168,7 @@ const Page = ({ comments }) => {
         textColor="text-white"
         bgColor="bg-moderate-cyan-primary"
         bgImagePath="/clients/laila-bram/couple.jpeg"
-        overlayClassName="bg-gradient-to-t from-moderate-cyan-primary opacity-80"
+        overlayClassName="bg-gradient-to-t from-moderate-cyan-primary from-moderate-cyan-dark opacity-80"
       />
 
       <WaktuAlamatAcaraFour

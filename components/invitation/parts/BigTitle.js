@@ -18,13 +18,13 @@ export const TitleWithBackground = ({
         {title}
       </div>
     </div>
-  );
-};
+  )
+}
 
 export const TitleH1 = ({ children }) => {
   return (
-    <h1 className="text-center mb-8 md:mb-16 font-yellowtail text-3xl md:text-5xl">
+    <h1 className="text-center mb-8 md:mb-16 font-yellowtail text-4xl md:text-5xl">
       {children}
     </h1>
-  );
-};
+  )
+}
