@@ -6,7 +6,6 @@ import InvitationHead from "components/invitation/parts/InvitationHead"
 import { OpeningModalWithCoupleImage } from "components/invitation/OpeningModal"
 import { Hero } from "components/invitation/Hero"
 import { QsArrum21 } from "components/invitation/Ayyat"
-import { NamaPengantinThree } from "components/invitation/NamaPengantin"
 import { DoubleWave } from "components/invitation/parts/Divider"
 import { WaktuAlamatAcaraFour } from "components/invitation/WaktuAlamatAcara"
 import { GuestBookWithPopup } from "components/invitation/GuestBook"
@@ -14,7 +13,8 @@ import Terimakasih from "components/invitation/Terimakasih"
 import InvitationFooter from "components/invitation/InvitationFooter"
 import DateCountdown from "components/invitation/DateCountdown"
 import PlayerButton from "components/invitation/parts/PlayerButton"
-import { CoupleQuoteStandard } from "components/invitation/CoupleQuote"
+
+import WithBackground from "components/invitation/couple/WithBackground"
 
 const Page = ({ comments }) => {
   const [data, setData] = useState(comments)
@@ -41,7 +41,7 @@ const Page = ({ comments }) => {
   const waveColor = "#347f7f"
 
   useEffect(() => {
-    setAudio(new Audio("/musics/beautiful-in-white.mp3"))
+    setAudio(new Audio("/clients/laila-bram/kenanglah-hari-ini-cut.mp3"))
 
     return () => {
       if (audio) {
@@ -125,7 +125,7 @@ const Page = ({ comments }) => {
           buttonBgColor="bg-moderate-cyan-primary opacity-80"
           buttonTextColor="text-white"
           backgroundImagePath="/clients/laila-bram/bg2.jpg"
-          coupleImagePath="/images/couple/couple5.jpg"
+          coupleImagePath="/clients/laila-bram/thumbnail.jpeg"
           overlayClassName="bg-gradient-to-b from-moderate-cyan-dark to-moderate-cyan-primary opacity-50"
         />
       </ReactModal>
@@ -150,24 +150,25 @@ const Page = ({ comments }) => {
 
       <QsArrum21 bgColor="bg-moderate-cyan-primary" textColor="text-gray-200" />
 
-      <CoupleQuoteStandard
+      {/* <CoupleQuoteStandard
         textColor="text-moderate-cyan-dark"
         bgColor="bg-moderate-cyan-primary"
         imagePathWanita="/images/woman/woman7.jpg"
         imagePathPria="/images/man/man4.jpg"
         quoteWanita="Mencintai seseorang memberikan kita kekuatan, dicintai memberikan kita keberanian."
         quotePria="Dalam pernikahan, yang terpenting adalah sah, bukan wah. Yang wajib adalah mahar, bukan mahal."
-      />
+      /> */}
 
-      <NamaPengantinThree
+      <WithBackground
+        title="Couple"
         namaWanita="Lailatul Zahro, S.Ag"
         ortuWanita="Putri dari Bpk. Muhyiddin & Ibu Peni Mitra"
         namaPria="Bramantyo Suryo Nugroho, S.H"
         ortuPria="Putra dari Bpk. Subur Aryanto & (almh) Ibu Supriyati"
-        imagePathPria="/images/man/man2.jpg"
-        imagePathWanita="/images/woman/woman2.jpg"
         textColor="text-white"
         bgColor="bg-moderate-cyan-primary"
+        bgImagePath="/clients/laila-bram/couple.jpeg"
+        overlayClassName="bg-gradient-to-t from-moderate-cyan-primary opacity-80"
       />
 
       <WaktuAlamatAcaraFour
