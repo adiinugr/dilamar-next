@@ -16,6 +16,7 @@ import PlayerButton from "components/invitation/parts/PlayerButton"
 
 import WithBackground from "components/invitation/couple/WithBackground"
 import WithBackgroundImage from "components/invitation/place-and-date/WithBackgroundImage"
+import GiftWithoutConfirmation from "components/invitation/gift/GiftWithoutConfirmation"
 
 const Page = ({ comments }) => {
   const [data, setData] = useState(comments)
@@ -110,7 +111,7 @@ const Page = ({ comments }) => {
         title="Laila & Bram Wedding Invitation"
         description="Kami mengundang Bapak/Ibu, saudara, dan rekan-rekan semua untuk hadir di acara pernikahan kami."
         link="https://katanikah.com/template/premium2/Nama+Tamu"
-        imagePath="/clients/laila-bram/image1.jpeg"
+        imagePath="/clients/laila-bram/meta.jpeg"
       />
 
       <ReactModal
@@ -180,6 +181,21 @@ const Page = ({ comments }) => {
         buttonBgColor="bg-moderate-cyan-primary"
         padding="pb-40 md:pb-52"
         isAkad={false}
+      />
+
+      <GiftWithoutConfirmation
+        title="Angpau Online"
+        textColor="text-white"
+        bgColor="bg-moderate-cyan-primary"
+        rekeningArray={[
+          {
+            id: 1,
+            bankName: "Bank Rakyat Indonesia (BRI)",
+            bankNo: "025101 022522500",
+            bankUserName: "a/n Bramantyo Suryo Nugroho",
+            bankImagePath: "/images/bank/bri.webp"
+          }
+        ]}
       />
 
       <GuestBookWithPopup
