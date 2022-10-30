@@ -107,7 +107,7 @@ const Page = ({ comments }) => {
   return (
     <>
       <InvitationHead
-        title="Siti & Sigit Wedding Invitation"
+        title="Ima & Sigit Wedding Invitation"
         description="Kami mengundang Bapak/Ibu, saudara, dan rekan-rekan semua untuk hadir di acara pernikahan kami."
         link="https://katanikah.com/template/premium2/Nama+Tamu"
         imagePath="https://katanikah.com/clients/siti-sigit/meta-image-1.jpeg"
@@ -122,7 +122,7 @@ const Page = ({ comments }) => {
         <OpeningModalWithCoupleImage
           handleOpenModal={handleOpenModal}
           namaTamu={tamu}
-          namaPengantin="Siti & Sigit"
+          namaPengantin="Ima & Sigit"
           textColor="text-nude-dark"
           buttonBgColor="bg-nude-dark opacity-80"
           buttonTextColor="text-white"
@@ -141,7 +141,7 @@ const Page = ({ comments }) => {
       )}
 
       <Hero
-        name="Siti & Sigit"
+        name="Ima & Sigit"
         date="05 November 2022"
         textColor="text-nude-dark"
         overlayClassName="bg-gradient-to-b from-nude-primary opacity-60"
@@ -236,7 +236,7 @@ const Page = ({ comments }) => {
       </GuestBookWithPopup>
 
       <Terimakasih
-        namaPengantin="Siti & Sigit"
+        namaPengantin="Ima & Sigit"
         bgColor="bg-nude-primary"
         textColor="text-nude-dark"
       />
