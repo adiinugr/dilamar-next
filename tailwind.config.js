@@ -99,6 +99,11 @@ module.exports = {
           primary: "#347f7f",
           light: "#d7efef",
           dark: "#122b2b"
+        },
+        nude: {
+          primary: "#E5D2C4",
+          light: "#fdf9f6",
+          dark: "#25170a"
         }
       },
       spacing: {
