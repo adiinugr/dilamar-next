@@ -17,8 +17,15 @@ export const Hero = ({
   snowColor = "#ffffff",
   isSnow = true,
   overlayPosition = "inset-0",
+  textPosition = "center",
   children
 }) => {
+  const textPositionFunction = () => {
+    if (textPosition === "top") return "justify-start"
+    if (textPosition === "center") return "justify-center"
+    if (textPosition === "bottom") return "justify-end py-20"
+  }
+
   return (
     <section
       id="hero"
@@ -39,7 +46,9 @@ export const Hero = ({
 
       {children}
 
-      <div className="h-full w-full absolute flex flex-col justify-center items-center">
+      <div
+        className={`h-full w-full absolute flex flex-col ${textPositionFunction()} items-center`}
+      >
         {initialText && (
           <Fade bottom>
             <div className="text-5xl md:text-8xl mb-16 font-display">

@@ -110,7 +110,7 @@ const Page = ({ comments }) => {
         title="Ima & Sigit Wedding Invitation"
         description="Kami mengundang Bapak/Ibu, saudara, dan rekan-rekan semua untuk hadir di acara pernikahan kami."
         link="https://katanikah.com/template/premium2/Nama+Tamu"
-        imagePath="https://katanikah.com/clients/siti-sigit/meta-image-1.jpeg"
+        imagePath="https://katanikah.com/clients/siti-sigit/meta-image.jpg"
       />
 
       <ReactModal
@@ -143,9 +143,10 @@ const Page = ({ comments }) => {
       <Hero
         name="Ima & Sigit"
         date="05 November 2022"
-        textColor="text-nude-dark"
-        overlayClassName="bg-gradient-to-b from-nude-primary opacity-60"
-        imagePath="/clients/siti-sigit/bg-nude2.jpg"
+        textColor="text-white"
+        overlayClassName="bg-gradient-to-t from-nude-dark opacity-70"
+        imagePath="/clients/siti-sigit/hero-image.jpg"
+        textPosition="bottom"
       >
         <DoubleWave color={waveColor} isBottom />
       </Hero>
