@@ -382,7 +382,7 @@ const Page = ({ comments }) => {
         textColor="text-white"
       />
 
-      <InvitationFooter />
+      <InvitationFooter textColor="text-brand-dark" />
 
       <div className="h-16"></div>
     </>

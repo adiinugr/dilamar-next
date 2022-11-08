@@ -33,6 +33,9 @@ module.exports = {
         light: "#F8E9DB",
         black: "#0e1111",
         lanzones: "#ddc277",
+        brand: {
+          dark: "#14405B"
+        },
         brown: {
           primary: "#8A5010",
           light: "#E89438",

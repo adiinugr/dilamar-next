@@ -8,7 +8,7 @@ const InvitationFooter = ({
 }) => {
   return (
     <footer
-      className={`${bgColor} ${textColor} grid grid-cols-4 gap-y-3 py-8 px-10 md:px-32 `}
+      className={`${bgColor} ${textColor} grid grid-cols-4 gap-y-3 py-6 px-10 md:px-32 `}
     >
       <div className="text-2xl font-bold flex items-center justify-start col-start-1 col-end-3">
         <Image
