@@ -11,8 +11,10 @@ const WithBackgroundImage = ({
   waktuResepsiSesi1,
   waktuResepsiSesi2,
   waktuResepsiSesi3,
-  namaTempat,
-  alamatTempat,
+  namaTempatAkad,
+  namaTempatResepsi,
+  alamatTempatAkad,
+  alamatTempatResepsi,
   googleMapsUri,
   lat,
   lng,
@@ -76,8 +78,8 @@ const WithBackgroundImage = ({
                   <p className="">{waktuAkad}</p>
                 </div>
                 <div className="text-center px-4">
-                  <p className="font-bold text-lg">{namaTempat}</p>
-                  <p>{alamatTempat}</p>
+                  <p className="font-bold text-lg">{namaTempatAkad}</p>
+                  <p>{alamatTempatAkad}</p>
                 </div>
               </div>
             </div>
@@ -114,8 +116,8 @@ const WithBackgroundImage = ({
                   </div>
                 </div>
                 <div className="text-center  px-4">
-                  <p className="font-bold text-lg">{namaTempat}</p>
-                  <p>{alamatTempat}</p>
+                  <p className="font-bold text-lg">{namaTempatResepsi}</p>
+                  <p>{alamatTempatResepsi}</p>
                 </div>
               </div>
             </div>
@@ -132,7 +134,6 @@ const WithBackgroundImage = ({
           </Fade>
           <Fade top>
             <a
-              data-aos="zoom-in"
               href={googleMapsUri}
               target="_blank"
               rel="noreferrer"

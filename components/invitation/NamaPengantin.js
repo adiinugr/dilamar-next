@@ -131,7 +131,7 @@ export const NamaPengantinThree = ({
           </div>
           <div className="w-full mx-4 text-center md:mt-8">
             <Fade top>
-              <p className="font-yellowtail text-3xl md:text-4xl mb-3">
+              <p className="font-yellowtail text-4xl md:text-4xl mb-3">
                 {namaWanita}
               </p>
               <p className="text-xl">{ortuWanita}</p>
@@ -146,7 +146,7 @@ export const NamaPengantinThree = ({
         <div className="flex flex-col-reverse w-full items-center font-body md:mb-0">
           <div className="w-full mx-4 text-center md:mt-8">
             <Fade top>
-              <p className="font-yellowtail text-3xl md:text-4xl mb-3">
+              <p className="font-yellowtail text-4xl md:text-4xl mb-3">
                 {namaPria}
               </p>
               <p className="text-xl">{ortuPria}</p>

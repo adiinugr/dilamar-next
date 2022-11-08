@@ -21,9 +21,15 @@ export const TitleWithBackground = ({
   )
 }
 
-export const TitleH1 = ({ children }) => {
+export const TitleH1 = ({
+  children,
+  textSize = "text-4xl",
+  fontStyle = "font-yellowtail"
+}) => {
   return (
-    <h1 className="text-center mb-8 md:mb-16 font-yellowtail text-4xl md:text-5xl">
+    <h1
+      className={`text-center mb-8 md:mb-16 font-yellowtail text-4xl md:text-5xl ${textSize} ${fontStyle}`}
+    >
       {children}
     </h1>
   )

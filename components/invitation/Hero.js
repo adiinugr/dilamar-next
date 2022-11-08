@@ -21,7 +21,7 @@ export const Hero = ({
   children
 }) => {
   const textPositionFunction = () => {
-    if (textPosition === "top") return "justify-start"
+    if (textPosition === "top") return "justify-start py-20"
     if (textPosition === "center") return "justify-center"
     if (textPosition === "bottom") return "justify-end py-20"
   }
