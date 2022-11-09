@@ -305,7 +305,7 @@ const Page = ({ comments }) => {
         namaWanita="Agustina"
         ortuWanita="Putri dari Bpk. Sudarman & Ibu Radiah"
         namaPria="Krismanto"
-        ortuPria="Putra dari Bpk. Usman & Ibu Endang Suhartini"
+        ortuPria="Putra dari Bpk. Usman (Alm) & Ibu Endang Suhartini"
         imagePathPria="/clients/tina-kris/men.jpeg"
         imagePathWanita="/clients/tina-kris/women.jpeg"
         textColor="text-white"
@@ -376,7 +376,7 @@ const Page = ({ comments }) => {
         imageData={imageData}
       />
 
-      {/* <WithBarcode
+      <WithBarcode
         bgColor="bg-white"
         textColor="text-green-dark"
         padding="pb-28"
@@ -386,7 +386,7 @@ const Page = ({ comments }) => {
         buttonBgColor="bg-green-primary"
       >
         <DoubleWave color={waveColor} isBottom />
-      </WithBarcode> */}
+      </WithBarcode>
 
       <Grid
         subtitle="Momen kebersamaan kami menuju sakinah, mawadah, warohmah"
