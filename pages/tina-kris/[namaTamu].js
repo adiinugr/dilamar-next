@@ -336,7 +336,7 @@ const Page = ({ comments }) => {
         />
       </RSVP>
 
-      {/* <WithBarcode
+      <WithBarcode
         bgColor="bg-white"
         textColor="text-green-dark"
         padding="pb-28"
@@ -346,7 +346,7 @@ const Page = ({ comments }) => {
         buttonBgColor="bg-green-primary"
       >
         <DoubleWave color={waveColor} isBottom />
-      </WithBarcode> */}
+      </WithBarcode>
 
       <GallerySlideShow
         bgColor="bg-green-dark"

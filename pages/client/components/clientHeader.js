@@ -6,7 +6,7 @@ const ClientHeader = ({ headerTitle = "RSVP", namaClient }) => {
   const formatedNama = nama.replace("-", " & ").toUpperCase()
 
   return (
-    <header className="bg-dark text-gray-50 px-4 md:px-36 fixed z-20 w-screen">
+    <header className="bg-brand-dark text-gray-50 px-4 md:px-36 fixed z-20 w-screen">
       <div className="flex justify-between items-center py-4">
         <div className="font-yellowtail text-3xl">KataNikah</div>
         <div className="flex items-center">
