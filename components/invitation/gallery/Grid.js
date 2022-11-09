@@ -8,7 +8,8 @@ const Grid = ({
   height,
   width,
   numberOfGridCols,
-  subtitle = "Merajut mimpi menuju sakinah, mawadah, warohmah."
+  subtitle = "Merajut mimpi menuju sakinah, mawadah, warohmah.",
+  fontFamily = "font-honey-carrot"
 }) => {
   const gridColsClassName = () => {
     if (numberOfGridCols === 2) {
@@ -22,7 +23,9 @@ const Grid = ({
     <div className={`${bgColor} ${textColor} flex justify-center items-center`}>
       <div className="flex flex-col py-8 md:py-10 px-6 md:px-44">
         <Fade bottom>
-          <div className="text-center font-honey-carrot text-5xl md:text-5xl mb-6">
+          <div
+            className={`text-center ${fontFamily} text-4xl md:text-5xl mb-6`}
+          >
             Moment Kebersamaan
           </div>
           <p className="text-center">{subtitle}</p>

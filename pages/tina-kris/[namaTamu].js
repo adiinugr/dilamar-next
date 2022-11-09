@@ -25,6 +25,7 @@ import DateCountdown from "components/invitation/DateCountdown"
 import PlayerButton from "components/invitation/parts/PlayerButton"
 import WithBackgroundImage from "components/invitation/place-and-date/WithBackgroundImage"
 import WithBarcode from "components/invitation/instagram-filter/WithBarcode"
+import Grid from "components/invitation/gallery/Grid"
 
 const bottomMenuData = [
   {
@@ -84,6 +85,39 @@ const imageData = [
     id: 5,
     type: "image",
     src: "/clients/tina-kris/image9.jpeg"
+  }
+]
+
+const gridImageData = [
+  {
+    id: 1,
+    type: "image",
+    src: "/clients/tina-kris/grid image (1).jpeg"
+  },
+  {
+    id: 2,
+    type: "image",
+    src: "/clients/tina-kris/grid image (2).jpeg"
+  },
+  {
+    id: 3,
+    type: "image",
+    src: "/clients/tina-kris/grid image (3).jpeg"
+  },
+  {
+    id: 4,
+    type: "image",
+    src: "/clients/tina-kris/grid image (4).jpeg"
+  },
+  {
+    id: 5,
+    type: "image",
+    src: "/clients/tina-kris/grid image (5).jpeg"
+  },
+  {
+    id: 7,
+    type: "image",
+    src: "/clients/tina-kris/grid image (7).jpeg"
   }
 ]
 
@@ -336,6 +370,12 @@ const Page = ({ comments }) => {
         />
       </RSVP>
 
+      <GallerySlideShow
+        bgColor="bg-green-dark"
+        textColor="text-white"
+        imageData={imageData}
+      />
+
       {/* <WithBarcode
         bgColor="bg-white"
         textColor="text-green-dark"
@@ -348,10 +388,15 @@ const Page = ({ comments }) => {
         <DoubleWave color={waveColor} isBottom />
       </WithBarcode> */}
 
-      <GallerySlideShow
+      <Grid
+        subtitle="Momen kebersamaan kami menuju sakinah, mawadah, warohmah"
+        imageData={gridImageData}
+        height={400}
+        width={400}
+        numberOfGridCols={2}
         bgColor="bg-green-dark"
         textColor="text-white"
-        imageData={imageData}
+        fontFamily="font-yellowtail"
       />
 
       <GuestBookWithPopup
